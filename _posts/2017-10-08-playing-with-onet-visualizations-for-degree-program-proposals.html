@@ -1,0 +1,31 @@
+---
+layout: post
+title: Playing with O*NET visualizations for degree program proposals
+date: 2017-10-08 15:25:53.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- engineering edu
+tags: []
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><em>Edit: Found it! Paul Ingemi located the corresponding "this is for programmers!" website, which I have no idea how I overlooked. But <a href="https://www.onetcenter.org/database.html">onetcenter.org</a> has everything for download in different </em>db<em> formats. Yesssss.</em></p>
+<p>I'm working on a small project involving how to propose new STEM-related degree programs, and wanted to jot down this resource and think-aloud about my attempts to understand how I might use it.</p>
+<p>The Department of Labor has a <a href="https://www.onetonline.org/">website front-end for O*NET</a>, a database with information about jobs. Job outlooks (is this field expected to grow, etc.?) are one of the pieces of information, number of people in that industry, and other stats I expected to see -- but then others I hadn't thought of, such as "which skills does this job require?"</p>
+<p>That last bit allows comparisons of easy lateral moves -- if you're trained in career A, and want to switch, what professions are <em>most similar</em> (but may not be in an obviously similar industry)? For instance, it seems logical to me that a truck driver would also probably be a good train operator, but I wouldn't have thought they would be using skills similar to an explosives worker... but okay, yes, big risky pieces of equipment that you have to operate... yes.</p>
+<p>This <a href="https://www.nytimes.com/2017/07/27/upshot/switching-careers-is-hard-it-doesnt-have-to-be.html?_r=0&amp;pagewanted=all">NYT article on career-switching has interactive visualizations</a> that play with the O*NET data. I can't immediately figure out how -- there's no source code or obvious API on the O*NET side. I wonder how easy it would be to hook to the database, or even scrape it if need be (but that seems silly; there <em>ought</em> to be an interface -- at the same time, that doesn't mean there actually is one). I wonder how we might use this information to think about how to choose new degree programs to start.</p>
+<p>For instance, we could look at popular degree programs that cannot possibly accept all of the students that apply, and find skill-adjacent careers to try and expand the number of things students with similar interests can go into (if expanding existing degree programs is not an option). We could screen potential new programs not only by job growth outlook, but by lateral move possibilities - what sorts of degrees will give students the widest range of options if they want to do something different post-graduation, or make it easier to switch majors before graduation? (Engineering degrees are <a href="https://www.asee.org/papers-and-publications/publications/jee/award-winning-jee-papers/2008-wickenden-award-winner.pdf">notoriously bad for switching-into from another </a>major, since they require <em>so many</em> specific prerequisite course chains.)</p>
+<p>So there's that one question on my mind -- what might we do with this data if we could play with it? And then there's the second question, which is: how might we (on a technical level) play with it?</p>
+<p>The O*NET website doesn't have a listed API that I can find. I cannot figure out how to directly query the data, short of <a href="http://shop.oreilly.com/product/0636920034391.do">going all Ryan Mitchell</a> on it and scraping the heck out of a lot of pages. This seems extremely silly. Maybe I'm missing something. But when Sebastian and I looked (thanks for sanity-checking me, Sebastian!) there wasn't any indication how the NYT piece pulled data from the O*NET database to make the visualizations. We suspect it may be a case of "we threw programmer-hours at the problem" as opposed to "this dataset was easy to manipulate."</p>
+<p>So as to not wander down rabbit holes, I've messaged the article authors asking if there's an easy way to learn more about their methodology. And then... onwards, to working on degree program proposals. Ah, research life.</p>

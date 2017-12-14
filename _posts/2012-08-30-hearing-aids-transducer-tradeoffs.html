@@ -1,0 +1,36 @@
+---
+layout: post
+title: 'Hearing aids: transducer tradeoffs'
+date: 2012-08-30 20:07:33.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- hearing
+tags:
+- hearingaids
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Right, so we were going to discuss tradeoffs in hearing aid transducer design next. Small mics, sensitive mics, power-efficient mics, low-noise mics -- you can't have all of them at the same time, but you can have some of them in combination.</p>
+<p><strong>Small microphones tend to be less sensitive, but have a broader bandwidth.</strong> As microphones get larger, the diaphragm gets larger and more attuned to tiny motions in the air (also known as "sound"), so you get more sensitivity; however, larger diaphragms also take longer to move, which means they respond more sluggishly to fast (high-frequency) signals, giving them a smaller bandwidth. Think about how quickly a kid on a jetski can turn -- on a dime, right? They could drive a jaggedy line all over a lake. Now think about a yacht. Can't turn quite as fast -- it could only trace out a slower, lower-frequency signal on that lake.</p>
+<p>By the way, I know we're talking about mics here, but the limiting factor in overall hearing aid bandwidth is usually the reciever. You usually get a ~6kHz bandwidth for BTE (behind the ear) aids and ~8kHz for ITE (in the ear). If you want better bandwidth than that, you basically need to have two receivers (a subwoofer and a tweeter, so to speak). Widex has a hearing aid (or aids? not sure) like this. We also talk about receivers as if small is better, and usually it is -- small receivers get better bandwidth for the same reasons small mics do, for instance -- but there is one special case: vibration. The <a href="http://blog.melchua.com/2012/08/29/hearing-aids-intro-to-transducers-or-whats-probably-in-your-ear-electret-mics-and-balanced-armature-transducers/">weird internal feedback issue discussed at the end of an earlier post</a> only becomes an issue with a tiny, high-powered receiver shaking like mad in your ear canal.</p>
+<p>Anyway, back to microphones.</p>
+<p>A larger microphone (and diaphragm) is also less susceptible to Brownian motion of air molecules, meaning they'll pick up less ambient noise and thus have a lower noise floor. (I should note here that part of my challenge in liveblogging during class is learning how to talk and write like an audiologist; there are a lot of overlapping terms that cluster meaning around the same things, and I am trying to disentangle and relate them to the technical knowledge I already have as an electrical engineer.) So I'll say it again: <strong>larger microphones have fewer issues with noise.</strong></p>
+<p>Continuing on: if the microphone is more sensitive (because it's larger, see above), it produces a larger signal to begin with, meaning it needs less amplification -- and thus drains less current, or in more pragmatic terms, "its battery lasts longer." And if you need to do less "stuff" to the signal, there's less chances for it to be distorted, so you'll also get less noise. <strong>More sensitive mics need less power and have fewer noise issues. </strong>Sounds awesome. Except for the fact that they're also larger. (See? I told you, tradeoffs.)</p>
+<p>What happens if you "max out" your mic or receiver? The technical term for this is hitting <strong>saturation limits</strong>; it's what happens when you try to give a microphone a louder sound than it's designed to handle, or when you try to get a reciever (speaker) to play a louder sound than it can physically play. As to what happens, the short version is that everything sounds like crap.</p>
+<p>All right, but <em>why</em> exactly does it sound like crap?</p>
+<p>The diaphragm in the microphone is a physical thing; there's only so far it will flex and bend, so there's a certain loudness level that the microphone just can't register beyond. When the mic starts banging up against its limits -- and I mean literally banging up, the diaphragm is being pushed so far back and forth it's actually whacking the other bits of the transducer --  it sounds awful; crackly, noisy, the sound of a pointy-edged jaggedy signal.</p>
+<p>Trouble is, it's easy to hit those limits in a little mic or receiver. You can do it with your voice right now; if you're wearing hearing aids, just talk loudly. If I put my hearing aids on and shout, my voice is six inches from my microphone -- I can easily get 100 dB to them. (That's loud.) When my boyfriend takes me to a U2 concert, it gets <em>way</em> louder than that. So a saturation limit would ideally be above 115 dB so that excited "IT'S BONO! SQUEEEE!" screaming nearby won't make me flinch. (Okay, I might flinch anyway, but for other reasons.) Pragmatically, most hearing aids don't get that sort of saturation limit because of other tradeoffs, but one can dream.</p>
+<p>Saturation limits affect the <strong>MPO, or maximum power output</strong>, of a hearing aid. We'll get back to this later, but here's another tradeoff: if you want a higher saturation limit, you mostly need to give the diaphragm more space to move around before it whacks something. This means it's moving across a bigger space, and so the electromagnetic field needs to bridge a bigger gap, which takes more current -- so it sounds like "bigger microphones use more power." But remember how mics with more diaphragm surface area are more sensitive, and sensitive diaphragms need less amplification and thus less power? So it depends on what dimension it's bigger on; <strong>a wider microphone uses more power but has a higher saturation limit, a longer microphone uses less power because of its increased sensitivity. </strong></p>
+<p><strong></strong>Life gets easier if you don't pay as much attention to size tradeoffs, basically. Except for breakability -- you can't get around the fact that <strong>larger things are more likely to break if you drop them</strong>.</p>
+<p>Next up we'll be talking about resonance.</p>

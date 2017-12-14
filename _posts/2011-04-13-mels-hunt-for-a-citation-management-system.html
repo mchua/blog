@@ -1,0 +1,73 @@
+---
+layout: post
+title: Mel's hunt for a citation management system
+date: 2011-04-13 13:06:46.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- teaching open source
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>As I work more and more with professors on incorporating open source into education and research, I've run up into the need for a better way to manage, cite, annotate, and reference large numbers of scholarly papers. This is likely to be a combination of process and tooling - let's see how I can go about figuring this out before I'm overwhelmed by Chicago-style bibliographies and writing deadlines.</p>
+<p><b>Step 1: Wander around the search space exploring options.</b></p>
+<p>Aside from googling terms like "citation management," "paper management," and other terms that came up (bibliography, academic paper, reference) in conjunction with the term "open source," I also put the same queries to <a href="http://sourceforge.net">sourceforge</a> and the <a href="https://admin.fedoraproject.org/pkgdb/">Fedora repositories</a>, leading to a bogglingly large number of options. This reminds me of what I actually forgot to do...</p>
+<p><b>Step 0: Define what you want.</p>
+<p></b>To be fair, until I wandered around the search space a bit, I was pretty hazy on what was <i>possible</i>. Did people do this online? Offline? On paper? Save just bibliographies? Integrate them into browsers or readers or text editors? Save annotated pdfs? Was it important that notes be text-searchable? Did everyone keep their own notes, or was this some sort of collaborative endeavour? (It seemed wasteful for thousands of academics to MLA-format the same citation over and over and over...)</p>
+<p>The answer I found to all these questions was: yes.</p>
+<p>Okay, so there wasn't One Right Answer or Several Clear Standards for this sort of thing - it was an individual choice, with some choices being somewhat more popular than others. Nice to know. What were my criteria? A first pass:
+<ol>
+<li><i>Open source.</i> I want to be able to share this solution with other people, and tweak it if need be (though I admit I do not modify the <i>vast</i> majority of software I personally use).</li>
+<li><i>Exportable in readable form. </i>I don't want to be locked into some custom format that's hard to share with other people (who may have a different system) or to browse myself; if I can't write my own parser for its storage format, it's officially Too Complicated. Also, export/import is vital for backups, and I'm wary enough of Murphy's Law to know that my computer will crash the week before my thesis defense is due. Being prepared!</li>
+<li><i>Store notes (different types, flexibly/dynamically determined) as well as bibliographic information.</i> I spew lots of thoughts while reading. I need a way to capture them. That's it.</li>
+<li><i>Handle both pdf/print/book and online documents with notions of "frozen" and "moving" resources.</i> I'll need to wrangle many scholarly papers and "traditional" reference materials like books, of course. But I also swim in an open source universe, and need to be able to easily refer to online resources - blogs, wikis, chat logs... transient and changing things. It would be great to be able to store a copy for "downloaded on this date" searchability and still point to the updated upstream, with disclaimers that things may have changed in the meantime. If need be, this is something I'm willing to hack in.</li>
+<li><i>Searchable text.</i> Whenever possible, I'd like to be able to access the full text of the documents I'm working with, along with the full text of my notes.</li>
+<li><i>Easy copy-paste of bibliographic information in the desired citation format.</i> I want to be able to hit a button and go "MLA transforms to... APA! Copy-paste!" without having to manually grab information out of each form field. This sounds stupid, but when you consider the number of times I'll be doing it, it gets <i>really </i>important.</li>
+<li><i>Citation cross-linking.</i> I'm not sure if there's a word for this, but I'd like to be able to note which books and articles cite each other, lead to each other, reference interesting ideas that contrast with each other. I'd like to be able to put the papers I write in this database, and point to which papers they cited - building up a picture of where I'm looking and what I'm citing over time.</li>
+<li><i>Enable spontaneous metadata. </i>In other words, tags.</li>
+<li><i>Runs on Linux.</i> Bonus points if it's cross-platform, but it's got to run on <i>my</i> operating system, at least.</li>
+<li><i>Easy to share my notes with others.</i> I know I can't share the papers in the vast majority of cases, but I would love to be able to open my notes and bibliographies and reading list to the rest of the world. Bonus points if I can tap into a community that's already doing this and not need to recreate a little nucleus all my own... but I recognize that perhaps this starts drawing questions about scholarly integrity vs collaboration, etc. (what's your own work, if you grab a citation list from someone else and refer to their notes on the papers as inspiration for your own?) and so people may not yet be doing it and I will need to learn more about this and learn to write some clear-cut guidelines around what I'm up to.</li>
+</ol>
+<p>Whether they were browser-based or text-editor extensions or webapps didn't matter to me. Based on this initial list of 10, I cut down the massive ream of search results (ok, 36 browser tabs, most with an aggregate of various software options) to a bunch that seemed like they might meet the criteria.</p>
+<p><b>Step 2: Presenting the first list of candidates.</b>
+<ul>
+<li><a href="http://jabref.sourceforge.net/">JabRef</a> - Java-based and therefore cross-platform and designed specifically to work with BibTeX, which is the standard bibliography format for LaTeX, my favorite document prep system. Which I should re-crash-course myself in, really. JabRef looks highly customizable, which is a big plus - and it's an active project. Not sure how user-friendly the interface is, or whether I want to work with Java.</li>
+<li><a href="http://www.zotero.org">Zotero</a> - this seemed to get a large number of rave reviews. A Firefox plugin (so using web citation is obviously already a key feature) developed by a collaboration of academic centers (including a library one!) it seems like a nice case of user-driven design, and trumpets its ability to sync remotely (working from multiple machines yay!) and publish one's process. Not sure how it deals with random notes, tags, and metadata yet. Also, stability questions pop up on my end.</li>
+<li><a href="http://www.refbase.net">RefBase</a> has a nice batch of features - web-based and highly integrated with other tools that sound appealing to me (email, Zotero, RSS). The email-everyone-when-a-new-record-is-added feature is particularly fascinating; I could see this being a potentially nice piece of TOS infrastructure if it works. On the other hand, it doesn't seem like the best way to keep book notes.</li>
+</ul>
+<p>There were some second-tier contenders that would be nice to check out if there's time.
+<ul>
+<li><a href="http://www.aigaion.nl">Aigaion</a> - seems like a smaller niche and less active program, but the bare-bones minimalism and solid good sense that seems to be exhibited by its developers (they've got all the right things - bugtracker, wiki with basic documentation, etc) attracts me.</li>
+<li><a href="http://www.connotea.org/">Connotea</a> - a web-based social bookmarking system for academic bibliographies, created by the Nature publishing group. It's open source (GPLv2) and looks quite full-featured, but development has slowed - the last mailing list post was in 2009, and there were 2 emails to the list that year.</li>
+<li><a href="http://www.unix-ag.uni-kl.de/%7Efischer/kbibtex/">KBibTex</a> (KDE), <a href="http://www.pybliographer.org/">Pybibliographer</a> (GNOME), and <a href="http://icculus.org/referencer/">Referencer</a> (GNOME) are organizers designed for specific Linux desktop systems - that having been said, the latter two especially look quite attractive and hackable (if not uber-maintained - in fact, the latter is looking for a maintainer). Possibly worth tinkering with; I'll have to decide whether the desktop lock-in is worth it, and these are less easy to publish with.</li>
+<li><a href="http://bibus-biblio.sourceforge.net/wiki/index.php/Main_Page">Bibus</a> could be nice if my workflow were centered around LibreOffice (or<br />
+OpenOffice), but it's not - however, it's mature and full-featured enough, and seems to be designed for collaboration enough to warrant consideration. <a href="http://ast.informatik.uni-bremen.de/">AuthorSupportTool</a> appears to be in a similar vein; it was done as a class project 2-3 years ago but there's still some development activity going on.</li>
+<li>Software not specifically intended for citation management - specifically, <a href="http://www.mediawiki.org">MediaWiki</a>... although I'd love a lighter-on-the-server wiki that still maintains interesting metadata tagging/category/etc management features, honestly.</li>
+</ul>
+<p><b>Appendix: Interesting candidates that didn't make it.</p>
+<p></b>I see these things as exciting for inspiration, possibly useful for other people, and a way to make me think about different workflow possibilities. Remember, when a feature doesn't exist in a piece of FOSS software, it's usually because it hasn't been coded in yet...<b><br /></b>
+<ul>
+<li><a href="http://www.mendeley.com/">Mendeley</a> - not open source.</li>
+<li><a href="http://www.endnote.com/">Endnote</a> - not open source.</li>
+<li><a href="http://www.mekentosj.com/papers/">Papers</a> - not open source, Mac-only.</li>
+<li><a href="http://bibdesk.sourceforge.net/">BibDesk</a> - open source, but Mac-only.</li>
+<li><a href="http://textcite.sourceforge.net/">TextCite</a> and <a href="http://wikindx.sourceforge.net/">Wikindx</a> - open source, web-based, but both seem dead and out of use now - however, at one time each had a fair number of users. This was just 3-4 years ago - how quickly the software landscape changes!</li>
+<li><a href="http://researcher.sfu.ca/about">reSearcher</a> and <a href="http://heuristscholar.org/heurist/">Heurist</a> looked fascinating - reSearcher in particular is under active development by a library group in Canada that's dogfooding their own work, which I always think is wonderful - but I just couldn't figure out quickly how they worked or what they did, and seemed a little less mature as open source communities and products, so I'll pass on them for now. Still, there may be some interesting sparks to fan here, and I'd personally love to chat with any developers from either project about what they're trying to accomplish.</li>
+</ul>
+<p><b>Appendix: Supplementary tools</p>
+<p></b>These are various things related to bibliography management that I thought might be interesting to use, but aren't themselves really scholarly resource management tools.
+<ul>
+<li><a href="http://www.alari.ch/people/derino/Software/Bebop/index.php">Bebop</a> - a way to generate nice webpages from BibTeX entries.</li>
+<li>Actually, I expected to find more of these. It's clear I'll have to relearn LaTeX and grok BibTeX (which I never really did use in undergrad) - I wonder how much I want to depend on <a href="http://www.lyx.org">LyX</a> as a tool.</li>
+</ul>
+<p>What's next? I'm not sure, nor am I sure when I'll be taking the next step, though I'm sure that a pressing need to write something else academic will be a factor in inspiring me to pick this up again (so if you see me working on this aggressively in early May, it <i>probably</i> means FIE accepted the first draft of the paper we submitted). Feel free to crank away at this if you'd like, or chime in on some of the options if you've tried them - Wikipedia's <a href="http://en.wikipedia.org/wiki/Comparison_of_reference_management_software">comparison of reference management software</a> may come in handy.</p>

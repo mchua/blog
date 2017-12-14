@@ -1,0 +1,37 @@
+---
+layout: post
+title: Etherpad FAD infrastructure questions
+date: 2010-08-31 07:20:36.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- olin
+- teaching open source
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Some of my <a href="http://www.olin.edu">Olin</a> buddies (<a href="https://fedoraproject.org/wiki/User:Sdz">Sebastian Dziallas</a>, <a href="https://fedoraproject.org/wiki/User:Computercolin">Colin Zwiebel</a>, <a href="https://fedoraproject.org/wiki/User:Rockychat3">Andy Pethan</a>, and <a href="https://fedoraproject.org/wiki/User:Djsaurus">DJ Gallagher</a>) are putting together their first <a href="https://fedoraproject.org">Fedora</a> event, a <a href="https://fedoraproject.org/wiki/FAD">FAD</a> focused on <a href="http://en.wikipedia.org/wiki/Etherpad">Etherpad</a> deployment. Predictably, it's called the <a href="https://fedoraproject.org/wiki/Etherpad_FAD">Etherpad FAD</a>. In preparation for this, Colin asked some questions about <a href="https://fedoraproject.org/wiki/Infrastructure">Fedora Infrastructure</a> that I thought other newcomers might have, so I'm posting my responses here in the hopes that people can (1) correct me if I'm wrong, and (2) transfer this information somewhere else more useful (wiki?) if I'm right.<br />
+<strong><br />
+</strong>By the way, if you're interested in Etherpad development or deployment and would like to participate in the event, <a href="https://fedoraproject.org/wiki/User:Computercolin">get in touch with Colin Zwiebel</a> and he'll get you started. Packagers, js/scala/java developers, infrastructure folks, experienced Etherpad developers and deployers along with new folks who want to learn... we need all sorts of people! It's in the Boston area, and some travel funding is likely to be available, or you can participate remotely (I'll be pitching in remotely from Cape Town, South Africa). Again, <a href="https://fedoraproject.org/wiki/User:Computercolin">get in touch with Colin</a> and he'll get you started.</p>
+<p>Now for Colin's questions...<br />
+<strong><br />
+How do things normally go up on Fedora Infastructure?</strong></p>
+<p>#fedora-admin. That's why I was trying to point you there. :) Really, just catch me on IRC sometime and we'll get your questions answered there in realtime.</p>
+<p><strong>Do you need someone to maintain the new installation?</strong></p>
+<p>Probably. :)</p>
+<p><strong>If so, what qualifications does that person need? How can we become/find that person?</strong></p>
+<p>How Fedora Infrastructure works in a nutshell: if you want something (say, <a href="https://fedoraproject.org/wiki/Etherpad">Etherpad</a>) deployed in production, it has to first move through <em><strong>publictest</strong></em> ("you've got root on this random box, experiment and break things and configure until you think you've got it right") and <em><strong>staging</strong></em> ("now that you think you know what you're doing, write us out detailed instructions on exactly how to replicate your setup, and we'll see if your instructions can be automated"). Once it's verified that you've got things in a state where they can be automatically and stably deployed, then you go into <em><strong>production</strong></em>, which is the "hurrah! it's launched!" state that you're looking for.</p>
+<p>So the first step is getting access to publictest machines so you can play around. For this, you'll want to get formally started with the Infrastructure team, as they are the ones who can grant access. <a href="http://fedoraproject.org/wiki/Infrastructure/GettingStarted">http://fedoraproject.org/wiki/Infrastructure/GettingStarted</a> is their getting-started page; you want to get sponsored, so you'll want to read <a href="http://fedoraproject.org/wiki/Infrastructure/GettingSponsored">http://fedoraproject.org/wiki/Infrastructure/GettingSponsored</a>, and the FIG (Fedora Infrastructure Group) you want is sysadmin-test, <a href="http://fedoraproject.org/wiki/Infrastructure/FIGs#sysadmin-test">http://fedoraproject.org/wiki/Infrastructure/FIGs#sysadmin-test</a>.</p>
+<p>Once you get access to the sysadmin-test group, you should have root privileges on all of Fedora's publictest machines; an admin in the #fedora-admin channel can tell you more about that. The next step after that is filling out an RFR (Request For Resources) as described in <a href="https://fedoraproject.org/wiki/Infrastructure/RFR">https://fedoraproject.org/wiki/Infrastructure/RFR</a> and you'll soon have root access to whatever sort of environment you need to set up things.</p>
+<p><em>I think that's it, but I'm going to blog this introduction to Planet Fedora to make sure I'm not steering you wrong, and also because the text may be useful for others getting started with the Infra team.</em></p>

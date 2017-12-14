@@ -1,0 +1,51 @@
+---
+layout: post
+title: How I read books
+date: 2009-12-20 01:47:37.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- teaching open source
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Taught this system in about 15 minutes to my cousin Melanie (high school freshman working on her first Big Paper for history; it's something about People with Swords in Ancient China, so I'm <i>totally </i>reading it when she's done) this afternoon and realized I'd never written it down, so here goes: this is how I've taken reading notes and written papers since I was in high school. I'm also writing this in part to prove that the terminal is useful for things other than writing code, because I <i>did not know how to code</i> when I started doing this.</p>
+<p>My system is largely predicated on the assumption that I am a Lazy Bum, and basically involves 4 tools: <a href="http://en.wikipedia.org/wiki/Cat_%28Unix%29">cat</a>, <a href="http://en.wikipedia.org/wiki/Grep">grep</a>, <a href="http://en.wikipedia.org/wiki/Pipe_%28Unix%29">| (pipes)</a>, and flat text files. These are standard <a href="http://en.wikipedia.org/wiki/Unix">Unix</a> tools, and I've never seen a <a href="http://en.wikipedia.org/wiki/Linux">Linux</a> distro without them; Melanie and I already run <a href="http://fedoraproject.org/get-fedora">Fedora</a>, so we were all set.</p>
+<p>I grab the text of books when possible (mm, <a href="http://www.gutenberg.org">Project Gutenberg</a>) and take advantage of the fact that my computer can read faster than I can. For instance, for history my Junior year of high school, I had to write some paper about the Judeo-Christian belief system. I forget the exact topic now, but let's imagine wanted to grab out some nice quotes about the symbolic use of... say, swords. I like swords. So I download bible.txt, and...<br />
+<blockquote><code><a href="http://en.wikipedia.org/wiki/Cat_%28Unix%29">cat</a> king-james-bible.txt| <a href="http://en.wikipedia.org/wiki/Grep">grep</a> -C 1 sword | <a href="http://en.wikipedia.org/wiki/Less_%28Unix%29">less</a></code></p></blockquote>
+<p>In English, this means "send (con<b>cat</b>enate) the text of the bible through a filter (<b>g</b>lobal <b>r</b>egular <b>e</b>xpression <b>p</b>rint) that looks for the word 'sword' and shows the <b>-C</b>ontext of 1 line before and after it, then let me scroll through the results <b>(less)</b>." The results look something like this.<br />
+<blockquote>01:003:024 So he drove out the man; and he placed at the east of the<br />           garden of Eden Cherubims, and a flaming <b>sword</b> which turned<br />           every way, to keep the way of the tree of life.<br />--</p>
+<p>01:027:040 And by thy <b>sword</b> shalt thou live, and shalt serve thy brother;<br />           and it shall come to pass when thou shalt have the dominion,<br />--<br />           stolen away unawares to me, and carried away my daughters, as<br />           captives taken with the <b>sword</b>?</p>
+<p>--<br />           that two of the sons of Jacob, Simeon and Levi, Dinah's<br />           brethren, took each man his <b>sword</b>, and came upon the city<br />           boldly, and slew all the males.</p>
+</blockquote>
+<p>And so on. Instant sworditude, much faster than actually reading the whole darn book (or Book, in this case).</p>
+<p>For those looking for a more powerful alternative to grep, try <a href="http://betterthangrep.com/">ack</a>. (The website URL is pretty accurate.) I was introduced to ack at <a href="http://openplans.org/">TOPP</a> and have never looked back; the main advantage is how easy it is to deploy ack on huge trees of folders swarming with text (or code) files, meaning that you could, instead of just looking in the King James Bible, deploy the above search for swords in <i>every note you've ever taken on every book you've ever read</i>. Assuming those notes are textfiles dumped somewhere underneath the folder you're searching in, I mean. It's made fascinating connections between long-ago reads I never would have thought of on my own, and my papers in college were much improved by it.</p>
+<p>I also take my reading notes in flat text files as I go through books. Those textfiles look something like this:<br />
+<blockquote>Arnold, Bennett. <a href="http://www.gutenberg.org/etext/2274">How to Live on 24 Hours a Day</a>. New York: Shambling Gate, 2000. Print.</p>
+<p>P: (5) Lay out things for tea at night so you can make tea in the morning as a nice wake-up call.<br />Q: (5) [breakfast] The proper, wise balancing of one's whole life may depend upon the feasibility of a cup of tea at an unusual hour.<br />N: Hilarious writing style. Read this book whenever the need for British wit strikes.<br />?: (7) Was this before or after Taylorism?<br />N: (7-8) This program would only work in a highly literate population. Which I suppose the reader belongs to, as they're reading the book. But still.</p>
+</blockquote>
+<p>Note a couple things.
+<ol>
+<li>Full bibliography at the top so I never have to figure out the formatting for it again.</li>
+<li>Each note gets a new line, and begins with a letter code for the type of note it is: P for paraphrasing (summary), Q for quote, ? for a question I have, N for a note (my own thoughts), and some not shown here, like R for "reference to some other material I should look up later" (such as when one book cites another that I figure I should read).</li>
+<li>Optionally, page numbers appear in (parentheses) immediately after the note type.</li>
+<li>Super-optionally, tags appear in [brackets] after the page numbers, mostly when I want to be able to associate a quote with a word that's not in the quote, for ease of searching later.</li>
+</ol>
+<p>Then I can make queries like "what were all the questions I had about this book?"<br />
+<blockquote><code>cat how-to-live-on-24-hours-a-day.txt | grep ?:</code></p></blockquote>
+<p>Or "what interesting stuff was on page 7?"<br />
+<blockquote><code>cat how-to-live-on-24-hours-a-day.txt | grep (7</code></p></blockquote>
+<p>And so forth.</p>
+<p>Confession: I've fallen off the wagon and haven't taken notes like this since I left school. I'm trying to climb back on it again, as this sort of database is gloriously helpful to build. Particularly if one plans on doing lots of reading and writing of papers. Like, say, if one were to consider grad school.</p>
+<p>I'm sure this system could be improved; I once had dreams of writing a GUI for it, but found this worksforme enough that I just never made one. There are probably better tools out there for it, there's probably a lot of <a href="http://en.wikipedia.org/wiki/Regular_expression">regexp</a>-fu I could pick up to do more powerful queries (in fact, this is one of the reasons why I know regular expressions at all), there's... well, you know what I'm about to say.</p>
+<p>Patches welcome!</p>

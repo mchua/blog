@@ -1,0 +1,29 @@
+---
+layout: post
+title: Questions about the datastore location
+date: 2010-02-17 08:26:48.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- sugar
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>It should <a href="http://karlierobinson.blogspot.com/2010/02/first-graders-and-xo-photo-retreavel.html">not be this hard</a> for people to figure out how to get large numbers of files from their journal to another computer. When I think "hm, where would the picture I took with Record be stored?" my first instinct is not "of course, it must be ~/.sugar/default/datastore/store with cryptic alphanumeric-hashed filenames and no file extensions!"</p>
+<p>Would it be possible to...</p>
+<ol>
+<li>Move the default "Journal stores things here" folder to ~/sugar/MyJournal or something like that? (Note 'sugar' instead of '.sugar' - not using a hidden folder makes this more discoverable. I wonder if this is more than a global find-and-replace of the path for any reason.)</li>
+<li>Make filenames of Journal items more identifiable - Karlie suggested using the first-created date and time (YYYYMMDDHHMMSS) as the beginning of the hash, and appending the filename extension, so for instance 20100217082415-asf693df7.png would at least tell me that this is an image I took on Feb 17, 2010, at 8:24:15am.</li>
+</ol>
+<p>I know these things are probably never going to be seen by the vast majority of kids using Sugar, because we're trying to leave behind the file-and-folder metaphor, but Sugar is built on an OS that <em>does </em>use the file-and-folder metaphor, so this would make it easier for the hackers tinkering on the undersides to figure out the underlying structure for themselves.</p>
+<p>Are there design decisions behind the current Journal storage format that I just don't know about? I'm honestly curious - it may be that a nested series of hidden folders <em>is</em> the right way to go for some reason I haven't figured out, and that it's worth the tradeoff - but right now I can't think of any.</p>

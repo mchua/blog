@@ -1,0 +1,34 @@
+---
+layout: post
+title: Hearing aids that don't amplify
+date: 2007-01-28 21:33:00.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta:
+  blogger_blog: signalsandsystemsredux.blogspot.com
+  blogger_permalink: "/2007/01/hearing-aids-that-dont-amplify.html"
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>One of the great things about having engineers for friends is that they can imagine in tech - a blue sky brainstorming session about filter design makes <span style="font-style: italic;">perfect</span> sense in the right group. So it's David Klempner (UIUC '06) that I've got to thank for the following kick back onto my original SigSys project path, abandoned two years ago.</p>
+<p>Simply put: Make hearing aids that don't stink. (Or ones that don't stink for me.)</p>
+<p>Since the traditional "why don't we amplify selected frequencies?" method doesn't do much for folks with a hearing profile like mine where the upper ranges are essentially gone (I've heard that mine is the worst kind of hearing loss to make hearing aids for), I'd been trying to come up with ways to interpret a full normal-human-hearing frequency range of sound within my limited frequency range of hearing.</p>
+<p>It's like suddenly having the bandwidth of a communications channel halved, but having to transmit the same information. Fortunately, things like the English language are coded with plenty of redundancy, so there's wiggle room that enables me able to understand speech. For more information on this, check out <a href="http://mellory.blogspot.com/2007/01/what-it-looks-like-to-hear-like-mel.html">What It Looks Like To Hear Like Mel</a>. Basically, I look like a first-order low pass filter.</p>
+<p>The audiograms (graphs) in that post were generated via hearing tests, which mostly involve beeping various frequencies at different volumes into  headphones and you indicating which ones you can hear (press a button,  raise your hand). It's a sort of primitive way of determining a person's <a href="http://en.wikipedia.org/wiki/Finite_impulse_response">FIR</a>, because as a kid I swore I could hear the little microphone and equipment clicks when they try to test the high frequencies. I couldn't hear the notes, but I heard the tiny <span style="font-style: italic;">pop</span> similar to the one that happens when you turn on a microphone hooked up to a great big speaker (not entirely sure what causes the impulse in the circuit, but the <span style="font-style: italic;">pop</span> is the response of the sound system settling down from it).</p>
+<p>Also, the "raise your hand if you hear" is subject to all sorts of experimental problems because people are inconsistent, easily confused, and... ah... cheat. (Hey, I raised my hand when I heard the microphone clicks, because I wanted to be "as hearing as possible.")  It would probably be more accurate to measure brain activity (which, as Raymond's first lecture mentioned, also depends on SigSys - the stuff is everywhere). Anyhow, conversation went something like this, with my first chime-in being a laundry list of hearing aid schemas that aren't straight amplification:</p>
+<p><span style="font-weight: bold;">David:</span> The obvious thing to try would be outright compressing frequencies downwards; it would make everyone sound weird but you might get more useful information out of it.</p>
+<p><span style="font-weight: bold;">Me:</span> A few years back I tried all sorts of funky little  things [as alternative hearing aids] - compressing all frequencies down, folding higher frequencies,  modulating all frequencies above a certain cutoff downwards...<br /><span style="font-weight: bold;"><br />David: </span>You were, in fact, both compressing and correcting for the volume and<br />speed effects, right?</p>
+<p><span style="font-weight: bold;">Me: </span>Uh....</p>
+<p><span style="font-weight: bold;"><span style="font-weight: bold;"></span></span>So David suggested this:</p>
+<blockquote><p>I'd start with whatever sampling rate your [laptop] hardware supports (presumably there's an <a href="http://en.wikipedia.org/wiki/Low_pass">LPF</a> there for anti-aliasing purposes), and then compress that down by a factor of two. Or, for that matter, maybe less than two; a 20% compression might give you a noticeable improvement without as much distorting effect. (eg, people's voices still sound human.) </p></blockquote>
+<p>Cool - a starting point for experimentation.</p>

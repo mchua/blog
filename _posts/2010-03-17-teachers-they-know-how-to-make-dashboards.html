@@ -1,0 +1,38 @@
+---
+layout: post
+title: 'Teachers: they know how to make dashboards.'
+date: 2010-03-17 01:53:52.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- teaching open source
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Or so I hypothesize. <a href="http://opencontent.org">David Wiley</a> and his students have come up with a <a href="http://opencontent.org/blog/archives/1286">lovely "waterfall" visualization</a> of student work-time correlated with their final grade. (I'm not sure if the code is open source yet, but I've asked about that in a comment, and I certainly hope so.)</p>
+<p>My guess, based on the years I've spent as a TA in college engineering classes (and far too much time grading first-year math and physics problem sets): anything that can be done to reduce one's evaluation workload is <i>extremely</i> tempting to a teacher. And maybe there's a better word for this, but the one I know for "things that let you quickly monitor how somebody or something's doing" is a dashboard.</p>
+<p>The intent of this is not to automate grading, but to let teachers draw on a <i>richer</i> pool of data on which to base your evaluations by making that pool of data easier to access and manipulate to draw your own conclusions. Show me all the patches a student has made this term; how many were accepted? Show me her blog posts. Are they thoughtful and articulate? Show me his mailing list conversations, his IRC logs - is he teaching others and being constructive? Show me their <a href="https://fedoraproject.org/wiki/Special:Contributions">wiki edits</a>. Show me a <a href="http://code.google.com/p/gource/">visualization</a> of their code. Show me, show me, show me.</p>
+<p>I don't know what this would look like; I think it would be different for each class and for each teacher. I would be fascinated to see what teachers and professors would do if we made better APIs to help them mine the data sources of the open source projects their students are working in. </p>
+<p>Bonus: this makes life easier for researchers studying open source participation and teaching and learning in open source communities. Actually, an initial <a href="http://blog.melchua.com/2010/03/01/fas-scraper">prototype</a> (8 lines of quickly-written and deliberately horrid python written in the hopes that it would make another programmer twitch enough to pick it up and do it properly) of something like this was inspired by <a href="http://www.cyber-anthro.com/">Diana Martin</a>, an anthropology grad student </p>
+<p>For instance, some Python-esque examples for a variant of this I could imagine for Fedora-specific services:</p>
+<blockquote><p><code>import fedorascraper</p>
+<p># returns a list of strings containing the last 10 edits ianweller made on Fedora's mediawiki instance<br />fedorascraper.mediawiki.lastedits(10, 'ianweller')</p>
+<p># returns the number of Planet posts rrix wrote since Jan 4 of 2010<br />fedorascraper.planet.num_posts_since('2010-01-04','rrix')<br /></code></p></blockquote>
+<p>That way I can start looking for interesting correlations and asking questions like...
+<ul>
+<li>Do people who maintain packages tend to post a lot on mailing lists right after a release?</li>
+<li>Of the people who have posted at least 3 times to design-list in the past 2 months, who maintains the most packages?</li>
+<li>These two students seem to build off each other's work a lot - when did they start having a lot of back-and-forth conversations on IRC, and has this increased over time, and is it steady-state?</li>
+</ul>
+<p>Interesting cross-correlation questions like that should be Easy To Ask. Easy enough that they can be assigned for <a href="http://allendowney.com/sd04fall/hw07/hw07.html">homework questions like this</a> - imagine students doing this not just for US Census data, but Fedora data, or data from - well, any open source project you might implement this sort of thing for.</p>
+<p>Teachers: would this be useful? What sorts of tools and libraries would make it easier for you to grade student work in open source - or what do you already use for it - and what lessons can we learn from this in terms of making a "open source community health" dashboard?</p>

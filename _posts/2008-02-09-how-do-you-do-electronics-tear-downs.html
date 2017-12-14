@@ -1,0 +1,30 @@
+---
+layout: post
+title: How do you do electronics tear-downs?
+date: 2008-02-09 08:35:45.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>On Bunnie's <a href="http://www.bunniestudios.com/blog/?p=226">name that ware contest</a>, I stare befuddled at the boards, maybe searching for a couple of part numbers at best. And then watch people comment within minutes with detailed analyses of how the thing was designed, sometimes manufactured, sometimes even commentary on the above two - and guesses (some correct!) about exactly which consumer product it is.</p>
+<p>Whenever I've taken something electronic apart - fairly rare, given the lack of scrap gadgets in my life and the early-childhood moratorium on disassembling things like my hearing aids - my reaction usually consists of two things: (1) Ooh, that's pretty, and (2) I have no idea how this works. And usually the "ooh, that's pretty" part refers to how they did the physical layout, packaging, and injection molding, which is something I had a brief exposure to before college because next to my dad's office is one of their company's small manufacturing plants.</p>
+<p>When I watch someone else take something electronic apart (five times: once with a Segway in Gill's robotics class, an electric toothbrush and a mouse at Continuum, and an XO and Classmate at OLPC), it's all I can do to keep my understanding afloat amidst the rapid fire commentary (and then only by writing down the terms I don't get and googling them later. "Oh, BGA means <a href="http://en.wikipedia.org/wiki/Ball_grid_array">ball-grid-array</a>. Ohhhhh.")</p>
+<p>The nice thing is that once I "get" a tear-down, I can explain it to other people pretty well, particularly non-engineers. I don't want to just be a geek-to-english translator for the rest of my life, though - I want to speak fluent hackerese and be able to analyze tear-downs myself, and maybe even someday design things that other people tear-down. (Yeah, I've made things. Simple things. But they kind of suck and would never be manufacturable.)</p>
+<p>Or maybe I can just keep trying to get Better At Stuff by working out puzzles (I've forgotten the orthagonality of sines proof - vital to the workings of the Fourier transform - and am trying to figure it out again without references) and Building Cool Things once I... have enough money to buy parts and equipment. I'm starting easy with building a generic USB peripheral kit for the XO and then customizing firmware on its PIC (...not my idea; I have a suspicion AVRs would be easier to program under Linux) for DyD's <a href="http://wiki.laptop.org/go/TeleHealth_Hardware">telehealth</a> module.</p>
+<p>DyD also introduced me to an electronics chatroom (#electronics on irc.freenode.net) and I've started subscribing to electronics blogs in an attempt to catch the crosstalk I so often just can't hear in labs, classes, and workspaces. (<a href="http://www.national.com/rap/">Bob Pease</a> articles, introduced to me a few years back by Gallimore, are awesome, but take <em>forever</em> for me to get because I have to trace every wire in his circuit diagrams and look up half the terms he uses.) I'm mostly looking for online stuff now because I can't yet afford a non-student IEEE membership renewal. (Or my ACM one. Or my ASEE one.They're electrical engineering, computer, and engineering education societies, respectively.) At least until my first paycheck comes in, and I should really be spending that on... food, and buses.</p>
+<p>To the non-techies in my life - apologies for the rapid-fire commentary. Translation (engineers, feel free to correct me): the <em>Fourier transform</em> is an important math tool for engineers that lets you separate signals into their frequency components - the easiest way to explain it is that it translates the music you hear into the flashing bass and treble bars looking pretty on your equalizer, and can go in the opposite direction as well.</p>
+<p><em>USB</em> (Universal Serial Bus) is a protocol, a language computers use to talk with one another, and it's the language your mouse/camera/thumbdrive uses to talk to your laptop ("Hi, I'm a mouse! I'm moving left! I clicked!") when you plug them in.  Universal == works with everything. Serial == messages come in to the same single place, one at a time, one after another, in contrast with parallel when they all come in at the same time but into different places. The difference between people lining up to pass through a single door (serial) or everyone stepping at the same time through different doors into the same building (parallel). Bus == the fancy word engineers use to describe a pathway that data can run through - most of the time, this means wires.</p>
+<p>I'm building a generic peripheral kit to make it easy for kids to make their own USB game controllers/keyboards/joysticks/etc - I hope. The software you write to go inside the mouse/keyboard/joystick/whatever so it can talk to your computer usually runs on a really small computer called a <em>microcontroller</em> (mcu), and we call these instructions <em>firmware</em>. The PIC and the AVR are two brands of microcontrollers, just like Whirlpool is a brand of washing machine, and since I like being platform-flexible I'm going to try to make the peripheral kit with several options for mcu brands if I can. The XO is the laptop designed by OLPC, but I think most of you knew that already.</p>
+<p>In the meantime, I'm learning a lot about software, which makes me extraordinarily happy. Lots and lots and lots. More on this soon.</p>

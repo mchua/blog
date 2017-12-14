@@ -1,0 +1,33 @@
+---
+layout: post
+title: 'drwright: GNOME-native typing breaks in GNOME 3'
+date: 2011-07-11 11:48:26.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+  _stcr@_mangue3.9a@neverbox.com: 2012-10-16 03:49:33|Y
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>One of the things I immediately noticed about <a href="http://gnome3.org">GNOME 3</a> is that the keyboard break feature, formerly a default option in GNOME 2's normal Keyboard Preferences setting dialog, has been removed. For RSI-aware geeks like myself, that is a big sadface. Fortunately, it's easy to re-enable, but exactly how to do it is a bit obscure, so I'm documenting for posterity.</p>
+<p>There are plenty of Linux-native typing break software packages, but if you want GNOME-integrated typing breaks, the relevant piece of software is called <a href="http://ftp.gnome.org/pub/GNOME/sources/drwright/3.0/">drwright</a>, and that link points you right to the most recent source (as of July 2011; if it's much later, check the parent directory to see if there are any later versions). It's packaged in most major distros, including <a href="http://fedoraproject.org">Fedora</a>, so a simple <em>sudo yum install drwright</em> will do the trick.</p>
+<p>Once you install it, typing breaks are configurable via the System Settings menu (throw your mouse into the top left hot-corner, then type "system" to find the menu).</p>
+<p><img style="max-width: 800px;" src="{{ site.baseurl }}/assets/system-settings.png" alt="" width="549" height="333" /></p>
+<p>You'll see a new Typing Break option.</p>
+<p><img style="max-width: 800px;" src="{{ site.baseurl }}/assets/typing-break.png" alt="" width="550" height="518" /></p>
+<p>If you click on that, you're back to the old familiar Typing Break dialog.</p>
+<p><img style="max-width: 800px;" src="{{ site.baseurl }}/assets/drwright.png" alt="" width="553" height="213" /></p>
+<p>That's it - modularity for the win. <em> </em></p>
+<p><em> </em></p>
+<p><em>(Thanks to <a href="http://blog.sdziallas.com/">Sebastian</a> for digging back through his history for the proper package name; I initially thought typing breaks were Gone Forever from GNOME 3 and was about to evaluate a slew of non-GNOME options.)</em></p>

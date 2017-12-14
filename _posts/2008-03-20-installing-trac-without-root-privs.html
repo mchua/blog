@@ -1,0 +1,46 @@
+---
+layout: post
+title: Installing Trac without root privs
+date: 2008-03-20 12:13:05.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><a href="http://trac.edgewall.org/">Trac</a> is a most excellent bugtracking, wiki, version control, &lt;insert other things relevant to development&gt; system. However, the default instructions for installing Trac require root (superuser) privs, which isn't possible if you use a shared server (I do) or don't have sudo on the box you're trying things out on (or for whatever reason, want to isolate your Trac install). Fortunately, the fix is easy; use <a href="http://pypi.python.org/pypi/virtualenv">virtualenv.</a></p>
+<p>I haven't seen these instructions up anywhere, so I'm posting them here (if someone would like these on the Trac wiki, feel free to port them over, or to ask me to). Thanks to Noah (coderanger) who suggested using virtualenv (by Ian) early on, saving a lot of unnecessary pain.</p>
+<p>First, if you don't have root <em>and</em> your default python install (type "python -V" at your prompt) is earlier than python2.4, you'll want to custom-install Python2.5 or some other more recent version. Instructions on how to do that are <a href="http://blog.localkinegrinds.com/2007/08/20/custom-python-installation-for-django-on-dreamhost/">here.</a> After you've got python2.4 or later, you can proceed.</p>
+<p><code><br />
+# get the code...<br />
+wget http://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.0.tar.gz #md5=fb86aabdfc2033612b936cf08ad811ec<br />
+tar zxfv virtualenv-1.0.tar.gz       # untar/unzip<br />
+mv virtualenv-1.0/virtualenv.py ./   # copy out the python files<br />
+rm -r virtualenv-1.0      # not strictly necessary, but cleans stuff up<br />
+rm virtualenv-1.0.tar.gz  # ditto<br />
+python virtualenv.py . # to install virtualenv in your current directory<br />
+</code></p>
+<p>(If you want to install virtualenv somewhere else, run <em>python virtualenv.py somewhere_else</em> as the last command instead.) You should now have a /bin and a /lib in your current directory. Now you can follow the <a href="http://trac.edgewall.org/wiki/TracInstall">Trac installation guide</a>, using the stuff in <em>./bin/python.</em></p>
+<p><code><br />
+bin/easy_install Pygments<br />
+bin/easy_install Genshi<br />
+bin/easy_install Trac<br />
+</code></p>
+<p>That's it. And now you can create your project wherever you like (replace /path/to/yourproject with whatever you want - /home/yourusername/nameofproject or whatnot) and test it...</p>
+<p><code><br />
+bin/trac-admin /path/to/yourproject initenv<br />
+bin/tracd --port 8000 /path/to/yourproject<br />
+</code></p>
+<p>and then go to http://localhost:8000 or http://your-url.com:8000 to check it out. Follow the instructions on the <a href="http://trac.edgewall.org/wiki/TracGuide">Trac wiki guide</a> thereafter to customize Trac and deploy it on a "real" (non-tracd) webserver - just use your virtualenv's <em>bin/python</em> python-instance.</p>
+<p>Suggestions, corrections, and clarifications are, as usual, welcome.</p>

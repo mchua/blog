@@ -1,0 +1,38 @@
+---
+layout: post
+title: 'Open Source Policy Map: suggestions for getting started (student project)'
+date: 2010-10-01 07:35:05.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- teaching open source
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><i>This blog post is written as a reply to Ankur Sinha's email regarding interest in the <a href="http://blog.melchua.com/2010/09/30/student-project-where-in-the-world-is-open-source-policy/">open source policy map student project idea.</a></i></p>
+<p>Thanks for your reply - it inspired me to go back and do a little more poking around, in the hopes of giving you more resources to get started. How to do everything is ultimately up to you - consider these notes as options you can choose whether or not to take, possible pointers for places to look if you're unsure where to begin.</p>
+<p>On the technical side, I'd suggest looking at the <a href="http://opengeo.org">OpenGeo</a> stack, in particular the <a href="http://openlayers.org">OpenLayers</a> javascript library, for implementation. It's an open source mapping library and they have very supportive core developers and a growing community. Some documentation:</p>
+<p><a href="http://workshops.opengeo.org/openlayers-intro/">http://workshops.opengeo.org/openlayers-intro/</a><br /><a href="http://docs.openlayers.org/">http://docs.openlayers.org/</a><br /><a href="http://openlayers.org/dev/examples/">http://openlayers.org/dev/examples/</a></p>
+<p>I dropped by their channel the other day, and David Winslow, the technical lead of the OpenGeo team, has offered to answer questions on IRC. They're in #opengeo on irc.freenode.net and his nick is dwins.</p>
+<p>What a first implementation would look like - well, that's something that's up to you to envision. I were doing this myself, I'd probably start by trying to:</p>
+<ol>
+<li>display a map on a webpage</li>
+<li>place markers on that map, one marker per policy decision</li>
+<li>when each marker is clicked, pop up a tooltip displaying more information about that policy decision</li>
+</ol>
+<p>An Inkscape mockup is below. Remember, though - this is just what's in<i> my</i> brain, and you probably have better ideas! Since you're implementing it, you can do this however you want.</p>
+<p><img style="max-width: 800px;" src="{{ site.baseurl }}/assets/csis-map.png" /></p>
+<p>Once that's up and running, you can start adding more metadata to each marker, tagging them by, for instance, country (USA/India/Denmark/etc), status (proposed/approved/rejected/etc), topic (infrastructure/purchasing/education), and so forth - and making those tags selectable and manipulable on the map ("show me all the rejected education-related bills from Latin America"). Again, you or others here will probably have better ideas.</p>
+<p>So here's the good news: for the mockups above, everything except the pop-up text was taken as a direct screenshot from <a href="http://openlayers.org/dev/examples/markers.html">this example</a>, so if you can figure out how to clone that example, you're already 80% of the way there. The hard part is going to be figuring out how to get started with a new stack, but again... ping the OpenGeo/OpenLayers developers on IRC, and I'm sure they'd love help and feedback on improving their "getting started" experience for new developers.</p>
+<p>Hope this helps - and good luck!</p>
+<p><i>Anyone interested in joining Ankur? <a href="http://fedoraproject.org/wiki/AnkurSinha">Ping him!</a></i></p>

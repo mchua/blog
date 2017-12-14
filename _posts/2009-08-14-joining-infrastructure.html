@@ -1,0 +1,35 @@
+---
+layout: post
+title: Joining Infrastructure
+date: 2009-08-14 19:02:58.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>I seem to have inadvertently started learning how to be a sysadmin. While talking about <a href="https://fedoraproject.org/wiki/Fedora_Insight">Fedora Insight</a> (FI) in the Fedora Infrastructure IRC channel, I decided to try installing <a href="http://zikula.org/">zikula</a>, the platform we've chosen to base FI on, because nobody seemed to know how much work it would take to get the things Marketing needed (the zikula, zikula-module-crpTag, and zikula-module-News modules) up and running. Turns out it was ridiculously easy, thanks to Paul writing <a href="https://fedoraproject.org/wiki/How_to_set_up_a_Zikula_sandbox">awesome documentation</a>.</p>
+<blockquote><p>&lt;mchua&gt; Just followed the instructions and set up a zikula sandbox on my laptop. Total time elapsed: 14 minutes, including installing all the necessary packages. So, yay. :)<br />
+&lt;ricky&gt; mchua: Feel free to apply to sysadmin-test if you want to replicate that 14 minutes and get a nice test instance going</p></blockquote>
+<p>So I headed to <a href="https://admin.fedoraproject.org/accounts/">FAS</a> and applied to the sysadmin-test group, and now I'm working through the <a href="https://fedoraproject.org/wiki/Infrastructure/GettingStarted">Infrastructure Getting Started</a> instructions in order to join the group. So far I've subscribed to the mailing list and then gotten interrupted by family wanting me to come to dinner. Once dinner has been et (eated? eaten? I know the last one is grammatically correct, but they all sound wrong) and I march through the Join Infra! instructions, <a href="https://fedorahosted.org/marketing-team/ticket/14">here's the ticket I'll be working on.</a></p>
+<p>Stuff I've learned so far:</p>
+<ul>
+<li>Joining Infrastructure isn't as big a deal as I thought it was. I mean, it's important, but it's not... for some reason, I have this knee-jerk reaction to the word "SYSADMIN!" and thought I wouldn't be competent enough to contribute and that joining would be Scary And Hard. I need to actually question these assumptions when they pop up in my head and go find out how hard things actually are (because they usually aren't). And yes, I find it especially ironic that this turned out to be my mental blocker, because I spend a giant portion of my time getting other folks past the "but... but... contributing is HARD!" bump.</li>
+<li>In order to play around on test instances, all you need is to be a member of the right FAS group. (sysadmin-test). That's it. Then you can just ssh into whatever test server you want to play with, and you've got sudo, and you can <em>do stuff.</em></li>
+<li>Test servers are at publictestN.fedoraproject.org, where N = {1, 2, 3, 4, 5, 6, 7}, so you can ssh yourFASusername@publictestN.fedoraproject.org and poof, you're in. (Though you should write down what you're doing at the appropriate https://fedoraproject.org/wiki/Infrastructure/Server/publictestN wiki page - for instance, I made a note on <a href="https://fedoraproject.org/wiki/Infrastructure/Server/publictest6">https://fedoraproject.org/wiki/Infrastructure/Server/publictest6</a>.)</li>
+<li>Ask questions on IRC. Ask questions on IRC. Ask questions on IRC. I am being overly cautious and asking "I'm going to do X! Is X okay?" before running any command I haven't run before - so I'm <em>really</em> overdoing it on the side of caution - but my underconfidence is rapidly petering out and I'm starting to get braver about trying things on my own. Sweet. (Sometimes, for whatever reason, I just need a psychological safety net. Thanks for everyone who puts up with me doing this.)</li>
+</ul>
+<p>I've never really done sysadmin stuff on anything other than my personal computer, so I may need a lot of hand-holding through getting this first test instance up (in terms of working with infra procedures, not so much the technical aspect of getting code/modules/etc. to work.) Actually, I'm surprised that Ricky was able to get me into it so gently that it <em>completely</em> bypassed my (irrational) "WHAAA I can't help with Infrastructure, I don't <em>know enough!</em>" fear - and thankful that he did.</p>
+<p>Wheeeee! Getting stuff done!</p>
+<p>If anyone would like more details/docs/thoughts on the "what's it like to come into Infrastructure as a newbie?" process, holler and I'll try to answer questions. I'm pleasantly surprised at how smooth and easy and awesome I'm finding the learning process right now, and I'm trying to do this as a "hey, if I can do it, so can you!" thing - one thing I've learned over the last few years is that being a vocal newbie helps the project you're a newbie to. (Yes, new folks. This is a "please blog!" poke.)</p>

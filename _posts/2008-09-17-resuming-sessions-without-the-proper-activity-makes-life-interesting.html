@@ -1,0 +1,29 @@
+---
+layout: post
+title: Resuming sessions without the proper Activity makes life interesting
+date: 2008-09-17 13:28:23.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- olpc
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>There is an exodus of interns. Brian Jordan left for Rwanda this morning; Dan Drake is already in Ethiopia. Both are helping out at pilots. We are demanding stories and pictures upon their return.</p>
+<p>While doing <a href="http://wiki.laptop.org/go/Tests/Upgrades/DataIntegrity">upgrade testing</a>, I found what might be an interesting bug; it still needs some chasing down and reproduction (and honestly, my <a href="http://dev.laptop.org/ticket/8533">bug report</a> could be better). The test was to check whether Activity sessions started before an upgrade could be resumed after that upgrade (so far it looks like the answer is yes for core Activities, which is great). The bug isn't in that; it's in what happens when you don't have the proper Activity to resume a session with.</p>
+<p>One upgrade from 656 (what shipped with G1G1 machines) to 760 (current release candidate) ended up with no core Activities in Sugar. Of course, without Activities to run them in, the sessions couldn't resume. They showed up as generic file icons in the Journal instead and you couldn't do anything with them.</p>
+<p>When the Activities were reinstalled, the old sessions still showed up as generic file icons in the Journal (instead of having the proper Activity icon next to them), but they could now be resumed. The curious bit is that when you resumed one of those sessions, you ended up with two separate Journal entries - one with a recent timestamp and the correct Activity icon by it, the other with the file icon and an old, unchanged timestamp. It was as if you'd created a new session that happened to have old data, and the old session hadn't been touched at all.</p>
+<p>Weird. Now to chase this down and reproduce it...</p>
+<p>While automating what used to be a <a href="http://wiki.laptop.org/go/Tests/other/Battery">manual test</a> (running a logging script beats the heck out of getting up every few minutes to see if a battery has died), I also learned something about OHM today, thanks to Richard. (Warning: Acronym alert. I've tried to link to relevant wiki pages when possible.) When there's output to the <a href="http://wiki.laptop.org/go/Virtual_terminal">VT</a>, <a href="http://wiki.laptop.org/go/OHM_power_management">OHM</a> won't suspend the XO (and the battery will run down way, way faster).</p>
+<p>In today's case, it meant that if I ran <a href="http://wiki.laptop.org/go/XO_power_draw#olpc-pwr-log">olpc-pwr-log</a> (the battery monitoring script, and a useful tool to know about) in the VT, the XO wouldn't suspend; if I ran olpc-pwr-log in the <a href="http://wiki.laptop.org/go/Terminal">Terminal</a> activity, the XO (and the script) would suspend (but thanks to wireless, it would wake up frequently enough to give us <em>some</em> battery drainage data, which was enough). Since we were trying to drain the batteries as fast as possible (Richard needed drained batteries to test the multi-battery charger), we ran the script in the VT.</p>
+<p>Phew. A lot of testing stuff going down tomorrow, so tomorrow's post will be far more interesting, I promise.</p>

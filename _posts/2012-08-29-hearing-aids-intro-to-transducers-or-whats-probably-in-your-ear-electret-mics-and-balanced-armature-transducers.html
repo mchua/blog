@@ -1,0 +1,54 @@
+---
+layout: post
+title: 'Hearing aids: intro to transducers (or: what''s probably in your ear - electret
+  mics and balanced armature transducers)'
+date: 2012-08-29 20:06:36.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- hearing
+tags:
+- hearingaids
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>The design of hearing aids (and in fact, the design of many things) is all about tradeoffs. You've heard "good, cheap, on-time -- pick two." Or "work, sleep, fun -- pick two." It's usually a more complex situation: do you get a better microphone that's more expensive and requires a larger battery? In order to accommodate that, do you shrink -- what? Maybe now it needs to be a BTE (behind-the-ear) aid instead of fitting in the canal (ITC), but now the receiver is behind the ear instead of next to the eardrum, which makes the sound travel through a long tube of air en route to the eardrum, which muffles it somewhat...</p>
+<p>Today's topic was transducers. <strong>What the heck are transducers?</strong></p>
+<p>Transducers are the input/output components of a hearing aid -- the microphone and the receiver (which is what they call the speaker). They transform sound to voltage and then back again to sound. In fact, one way to check the calibration of an instrument -- say, headphones in an audiology lab -- is to measure the voltage of the signal running through them and compare that to the sound pressure coming from them, and to compare that week by week to make sure you're not losing anything.</p>
+<p>Transducers have a few electroacoustic characteristics that need to be taken into consideration during hearing aid design...</p>
+<ul>
+<li>size</li>
+<li>power consumption</li>
+<li>bandwidth</li>
+<li>dynamic range (noise floor and sensitivity, and saturation limit)</li>
+</ul>
+<p>And a few physical ones.</p>
+<ul>
+<li>resistance to shock -- if you drop it, will it break?</li>
+<li>electromagnetic shielding -- if you walk by other electronics spewing EM waves into the air, will you start getting awful warpy-scratchy "sounds like a poorly tuned radio" interference? Putting a metal case around a transducer gives it a tiny Faraday cage and tends to help reduce the badness.</li>
+<li>sensitivity to vibration -- as components get smaller, they become more susceptible to noise due to physical vibrations.</li>
+</ul>
+<p>Dr. Alexander pointed us to <a href="http://knowles.com">http://knowles.com</a>, a supplier of hearing instrument transducers -- there aren't many suppliers, and most manufacturers get all their stuff from one source. I look at it and go "oooOoooh." It's like <a href="http://digikey.com">Digi-Key</a> for hearing aids; I wonder if individuals can purchase small quantities of the components.</p>
+<p>With that having been said, let's turn our attention to what's probably in your ear if you've got a hearing aid: an <strong><a href="http://en.wikipedia.org/wiki/Electret_microphone">electret microphone</a>. </strong>(The wikipedia article is pretty good; I made this image and hereby release it into the public domain but am too tired to upload it to Wikimedia Commons, so if someone would save me the trouble I'd be grateful.)</p>
+<p><a href="http://blog.melchua.com/wp-content/uploads/2012/08/electret-mic.png"><img class="aligncenter size-medium wp-image-3789" title="electret-mic" src="{{ site.baseurl }}/assets/electret-mic-300x99.png" alt="" width="300" height="99" /></a></p>
+<p>A teflon electret on a backplate acts like a permanent magnet and creates a permanent electrical field between the backplate and the diagphram. (This permanent field means electret microphones don't technically need a battery supply, which is great -- old microphones used to, so you'd have <em>two</em> batteries in each hearing aid, one for the mic and one for the receiver.)</p>
+<p>As the sound waves come in and hit the diaphragm, it vibrates (like an eardrum). As the diaphragm vibrates, it changes the electric field between itself and the backplate, which in turn induces a fluctuating charge between them that is picked up by a FET (field effect transistor).</p>
+<p>FETs -- transistors, really -- are all over electrical engineering, and the simplest way to think about them is that they are amplifiers. (I wince as I type this because it's a gross oversimplification, but let's keep going; this is good enough for now.) Transistors, including FETs, take in a little signal and a big power source, and the little signal tells them what fraction of the big power source to output; imagine signalling someone to turn on and off a firehose by having them watch you turn on and off a faucet and trying to follow what you're doing. It's... more or less like that, although electrical engineers everywhere will now slap me for using the hydraulic analogy for electricity. That's fine; I'll duck.</p>
+<p>In this case, the FET is acting as a pre-amp. This means it doesn't do the bulk of the amplification -- it's just getting the signal boosted up a little bit before it hits the "real" amplifier further on so that there won't be such a big impedance mismatch. (Another not-entirely-accurate-but-good-enough analogy: imagine trying to paint a huge wall mural from a postage stamp. It's going to be way easier if you photocopy the postage stamp up to an 8.5x11" piece of paper first.)</p>
+<p>You may also run into the <strong><a href="http://en.wikipedia.org/wiki/Headphones#Balanced_armature">balanced armature transducer</a></strong> as another component sitting in your ear canal regardless of whether you have hearing aids or not (it's also used in plain ol' music earphones for hearing people). Check out the diagrams at that link.</p>
+<p>Again, you've got your basic electromagnetism setup here -- you've got an armature floating between two magnets, and an electric signal running through coils by the magnet sends the armature vibrating up and down. The armature is connected to a diaphragm via a drive rod, so the diaphragm (think "speaker cone" pumps up and down, which moves a little volume of air in the sound port, which pops into the ear and shows up against your eardrum as... well, sound. You might find this in a standard E&amp;M (electricity and magnetism) undergrad physics homework problem.</p>
+<p>Hearing aids may have a transducer where the diaphragm doesn't go straight out into the sound port -- to get a gauge on how weird this seemed to me when I first encountered it, imagine going into a disco with some big subwoofers pointing out towards the dance floor. Now turn the subwoofers sideways so they face the wall and pop a big PVC pipe right-angle joint into their faces, so the air pressure comes from the subwoofers, "turns the corner" in the pipe, and <em>then</em> goes out into the dance floor. What the heck?</p>
+<p>One word for you: earwax. (Also, this sort of arrangement might let you fit the transducer into a hearing aid in a certain way.) E&amp;M physics problem sets don't usually need to deal with earwax, but that makes sense -- you don't want that coming straight in and plopping onto your diaphragm.</p>
+<p>Physics problem sets also probably won't need to deal with other things that come with putting tiny thing inside your ear canal, like a particularly weird form of feedback called <strong>internal feedback</strong>. If you've got a profound hearing loss and your receiver is consequently pumping out super-high air pressures out the business end of your device, it's not just going to vibrate your eardrum -- it's going to chug around your ear canal and vibrate the case of your hearing aid as well. And when your hearing aid shell vibrates, it pushes the air near it around, which creates sound -- which faithfully gets picked up by the microphone and amplified, and voila, feedback. Ouch.</p>
+<p>I've never had to worry about this, because I've only ever had BTE (behind-the-ear) hearing aids; if you separate the receiver and the mic, this becomes a non-issue. (But you do have to deal with having a bigger hearing aid and a <em>thing</em> sitting behind your ear. Again, tradeoffs.)</p>
+<p>We'll talk a bit more about tradeoffs in the next hearing aids post.</p>

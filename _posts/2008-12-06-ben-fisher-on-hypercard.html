@@ -1,0 +1,96 @@
+---
+layout: post
+title: Ben Fisher on HyperCard
+date: 2008-12-06 00:04:18.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><strong>Introduction:</strong></p>
+<p>These words aren't mine; they're from <a href="http://halfhourhacks.blogspot.com/">Ben Fisher</a>, whose blog (titled "half hour hacks") includes things like "So, just for fun, I quickly wrote a Python script to translate assembly-like code into assembly" and "Today I was kind of bored and made... a system for checking if a link is a <a href="http://en.wikipedia.org/wiki/Rickroll">rickroll</a>." I enjoyed our conversation so much I asked for his permission to repost it.</p>
+<p>Ben starts by explaining why he likes HyperCard, then continues with a description of what HyperCard is and how its design encouraged his early adventures in programming, ending with an abstraction of several design principles that programs with similar goals can emulate. I've split Ben's text up into several sections to make it easier to follow. Other than this and several spelling/punctuation corrections, the text is Ben's unaltered, original prose.</p>
+<p>I'll be quiet now and let Ben talk.</p>
+<p><strong>Why Ben likes HyperCard</strong></p>
+<p>HyperCard was what introduced me to hacking, a long time ago. HyperCard is the right thing - encouraging independent explorations of coding. In my case at least, you didn't need anyone to teach you.</p>
+<p>Note that I say "introduced me to hacking" and not "introduced me to programming."</p>
+<p>Programming is something anyone can learn in a computer science course: you learn the syntax of a language. You write 50 primitive programs and are bored to tears, rarely having to use any creativity. At the end of the course you know some syntax but are woefully unprepared to do real coding. What is worse, your opinion of programming has been deadened, and you see it has a dull, boring task.</p>
+<p>Hacking, on the other hand, is not something easily taught. One is curious, independent, passionate, creatively trying new things. Coding is not a dull, menial task - it is a rich means of expression.</p>
+<p>HyperCard allowed you to start coding with no knowledge of data structures, compilers, bytes. After working with it for a short time, though, one is inspired to learn about these things voluntarily because now coding is so much more than just syntax. My dream is to create something inspired by HyperCard in Python. Over the next few days I will send you some of my analysis of HyperCard and why it worked so well...</p>
+<p><strong>What is HyperCard?</strong></p>
+<p>Originally planned to be a simple database for home users. But, because of the powerful scripting<br />
+language, people began to write programs for it. Home users and non-technical users were able to write programs because of the awesome interface.</p>
+<p>Then Apple killed it over a slow starving process of many years. Despite being very popular, Apple never even gave it color support, and since it is Mac Classic, it is now obsolete. But its ideas are very valuable, and relevant today.</p>
+<p><strong>HyperCard's programming model</strong></p>
+<p>Your application window is called a "stack." Each stack contains "cards." Each card is essentially a form that has its own layout, but lives in the same stack window (think tabs - you are only in one card at a time). There are also "backgrounds" that can be shown on multiple cards. Cards typically have "links" to other cards- where a link can be a button with a script that says (go to card x). I don't think these ideas are too relevent to applications today, though.</p>
+<p><strong>Using the interface<br />
+</strong></p>
+<p>There is no compile step. There is not even a run - you are always running the program you are working on. Form builder, paint tool, code editor, were all built in seamlessly.</p>
+<p>This is how it would work: you have a tool palette of about 15 choices. You can choose a paintbrush and draw on your form as if you were in MS Paint. Then you could choose the "Button" tool and create a button widget by drawing it on the screen. Select the button you made and choose "Edit script."</p>
+<p><strong>Sample code<br />
+</strong></p>
+<p><code> </code></p>
+<pre>on mouseup
+ask "What is a number?"
+put it into myNumber
+ask "Type in some data points."
+put item 1 of line 3 of it into x
+put item 2 of line 3 of it into y
+answer x*x + y*y
+end
+mouseup</pre>
+<p>This says to perform those steps on the "mouseup" event. That's all there is to it. To test this, you change to the "browse" tool. This is the tool that can create mouse events. Then, when you click the button, that code is executed.</p>
+<p><strong>More on widgets</strong></p>
+<p>There is also a text widget called a "field." Fields can respond to text events. All widgets can respond to mouseenter, mouseup, mousedown, and so on. (Sound like JavaScript? That's because hypercard inspired javascript.)</p>
+<p>It is important that HyperCard's scripting language is not a toy by any means. It's really handy for string parsing (get character 5 of item 4 of line 2 of mydata) - where the itemdelimiter defaults to "," but could be anything. Custom functions, loops, arrays, were all there. I hate to admit that the syntax may look like Basic, but the resemblance is only in the good things (natural language) and not the bad (Ugly Code And Often Arbitrary Conventions). It is easy code to read, even if you don't know coding.</p>
+<p>All of the widgets have properties. (put the location of btn id 3 into myvar. set the name of btn id 3 to "new").</p>
+<p>All widgets have an "id" that can be used as a reference, passed to other functions, and so on. When stated this way, these concepts seem really natural and intuitive, whereas when using vc++ they are painful.</p>
+<p><strong>Source files</strong></p>
+<p>In HyperCard, the user does not see one long source file. Instead, each object that responds to events has its own code. However, because of the hierarchy, one would place common functions in the Card or Stack level, so that every lower element like a button could see them.</p>
+<p><strong>Other cool tricks</strong></p>
+<p>There were lots of other cool tricks that allowed you to use Hypercard in a lot of ways. A button<br />
+widget could have an image icon, and with the border turned off, you have an image "widget." You can then change the location in a loop to have a moving picture. One of the classic hacks is to completely forgo the typical button widgets and draw on the forms with the paint tools. Draw on many cards, and make each card like a frame by slightly moving something. Then by running through the cards, you see an animation.</p>
+<p><strong>Sound effects and images</strong></p>
+<p>Adding sound effects and images to your stack was point and click. In your scripts you would say "play soundeffect", or if you were creative, "play soundeffect a4 b4 c4 b4 a4" to make<br />
+a melody.</p>
+<p><strong>Message passing</strong></p>
+<p>One of the good things about HyperCard was its inuitive message passing hierarchy. Events would be first passed to the most specific target (lowest first), and then bubble up until caught. Once caught, the message could be optionally be "passed" further up the chain.</p>
+<p>It just makes sense, and you don't need to register events or have listeners or anything. Keyevents (on keydown, on arrowkey), Mouseevents (on mouseenter, on mousedown, on mouseleave...), initialization (on opencard, on openstack). Global variables could be declared anywhere (global myvar).</p>
+<p><strong>Error messages</strong></p>
+<p>You could not make your programs hang. An error message would show up pointing out the line of code at fault.</p>
+<p><strong>Relatives of HyperCard today<br />
+</strong></p>
+<p><a href="http://www.runrev.com/home/product-family/">Revolution</a></p>
+<ul>
+<li> Very powerful,the closest good alternative today.</li>
+<li>Loses charm of HyperCard for some complexity</li>
+<li>Very closed source. :(</li>
+<li>Not the answer.</li>
+</ul>
+<p><a href="http://pythoncard.sourceforge.net/">PythonCard</a></p>
+<ul>
+<li>Good idea but not there yet.</li>
+<li>Interface is extremely clumsy</li>
+<li>Needs work. Not that easy to get started.</li>
+</ul>
+<p><strong>Design: Real coding</strong></p>
+<p>HyperTalk (HyperCard's scripting language) is a language in its own right. It uses the same concepts (if, else, repeat while) as other programming languages while being a bit more verbose. I do not believe in a complete abstraction from code. This would be too limiting. It should be possible to move to other worthwhile languages without feeling completely lost.</p>
+<p><strong>Design: "Simple things should be simple, and complicated things should be possible."</strong></p>
+<p>Starting a new project is done by opening the program and clicking New. Making a gui is as as dragging the widgets onto the screen. IDEs are nice.</p>
+<p>The scripting language allows complicated things to be done. It is nice to have simple communication with mulimedia like "move this graphic to (x,y)"</p>
+<p><strong>Design: Explore</strong></p>
+<p>It is cool to be constantly running your program, without needing to compile/run/debug. HyperCard had a "message box" - a little pallette with a text box for executing code. You could try out some code. Your scripts could also use the the message box for easy debugging. It's nice to have a "trace" for displaying output, when it's not a console program.</p>
+<p><strong>Design: Encourage exploration</strong></p>
+<p>The design should be intuitive and simple. Do not overwhelm the user.</p>

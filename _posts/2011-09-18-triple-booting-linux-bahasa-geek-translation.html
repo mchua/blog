@@ -1,0 +1,34 @@
+---
+layout: post
+title: 'Triple-booting Linux: Bahasa geek translation'
+date: 2011-09-18 22:13:15.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><em>Note: I originally wrote this post in January 2008, and my setup (and all three distros) have changed considerably since. The original motivation was, as per my notes, "so that people with little/no Linux experience can still understand what I'm doing - if you fit that description, I'd much appreciate a comment on how well it works, and what things are still confusing so I can clear them up." Other than this intro, the rest of the post has been left untouched, and is... at least for me, an interesting time machine. In less than four years, we've come a long way.</em></p>
+<p>I wanted to triple-boot my laptop with 3 <a href="http://en.wikipedia.org/wiki/Linux">Linux</a> <a href="http://en.wikipedia.org/wiki/Linux_distribution">distros</a> so that I could separate my work from my development from my play - <a href="http://ubuntu.com">Ubuntu</a>, <a href="http://fedoraproject.org">Fedora 7</a>, and <a href="http://gentoo.org">Gentoo</a>, respectively. Now, I've been using Linux for about 7 years, and dual-booting with Windows for half that time. But triple-booting distros ended up taking me a long time to figure out, even if it was actually simple in the end. Here's why.</p>
+<p><strong>Partitioning</strong></p>
+<p>First I had to partition my hard drive. This means I had to split up my hard drive into sections so each distro could have its own place to play - plus a shared partition (mounted to /home) so I could keep my files and folders accessible and common across each OS. Four partitions - Ubuntu, Fedora, Gentoo, and home. Not bad. My hard drive is 120GB, so 10GB seemed like a fair amount to give to each distribution, leaving 90GB for files (way more than I need at the moment).</p>
+<p>But wait - I needed a swap partition. <em>Swap partitions</em> are used by your computer as "extra <a href="http://en.wikipedia.org/wiki/RAM">RAM</a>" - when it's got extra stuff kicking around actively that it wants to stash somewhere and the RAM is out of room, it goes in your /swap partition and makes things seem a lot faster. (In some distributions, including Ubuntu, you can use a <em>swap file</em>, an ordinary file in your hard drive instead of a whole separate partition, for the same purpose.)</p>
+<p>Okay, so I'd make one swap partition and share it across all three distros, right? Nope. Ubuntu needs its own swap partition (not a swap file) if you want it to be able to hibernate. Since I often get interrupted in the middle of work and like being able to have all my open windows, running apps, etc. automagically restored, I like hibernate. So I need two swap partitions, one for Ubuntu and one for Fedora and Gentoo to share. They recommend that your swap partition be anywhere from 1-2x the size of your RAM; my laptop has 2GB of RAM, so I decided to make 2 swap partitions, 4GB each.</p>
+<p>Problem: 3 distros + 1 home + 2 swap = 6 partitions. A device like a hard drive can have a maximum of 4 partitions. (I'm not sure why.) I found this out when I tried to write the partition table and my laptop began shouting that the 82 GB I hadn't yet allocated was "unusable space."</p>
+<p><strong>Extended partitions</strong></p>
+<p>The solution? Use extended partitions. In the Ubuntu installer, this meant manually partitioning (which I was doing anyway, instead of the automatic allocation the LiveCD makes for you) and making the last 3 partitions "logical" instead of "primary."</p>
+<p>I'm told there is no difference in speed and functionality, from the point of view of the end-user, on primary vs logical partitions. The only difference is that on the actual hard drives, logical partitions are "nested" inside a primary partition.</p>
+<p>Learned something new today.</p>
+<p>And if I thought my triple-boot adventure took a long time, I can only imagine how long it took <a href="http://www.justlinux.com/forum/showthread.php?t=143973">this person</a>, who chainloaded grub to boot... 100.</p>

@@ -1,0 +1,37 @@
+---
+layout: post
+title: Lynne May's SoaS deployment
+date: 2010-02-06 12:45:35.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- soas
+- sugar
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><em>From the department of what-Mel-does-in-her-free-time: We're doing a <a href="http://wiki.sugarlabs.org/go/Sugar_on_a_Stick">Sugar on a Stick</a> (SoaS) deployment in my aunt Lynne May's 9-student first-grade class, and just got the green light from the school to proceed - so I'm going to jump straight into documenting what we're doing, and then (in later posts) fill in the background and continue to get us in shape for being good open source citizens with things like <a href="http://wiki.sugarlabs.org/go/User:Mchua/SoaS_pilot">project wiki pages not in my userspace</a> and <a href="http://wiki.sugarlabs.org/go/User:Mchua/SoaS_pilot#Meetings">better meeting notes</a> and whatnot.</em></p>
+<p><em>This means it might be confusing for a while (because we'll be writing about things for which the background context may initially be missing) but if you're curious, please ask questions - they'll give me things to write more about in future posts, too! (And yes, the other people involved with the deployment should be hitting <a href="http://planet.sugarlabs.org/">Planet Sugar Labs</a> with their posts shortly as well.)</em></p>
+<p><img style="max-width: 800px;" src="{{ site.baseurl }}/assets/SugaronastickBlueberry.png" alt="" width="389" height="275" /></p>
+<p>The curricular theme for the second half of first grade at this school has traditionally been "community" - so Lynne May is planning her curriculum so the kids spend the <em>whole semester</em> learning (in a very exploratory way) about the <a href="http://wiki.sugarlabs.org">Sugar Labs community</a> and coming up with ways to convey their understanding of how open source participation works. For comparison, they'll be looking at open source communities in parallel with two other kids of communities: their school (all together) and the neighborhood they (individually) live in.</p>
+<p>And they'll be participating <a href="http://en.wikipedia.org/wiki/Upstream_%28software_development%29">upstream</a> - this was important to Lynne May, that we find a way for the students to become a part of an open source community. We're watching for opportunities throughout term for them to <a href="http://dev.sugarlabs.org">submit bug reports</a>, blog on <a href="http://planet.sugarlabs.org">Planet Sugar Labs</a>, participate in online meetings (in <a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat">IRC</a>, with a computer hooked to a wall projector and a grown-up typing and helping them read), and generally listening for things the Sugar (and Sugar-in-<a href="http://fedoraproject.org/">Fedora</a>) community needs that they can make, and making them.</p>
+<p>I am excited.</p>
+<p>The game plan for the week is something like this - note that we're deliberately trying to keep things simple and the workload low so that we're all only spending a few extra hours a week on this deployment (the work should be minimal, and the vast majority of that work should be stuff we would have to do anyway).</p>
+<ul>
+<li><strong>In user-land: </strong>Lynne May is continuing to work with school administration on getting (and keeping!) our all-clear-to-proceed status, and starting to think about how to inform parents. She's also spending more time getting to know various <a href="http://activities.sugarlabs.org">Activities</a>, as shehas played with Sugar multiple times before, but never in the "how will I use this in my classroom <em>right now</em>?" sense. Last night's adventure was <a href="http://www.squeakland.org/">Etoys</a>, which was ultimately deemed too difficult to work with first-graders on within the scope of our deployment. We would <em>love</em> to be proven wrong about this, by the way - the concern is mostly that we'd spend so much time getting through the basics of Etoys that this is all we'd be able to do for the last 4 months of the school year.</li>
+<li><strong>In support-and-testing land: </strong>I am purchasing hardware  and putting up our remaining bit of infrastructure: a test case system. <a href="http://wiki.sugarlabs.org/go/Infrastructure_Team">Sugar Labs Infrastructure</a> wizard (and head honcho) <a href="http://codewiz.org/">Bernie Innocenti</a> has given me the access mojo needed to get <a href="http://semantic-mediawiki.org/wiki/Semantic_MediaWiki">Semantic Mediawiki</a> on a test box - which is really all we need for a 4-month experiment. It's not like the absence of a test case system will block the ability of the class to work with SoaS, but if we can get a good test case system going, the things we learn could also <a href="https://publictest6.fedoraproject.org/wiki/Category:Test_result">help other projects</a>, so it's something I'm going to be trying.</li>
+<li><strong>In development land: </strong><a href="http://wiki.sugarlabs.org/go/User:Sdz">Sebastian</a> is getting the <a href="http://fedoraproject.org/wiki/Releases/Rawhide">rawhide</a> composes working for the SoaS build we'll be using - we're going to be testers for the <a href="http://fedoraproject.org/wiki/Releases/13/Schedule">F13-based</a> spin, with <a href="http://wiki.sugarlabs.org/go/Sugar_on_a_Stick/Blueberry">Blueberry</a> (the current stable version) as our fallback in case anything explodes. This in itself is a big task, which means that we could use some help with <a href="http://fedoraproject.org/wiki/Sugar_Activities">packaging Activities</a>.</li>
+</ul>
+<p>Our next check-in meeting is Thursday. We still need to figure out a regular check-in on curricular matters (so far, Lynne May and I have just been talking casually every evening - I live with her family, so this is easy... and we need to start documenting these conversations) - but we touch base on technical matters at the <a href="http://sdziallas.com/blog/sebastian/2009/12/thinking-of-contributing-to-sugar.html">weekly Fedora Sugar meetings</a> in <a href="http://sdziallas.com/blog/sebastian/2009/12/thinking-of-contributing-to-sugar.html">#fedora-olpc</a> on Thursdays at <a href="http://www.timeanddate.com/worldclock/fixedtime.html?month=12&amp;day=31&amp;year=2009&amp;hour=15&amp;min=0&amp;sec=0&amp;p1=0">1500 UTC</a> (10am EST).</p>
+<p>Anyone is welcome to join in; the meetings are for <em>any</em> Sugar work being done in Fedora. All the agenda items have so far been somehow related to this deployment, but if you've got your own SoaS deployment, are working on Activity packaging, are interested in getting Sugar packages in <a href="http://fedoraproject.org/wiki/EPEL">EPEL</a> to work towards Sugar being available on <a href="http://www.redhat.com/rhel/">RHEL</a> in the future, that all fits - join us!</p>

@@ -1,0 +1,39 @@
+---
+layout: post
+title: How to conduct a basic hearing screening with a $1k machine that could be a
+  $20 open-hardware Altoids-tin design
+date: 2013-02-15 13:54:44.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- engineering edu
+- hearing
+- olin
+tags: []
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>I'm going to Zambia this summer with Purdue's audiology department; part of my job is to create a training tool for special education undergrads who will conduct hearing screenings on schoolchildren. These are <em>really </em>simple tests designed to quickly check a large population to determine who's fine (most of 'em) and who might need more detailed screening for some form of hearing loss.</p>
+<p>The machine you use is called an audiometer (the one I saw was a 1991 Beltone Model 120 -- large, ancient, probably analog circuitry; I'm trying to get permission to open up the case and photograph the guts). Depending on the population and the test environment, you set the volume of the audiometer to beep at 20, 25, or 30 dB (softer for kids and quiet tests environments, louder for adults, loudest for older people and noisy test environments). Then, you...</p>
+<ol>
+<li>...put the headphones on the person (TDH-49 and TDH-50 are common models;  the red earpiece is always on the right ear, the blue one on the left)</li>
+<li>...and play them beeps (pure tones) at 1kHz, 2kHz, and 4kHz in each ear.</li>
+<li>If they can hear all six beeps, they pass. If they can't, you flag them for follow-up testing.</li>
+<li>That's it.</li>
+</ol>
+<p>All they need is a machine that beeps at 1kHz, 2kHz, and 4kHz at 20, 25, and 30dB. The one they have is the size of a typewriter and costs about $1k.</p>
+<p>WE CAN DO BETTER.</p>
+<p>Oh, this machine has other options; you can test with air or bone conduction, but school hearing screenings basically all use air conduction, which is a fancy word for "headphones." You can choose among 3 modes for your beeps: "normal off" (beeps when you press a button -- this is the mode you use for hearing screenings), "pulse" (beep-beep-beep-beep) or "normal on" (a constant beeeeeeeeeeeeeeeep -- I was told you'd never test a patient in that mode, so maybe this is used for calibration). The Beltone Model 120 I used could also do more detailed audiograms, meaning that you could select more than those 3 frequencies and more than those 3 volumes (via a dial for each).</p>
+<p>But <em>seriously</em>. How much would it cost to make an open-hardware version of this in an Altoids tin? $20?</p>
+<p>I realize there are all sorts of things about calibration, frequency response of headphones, medical device design, audiology, etc. that I don't know -- this problem may be harder than I think (power considerations alone might rule out the Altoids tin option). But I am <em>pretty</em> sure we can do it with less than $1k and make it smaller than a typewriter.</p>
+<p>Anyone interested?</p>

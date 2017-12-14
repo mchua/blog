@@ -1,0 +1,55 @@
+---
+layout: post
+title: How to install a Textpattern website on Dreamhost
+date: 2007-03-05 20:50:00.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta:
+  blogger_blog: mellory.blogspot.com
+  blogger_permalink: "/2007/03/how-to-install-textpattern-website-on.html"
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Continuing my grand tradition of volunteering for things I don't actually know how to do, I'm setting up a website for the <a href="http://iddsummit.org">International Development Design Summit</a> and learning <a href="http://textpattern.com/">Textpattern </a>(a lightweight and flexible CMS) as I go. I'm writing this documentation in the hopes that other Textpattern newbies will find it useful someday - or at the very least, so I can refer to it again later.</p>
+<p>Disclaimer: As the title suggest, I'm using <a href="http://dreamhost.com">Dreamhost</a>. YMMV on other web providers.</p>
+<p><span style="font-weight: bold;">First, download and unzip Textpattern into the directory of your choice. </span>Note: I'm using version 4.0.4, the latest as of this writing. Change the numbers to reflect the version you want to install.</p>
+<ol>
+<li><a href="http://textpattern.com/download">Download </a>Textpattern. I typed <span style="font-weight: bold;"><span style="font-style: italic;">wget http://textpattern.com/file_download/29/textpattern-4.0.4.zip</span> </span>into my shell prompt.</li>
+<li>Unzip Textpattern. Predictably, this is <span style="font-weight: bold; font-style: italic;">unzip textpattern-4.04.zip</span> in the shell prompt. (Yes, shell prompts are in bold italic here.)</li>
+<li>Move the files to the directory you want to install them in. The slash-asterisk (/*) means "[move] everything inside this folder." Since I wanted to move them to my current directory (denoted by a period) I typed a period at the end; replace the period with the name of your directory if you want.  <span style="font-style: italic; font-weight: bold;">mv textpattern-4.0.4/* .</span></li>
+<li>Remove the empty directory and the zip file, just for cleanup. <span style="font-weight: bold;">rm -r textpattern-4.0.4*</span></li>
+</ol>
+<p><span style="font-weight: bold;">Create a database.</p>
+<p></span>
+<ol>
+<li>In the Dreamhost control panel, go to Goodies > Manage MySql.</li>
+<li>Scroll to the bottom. Follow the instructions for creating a new MySql database. It doesn't really matter what names/hosts/passwords you use, as long as you remember them.</li>
+</ol>
+<p><span style="font-weight: bold;">Install it.</p>
+<p></span>
+<ol>
+<li>Go to <span style="font-weight: bold;">yourwebsite.com/textpattern</span> and follow the prompts. (yourwebsite.com is the folder that you moved the textpatterns into in the first section of this tutorial). You'll have to...</li>
+<li>Pick a language (I go with English-US, but you don't have to; it's just that I only read English fluently at the moment.)</li>
+<li>Remember the passwords, hosts, usernames, and stuff you created in the second section of this tutorial, and type them into appropriate forms.</li>
+<li>Copy-paste some PHP code the installer provides you with and use it to create <span style="font-weight: bold;">config.php</span> in your <span style="font-weight: bold;">yourwebsite.com/textpattern</span> folder (I use vim in my shell; you can also ftp in a document you make in Notepad).</li>
+<li>Make an account. It doesn't matter what you use for your password and login, as long as you remember it.</li>
+</ol>
+<p><span style="font-weight: bold;">Basic options</p>
+<p></span>
+<ol>
+<li>Go to <span style="font-weight: bold;">yoursite.com</span> and log in. Congratulations, you have an install!</li>
+<li>There's a tiny drop-down menu in the upper right hand corner. Use it to go to admin > preferences.</li>
+<li>Change the fields as you will.</li>
+<li>View your site.</li>
+</ol>
+<p>That's it. Next up: customizing the look and feel of your site.</p>

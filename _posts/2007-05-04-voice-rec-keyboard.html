@@ -1,0 +1,26 @@
+---
+layout: post
+title: Voice rec keyboard
+date: 2007-05-04 07:43:00.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta:
+  blogger_blog: mellory.blogspot.com
+  blogger_permalink: "/2007/05/voice-rec-keyboard.html"
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<div xmlns="http://www.w3.org/1999/xhtml">From the Dept. of Ideas That Won't Go Away Until I Write Them Down: Can someone tell me why this idea won't work?</p>
+<p>Basically, I'm proposing a peripheral that enumerates as an USB keyboard but uses voice recognition instead of keypresses for input. Put a good microphone, a hefty Blackfin, and some EEPROM (or have an SD card slot, so dictionaries can be swapped in and out) on a board, perhaps with some (chordable) buttons for additional input. Load the open-source speech recognition engine <a href="http://www.speech.cs.cmu.edu/pocketsphinx/">PocketSphinx </a>on the Blackfin. The processor is dedicated to speech recognition, taking the computational load off the laptop it's plugged into. Note that this is a technologically naive view: I'm not <i>actually</i> sure this is easily technologically feasible (I can find out, but don't have time to right now.)</p>
+<p>In order to use it, you'd speak into the microphone (or press a button while speaking into the microphone) when you'd normally type; the Blackfin would translate this to text and either push it out over USB directly or stream the data to a PIC that logically chunks words and translates them into commands ("enter" would get turned into a newline, etc.) and sends them out over USB.</p>
+<p>Okay. I think I can stop thinking about this now. Back to work.</div>

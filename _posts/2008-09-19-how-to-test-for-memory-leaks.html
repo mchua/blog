@@ -1,0 +1,37 @@
+---
+layout: post
+title: How to test for memory leaks
+date: 2008-09-19 07:46:16.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- olpc
+- sugar
+- testing
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>My <a href="http://wiki.laptop.org/go/Image:Onevelociraptorperchild.png">desktop background</a> at work. (And on my personal laptop as well.) Every child needs their own velociraptor!</p>
+<p>We now have a <a href="http://wiki.laptop.org/go/Memory_leak_testing">howto on memory leak testing</a> - many thanks to Tomeu for taking the time to sit with me through my first memory leak test case. If you're curious how hungry various actions in Sugar are, take a look. We have some memory leak bugs like <a href="http://dev.laptop.org/ticket/8394">#8394</a> that need test cases and testing, too, if you want to lend a hand.</p>
+<p>I also started a section for <a href="http://wiki.laptop.org/go/Testing#Test_setups">test setups</a>, which are shorthand references for actions that we do across many tests. It's annoying to have to retype "first, take a USB stick..." or "if you don't have this installed, wget this file..." dozens of times over, so we say things like "set up for a smoke test" and give a link to general smoke test setup instructions. This section is a stub right now; what other things should go in here?</p>
+<p>Got some slightly confusing <a href="http://wiki.laptop.org/go/Image:Battery-drain-logs.tar.gz">battery test results</a> from yesterday's run. Most of them performed as expected, but a couple had logs that terminated when the battery wasn't even halfway discharged. I've also got a setup trying to reproduce <a href="http://dev.laptop.org/ticket/7893">#7893</a>, which, if fixed, will be a triumph because it means your Neighborhood view will actually reflect the things present in your Neighborhood (instead of having Activities from no-longer-present XOs hanging out like the Ghost of Christmas Past). Fingers crossed.</p>
+<p>For the record, according to our current test case management system, we have the following coverage...</p>
+<ul>
+<li>Test cases we know should exist (i.e. stubs OR cases created): 59</li>
+<li>Test cases actually written (i.e. cases, not stubs): 51</li>
+<li>Test cases run: 25 (42.4% of test cases that should exist)</li>
+<li>Test cases run and passed: 18 (72% of test cases run, 30.5% of test cases that should exist)</li>
+<li>Test cases run and failed: 10 (40% of test cases run, 17% of test cases that should exist)</li>
+<li>Test cases run with both passes and fails: 3</li>
+</ul>
+<p>Clearly we need better test case coverage... and a better way of showing testing coverage, progress, results, and all that jazz. <a href="http://wiki.laptop.org/go/TestResults_8.2.0">This</a> is what we've got now. Suggestions? Ideas?</p>

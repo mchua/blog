@@ -1,0 +1,31 @@
+---
+layout: post
+title: SigSys, piano style
+date: 2007-01-24 14:37:00.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta:
+  blogger_blog: signalsandsystemsredux.blogspot.com
+  blogger_permalink: "/2007/01/sigsys-piano-style.html"
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>I've seen a variant of this diagram in every SigSys book I've found (a grand total of 3, but... hush).<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://bp2.blogger.com/_c7HbV-g5J5c/Rbfg-AE1bDI/AAAAAAAAAAo/XBktSrMYR7o/s1600-h/temp.JPG"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="{{ site.baseurl }}/assets/temp.JPG" alt="" id="BLOGGER_PHOTO_ID_5023731265131867186" border="0" /></a><br />Basically, signals go into systems, and new signals come out. When they go in on the left side, we usually call them X; the output of a system is usually labeled Y. Y? Dunno. Anyhow, signals can be functions, or they can be discrete or continuous. Discrete functions have values at certain time steps, and that's it; continuous functions have a value at all times.</p>
+<p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://bp0.blogger.com/_c7HbV-g5J5c/Rbfk4gE1bHI/AAAAAAAAABI/wtqjv57yCpc/s1600-h/temp.JPG"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="{{ site.baseurl }}/assets/temp.JPG" alt="" id="BLOGGER_PHOTO_ID_5023735568689097842" border="0" /></a></p>
+<p>And then there's this diagram, which you also see a lot. I'm going to be a bad engineer and not label my axes or anything. It's a sketch.<br />Or in other words, equalizers (this is just a high-pass, you can generalize).</p>
+<p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://bp0.blogger.com/_c7HbV-g5J5c/RbjPqQE1bMI/AAAAAAAAACE/tONtgk97cMs/s1600-h/temp.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 432px; height: 99px;" src="{{ site.baseurl }}/assets/temp.jpg" alt="" id="BLOGGER_PHOTO_ID_5023993709108489410" border="0" /></a></p>
+<p>Diana opened class on the first day by playing us music (a signal) and showing us what it sounded like after passing through different filters (systems). First, the signal. (This isn't actually the one Diana played; it's what I had lying around. I don't know what song either is.)<br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://bp0.blogger.com/_c7HbV-g5J5c/RbjLFQE1bJI/AAAAAAAAABs/JRzRHZprKFU/s1600-h/temp.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 418px; height: 243px;" src="{{ site.baseurl }}/assets/temp.jpg" alt="" id="BLOGGER_PHOTO_ID_5023988675406818450" border="0" /></a><br />The image quality makes my eyes hurt, but you can click on the picture to see a less-awful version. The green thing on the bottom is called a spectrogram, which is basically "continuous sheet music that's very hard to read." See hackish overlay of notes on top. Both sheet music and spectrograms tell you what frequencies are going at any given time, how long they are going for, and how loud they sound (fortes and accents in the sheet music, bolder colors for louder notes in the spectrograms). Anyway, this is a signal. And now: signals... the filtered versions.</p>
+<p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://bp2.blogger.com/_c7HbV-g5J5c/RbjM0wE1bKI/AAAAAAAAAB0/j-hFWFh4kV0/s1600-h/temp.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="{{ site.baseurl }}/assets/temp.jpg" alt="" id="BLOGGER_PHOTO_ID_5023990590962232482" border="0" /></a><br />Roughly translated to piano, high pass, low pass, and band pass mean "play the right hand", "play the left hand", and "play only the notes you hit with your thumbs. ("Pass" refers to the frequencies you allow to pass through.)</p>
+<p>In reality, it sounds more like this, especially if you have a lower-order filter. They don't actually cut off the frequencies with perfect clean-ness, just more fade 'em out over time. This is why the little diagram of the filters (the red and green picture above) isn't a nice sharp step function, but a sort of funky little curve.</p>
+<p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://bp2.blogger.com/_c7HbV-g5J5c/RbjNcwE1bLI/AAAAAAAAAB8/tkaN3ZFIjPg/s1600-h/temp.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 401px; height: 103px;" src="{{ site.baseurl }}/assets/temp.jpg" alt="" id="BLOGGER_PHOTO_ID_5023991278156999858" border="0" /></a><br />Another cool thing about the sheet music analogy is that the Fourier transform actually makes sense. The transform depends on the orthogonality of sines (which we had to prove in PDEs; I will see if I can dig up my chicken scratch on it) and says that you can split any signal into sine waves - or in other words, frequency components... or in other words, notes. This is a piece of music, but at any moment you can stop and say "hey, look at the keys  (frequencies) I'm pressing on the piano" and break the chords down into individual notes. Fourier transforms take a signal in the time domain and transform it to one in the frequency domain, and vice versa. Kind of like saying "Ok, I can look at my music in terms of when I'm playing the notes, or in terms of what notes (frequencies) I play most often."</p>
+<p>We also talked about complex arithmetic, which I won't write about now because it's basically "do you remember how to convert between polar and rectangular coordinates?" right now.</p>

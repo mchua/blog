@@ -1,0 +1,36 @@
+---
+layout: post
+title: How can we make it easier for people to send patches?
+date: 2009-10-01 02:31:59.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Thought folks might be interested in these two (short-ish yet horrendously formatted html) logs: a <a href="http://mchua.fedorapeople.org/conversations/2009-10-01-packaging-workflow-bug.html">workflow bug report</a> from Michael Stone and a <a href="http://mchua.fedorapeople.org/conversations/2009-10-01-packaging-workflow-improvement-draft.html">brainstorm of potential solutions</a> with <a>Toshio Kuratomi</a> and Dennis Gilmore.</p>
+<p><b>My paraphrased short version:</b></p>
+<p>Michael Stone: Hey, I've been trying really hard to contribute a patch to a Fedora package but kept finding myself having to jump through hoops; I plunged through anyway but was ultimately stopped by lack of creds. It's frustrating and probably turning away contributors who aren't speaking up like I just did. Might want to fix that workflow.</p>
+<p>Me: Yeeeeah.</p>
+<p>Toshio (in another channel, completely separately): I've been thinking about organizing the packaging guidelines [to make them easier]...</p>
+<p>Me: Toshio, you should read Michael's comments on the process.</p>
+<p>Toshio: *reads* Yeeeeah. So, some ideas...</p>
+<p>Dennis: *pops in* And yet more ideas on what we could do about this...</p>
+<p><b>Some Time Later: proposed fixes!</b></p>
+<ol>
+<li> Everything except for the commit can be done without needing any account information at all; this isn't really documented, though. Document it and make that documentation findable. This solves everything except the "it's hard to commit" problem.</li>
+<li>Add functionality to <a href="https://fedorahosted.org/fedora-packager/">fedora-packager</a> so that anyone with the fedora-packager package installed can send a patch right on the command line. Imagine running something like <b><i><span highlight="Search">fedora-packager</span>-email-patch &lt;name-of-package&gt; &lt;patchfile&gt;.patch &lt;your-email&gt;@domain.name</i></b> and having it go straight through with no account creation required. This would solve the commit problem for everyone who can install fedora-packager.</li>
+<li>Create an automated send-a-patch@fedoraproject.org account that only accepts emails with a valid package name as the subject line, and forwards any attachments that are patches to the relevant package owner via the (already existing) &lt;packagename&gt;-owner@fedoraproject.org email aliases. This would solve the commit problem for everyone who has email.</li>
+</ol>
+<p>Thoughts? Takers? I might see if I can do #1 during spare time while hanging out with Pascal Calarco &amp; Co. at Notre Dame this coming Monday.</p>

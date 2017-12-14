@@ -1,0 +1,28 @@
+---
+layout: post
+title: Fixing the Record Activity / re-firing up QA
+date: 2010-03-08 07:19:18.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- soas
+- sugar
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>The <a href="http://activities.sugarlabs.org/en-US/sugar/addon/4081">Record</a> Activity wasn't working in our (testing) image of <a href="http://wiki.sugarlabs.org/go/Sugar_on_a_Stick">SoaS</a>. Fortunately, <a href="http://sdziallas.com">Sebastian</a> was in town and quickly showed <a href="http://melispeaks.wordpress.com/">Melanie</a> how to fix it - it's just a matter of updating to the latest RPM.
+<ol>
+<li>Switch to root.</li>
+<li>Run "yum update --enablerepo=rawhide sugar-record" (no quotes)</li>
+</ol>
+<p>That's it.</p>
+<p>On a separate note, now that Melanie has picked up on deployment support (I have very little to do with that at this point other than being around for general minionhood - Melanie's my boss for that) I'm starting to (finally) turn my thoughts to testing/QA infrastructure. The Welly crew has been <a href="http://lists.laptop.org/listinfo/testing">keeping the flame alive</a> and I've got quite a bit to learn from them from the year I've been out of the OLPC/Sugar QA loop.</p>

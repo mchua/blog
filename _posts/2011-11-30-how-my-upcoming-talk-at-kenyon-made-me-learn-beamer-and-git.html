@@ -1,0 +1,47 @@
+---
+layout: post
+title: How my upcoming talk at Kenyon made me learn beamer and git
+date: 2011-11-30 22:29:38.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- olin
+- teaching open source
+tags: []
+meta:
+  aktt_tweeted: '1'
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><a href="http://sububi.org/">Matt Jadud</a> and I are giving a talk this Friday at his undergraduate alma mater, <a href="http://kenyon.edu">Kenyon College</a>. I haven't seen Matt since <a href="http://teachingopensource.org/index.php/POSSE">POSSE</a> this summer and am looking forward to long conversations with him on the nature of academic life and other things, possibly punctuated by bottles of my <a href="http://www.triplexxxfamilyrestaurant.com/">favorite rootbeer</a>.</p>
+<p>Our topic is how liberal arts students can get involved in open source.</p>
+<blockquote><p><strong>Take a Walk in the Commons: Open Source and the Liberal Arts</strong></p>
+<p>As educators in the liberal arts, we try to prepare our students for a lifetime of learning. When we introduce our students to open communities as part of their classroom experience, we provide them with an opportunity to engage with the world around them and help solve real problems for real people. Participation in open communities as part of the undergraduate experience provides ways of developing and practicing communication, teamwork, and leadership skills---and contrary to popular belief, sometimes the most valuable contributions are the nontechnical ones.</p>
+<p>In this talk, we'll explore the wide range of opportunities for students to get involved in open source and open communities, with examples, case studies, and concrete next steps you can take as an educator or student to bring these opportunties into your classrooms and projects. Regardless of whether your interests are intellectual property law, computing in the sciences, enabling government transparency, language learning, or something else entirely, there's an open community waiting for students to contribute and make a difference.</p></blockquote>
+<p>As of today (November 30, 2011) our slides are almost-but-not-quite done - comments welcome on what we do have, which is <a href="https://github.com/mchua/A-Walk-in-the-Commons">up on github</a>. Slides were created with <a href="http://en.wikipedia.org/wiki/Beamer_(LaTeX)">Beamer</a>. Which brings me to noting two things I learned today:</p>
+<p><strong>Installing Beamer on Fedora 16</strong></p>
+<p>Beamer is a lovely little tool that uses LaTeX for making presentation slides. And all the Fedora installation instructions I found for Beamer are incorrect, so I'll save you the hour of head-scratching I endured this afternoon and tell you that you need two packages beyond whatever comes with the default F16 install. Just <code>yum install texlive-texmf-latex texinfo-tex</code> and you should be all set to jump into the directory with beamer slides and <code>make</code> away.</p>
+<p>If you want to try out beamer, here's a quick little walkthrough that'll get you looking at our current slides in 5 lines, assuming you already have git installed (if not, <code>yum install git</code> first).</p>
+<p><code><br />
+git clone git@github.com:mchua/A-Walk-in-the-Commons.git # grab the code<br />
+cd A-Walk-in-the-Commons/presentation # go to the slide files<br />
+sudo yum install texlive-texmf-latex texinfo-tex # install beamer<br />
+make # builds the beamer slides into a pdf<br />
+evince a-walk-in-the-commons.pdf # and you've got them!<br />
+</code></p>
+<p><strong>Changing the origin of your git repository</strong></p>
+<p>My git repository of the slides is actually <a href="https://github.com/jadudm/A-Walk-in-the-Commons">a fork of Matt's</a>. I cloned his original, made and committed my changes, and then realized that I didn't have push access to his repository, so I <a href="http://help.github.com/fork-a-repo/">forked my own</a>. But my commits were still lined up to push to Matt's repository - how do I tell git to push to my new repository instead? It took a couple minutes of scanning through manpages and searching the intarwebs, so here's the answer for posterity (for the record, the solution came when I finally realized we did this for <a href="http://wiki.sugarlabs.org/go/Sugar_on_a_Stick/Documentation_SOP">SoaS documentation</a> git issues).</p>
+<p><code><br />
+git remote rm origin # remove the original repository (in this case, Matt's)<br />
+git remote add origin git@github.com:username/your-new-repository # add my new repository<br />
+git push origin master # and now it pushes to the right place<br />
+</code></p>

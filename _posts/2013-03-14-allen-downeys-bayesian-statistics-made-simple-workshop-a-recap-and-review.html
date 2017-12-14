@@ -1,0 +1,48 @@
+---
+layout: post
+title: 'Allen Downey''s "Bayesian Statistics Made Simple" workshop: a recap and review'
+date: 2013-03-14 10:58:31.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- engineering edu
+- olin
+- teaching open source
+- women in free software
+tags: []
+meta:
+  _edit_last: '2'
+  _jd_tweet_this: 'yes'
+  aktt_tweeted: '1'
+  _wp_jd_bitly: http://bit.ly/YdqQkH
+  _wp_jd_target: ''
+  _jd_wp_twitter: 'a:1:{i:0;s:104:"Blog: Allen Downey''s "Bayesian Statistics Made
+    Simple" workshop: a recap and review http://bit.ly/YdqQkH";}'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>I attended <a href="http://allendowney.com/">Allen Downey's</a> PyCon 2013 workshop on Bayesian Statistics Made Simple; his slides and code are <a href="https://sites.google.com/site/simplebayes/home/pycon-2013">available online</a> (free and open, of course -- go Allen!) Bayesian thinking ("given these results, how likely are my hypotheses?") is powerful, simple, and a mind-flip for folks like me used to frequentist statistics ("given my hypotheses, how likely are results I don't yet have?"). The Python library Allen developed for his book makes it easy to nest multiple levels of specifications describing our assumptions; since I find typing out clean, modular code consumes far less mental RAM than manipulating abstract math symbols on paper, that suits me just fine. We went through basic problems such as:</p>
+<ul>
+<li><span style="line-height: 13px;">If I've seen N enemy tanks with the following serial numbers (and assume enemy tanks are numbered sequentially starting from 0), how many total tanks does the enemy probably have -- and how does my guess change as I see more tanks?</span></li>
+<li>If I have the results of a repeated coin-flip, what is the probability that the coin I flipped is fair? (Hint: it depends on how you think the coin may be <em>unfair</em>.)</li>
+<li>If Alice scored higher on the SAT than Bob, what is the chance that Alice is smarter than Bob? (What assumptions do we make about the SAT, test-takers like Alice and Bob, and the nature of intelligence?)</li>
+</ul>
+<p>The budding researcher in me took notice when Allen presented examples of more things one could do with Bayesian statistics. For instance, b</p>
+<ul>
+<li style="display: inline !important;"><span style="line-height: 13px;">y looking at my dataset from a first experimental sampling run... say I interview students and find 3 students who love thermodynamics, 2 who hate it, and 15 who don't know what it is -- I can start making inferences about:</span></li>
+</ul>
+<ul>
+<li><span style="line-height: 13px;">How many other opinions about thermodynamics might be out there that I didn't get in my first trip to the field?</span></li>
+<li>How many more students will I need to interview before I have X% confidence that I have gotten Y% of the existing opinions about thermodynamics expressed?</li>
+<li>What's the proportion of students who love, hate, etc. thermodynamics -- or rather, what's the <em>probability</em> that, in the entire population of all students I could ever interview, X% will express this opinion? (In my first sample, 10% of students loved thermodynamics. What's the probability of the "real" proportion of thermodynamics-lovers in the general student population being 10% -- versus, say, 50% of students loving thermodynamics and me just unluckily missing them? How would my confidence in making the claim "10% of students love thermodynamics" increase if I interviewed more students?)</li>
+</ul>
+<p>...all given certain assumptions, of course, such as assuming my sampling is really random -- maybe the thermodynamics-lovers were all at a thermodynamics conference when I went looking, or assuming students will express a clear, "truthful" opinion on thermodynamics to me for some value of "truth," and... As with all modeling techniques, these guesses are only as good as my model. But the neat thing about Bayesian statistics is that it's easy to tweak facets of my assumptions and see what changes in predicted results ripple out from it. So it's a thinking tool that's good to have, in any case.</p>
+<p>I also picked up pedagogy from Allen's workshop. It was immediately clear to me how he had used <a href="http://www.greenteapress.com/thinkbayes/">his in-progress book</a> and <a href="http://allendowney.blogspot.com/">research blog</a> on the same topic to scaffold the construction of his workshop, and that was a lesson in and of itself; all three share the deliberate, incremental, self-teaching style I associate with Allen (who was one of my professors in <a href="http://olin.edu">college</a>). Although we both <a href="http://allendowney.blogspot.com/2013/02/belly-button-biodiversity-part-three.html">believe in transparent science</a>, our teaching styles are vastly different; Allen leads large groups down a well-marked trail, scaleable and reproducible, moving with the clean efficiency of experience. He'd be an excellent MOOC professor. I like scattering my groups loose to wander in a rawer pasture, building discussion around surprising things people stumble into -- a different improvisation every time depending on who's there. Both styles have their pluses and minuses, and Allen's an old hand at his style whereas I'm barely a journeyman in mine. I come from teaching full-week, all-day workshops and semester-long classes, where team dynamics and wandering comfort can evolve and distributed group improvisation is wonderful once you get past the initial discomfort hump. But Allen's marked-trail style is more expected -- and certainly more efficient -- for short workshops like the ones we had, so I'll try to adapt my materials more to that teaching technique next time I have a 3-hour workshop to run.</p>
+<p>Speaking of which -- I succumbed to exhausted sleep too early last night to post materials from my workshop; I'll need to find some time in the next 36 hours to do so (note to self: the perfect is the enemy of the good).</p>

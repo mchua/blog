@@ -1,0 +1,64 @@
+---
+layout: post
+title: 'Guest post by Gabrielle Ewall: proposal to use Bayesian statistics for understanding
+  Hacker School learning styles'
+date: 2014-09-29 15:11:37.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- engineering edu
+tags:
+- hackerschool
+- hackerschoolbook
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+  _jd_tweet_this: 'yes'
+  _wp_jd_bitly: http://bit.ly/1tc3Stk
+  _wp_jd_target: http://blog.melchua.com/2014/09/29/guest-post-by-gabrielle-ewall-proposal-to-use-bayesian-statistics-for-understanding-hacker-school-learning-styles/
+  _wpt_failed: 'a:5:{s:6:"author";b:0;s:8:"sentence";s:140:"Blog: Guest post by Gabrielle
+    Ewall: proposal to use Bayesian statistics for understanding Hacker School learning
+    styl http://bit.ly/1tc3Stk";s:5:"error";s:303:"403 Forbidden: The request is understood,
+    but it has been refused. This code is used when requests are understood, but are
+    denied by Twitter. Reasons can include: Too many Tweets created in a short time
+    or the same Tweet was submitted twice in a row, among others. This is not an error
+    by WP to Twitter.";s:4:"code";i:403;s:9:"timestamp";i:1412021499;}'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p dir="ltr"><em>Over the next few days, I'll be introducing the new members of the Hacker School Book research team and the stuff they're working on -- or rather, they'll be introducing themselves. We kick this off with a guest post from <a href="https://github.com/gabriellee">Gabrielle Ewall</a> (the team is working on getting their own personal blogs up, so this should settle down in a week or so).</em></p>
+<p dir="ltr">Hey friends!  I’m Gabrielle.  Right now I’m pursuing an undergraduate degree in Engineering with Neuroscience at <a href="http://olin.edu">Olin College</a>.  I am passionate about education questions such as: what motivates people to learn, how can lessons most effectively engage students, and what factors make an educational environment most accessible to learning disabled students.  I am interested in computational modeling techniques like Machine Learning and Bayesian Inference.</p>
+<p dir="ltr"><strong>The questions we’re trying to answer</strong></p>
+<p dir="ltr">We’ve heard that many Hacker Schoolers are interested in the <a href="http://blog.melchua.com/2013/06/19/hacker-school-session-engineering-learning-styles/">learning styles framework</a>, and we plan on investigating what learning styles mean at Hacker School.  Specifically, we’re curious about the following:</p>
+<ol>
+<li dir="ltr">
+<p dir="ltr">What is the distribution of learning styles among Hacker Schoolers, and how does that compare to distribution among other groups (undergraduate engineers, etc)?  Do certain combinations of learning styles gravitate towards Hacker School?</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">How does learning style affect feelings of personal success at Hacker School?  Are certain experiences at Hacker School more rewarding for individuals with a particular learning style?</p>
+</li>
+<li dir="ltr">
+<p dir="ltr">Is learning style related to how Hacker Schoolers feel about their undergraduate experiences?  For example, might active learners think “college was boring but Hacker School is great,” whereas reflective learners might think “college was awesome, and Hacker School is also awesome?”  If the learning environment of their undergraduate institution does not fit a Hacker Schooler’s personal learning style, can this contribute to imposter syndrome?</p>
+</li>
+</ol>
+<p dir="ltr">We hope that information about the learning styles distribution will help us understand Hacker School as a learning environment.</p>
+<p dir="ltr"><strong>How we’re addressing these questions: Bayesian statistics</strong></p>
+<p dir="ltr">The first thing I am working on is comparing the distribution of learning styles in Hacker School to the distribution in other groups.  Since there’s been a lot of research done on learning styles distributions, we already have some beliefs about what learning styles distributions might be most likely at Hacker School.  Bayesian statistics <a href="http://www.greenteapress.com/thinkbayes/">(here’s an open-content textbook on that)</a> is an awesome tool for these kinds of problems because it allows us to incorporate prior beliefs like this into our analysis.  Additionally, Bayesian statistics allows us to preserve information about the uncertainty of our hypotheses, which is especially important given the sparsity of our data right now.</p>
+<p dir="ltr"><strong>Where to get my code</strong></p>
+<p dir="ltr">The current code is living at <a href="https://github.com/gabriellee/HackerSchool">https://github.com/gabriellee/HackerSchool</a>, and utilizes Allen Downey’s thinkbayes2 and thinkplot modules (also included on my repository, so just grab the whole thing).</p>
+<p dir="ltr">The code is very basic right now.  I initially assume that the ratio of sensing to intuitive learners at Hacker School is equally likely to be any percentage from 0 to 100.  The code updates the hypotheses of this ratio according to data from an imaginary group of Hacker Schoolers who happen to have a 50/50 ratio of sensing to intuitive learners, and outputs the probability that Hacker Schoolers have the same ratio of sensing to intuitive learners as a different hypothetical group with a 50/50 ratio.  It also produces a graph of the probability of various sensing:intuitive ratios at Hacker School.</p>
+<p dir="ltr"><strong>How to run my code</strong></p>
+<p dir="ltr">The code will be more exciting to run in a little while (and we will report back with a demo at that time), but if you’re really curious <em>right now</em>: to run it, you’ll need ipython notebook installed.  If you already have python and are running Linux, you can type:</p>
+<blockquote>
+<p dir="ltr">sudo pip install ipython[notebook]</p>
+</blockquote>
+<p dir="ltr">into your command line and you’re good to go.  Otherwise, grab <a href="http://continuum.io/downloads">Anaconda</a>.  When you’re all set, open and run learningstyles_dist2.ipynb to use the code.</p>
+<p dir="ltr"><strong>What’s next</strong></p>
+<p>Over the next few weeks, I plan to create implementations of this code for all of the learning style categories, use a more reasonable set of prior beliefs about the likelihood of each hypothesis, and start to input some real data! Stay tuned.</p>

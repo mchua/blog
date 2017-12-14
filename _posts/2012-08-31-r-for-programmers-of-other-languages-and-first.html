@@ -1,0 +1,75 @@
+---
+layout: post
+title: 'R: for programmers of other languages, and .First'
+date: 2012-08-31 07:55:12.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- engineering edu
+tags:
+- rprogramming
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+  _stcr@_tim@tim-smith.us: 2012-08-31 07:58:36|Y
+  _stcr@_mark.hoemmen@gmail.com: 2012-08-31 10:56:11|Y
+  _stcr@_jerzywieczorek@gmail.com: 2012-09-20 11:20:12|Y
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Thanks to Jerzy Wieczorek, Katie Rivard, and Mark Hoemmen for their flood of helpful comments, suggestions, and resources on R. I am happily working through them in parallel with the lectures. As it turns out, I'm still bad at paying attention to lectures, and learn (programming, at least) most efficiently from parallel streams of text data -- but CART lets me access the lecture information as a stream of text data as well, which is <em>tremendously</em> valuable. (Did you know that when people teach programming, they sometimes <em>say helpful things that aren't in books?</em> Craaaaaazy. I wonder how many "tricks of the trade" I've missed over the years by just not knowing this.) So I am learning R by simultaneously reading lecture transcripts, R documentation, at <em>least</em> 3 tutorials at this point, fooling around on the command line, Googling for stuff, and asking questions in class.</p>
+<p>I was about to reflexively say "stupid questions" until I realized that (1) now with CART, I'm no longer afraid my question has already been covered in a lecture moment that I didn't hear (leading to my classmates laughing at my seeming dumbness, or so I fear), and (2) every single question I've asked has been met with a pause from the professor, followed by "...hrm, that's... that's a good question, actually. Let's see..." instead of a "DUH THIS IS THE ANSWER" answer. By the time I've asked a question in class, I've already searched for the answer and tried to experiment on the command line to figure it out. So my questions, actually, are... smart. I'm not used to this feeling.</p>
+<p>Today's main reading-in-parallel comes from Jerzy, who pointed me towards <a href="http://johndcook.com/R_language_for_programmers">an R tutorial for programmers of other languages</a>. It felt like it was written for people like me, drawing on something familiar (direct exposure to other programming languages and a "I want to get THIS done now" mentality) instead of background I'm not as strong on (theoretical programming language concepts, high-level statistics in the format of abstract math).</p>
+<p>(Side note: whenever I encounter anything CS-related, I always pause for a moment of appreciation of Lynn Stein; the single semester I spent in her FoCS (Foundations of Computer Science) class gave my hobby-coding 19-year-old ECE-major self enough CS background to scramble into learning new things in that domain alongside Students Who Actually Spent Four Or More Years Learning CS. R right now is no exception. So thank you, Lynn. And Katie, who was our extremely patient NINJA/TA the year I took it.)</p>
+<p>A few gotchas about the R language that stood out at me today:</p>
+<p><strong>R fills matrices by column, not row (as I expected)</strong></p>
+<p>In R, you make a matrix by taking a vector and changing its dimensions. <code>c(1,2,3,4,5,6)</code> is the vector <code>[1,2,3,4,5,6]</code>, so <code>array(c(1,2,3,4,5,6), dim=c(2,3))</code> folds it into a 2x3 matrix -- but it does that by column, so you end up with...</p>
+<p><code><br />
+1 3 5<br />
+2 4 6<br />
+</code></p>
+<p>If what you actually wanted was:</p>
+<p><code><br />
+1 2<br />
+3 4<br />
+5 6<br />
+</code></p>
+<p>then simply permute the matrix: <code>aperm(array(c(1,2,3,4,5,6), dim=c(2,3)))</code></p>
+<p><strong>R starts counting at 1.</strong></p>
+<p>Not zero. One. I may struggle to remember this one because it's so unusual among the programming languages I know. If you try to access the 0th element of a vector, it ends up being <code>numeric(0)</code> (There's also <code>logical(0)</code>, so I'm guessing it means "the numeric value zero, instead of the boolean datatype," but I'm not sure why one would care about the distinction... yet. Maybe <code>logical(0)</code> is a simpler datatype that takes less space, or something.)</p>
+<p><code><br />
+&gt; myvector myvector<br />
+[1] 1 2 3</code></p>
+<p>&gt; myvector[0]<br />
+numeric(0)</p>
+<p>&gt; myvector[1]<br />
+[1] 1</p>
+<p><strong>You can append new items past the end of an existing object, but it'll fill the gaps with NA.</strong></p>
+<p>I'll make the vector <code>[1,2,3]</code> and then try to append the number 5 to the 5th position -- but there'll be a gap in the 4th position that needs to be filled in. What happens? Here's what happens.</p>
+<p><code><br />
+&gt; myvector myvector[5] myvector<br />
+[1] 1 2 3 NA 5<br />
+</code></p>
+<p><code>NA</code> is "not applicable," which is kind of like <code>NaN</code> ("not a number") or <code>NULL</code> (..."null," of course).</p>
+<p><strong>R's <code>search()</code> path can be your friend -- or foe, if managed incorrectly.</strong></p>
+<p>R is a lazy language. (I think "uses lazy evaluation" is the correct technical term of More Precision Than I Typically Use.) This means that if you're running R code and tell it to look for something, it'll rummage through its closets in order (you can see the order by using <code>search()</code>) and uses the value of the first matching thing it finds, complaining if it can't find any.</p>
+<p><code><br />
+&gt; search()<br />
+[1] ".GlobalEnv" "file:lattice.RData" "package:stats"<br />
+[4] "package:graphics" "package:grDevices" "package:utils"<br />
+[7] "package:datasets" "package:methods" "Autoloads"<br />
+[10] "package:base"<br />
+</code></p>
+<p>&nbsp;</p>
+<p>This output tells me that R is going to look in my global environment first (the terminal I'm running in), then the lattice.RData package I attached, then stats, then graphics, then so on. If I have a variable called "Bob" defined in the stats package, and another called "Bob" in my GlobalEnv, R just grabs the GlobalEnv Bob (so I should make sure that's the Bob I <em>want</em> to grab).</p>
+<p><strong>.First is the R equivalent of .zshrc (or .bashrc, for those of you who've kept your default Linux shell).</strong></p>
+<p>If you have something you want run every time R starts up, chuck it in a function called <code>.First</code> (the dot at the beginning is part of the name). That function name is magic and gets run each time; it's part of your GlobalEnv. <code>.Last</code> is similar, except it's run right before exiting each time you call <code>q()</code>uit.</p>
+<p>The gotcha is that .First (and all other GlobalEnv functions in your session) gets stored in the binary file that saves the state of your R environment (the thing that makes it so you don't need to redefine everything and its mother when you close R and start it up again -- it's just where you left off the last time). You can't edit it separately; you've got to edit it in the session. Implication: don't make your <code>.First</code> file crash the system.</p>
+<p>Which brings me to my final note. By some point in this afternoon, I'd gotten tired of switching to my R code directory and attachng <code>lattice.RData</code> (which we use as sample data) every time I fire up R for class. I was peeved, actually; if R saves the environment upon exit, shouldn't it still have <code>lattice.RData</code> still attached when I start R again? 15 minutes of experimentation later, I was satisfied enough with the answer I'd discovered ("no, it doesn't, and I don't know why") and had chucked it in a working <code>.First()</code> function instead, which I've tested enough to make me happy.</p>

@@ -1,0 +1,42 @@
+---
+layout: post
+title: 'Making POSSE Print materials, or: Mel becomes a LaTeX ninja'
+date: 2011-02-28 16:55:30.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- teaching open source
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><i>I've been remiss at blogging updates on the (fast and furious) work going on at <a href="http://teachingopensource.org">Teaching Open Source</a> to shape up the <a href="http://teachingopensource.org/POSSE">POSSE</a> workshop program prior to our big <a href="http://sigcse.org/2011">SIGCSE 2011</a> launch date, so here's the first of what I hope will be many ongoing notes on various aspects of our progress.</i></p>
+<p>A bunch of us have bemoaned the lack of quality design/layout for POSSE materials - we want a snazzy little bunch o' dead trees we can be proud to hand out to people at conferences and workshops! - and so <a href="http://blog.sdziallas.com">Sebastian</a> and I pinged <a href="http://fedoraproject.org/wiki/User:Emichan">Emily Dirsh</a>, <a href="http://fedoraproject.org/wiki/Design">Fedora Design Ninja</a>, a line asking about what it would take to come up with some open materials for the&nbsp;Teaching Open Source community. Mmm, contributing to the ecosystem.</p>
+<p>Here's the current gameplan after Emily and I talked today; our full logs can be found <a href="http://meetbot.fedoraproject.org/teachingopensource/2011-02-28/posse_design.2011-02-28-20.06.html">here</a>.</p>
+<ol>
+<li>All designs and materials will be released under an open content license (probably <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">cc-by-sa</a>)  made in open formats using open tools (LaTeX, Drupal, etc) and generally be free and open all the way through. This was important to us.</li>
+<li>We want content both for print (pdf) and web; given that our primary audience is technical academia and we'd like the sources to be tweakable by others, <a href="http://www.latex-project.org/">LaTeX</a> seemed like a good choice for markup.</li>
+<li>The first thing we'll do is create a stylesheet we can use to generate good-lookin' print materials from that LaTeX markup. Think something like <a href="http://mairin.wordpress.com/2010/01/08/inkscape-class-day-1/">Mo Duffy's Inkscape tutorials</a> (see the 2 pdfs at the end of that blog post) as an end product. We're hoping to have this done before SIGCSE so we can generate and distribute some sample materials using it.</li>
+<li>The next thing will be to work on a LaTeX-to-html/css stylesheet to generate the web content.</li>
+<li>Finally, the whole thing will be slipped into a CMS (<a href="http://drupal.org">Drupal</a>) and skinned. Voila, a professional web presence and layout for all things POSSE, with plenty of open-fu all the way through.</li>
+</ol>
+<p>This pretty much dictates the rest of my evening. Emily has asked for sample markup with all the syntax we'll be using, so it looks like I'll be refreshing my LaTeX memory shortly. <a href="http://lyx.org">LyX</a> has spoiled me - it's been a while since I cranked open a text editor and wrote TeX with my BARE HANDS!&nbsp;<i>grunt, grunt</i> - but it shall be done. Elements this document has to include, because the POSSE handouts will almost certainly include them:</p>
+<ol>
+<li>An abstract/summary at the beginning</li>
+<li>Section and subsection headers</li>
+<li>Graphics (mostly screenshots) with captions</li>
+<li>Code snippets</li>
+<li>Terminal input (distinguishable from a code snippet!)</li>
+<li>Lists and bullets</li>
+<li>A few styles of asides ("Did you know?" sidebars - as in "Did you know? Penguins don't like cheese!")</li>
+<li>A styling/numbering for "homework assignment"-type problems at the end</li>
+</ol>
+<p><emichan><mchua></mchua><mchua></mchua><mchua></mchua><mchua></mchua><mchua></mchua><mchua><emichan><mchua></mchua><mchua></mchua><mchua></mchua><mchua></mchua><mchua></mchua><mchua></mchua><mchua><emichan><br />Am I missing anything? Let me know! Favorite LaTeX tips and stylesheets, tutorials, and whatnot are also extremely welcome.</emichan></mchua></emichan></mchua></emichan></p>

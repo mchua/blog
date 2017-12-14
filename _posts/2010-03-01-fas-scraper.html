@@ -1,0 +1,36 @@
+---
+layout: post
+title: FAS scraper
+date: 2010-03-01 23:04:04.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- olin
+- teaching open source
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Had a little fun today while talking with <a href="http://www.cyber-anthro.com/?page_id=205">Diana</a> about her research. She was explaining how it's hard for her to figure out who's an active Fedora contributor since there are so many ways and means and places (git, wiki, lists, etc) to contribute and everyone contributes in a different place (someone may maintain a lot of packages but never blog, another person may blog and never touch the wiki, etc), so I pointed out that just about everything in Fedoraland was a website with FAS authentication, so "fire up <a href="http://twill.idyll.org/testing.html">twill</a>, scrape 'em all down, do some text processing, and you'll have a per-user portfolio you can analyze to get an activity count."</p>
+<p>8 minutes of coding and 29 minutes of documenting later, a quick and dirty solution prototype is up in the form of <a href="http://mchua.fedorapeople.org/FAS_scraper">FAS scraper.</a> It takes a list of FAS usernames and makes little portfolios for each user using his/her recent activity from a variety of services (so far, just wiki recent changes and packages-maintained). This isn't meant to prototype the architecture of the code (this code basically has no architecture, it's 11 lines long), it's meant to be a rough demo of desired functionality. Think about making the user-portfolios themselves more query-able and you'll have a notion of how this could be extended - it would be neat to run queries like:</p>
+<ol>
+<li>How many people who blogged on Planet at least twice a month for the last 6 months are also frequent wiki editors?</li>
+<li>Show me all the users who maintain at least 10 packages and are also members of the syadmin-test FAS group?</li>
+<li>For each user with recent wiki edits to the F13 Talking Points page on the wiki, give me all their emails to the advisory-board list in the past month.</li>
+</ol>
+<p>I'm sure you can think of better ones. For students (and professors), I actually think this might make a neat variant of a <a href="http://allendowney.com/sd04fall/hw07/hw07.html">problem set I was once given in college.</a></p>
+<p>To run it, you'll need the python and python-twill packages (that's what they're called in Fedora, dunno about other distros), so this is what I <i>think</i> most people reading this will want to do, for easy copy-pasting into a shell script or a terminal.</p>
+<p><code><br />sudo yum install python python-twill<br />mkdir fasscraper<br />cd fasscraper<br />wget http://mchua.fedorapeople.org/FAS_scraper/FAS_scraper.py<br />python FAS_scraper.py<br /></code></p>
+<p>You'll get a directory full of output that <a href="http://mchua.fedorapeople.org/FAS_scraper/sample_output/">looks like this.</a> They look reasonably pretty on account of they're straight scrapes of the html pages. This is the sort of thing I pull up to show students when I speak about what a "FOSS portfolio" looks like, so I might just use it to quickly autogenerate "portfolio pages" for the folks I'm introducing them to on IRC. And yes, I realize some of these services are likely to have better APIs to interface with than "scrape the webpage, then consider parsing the html in later versions." I do not know what they are or where they are.</p>
+<p>I am, lines-of-code-per-unit-time-wise, one of the slowest programmers I know, because my docs-per-line-of-code ratio is ridiculous. It's an old habit that comes from writing APIs usable by mechanical engineers. Fighting the temptation to rewrite. Will probably cave at some point and do a more proper version than the kludge that's up now, but... if someone takes it off my hands before then, I'll rest easier and not stay up all night fiddling with this.</p>
+<p><username><mchua @fedoraproject.org><username>In terms of moving this forward, what actually needs to happen is for this to be re-architected into a good general-purpose python library for getting data from FAS-authenticated services. Do things like "instead of manually defining the list of FAS usernames in the code, grab the list of usernames from the actual FAS system."</p>
+<p>Any takers? The first thing to do, methinks, is to get this baby under version control.<br /><start_of_url><username><start_of_url><username><end_of_url></end_of_url></username></start_of_url></username></start_of_url></username></username></p>

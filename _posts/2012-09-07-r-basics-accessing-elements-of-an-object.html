@@ -1,0 +1,73 @@
+---
+layout: post
+title: 'R basics: accessing elements of an object'
+date: 2012-09-07 15:40:00.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags:
+- rpro
+- rprogramming
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Because I remember things better when I explain them, and because accessing elements inside a list in R is just <em>barely</em> different enough from other programming languages I'm used to that it's throwing me off with false cognates a bit -- here's a brief tour on basic ways to access objects in an R list. This is elementary R, but I'm a novice R programmer taking notes for my own reference, so hey.</p>
+<p>Note that the "&gt;" at the start of some lines is the R prompt ("stuff you should type"), but that you shouldn't type the "&gt;." Everything else is print output that R will display to you.</p>
+<p>First we need to create a <em>list</em> which we'll call <code>mylist</code>.</p>
+<p><code><br />
+&gt; mylist &lt;- list(component = c(1,2,3))<br />
+</code></p>
+<p><code>mylist</code> is a super-simple list. Its contents look like this:</p>
+<p><code><br />
+&gt; mylist<br />
+$component<br />
+[1] 1 2 3<br />
+</code></p>
+<p>This list only has one <em>element</em>. It is named <code>component</code>. (It also has one attribute, as Jerzy pointed out in the comments below -- the single attribute is called "names".)</p>
+<p><code><br />
+&gt; attributes(mylist)<br />
+$names<br />
+[1] "component"<br />
+</code></p>
+<p>We can access the element named component in a few ways:</p>
+<p><code><br />
+&gt; mylist["component"]<br />
+&gt; mylist[1]<br />
+</code></p>
+<p>One uses the element name, the other uses the index number. Both of these return a list, which looks like this when it's printed out -- note the <code>$component</code> at the top. Inside the list is a vector of 3 numbers.</p>
+<p><code><br />
+$component<br />
+# [1] 1 2 3<br />
+</code></p>
+<p>If you want to reach inside the list and get the stuff inside -- in this case, that vector of 3 numbers -- you can do it two ways as well: with the attribute name or the index number.</p>
+<p><code><br />
+&gt; mylist$component<br />
+&gt; mylist[[1]]<br />
+</code></p>
+<p>&nbsp;</p>
+<p>Both of them will return simply the vector -- it won't be wrapped in a list. Note how there's no <code>$component</code> label at the top.</p>
+<p><code><br />
+[1] 1 2 3<br />
+</code></p>
+<p>Since <code>mylist$component</code> and <code>mylist[[1]]</code> return whatever is inside this list, and in this case it is a vector, we can access elements in it just like any other vector.</p>
+<p><code><br />
+&gt; mylist$component[2]<br />
+&gt; mylist[[1]][2]<br />
+</code></p>
+<p>And you'll simply get that second number in the vector.</p>
+<p><code><br />
+[1] 2<br />
+</code></p>
+<p>I read on <a href="http://www.johndcook.com/R_language_for_programmers.html">John Cook's "R langauge for programmers"</a> that you can think of R lists as C-style structs. That's not too bad.</p>
+<p>Side note: R typically gives you columns (for instance, <code>mymatrix[1]</code> gives you the first column of <code>mymatrix</code>), but if you throw a comma afterwards it'll give you rows. (For instance, <code>mymatrix[1,]</code> gives you the first row of <code>mymatrix</code>). You can combine these: <code>mymatrix[c(1,2,3),c(1,2)]</code> gives you the first 3 rows of the first 2 columns of <code>mymatrix</code>.</p>

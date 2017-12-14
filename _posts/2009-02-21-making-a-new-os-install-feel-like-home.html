@@ -1,0 +1,34 @@
+---
+layout: post
+title: Making a new OS install feel like home
+date: 2009-02-21 00:16:22.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>One thing I'd forgotten about switching keyboard layouts: passwords become much more interesting to type.</p>
+<p>I'm writing this post from my shiny new Fedora 10 install and figured I should list the tweaks I'm making to my vanilla install to make it feel like home. It's surprisingly minimal, and I know most of the config files I have to save ahead of time. Dream scenario: I run a script on my old OS installation to grab config files into a nice .tar.gz, move that over to the new one on a thumbdrive, and run another script which installs the programs I need, then the plugins/extensions I like on them, and then spits custom config files into the right places. Instant customized laptop. It's non-onerous enough that I don't mind doing it manually, since I only do this every 6 months or so anyway. Here's what it took to get my laptop feeling "normal" again.</p>
+<ol>
+<li>Set up accounts and permissions (give myself sudo, etc).</li>
+<li>yum install vim, emacs, git, svn, bzr, gobby, and wget. And <a href="http://inkscape.org/">Inkscape</a>, for that matter; I sketch things in it often enough that Inkscape has joined the ranks of the "I assume this is present and need it to feel functional" programs, which is pretty neat. (Gimp was already preinstalled.)</li>
+<li>GNOME customization; get the right applets into the right panels in the right places, set up keyboard shortcuts (swap ctrl and capslock, make the Windows key launch a terminal, etc.) and install my <a href="http://www.gnome.org/fonts/">favorite font family</a> and change default window settings so that windows and fonts feel "the right size" to me. Set up keyboard configurations so I can swap between qwerty and dvorak.</li>
+<li>Install and configure <a href="http://www.mozilla.com/en-US/thunderbird/">Thunderbird</a> and the <a href="https://addons.mozilla.org/en-US/thunderbird/addon/640">quicktext extension</a>, which is the killer feature for me.</li>
+<li>Install and configure <a href="http://www.xchat.org/">XChat</a>, which I like for limited screen space setups (like my 12" laptop) where there's only room to display one channel at a time. In a setup with more monitor real estate, I'd likely tile a workspace with <a href="http://irssi.org/">irssi</a> terminals; I think this is cjb's setup.</li>
+<li>Get my Firefox shortcut bookmarks up, along with the few extensions I use regularly: <a href="https://addons.mozilla.org/en-US/firefox/addon/2324">session manager</a>, <a href="https://addons.mozilla.org/en-US/firefox/addon/3615">del.icio.us</a> (okay, this is more of an "I probably should use this regularly") and <a href="https://addons.mozilla.org/en-US/firefox/addon/1730">scribefire</a>. <a href="http://adblockplus.org/en/">Adblock plus</a> and <a href="http://downloadstatusbar.mozdev.org/">download statusbar</a> are also on the list.</li>
+<li>That's it. I use a surprisingly small number of things on a daily basis, and my tweaks are relatively self-contained (and now documented!) My calendar and email archives are now on the web, most of my projects are on the web or available via externally hosted repositories, and it feels <em>really</em> nice to live so light.</li>
+</ol>
+<p>The big thing I haven't yet done is to mount my old homedir partition (though it probably says something that I've been going for most of a day without feeling the need to access any old files yet). This will give me useful things like my .bashrc and ssh keys. The reason I haven't yet done it yet is that I... uh, might have accidentally overwritten that partition, because I'm an idiot and blithely clicked through default answers on the installer. Don't worry; I backed up. The cockiness of knowing I backed up likely contributed to my "oh! I don't need to pay attention!" bypass of partitioning stuff the way I should have. Eh. I will fix it... later.</p>
+<p>Anyway, it might be a good opportunity to move most of my archives to version control. I've been intrigued by the idea of keeping your life (or your homedir, anyway) in vcs, and I <a href="http://kitenet.net/~joey/svnhome/">would not be the first</a>. We'll have to see if I get excited enough to overcome inertia this time; I've been toying with the idea for nearly a year, but this is the first OS (re)install I've done since I began considering it seriously.</p>

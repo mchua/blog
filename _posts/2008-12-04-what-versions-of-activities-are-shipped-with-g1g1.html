@@ -1,0 +1,41 @@
+---
+layout: post
+title: What versions of Activities are shipped with G1G1?
+date: 2008-12-04 14:35:07.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- olpc
+- testing
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><i>The job of a tester is to get bugs fixed. Here's a look at how I'm trying to get a couple going.</i></p>
+<p>"What version of the <a href="http://wiki.laptop.org/go/Measure">Measure</a> <a href="http://wiki.laptop.org/go/Activity">Activity</a> was shipped on this year's G1G1 machines?"</p>
+<p>It was a simple question from <a href="http://wiki.laptop.org/go/User:Arjs">Arjun</a>, Measure's maintainer. This should be easy; it's reasonable that an Activity maintainer would want to know what version of their work is being used in a release, and you could imagine an XO user wanting to check what version of an Activity they'd get on their machine if they <a href="http://wiki.laptop.org/go/Clean-install_procedure">clean-install</a> upgraded to the G1G1 image.</p>
+<p>Through the process of answering this question, Chris, Bert, and I learned that it wasn't a simple answer - but it should be. Here's how the system works right now, why it's broken, and what we've proposed for fixing it. In the process, I began to learn about the mysteries of OLPC's <a href="http://en.wikipedia.org/wiki/Software_build">software build system</a>.</p>
+<p>A bit of backstory: on your XO, you're probably running an <i>OLPC build</i>, most likely one of the builds designated as a <i>release</i>. For instance, <a href="http://pilgrim.laptop.org/%7Epilgrim/olpc/streams/8.2/build767/">build 767</a> is <a href="http://wiki.laptop.org/go/Release_Notes/8.2.0">release 8.2.0</a>. An analogous situation would be publishing a book; you might have many drafts (builds) of a book, but every year or so you pick a good recent draft you've finalized and say "this is what we're going to publish as the 3rd edition (release) of this book." Builds are made of <a href="http://en.wikipedia.org/wiki/Software_package_%28installation%29">packages</a> - think of them as chapters included in a book. The OLPC build you're running includes packages for the <a href="http://en.wikipedia.org/wiki/Operating_system">Fedora-based OLPC OS</a> and the <a href="http://wiki.laptop.org/go/Sugar">Sugar UI</a> (and other things).</p>
+<p>On top of this, you have <a href="http://wiki.laptop.org/go/Activities">Activities</a>, or what most people think of as "the games that you can play on your XO." Builds and Activities are separate. (This wasn't always the case - and it's led into problems for us today. More on that later.) The idea is that if you're deploying XOs at your school, you'd choose the Activities you want for your particular deployment/school/classroom instead of being forced to accept a default package of Activities that might not fit your individual needs. </p>
+<p>To do this, you'd first install the build, then use <a href="http://wiki.laptop.org/go/Customization_key">customization keys</a> to put the Activities you want on the XOs you have. The analogy breaks down a bit here, but you could imagine Activities as a bunch of stickers you've applied to your book's cover, and a customization key as a sheet you've made with all the stickers that you wanted on your book, so you can peel-and-stick it as a single thing. So you've got a build with Activities - or a book with stickers on the cover - and the entire shebang together is called an <a href="http://en.wikipedia.org/wiki/Disk_image">image</a>. </p>
+<p>Usually, OLPC lets people "sticker their own books" - pick a release, install it, pick Activities, install them, move on happily with their XO-using lives. For G1G1, we ship pre-stickered books. Arjun's question can therefore be phrased as "what verison of my sticker went out on the books you shipped?"</p>
+<p>Here's where the problem comes in: the process by which we create G1G1 images (the pre-stickered books) is manual and undocumented. This leaves Arjun with three places to look to answer his question.</p>
+<p><b>He could look at the <a href="http://wiki.laptop.org/go/Activities/G1G1">wiki page</a>.</b> This is probably accurate, but isn't guaranteed to be, since it's manually updated/edited. I could edit, right now, that page to say that every Activity shipped with version 42, which would be a crying lie.<br /><b><br />He could look at an XO.</b> Arjun could download the G1G1 image, install it on an XO, then go into that XO and look at the Activity version number in the files there. this is accurate, but not optimal.  It consumes a lot of time and bandwidth and assumes he has a spare XO to reflash for this purpose, which is not the case for many developers.<br /><b><br />He could look in the <a href="http://download.laptop.org/xo-1/os/official/767/jffs2/build.log">build.log</a></b> for the image. This is what ended up happening, and it would be great - except for one thing. <i>The G1G1 image with Activities doesn't have a build log.</i> That build log I've just showed you is for the build <i>within</i> the G1G1 image - the book without the stickers - and it has no information whatsoever about what Activities are on the image itself, since the build and the Activities are totally separate things within an image.</p>
+<p>If you look through that file, though, you'll see what confused Arjun; there's text in there that <i>looks</i> like it's information about Activities. Stuff like this:</p>
+<p><code><br />16:25:29 URL:http://mock.laptop.org/repos/local.8.2/XOS/Measure-12.xo [20330] -&gt; "Measure-12.xo" [1]<br />16:25:29 URL:http://mock.laptop.org/repos/local.8.2/XOS/Measure-13.xo [20118] -&gt; "Measure-13.xo" [1]<br />16:25:30 URL:http://mock.laptop.org/repos/local.8.2/XOS/Measure-14.xo [26059] -&gt; "Measure-14.xo" [1]<br /></code><br />If I was Arjun, here's what I'd be thinking. "Wait, this build log has stuff about Activities - it must be the build log for the G1G1 image... and it's telling me that they put an outdated version of my Activity on thousands of XOs - oh no! PANIC TIME!"</p>
+<p>What happened? Well, remember how I was talking about builds and Activities being separate, and how this hadn't been the case in the past? Yep. This is an old, dead artifact. While creating a build, the build system still downloads old Activities; it just doesn't actually put those Activities in the build. So there's stuff about Activities in the build.log despite the fact that Activities aren't anywhere in the build itself. And as we've seen, this can be confusing.</p>
+<p>The solution is pretty simple. The answer is that we need to say that...
+<ol>
+<li>This is not the document you're looking for. (filed bug <a href="http://dev.laptop.org/ticket/9070">#9070</a>)</li>
+<li>The document you're looking for does not exist</li>
+<li>However, it should exist; let's create it. (filed bug <a href="http://dev.laptop.org/ticket/9071">#9071</a>)</li>
+</ol>
+<p>Does anyone want to help fix these things?</p>

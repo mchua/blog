@@ -1,0 +1,30 @@
+---
+layout: post
+title: Expense reports SOP
+date: 2010-02-05 16:53:05.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>In an attempt to reduce my future procrastination on expense reports by making them easier and easier to do each time, here's the process as I've got it so far.
+<ol>
+<li><b>Capture.</b> Get everything on my company credit card. Evvvvverything. Also get receipts for everything. Evvvvvvverything. Receipts all go in my wallet, in sequential order, front to back. Everything I get on my card goes in the right pocket, everything I can't get on my card for whatever reason (maybe it's a reimbursement for an event attendee) goes in the left pocket. Online purchases get their receipts (which arrive via email) shuffled into a "expenses-to-report" folder in my inbox. This way I have three places to look when I go file: my inbox, the right side of my wallet, and the left side of my wallet.</li>
+<li><b>Annotate.</b> When I get a receipt, I write down what that receipt is for. "Hotel Mon-Wed." "Dinner with X, Y, and Z Thursday night." If I'm tracking for an event or anything that involves people other than myself, put up a budget table on the appropriate event wiki page: columns should include item, price, and status (where the latter is stuff like "approved" or "booked" or "paid" or "reimbursed" or "done").</li>
+<li><b>Digitize.</b> When I have all the receipts, I line 'em up on the floor and snap pictures going down the line, then throw them on my computer and run (within the folder with the pics), <b><a href="http://www.imagemagick.org/script/mogrify.php">mogrify</a> -geometry 500 -separate *; rm *-1.JPG; rm *-2.JPG; mogrify -rotate 90 *</b> which resizes them to 500px width, separates the RGB channels and discards the GB ones (leaving you with a grayscale image rendered from the red channel), and rotates them to the proper orientation. At the same time, I print all the email-receipts to PDF. I go through and quickly rename the files to sane names like "thursday-dinner-olive-garden.JPG" or "30.68-gas.JPG" or whatever will let me identify them quickly by filename later.</li>
+<li><b>File.</b> Stick everything in Oracle.</li>
+<li><b>Submit.</b> I go down the list of receipts that Oracle tells me I have to submit and smush them together in order using <a href="http://pdfchain.sourceforge.net/">pdfchain</a>, then send that off to the email address I need to send receipts to.</li>
+<li><b>Reward.</b> Yay, Mel! You filed expense reports! Now you can go and have an orange juice!</li>
+</ol>
+<p>See, Mel? It's not so bad. Really. Really not so bad. (Except when pdfchain barfs at you and you can't figure out the underlying issue that pdftk is having and one of the receipts was on thermal paper placed next to a very hot pizza box and was nearly black by the time you got it and consequently had to be GIMP'd up and your phone company won't give you the number for your mobile broadband device so you can get the receipt for <i>that </i>and... well... obviously there's stuff I can do to improve the predictability of this workflow more.)</p>

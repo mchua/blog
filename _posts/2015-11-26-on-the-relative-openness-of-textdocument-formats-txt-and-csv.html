@@ -1,0 +1,46 @@
+---
+layout: post
+title: 'On the relative openness of text/document formats: .txt and .csv'
+date: 2015-11-26 18:49:07.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- engineering edu
+- fedora
+- teaching open source
+- women in free software
+tags: []
+meta:
+  _stcr@_bcotton@funnelfiasco.com: 2015-11-27 21:42:51|Y
+  aktt_tweeted: '1'
+  _edit_last: '2'
+  _stcr@_samuel@sieb.net: 2015-12-04 14:22:30|Y
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p style="text-align: left;"><em>My friend and research colleague Todd Fernandez writes: I know the <a href="https://en.wikipedia.org/wiki/OpenDocument">ODF</a> (Open Document Format) is generally the preferred format from an open documents standpoint. My question is whether you [and other Free/Libre groups] would consider .txt files in Unicode and <a href="https://en.wikipedia.org/wiki/Comma-separated_values">.csv</a> (comma-separated value) data files considered equivalently open?</em></p>
+<p>First of all, I can't answer for FSF or other groups -- so what you're getting is the Mel answer to <strong>"are .txt and .csv files open?" </strong>This email reply is getting so long that I'll turn it into a blog post.</p>
+<p><strong>The Mel answer is "yes."</strong> I consider .txt files in Unicode and .csv to be "open." In fact, I personally prefer to use them over ODF, which I'm rarely able to open with the software pre-installed on most computers I encounter.</p>
+<p>In the paragraphs that follow, I'll get into more detail behind my reasoning. To define "open" and "free," I'll loosely use the <a href="https://opensource.org/osd-annotated">Open Source Definition (OSD)</a> and the <a href="http://www.gnu.org/philosophy/free-sw.en.html">Free Software Definition</a>, noting that these were created for software and need to be adapted for a discussion on file formats.</p>
+<p>In discussing these file formats, I'll cover .txt first, since .csv builds on top of .txt. The file extension".txt" can mean a lot of things, and each of those things has different levels of open-ness (from a more legal-ish open standards standpoint, see definitions above) and accessibility (from a "how many people are able to read/write them on their computers with their current software" standpoint). I personally care about both.</p>
+<p><strong>ASCII and ANSI</strong></p>
+<p>You asked specifically about Unicode, but ".txt" can also mean ASCII, which is/was an American-developed standard for text information. I'll start here, since ASCII was where Unicode began (in fact, ASCII's 128 characters are Unicode's first 128 characters).</p>
+<p>ANSI X3.4-1968 is the document describing this encoding. It is a standard that's widely used and published, lots of programs can access it, and you can use it in your programs without too much effort and without licensing costs (as far as I can tell; I can't easily find the exact legal status). Basically, if I translate the <a href="https://opensource.org/osd-annotated">Open Source Definition</a> from software to file formats, I can't find evidence that ANSI X3.4-1968 itself <em>contradicts</em> any of its criteria. I know this is different than proving that it absolutely <em>meets</em> all these criteria, but this is good enough for me.</p>
+<p>&nbsp;</p>
+<p>As an interesting side note: ASCII is an ANSI standard (American National Standards Institute, hence the ANSI- prefix on its standards document). <a href="http://www.ansi.org/about_ansi/introduction/introduction.aspx?menuid=1">ANSI's definition of "open"</a> is about "do stakeholders have access to the consensus decisionmaking process that forms the standards?" and "are licensing fees and getting permission to use the standard at a reasonable and not overly burdensome level?" rather than "are there no licensing fees and permissions needed at all?" The latter corresponds to <a href="http://www.gnu.org/philosophy/free-sw.en.html">part of the 4 requrements for "freedom" according to the FSF</a>, so it's possible for something to be "open" according to ANSI but not "free" according to the FSF.</p>
+<p>It would be interesting to go through and do a more rigorous look on whether ASCII's legal/licensing criteria meets the Four Freedoms. I'm not a lawyer, but I'd be interested in what a lawyer would say.</p>
+<p><strong>UTF/Unicode</strong></p>
+<p>".txt" can also mean UTF, or Unicode Transformation Format; this is what your email asked about. The "A" in ASCII stands for "American," and "American" in this case meant "monolingual," meaning that if you wanted to type something outside ASCII's 128-character, heavily-biased-towards-American-English set, you were flat out of luck. Unicode took the first 128 characters of ASCII, then... kept on going. Unicode is a more internationally-savvy superset of and successor to ASCII.</p>
+<p>UTF-8 and UTF-16 are two Unicode variants in common use. The numbers refer to the number of bits per character, which you can think of as "UTF-16 has more letters in its gigantic international meta-alphabet than UTF-8." <a href="http://www.unicode.org/versions/Unicode8.0.0/UnicodeStandard-8.0.pdf">UTF standards are developed by the Unicode Consortium</a>, which I keep mistakenly typing as the "Unicorn Consortium" (which would be kinda awesome).</p>
+<p><a href="http://unicode.org/copyright.html#Exhibit1">Unicode's copyright permissions language</a> seem very, very similar to the 4 requirements of the FSF for freedom. Since ASCII is a subset of Unicode, this makes me even more comfortable saying that ASCII is also "open." However, I am not a lawyer, nor am I using "open" in a legally rigorous sense here -- remember, I am a non-legally-trained engineer going "yeah, I don't see anything that contradicts the definitions made for Open and Free software, if we were to translate it to file-formats-land."</p>
+<p><strong>CSV</strong></p>
+<p>CSV is a format that's layered atop plaintext (ASCII, UTF, whatever). In other words, you use plaintext to write a CSV document. CSV itself is not formally specified, which means it's a free-for-all, and... you can use it for whatever, because you're pretty much making it up. It's just that you're just making it up in the same way lots of other people have made it up.</p>
+<p>Then again, "official standards" are just a group of people who have made things up and have agreed to stamp the label of "official" on their work; it's still a social construct that depends on how many other people agree with them. (I can make something an "official" standard according to Mel, but if nobody else agrees with me, my standard is useless.)</p>
+<p>Anyway, I'm not sure if that qualifies CSV as "open," but it's certainly not "closed." To me, CSV is just as open as whatever underlying plaintext (.txt) format it's using. But again, I'm not a lawyer, don't work for the FSF, etc. This is just one hacker's opinion, and I'd love to hear what others think.</p>

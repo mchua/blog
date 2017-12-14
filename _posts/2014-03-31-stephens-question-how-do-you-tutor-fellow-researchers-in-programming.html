@@ -1,0 +1,44 @@
+---
+layout: post
+title: 'Stephen''s question: how do you tutor fellow researchers in programming?'
+date: 2014-03-31 21:42:20.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- engineering edu
+- olin
+- teaching open source
+- women in free software
+tags: []
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+  _jd_tweet_this: 'yes'
+  _wp_jd_bitly: http://bit.ly/QAMDGt
+  _wp_jd_target: http://blog.melchua.com/2014/03/31/stephens-question-how-do-you-tutor-fellow-researchers-in-programming/
+  _wpt_failed: 'a:5:{s:6:"author";b:0;s:8:"sentence";s:98:"Blog: Stephen''s question:
+    how do you tutor fellow researchers in programming? http://bit.ly/QAMDGt";s:5:"error";s:303:"403
+    Forbidden: The request is understood, but it has been refused. This code is used
+    when requests are understood, but are denied by Twitter. Reasons can include:
+    Too many Tweets created in a short time or the same Tweet was submitted twice
+    in a row, among others. This is not an error by WP to Twitter.";s:4:"code";i:403;s:9:"timestamp";i:1396320144;}'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><em><a href="http://www.stephenlongfield.com/">Stephen</a> recently asked for advice on how I'd teach programming using <a href="https://www.python.org/">Python</a> to fellow academics. Specifically, an English major and a Materials Science (Matsci) researcher -- smart people deeply into their own disciplines... who happen to not have had programming experience. Here's what I said; if you have more comments/advice for Stephen, leave them in the comments.</em></p>
+<p>Showing them the fundamentals in a common way, then diverging into their disciplinary interests, sounds about right. If they're both completely new to programming, you'll have a little while before they really branch off.</p>
+<p>If you want a common starter text, <a href="http://www.greenteapress.com/thinkpython/">Think Python</a> may be good for this specific case. Just skip the sections related to graphics (Turtle at the start, Tkinter at the end). I also enjoy (and under different circumstances, would recommend) <a href="http://learnpythonthehardway.org/book/">Learn Python The Hard Way</a> and <a href="http://www.diveintopython.net/">Dive Into Python</a>, but the former is more geared towards web development and the latter is for people who have programmed in another language before.</p>
+<p>For your English major friend, one of the exercises gets you into <a href="http://www.greenteapress.com/thinkpython/html/thinkpython014.html#toc149">Markov analysis/generation of texts.</a> This should be a fun place to play with poetry. The <a href="https://twitter.com/markov_bible">Markov Bible</a> is a hilarious example of the sorts of things that can be done, and people have <a href="http://gnosis.cx/TPiP/">written entire books on text processing with Python</a>.</p>
+<p>For your Matsci friend, who you said was interested in data analysis, Allen's next book starts <a href="http://greenteapress.com/complexity/html/thinkcomplexity006.html#toc35">playing with things like census data</a> -- that exercise should start being doable around the same time as the Markov analysis, because they're both fundamentally about "read from a file, do math, spit out to a file." They'll probably want to <a href="http://www.scipy.org/getting-started.html">jump off into SciPy</a> at some point to make plots and crunch more complex data.</p>
+<p>For a fun change of pace and/or an intro session and/or while people are installing software on their machines, you can try <a href="http://codingbat.com/python">CodingBat</a> exercises. The <a href="http://www.bostonpythonworkshop.com">Boston Python Workshop's</a> exercises for <a href="http://codingbat.com/home/bostonpythonworkshop@gmail.com/Friday">Friday</a> and <a href="http://codingbat.com/home/bostonpythonworkshop@gmail.com/Saturday">Saturday</a> are a tiny manageable collection. This also gets them into the habit of <a href="http://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a> (which is also a good <a href="http://blog.melchua.com/2014/02/10/test-driven-learning-setting-learning-goals-for-yourself-software-engineering-edition/">approach to curriculum design</a>, although I need a new name for it because <a href="http://users.csc.calpoly.edu/~djanzen/tdl/">Test Driven Learning is already taken</a>).  CodingBat problems are very basic, so this only applies for the first few sessions before it'll get too easy for them.</p>
+<p>I would structure your learning sessions primarily as pair programming time. They'll learn from each other's approaches, debug/unstick each other naturally, and learn how to cleanly structure and communicate about code. If you have them pair-program their way through the book, you can spend a chunk of your time writing your own dissertation while being on-call, as in <a href="http://www.pgbovine.net/passive-pair-programming.htm">passive pair programming</a>.</p>
+<p>Whatever you do, teach them fundamentals of software engineering as you go along -- commenting, testing, and version control specifically. <a href="http://software-carpentry.org/v4/index.html">Software Carpentry</a> has good resources for this sort of thing. With the same rationale, take the first session and have them make and use github accounts while working through their starter exercises for the sake of everybody's sanity. This gets them in the habit of working in public, which is important if you ever want to...</p>
+<p>...introduce them to a broader community of programmers, which you should do as quickly as possible. Whether that's "hey folks, join this Python mailing list" or "let's go to a local Python meetup and get you asking questions -- I'll go to your first one with you and model this introducing-self and question-asking thing in programming-land" or whatever you have around in your neck of the woods, it's basically the act of teaching them to learn from people other than you. And then... they're off, and they don't need you any more to keep learning and doing what they want to do. It's a great job, making ourselves obsolete.</p>
+<p>Hope this helps, and good luck.</p>

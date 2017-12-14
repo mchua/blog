@@ -1,0 +1,47 @@
+---
+layout: post
+title: 'Student project opportunity: MeeGo-based Fedora Spin (Marketing and Design
+  help needed)'
+date: 2010-09-11 10:19:02.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- teaching open source
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><img style="max-width: 800px;" src="{{ site.baseurl }}/assets/meego.png" alt="" /><br />
+<em>Image CC-BY based on graphic by Melanie Kim for the <a href="http://spins.fedoraproject.org/moblin/">Fedora 13 Moblin Spin</a><a href="http://spins.fedoraproject.org/moblin/"> homepage</a>.</em></p>
+<p>Crossposting to the <a href="http://teachingopensource.org/index.php/Planet">Teaching Open Source planet</a> in order to see if any marketing/branding students might be interested in this as a fascinating capstone/case-study. From an <a href="http://lists.fedoraproject.org/pipermail/marketing/2010-September/013395.html">email</a> by Paul Frields to the Fedora Marketing list (italics) with my annotations for students inline.<br />
+<em><br />
+<a href="https://fedoraproject.org/wiki/User:Pbrobinson">Peter Robinson</a>, a <a href="https://fedoraproject.org">Fedora</a> contributor in the <a href="http://fedoraproject.org/wiki/SIGs/FedoraMini">Mini SIG</a>, has worked previously on the <a href="http://spins.fedoraproject.org/moblin">Moblin</a> based Fedora <a href="http://spins.fedoraproject.org">spin</a>, and has been working on a spin that includes <a href="http://meego.com">MeeGo</a> software.  He has been talking to some of the folks involved in MeeGo about their compliance testing, which is a requirement for us to use the MeeGo marks.[1][2]</em></p>
+<p><em>[1] <a href="http://meego.com/about/trademark">http://meego.com/about/trademark</a><br />
+and <a href="http://www.linuxfoundation.org/about/linux-foundation-trademark-usage-guidelines">http://www.linuxfoundation.org/about/linux-foundation-trademark-usage-guidelines</a></em></p>
+<p><em>[2] Using the mark is also subject to other restrictions such as when juxtaposing it with another product name like Fedora.  Fedora already has agreement with the Linux Foundation on a suitable name and permission to use it, but that's contingent on passing the compliance testing.</em></p>
+<p>This paragraph contains a lot of assumptions about your background knowledge, so I'll try to break out why this is so exciting. MeeGo is an open source software development stack for portable devices - basically, it lets people make and remix cool stuff for netbooks, phones, and things of that sort - not just the individual applications like on an Android or iPhone, but all the software on the entire device.</p>
+<p>Fedora is an open source operating system that has something called "spins," which let people create remixed version of the OS for specific use-cases - to make a clumsy analogy for those of you from the proprietary software world, imagine if you could, say, download "Windows: the engineering student version!" pre-loaded with Matlab, Eagle, and all the applications that an engineering student might want, or "Windows: for graphic designers!" with Photoshop and Illustrator... except that with Fedora Spins, everything - the operating system and the applications - are open source, meaning they're both openly modifiable and shareable (libre) as well as not costing any money (gratis).</p>
+<p>What Peter and the Mini SIG (Special Interest Group) have been working on - for fun, because they think it'd be a nifty thing to have - is a spin with MeeGo on it, so people can use a Fedora-based stack (and all the other tools and applications that are part of the Fedora ecosystem, plus the support and infrastructure of the global Fedora community) to develop and play with things on their mobile devices. They're free to do anything they want with the code, because the code is open source; however, in order to use the trademarks - to use the name "Fedora Spin" or "MeeGo" to market what they're making (as opposed to having to call it "Peter's Software Thing For Small Devices" and avoid the words "Fedora" and "MeeGo" entirely) they need permission from the trademark holders. So they've been talking with those people to try and get permission, because "Fedora MeeGo Spin" (or similar) sounds better - and means more to people who've heard of MeeGo and Fedora before - than "Peter's Software Thing."<br />
+<em><br />
+Unfortunately what we've heard about the compliance requirements (which have yet to be published AFAIK) is that we'd be required to ship and use ConnMan, a nonstandard userspace network control stack that is not compatible with NetworkManager.  This is not in Fedora for several reasons, one of the most obvious among them being it would be very confusing to maintain two entirely separate and incompatible network control stacks of this type.</em></p>
+<p>The Fedora Board granted the team permission to use the "Fedora Spin" name because the spin fit all the requirements from the Fedora side to use that mark (all packages come from the Fedora repositories, etc). However, the spin did not fit MeeGo's requirements for use of the MeeGo mark. MeeGo requires a specific pieces of software (ConnMan, or "Connection Manager") to be part of the software stack you're shipping - if you don't have that piece of software, you can't call your thing "MeeGo." (Kind of like how you can't call something a grilled cheese sandwich if it doesn't have cheese in it.)</p>
+<p>The problem here is that ConnMan is <em>not</em> in the Fedora repositories (the selection of software we can say is "part of Fedora" because it fits Fedora's requirements for open licensing and has been packaged to be easily installed and deployed on Fedora-based systems), so Peter can't include ConnMan (to fulfill MeeGo's trademark usage requirements) without going against the trademark usage requirements for Fedora.</p>
+<p><em>This doesn't mean we won't have this particular spin, but it will affect our use of the MeeGo name and trademark.  The spin will probably need to be renamed in some way.  We can say the spin contains some MeeGo software, which is fair use because it is a true statement. The MeeGo name would need to be marked with proper trademark attribution.</em></p>
+<p>It's one or the other - so Peter chose, in this case, to meet the Fedora requirements. He is now making a Fedora Spin that uses the Fedora code <em>and</em> trademark, deploying the MeeGo <em>code</em> but not their trademark, and finding a way to market the resulting product without using the MeeGo <em>name</em>.<br />
+<em><br />
+Peter is considering options for renaming the spin accordingly, and swapping out any required artwork, which he believes is not a substantial amount of work.  If anyone is interested in helping Peter, please get in touch with him via the Spins SIG.</em></p>
+<p><em></em>Peter is an amazing engineer - and this project also needs marketing and design help, which is outside Peter's area of expertise. He's looking for people to help him figure out naming, branding, and marketing/publicity for this spin (while adhering to trademark usage guidelines for the various pieces of software that make up the spin) and also people to look at the design work for the entire project (UI, icons, and artwork for marketing collateral) so that the software is beautiful and usable (it's already more or less technically functional) and gets conveyed as such in the materials we put out to spread the word about it.<br />
+<em><br />
+I've told you everything I know about the issue here -- I'm letting Marketing know about the issue so that the team can keep in touch with Peter to make sure F14 talking points and any other F14 material like the one-page, "shiny" release notes are kept in sync.  I told Peter I would send on this message on his behalf, because he's quite busy at work but he wanted other involved teams to know what was going on.</em></p>
+<p><em></em>Since efforts in Fedora are grassroots-driven and decentralized (there's no Big Boss that declares "this product shall happen!" or "it will be marketed this way!" or "this person is in charge of doing that until I say otherwise!"), Paul is relaying a message on behalf of (the very busy) Peter in an attempt to find interested people that might want to step up and help him.</p>
+<p>Are you interested? Maybe you're a marketing student looking for a project so you can try out some of the things you've been learning about brand positioning, or someone with an interest in learning about trademark issues, or you have an interest in design and usability and have started to play around with graphics in your spare time. If you're keen, <a href="https://fedoraproject.org/wiki/User:Pbrobinson">email Peter</a> or drop me a line (leaving a comment to this blog post will work great!) and we'll get you started.</p>

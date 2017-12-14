@@ -1,0 +1,38 @@
+---
+layout: post
+title: 'FUDCon Tempe Hackfest: Test cases'
+date: 2011-01-31 03:14:43.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><em>This post is one of multiple <a href="../2011/01/30/im-liveblogging-fudcon-tempe-hackfests/">FUDCon   Tempe hackfest liveblogs</a>. (Not sure what FUDCon is? <a href="../2011/01/30/a-whirlwind-of-fudcon-sessions/">Read  this  post first</a>.)</em></p>
+<p>My last hackfest liveblog for the evening was with <a href="http://fedoraproject.org/wiki/User:Adamwill">Adam Williamson</a>, who's <a href="http://lists.fedoraproject.org/pipermail/test/2010-December/096095.html">following up on some drat ideas</a> from the <a href="https://admin.fedoraproject.org/mailman/listinfo/test">test mailing list</a> and making them into reality this weekend.</p>
+<p><em><a href="http://blog.melchua.com/wp-content/uploads/2011/01/test-cases.png"><img class="alignnone size-full wp-image-2767" title="test-cases" src="{{ site.baseurl }}/assets/test-cases.png" alt="" width="399" height="295" /></a></em></p>
+<p><strong>Adam:</strong> I'm running a hackfest on package-specific test cases, which is a test case that tests your package.</p>
+<p><em>Why should I do this? Why would I care?</em></p>
+<p>So that when you push an update and people test your update, they will be testing the right things. They won't just be saying "oh, I installed it and nothing broke, so I guess it's good." Instead, they'll be able to say "I installed it, I ran your test case, so I know the package does what it's supposed to do, and it's good."</p>
+<p><em>All right. What do I do?</em></p>
+<p>We have an <a href="http://fedoraproject.org/wiki/QA:SOP_package_test_plan_creation">SOP on how to [write package-specific test cases]</a> on the wiki.</p>
+<p><em>Whoa, long page. It looks like it would take a long time to work through.</em></p>
+<p>10 minutes of your time. Please come do it.</p>
+<p>I will be floating around [during FUDCon]. If you maintain a package, or if you just know how to test a package, come to me and spend 10 minutes, and we'll make a test case for the package, and that will live on forever and be useful for years to come.</p>
+<p><em>Why did you start doing package-specific test cases? Was this in response to something that happened?</em></p>
+<p>I believe it was the... packagekit update... we pushed out the update and people said "well, you know, I installed it and it worked okay." And then we <a href="http://fedoraproject.org/wiki/Updates_Lessons#2010-07-07_-_PackageKit_not_showing_updates_anymore">found out that update notification was broken.</a></p>
+<p><em>Right, that was a big deal - it meant a lot of users were stuck in limbo-land with no updates and didn't know it, and we had to run around and say to everyone <a href="http://lists.fedoraproject.org/pipermail/announce/2010-July/002843.html">"updates are broken! updates are broken!" </a>which wasn't fun for anyone.</em></p>
+<p>And we didn't have a test case that said "you have to test update notification," so we never knew it was broken. But if we had a test case that said "you have to test update notification," that will never happen again.</p>
+<p><em>Okay, so if I'm at FUDCon, I can come find you and do this with you in person in 10 minutes. What if I'm not in Tempe, or I'm too busy here and can't find you until afterwards?</em></p>
+<p>You can <a href="http://fedoraproject.org/wiki/User:Adamwill">email me</a>, you can <a href="https://admin.fedoraproject.org/mailman/listinfo/test">contact the test mailing list</a>. Come on <a href="http://fedoraproject.org/wiki/Communicate/IRCHowTo">IRC</a>, I'm always on IRC, I'm <strong>adamw</strong> and I'm always happy to help people write test cases. This is a baby little project and we need to grow it!</p>

@@ -1,0 +1,31 @@
+---
+layout: post
+title: 'Linux Security Myths: OLF talk by Mackenzie Morgan (maco)'
+date: 2010-09-11 13:59:48.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<blockquote>[Linux] people will say "there are no viruses!" - and normal users will hear "<i>nothing </i>bad can happen!"<br />...and they're wrong.<br />--Mackenzie "Maco" Morgan, OLF 2010</p></blockquote>
+<p>I'm liveblogging from Maco's talk at the 2010 <a href="http://www.ohiolinux.org/">Ohio Linux Fest</a> (OLF) titled "Linux Security Myths," where she's going through the security exploits that "normal" Linux users can get hit by. Just because the Linux virus record is practically spotless compared to that of Windows doesn't mean us FOSS users can get off scot-free - we've still got to exercise common sense. As Maco said during her slide on phishing, "there's no patch for gullibility."</p>
+<p>The talk started with an overview of a few common types of attacks, explaining terminology for newcomers in the audience: <a href="http://en.wikipedia.org/wiki/Virus_%28computer%29">viruses</a>, <a href="http://en.wikipedia.org/wiki/Social_engineering">social engineering</a>, <a href="http://en.wikipedia.org/wiki/Trojan_horse_%28computing%29">trojans</a>, <a href="http://en.wikipedia.org/wiki/Computer_worm">worms</a>, <a href="http://en.wikipedia.org/wiki/Botnet">botnets</a>, <a href="http://en.wikipedia.org/wiki/Rootkit">rootkits</a>. Maco's slides (which will be available on her <a href="http://ubuntulinuxtipstricks.blogspot.com/">blog</a> soon) and Wikipedia explain these better than I can, so I'll let them do that. She also talked about browser-based attacks, which are big and will be even bigger as we become more reliant on webservices - sure, Internet Explorer (and its legions of vulnerabilities) isn't a problem on Linux, but Firefox and Opera and Chrom{e,ium} are cross-platform, so the same dangers apply here.</p>
+<div class="ace-line" id="magicdomid444">The second half of the talk was recommendations for protecting your system (as a basic desktop enduser). Again, Maco's slides explain these in more detail - they're the sorts of things that seasoned Linux users and sysadmins know automatically, and therefore sometimes forget to tell our friends when we first introduce them to "that Linux thing." I'll expand on a couple below.
+<ul>
+<li>When installing software, use the repositories provided by your distribution! Don't just click around the internet and randomly download and install things; software that makes it into a distribution's repo has been vetted and tested by that distribution and can be trusted (inasmuch as you trust code and content coming from that distribution - but in my opinion, I'd rather trust Fedora's multiple levels of sanity-checks than some random third-party developer I don't know).</li>
+<li>Many package managers (the software your distribution provides to help you find and install new applications - for instance, PackageKit) will tell you if the signatures of the software you're about to install seem "off" in some way. These (digital) signatures are ways for a program to say "I am the code you think you're downloading, and I was by the people you think actually made me," so if you get an alert that something's funny about a signature, that's a warning to pay attention to.</li>
+</ul>
+<p>Actually, the sorts of points made in this talk are the ones I'd love to see turned into a one-page "Your Linux System: what you need to learn about security" guide (more cleverly named, of course) for newcomers to the Linux community - for instance, as a handout at installfests to take home with your shiny new system. </p>
+<p>What <i>don't</i> new users know about security that you wish they did? What did <i>you</i> not know about security as a new Linux user that you later discovered and wished someone had told you from the start?</div>

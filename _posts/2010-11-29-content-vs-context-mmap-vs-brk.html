@@ -1,0 +1,32 @@
+---
+layout: post
+title: Content vs context, mmap vs brk
+date: 2010-11-29 23:32:58.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- olin
+- teaching open source
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>I haven't posted for a while about something tech-related that's caught my eye, but Siddhesh managed to get me <a href="http://siddhesh.livejournal.com/25361.html">curious about memory allocation</a>. It's nothing I'm going to chase down (right now) to study further, but it was a cool "oh! okay, thinking about this for a second" moment - comes, is interesting, goes. I'm writing about it here becauuse Siddhesh also explains what <i>doesn't</i> work to get people interested in memory allocation in operating systems class (which I haven't taken myself yet).</p>
+<blockquote><p>The concepts really go directly from the textbooks into examination papers for most, including me. We would grab on to key phrases like "semaphores", "paging", "segmentation", "stack" and so on, and never really stop to wonder how this all is really implemented.</p></blockquote>
+<p>So here's the thing: when I study engineering, I want to learn how to <i>be</i> an engineer, not <i>about</i> engineering. I want to learn how engineers think, and how Mel-as-an-engineer thinks. I don't want to be a textbook - I want to be a person, living out a story in which I am a maker and a doer and builder and hacker of things. And so I look for stories from and by other hackers in order to overhear how they think. I'd prefer a textbook like <a href="http://www.amazon.com/Only-Changed-Software-Phone-Fire/dp/0750682183/ref=tag_stp_s2f_edpp_url">"If I only changed the software, why is the phone on fire?"</a> over dry listings of concepts, because oftentimes to get started with something technical and new I need (1) context and (2) inspiration <i>before</i> I get (3) content. </p>
+<p>I mean, Siddhesh could have written something like this:<br />
+<blockquote>Chapter 14: Memory Allocation - There are two main ways to allocate memory at the operating systems level, such as during a call of <b>malloc</b>. The table below illustrates the features and tradeoffs between <b>mmap</b> and <b>brk</b> (Fig. 2.6).</p></blockquote>
+<p>Which I would promptly have yawned at and closed the browser tab on.</p>
+<p>And maybe that's what I was missing when I started studying electrical engineering in undergrad, and what my classmates then were missing from the math courses. I was already psyched about math, eager to learn calculus of variations freshman year, knew exactly why I wanted to learn differential equations (to understand the snow swirling outside the buildings when the wind came in the winter, in part) and so I wanted <i>stuff</i>, hungered for content. But when it came to amperes and coulombs, watts and volts and impedance, I didn't know where they fit in - whereas my buddies who'd been tinkering with robots and circuits and soldering irons since middle school and wondered, finally, how they <i>worked</i> - for that domain, they wanted content, I wanted context.</p>
+<p>But classes have to cater to both people. And students don't always know which one they need at any given point in time (and it may switch back and forth pretty rapidly). I wonder if it would help to talk with students about this at the start of term, get them to reflect on which one they need at that particular moment, and signal as it changes through the semester so you can adjust the way you teach.</p>
+<p>Or from the other perspective as a student, if you're aware of what you need and can ask the professor for those resources independent of what the rest of the class is doing - "Hey, we're getting a lot of context right now, which is awesome, but I'd really like to learn a lot more about &lt;foo&gt; - could you point me towards good resources on that?" or "We're going pretty fast through this stuff, but I'm having a hard time seeing where it fits in... do you know anyone who does this on a project, or good case studies or magazine articles I could read, or something I could take apart that uses it?"</p>
+<p>I wonder if those sorts of things, that kind of self-awareness, would make a difference - and if that's one way to think about what it means to apply "the open source way" to education.</p>

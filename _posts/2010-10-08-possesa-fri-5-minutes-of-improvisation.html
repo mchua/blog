@@ -1,0 +1,76 @@
+---
+layout: post
+title: "#possesa Fri: 5 minutes of improvisation"
+date: 2010-10-08 10:40:33.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- olin
+- teaching open source
+tags: []
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+  _jd_tweet_this: 'yes'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Working backwards through <a href="http://teachingopensource.org/index.php/POSSE_South_Africa">POSSE South Africa</a> - these posts are going to hit all out of order.</p>
+<p>Today was our final day: as part of this, Tayo asked me during a coffee break how I (as an experienced contributor) would get started with an unfamiliar project. We called the now-caffeinated professors together, threw my laptop on the projector, had Grant set a countdown timer for 5 minutes, and called out for a random project. "<a href="http://sakaiproject.org/">Sakai</a>!" called Boniface. "That's... an open source project somehow related to education, and... that's... all I know about it!" I responded, and we all agreed these waters were sufficiently unfamiliar to me to be a fair test.</p>
+<p>Grant hit the timer, and off I went. Note that this is a recreation of my steps, retraced a few hours later, with a summary of the "thinking out loud" annotation I gave verbally in the classroom as I went through it, with the addition of two things: (1) the source code, which I didn't find the first time, and (2) the licensing, which Jan suggested afterwards as something I had forgotten to check (and yes, he's right, it is important).</p>
+<p>Start the clock!</p>
+<p><b>Minute 1: what's the project? where are the people?</b></p>
+<p><img style="max-width: 800px;" alt="" src="{{ site.baseurl }}/assets/sakai-google.png" /></p>
+<ol>
+<li><a href="http://www.google.co.za/search?q=sakai&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;rls=org.mozilla:en-US:official&amp;client=firefox-a">google: sakai</a> - okay, that first result sounds like what I'm looking for, it mentions "education" and "distributed as free and open source software." That's probably the homepage, which is what I'm looking for eventually. Open that in a new tab, look at it later, because first I'm going to...</li>
+<li><a href="http://www.google.co.za/search?q=sakai+irc&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;rls=org.mozilla:en-US:official&amp;client=firefox-a">google: sakai irc</a> - aha, "freenode.net /join #sakai" - I throw open my <a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat">IRC</a> client (<a href="http://blog.melchua.com/2010/07/07/irssi-screen-quickstart/">irssi, running in screen</a>) and join the chat channel to start lurking and letting the conversation (if there's any conversation) go by, noting at a glance that there are very few people (around 12) in the channel and that I'm not likely to overhear much. All right, minimizing that window, looking at it later, and moving on to...</li>
+<li><a href="http://www.google.co.za/search?q=sakai+mailing+list&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;rls=org.mozilla:en-US:official&amp;client=firefox-a">google: sakai mailing list</a> - I find the project's <a href="http://collab.sakaiproject.org/">mailing lists</a> (first hit), note there's a list called <i>sakai-dev</i> that's "RECOMMENDED for designers, programmers, developers, and quality assurance," go "ah! I'm a developer!" and click through to the <a href="http://collab.sakaiproject.org/mailman/listinfo/sakai-dev">list page</a> and the <a href="http://collab.sakaiproject.org/pipermail/sakai-dev/">archives</a>, looking at <a href="http://collab.sakaiproject.org/pipermail/sakai-dev/2010-October/thread.html">this month's postings</a>. BINGO. I've found the people. The conversation is thriving <i>now</i>, it's active <i>now</i>, it looks like there's a lot of high-quality discussion <i>now</i>, I can pick out a few topics of interest ("ooo, maven!" "there's a QA meeting tomorrow?"). Note that I don't actually <i>read</i> list messages now, though I could - what I've been looking for is <i>what means of communication this project uses</i> so I know <i>where to ask for help</i> later on.This project is alive. That's good. I've found the places people hang out, I know how to get in touch the moment I have a question I can't answer. Let's move on and find about the project itself.</li>
+</ol>
+<p><b><br />
+Minute 2: what can I learn from the homepage?</b></p>
+<p><img style="max-width: 800px;" alt="" src="{{ site.baseurl }}/assets/sakai-homepage.png" /></p>
+<ol>
+<li>I head back to <a href="http://sakaiproject.org/">sakaiproject.org</a>, still trying to figure out what the heck Sakai <i>is</i>. Ah, it's "an enterprise teaching,<br />
+learning and academic collaboration platform," according to the front page. Still a little hazy, but the fancy graphic design and professional-sounding wording on the front page indicates to me that this project has polish, probably momentum - there's mention of a conference, a merger, awards, etc. on the front page, which indicates to me that this project is probably professional-grade - used in live deployments by customers, probably with companies that make a living in the Sakai ecosystem by supporting it. (This is good news if I think I'd like to work on open source for a living down the line; being a good contributor to this project could make me quite employable.)</li>
+<li>I'm still not sure what Sakai is, though. I head to <a href="http://sakaiproject.org/product-overview">Project &gt; Project Overview</a>, and am told that you can manage courses with it, that many institutions do deploy it, and hey, look at the <a href="http://sakaiproject.org/features">features</a>. Okay, it's online collaboration for schools. Got it. Or at least I understand it at a basic enough level to move forward. Now where do I look for the contributor community?</li>
+<li>I look at the support drop-down menu and notice that community and commercial support is available - cool, but I'm still looking for the contributor community. Aha! <a href="http://sakaiproject.org/community-overview">Community &gt; community overview</a> gives me... no, it gives me maps and a shiny description of how awesome the community is. Not what I'm looking for yet, though someone who's never contributed to FOSS might find this page reassuring.</li>
+<li><a href="http://sakaiproject.org/contributing-sakai">Community &gt; contributing to Sakai</a> - there, now we're talking. Hey look, I found a <a href="http://confluence.sakaiproject.org/display/CONF/Welcome+to+the+Sakai+wiki">wiki</a>, which is usually a contributor community homepage hub. Awesome. I want to make technical contributions, so I click on <a href="http://sakaiproject.org/contributing-sakai">Building Sakai.</a> BINGO! I've found project teams, developer docs, work in progress... and yep, it advises me to look at the email list as "the place to be," but I've already figured that one out.All right. It's pretty mature, it has a focus, it has a development community with useful getting-started resources. I can do this. Next: where's the code?</li>
+</ol>
+<p><b><br />
+Minute 3: where's the code? what's it written in? what does development activity look like?</b></p>
+<p><img style="max-width: 800px;" alt="" src="{{ site.baseurl }}/assets/sakai-ohloh.png" /></p>
+<ol>
+<li>I'm looking for the source code repository of Sakai. Can't immediately find it from the "building Sakai" page, so I <a href="http://www.google.co.za/search?q=sakai+version+control&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;rls=org.mozilla:en-US:official&amp;client=firefox-a">google: sakai version control</a>. Aha, the 4th hit has it: <a href="http://sakaiproject.org/get-source-code">get the source code</a>. Looks like they use <a href="http://en.wikipedia.org/wiki/Apache_Subversion">SVN</a> for version control - I don't really care, so long as they use <i>some</i> form of version control, though I'm going to have to look up the specific syntax for SVN later - and I could start a checkout now if I wanted to, let it run in the background while I do other things.</li>
+<li>I want to dive into the code, see what it looks like. Let me look at the <a href="https://source.sakaiproject.org/svn/sakai/trunk/">trunk</a>, which is the main branch; other branches might be experimental, or in other ways "not the central location for what developers would consider the most recent version of the code in progress." Whoa. It looks huge. This is a massive codebase. What's it written in? Where can I get more stats quickly, because I don't have the time (or honestly, the skill) to understand things quickly just by looking at a zillion files?</li>
+<li>I head to <a href="http://www.ohloh.net/">ohloh</a> and search for 'sakai,' which quickly points me to <a href="http://www.ohloh.net/p/sakai">sakai's project page on ohloh. </a></li>
+<li>I click on <a href="http://www.ohloh.net/p/sakai/analyses/latest">code analysis</a> and suddenly have a lot of useful info. It's mostly written in Java, which... okay, I've never written production Java code before, only tinkered a little with in high school, this might have a learning curve for me. I don't <i>really</i> know Javascript. I do know HTML, I could potentially help with that. Generally, these technologies seem useful, things I know, can learn, and want to learn, so all right.</li>
+<li>Scroll down, look at the <i>lines of code</i> analysis - seems to be thriving, changing over time, good stuff, all right.This codebase seems like it's got reasonably healthy <i>activity</i>. The actual <i>structure</i> of the code, I'll have to wait until I can read more developer docs and more actual code, but with this much activity around it, the project's probably either in decent shape or rapidly moving towards it. It's not a guarantee, but it's a probability - projects without clean code architecture tend to not be able to build that active of a dev base (not to mention commercial support services!) so I'm feeling pretty good about this.</li>
+</ol>
+<p><b><br />
+Minute 4: how is this licensed?</b></p>
+<p><img style="max-width: 800px;" alt="" src="{{ site.baseurl }}/assets/sakai-license.png" /></p>
+<ol>
+<li>It does no good to get invested in a code project unless I can legally use it - and my code - for things I want to do later on, so back we go to <a href="http://www.ohloh.net/p/sakai/analyses/latest">the project's ohloh code analysis page</a> to look at the license, and... what the heck is the "educational community license" most of its files are licensed under? I'm not a lawyer, so I want to do more than read the <a href="http://www.opensource.org/licenses/ecl1.php">legal text</a>.</li>
+<li>First question. Is it an open source license? <a href="http://www.opensource.org/licenses/ecl1.php">The OSI says yes.</a> That's good.</li>
+<li>Is it a Free Software license? The <a href="http://www.gnu.org/licenses/license-list.html#SoftwareLicenses">FSF says no</a>. <strong>[Update, 15 August 2013: The new version of Sakai is licensed under a new version of the Educational Community License, which the FSF <em>does </em>approve as Free Software. Thanks to Richard Fontana for the news!]</strong></li>
+<li>I hit up <a href="http://en.wikipedia.org/wiki/Comparison_of_free_software_licenses">Wikipedia's comparison of free software licenses</a> and decide that - for me, right now - the Educational Community License is good enough. It's OSI-approved so it's got the basic open source "license features" I personally care about, it's also okayed by <a href="http://fedoraproject.org">Fedora</a> which is my favorite distribution, so I'd be able to package (or if it's already packaged, easily deploy) Sakai there. Cool.Note that this <i>may not be okay for someone else</i> - if you care about the code you work on having an FSF-approved license, you might decide to find another project. That's totally all right - it's about personal preference, it's about making sure you can do what <i>you</i> want to do with your code, that other people have the freedoms that you want them to have regarding your code.</li>
+</ol>
+<p><b><br />
+Minute 5: how do I set an instance up so I can start playing around with what this software does?</b></p>
+<p><img style="max-width: 800px;" alt="" src="{{ site.baseurl }}/assets/sakai-screenshot.png" /></p>
+<p><i>Blackboard integration screenshot from a <a href="http://confluence.sakaiproject.org/display/BBLEC/Screenshots">collection</a> by Jim Pease, uploaded to the Sakai wiki</i><b><br />
+</b></p>
+<ol>
+<li>Back to the <a href="http://confluence.sakaiproject.org/display/CONF/Welcome+to+the+Sakai+wiki">wiki</a> - this time, I want to look at <a href="http://confluence.sakaiproject.org/display/PROD/Deploying+Sakai">deploying Sakai</a>, because I want a local instance up and running. Look at these instructions, see if they're sane... great, there's stuff here like release documentation, sysadmin guides - it looks like there are clear directions I can follow, step-by-step, to get my own test instance going. I'm not actually doing the installation now, I'm just making sure I can find the resources to do it later.</li>
+</ol>
+<p>At this point I look back at the IRC channel to see if there's been activity in the last few minutes (nope) and survey my open browser tabs; I have lots of information about the project at my fingertips, I know how to begin navigating it, and at this point I'd probably head for the bugtracker and try to find a first ticket to dive in on, knowing where the developer docs are (they're on the wiki) and where to ask for help if I get stuck (the mailing list).</p>
+<p><b>Aaaaaand... time.</b></p>
+<p>What did I miss? (If you're from Sakai - how off are my impressions, and what resources do you <i>wish</i> I'd found?) What would your own 5-minute dive look like - on this project or on any other? Comments welcome - the objective of this exercise was to show a "think out loud" from an experienced FOSS contributor, with the caveat that <i>every contributor thinks differently</i>, and that every contributor comes up with their own way of doing things as they go along.</p>

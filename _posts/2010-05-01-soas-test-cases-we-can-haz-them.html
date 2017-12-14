@@ -1,0 +1,83 @@
+---
+layout: post
+title: 'SoaS test cases: we can haz them.'
+date: 2010-05-01 19:04:34.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- soas
+- sugar
+- testing
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><a href="http://fedoraproject.org/wiki/Releases/13/Schedule">It's less than 3 weeks to the F13 release</a>, and therefore high time we started doing some consistent QA for <a href="http://wiki.sugarlabs.org/go/Sugar_on_a_Stick">Sugar on a Stick</a> - which, for the uninitiated, is a <a href="http://spins.fedoraproject.org">Fedora Spin</a> based on the <a href="http://sugarlabs.org">Sugar Learning Platform</a>. Here's the status as of the April 29, 2010 compose (which is identical to the current May 1st <a href="http://alt.fedoraproject.org/pub/alt/nightly-composes/soas/">nightly build</a>) for the main build and each of the <a href="http://activities.sugarlabs.org">Activities</a> that ships by default.</p>
+<table width="100%" align="center" border="1" cellspacing="0">
+<tbody>
+<tr>
+<th> Nightly build</th>
+<th> Tested by</th>
+<th> Boots?</th>
+<th> Neighborhood?</th>
+<th> Browse</th>
+<th> Etoys</th>
+<th> Chat</th>
+</tr>
+<tr>
+<td>  20100429.16.iso</td>
+<td>  <a href="https://fedoraproject.org/wiki/User:Mchua" title="User:Mchua">Mchua</a></td>
+<td style="background: lime none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"> yes</td>
+<td style="background: orange none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"> with <a href="https://admin.fedoraproject.org/updates/telepathy-gabble-0.9.11-1.fc13" class="external text" title="https://admin.fedoraproject.org/updates/telepathy-gabble-0.9.11-1.fc13" rel="nofollow">telepathy-gabble update</a></td>
+<td style="background: lime none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"> yes</td>
+<td style="background: lime none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"> yes</td>
+<td style="background: lime none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"> yes</td>
+</tr>
+</tbody>
+</table>
+<table width="100%" align="center" border="1" cellspacing="0">
+<tbody>
+<tr>
+<th> Terminal</th>
+<th> Turtle Art</th>
+<th> IRC</th>
+<th> Log</th>
+<th> Write</th>
+<th> Record</p>
+</th>
+<th> Physics</th>
+<th> Read</th>
+</tr>
+<tr>
+<td style="background: lime none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"> yes</td>
+<td style="background: lime none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"> yes</td>
+<td style="background: lime none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"> yes</td>
+<td style="background: lime none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"> yes</td>
+<td style="background: lime none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"> yes</td>
+<td style="background: lime none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"> yes</td>
+<td style="background: lime none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"> yes</td>
+<td style="background: orange none repeat scroll 0% 0%; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"> yes, but no book files to open</td>
+</tr>
+</tbody>
+</table>
+<p>What do these results mean, and how can they be reproduced? <a href="http://wiki.sugarlabs.org/go/Sugar_on_a_Stick/Mirabelle">More details on the Mirabelle page</a>. Basically, this is the most minimal of smoke tests; I'm not going to pretend that this is <i>good</i> work, but it's something that needs to happen, and the sort of thing where something is better than nothing. The goal was to come up with a way to verify, in under 1 hour total (from "start downloading image" to "finish reporting test results"), that a SoaS image and the Activities therein are minimally functional - they boot, they run, they do <i>something</i>, they shut down cleanly, and they save their results to the Journal.</p>
+<p><a href="http://wiki.sugarlabs.org/go/Sugar_on_a_Stick/Mirabelle#Smoke_tests">The current smoke tests</a> take me less than 25 minutes to execute from start to finish, so if we assume that the image can be downloaded and burned (I used <a href="http://fedoraproject.org/wiki/FedoraLiveCD/USBHowTo">liveusb-creator</a> on my Fedora 12 system) in 30 minutes and results can be reported to the wiki table in roughly 5 - which matches with my timing (and I made that wiki page from scratch for the first round, too), we're set, and so I've <a href="http://bugs.sugarlabs.org/ticket/721#comment:4">closed a long-standing bug</a> asking for SoaS test cases. For now.</p>
+<p>The test page is linked to from the main <a href="http://wiki.sugarlabs.org/go/Sugar_on_a_Stick/Getting_Involved#v3_testing">getting-involved page</a>, which needs a <i>lot</i> of cleanup. We'll probably hook the (under construction - <a href="https://fedorahosted.org/design-team/ticket/132">anyone want to help make banners?</a>) <a href="http://spins.fedoraproject.org/soas/">SoaS Fedora Spin website</a> to <a href="http://openhatch.org/+projects/sugar">openhatch</a> when going through things with the mop n' bucket (although at this point I'm feeling more like breaking out a <a href="http://en.wikipedia.org/wiki/Weed_whacker">weed-whacker</a>).</p>
+<p><b>How can you help?</b></p>
+<p>In terms of running the tests for the upcoming v.3.0 (F13-based) Mirabelle release, we're actually set. If this takes me less than an hour a day, I can do that for 15 out of the 17 days remaining with no problem (exceptions made for May 8th and 9th, when I will be off camping for my birthday). We need to come up with a better way of doing this for v.4.0, so better test cases, test case/reporting management systems, and <a href="http://wiki.sugarlabs.org/go/SoaS_Activity_Criteria">Activity criteria</a> (read: tests, please) are extremely welcome - that's all long-term, though.</p>
+<p>In terms of getting Mirabelle ready to go out the door, right now we need:
+<ul>
+<li><a href="https://admin.fedoraproject.org/updates/telepathy-gabble-0.9.11-1.fc13">this telepathy-gabble update</a> to be pushed to the Fedora updates repo - it has +3 karma but is still in testing, and<b> <i>must</i> be pushed before Tuesday</b>; without it, collaboration in SoaS <i>does not work at all</i>. (By the way, I started a <a href="https://fedoraproject.org/wiki/How_to_test_updates#Steps_to_follow">howto for testing updates</a>, which needs some help - writing instructions on how to consistently get a VM running is surprisingly difficult.)</li>
+<li><a href="http://spins.fedoraproject.org/soas/#downloads">download/install instructions</a> for burning the image to a stick, for every major operating system, that can be followed by a classroom teacher without technical expertise. We know the <a href="http://wiki.sugarlabs.org/go/Sugar_on_a_Stick/Blueberry">Blueberry install instructions</a> do not fit this criteria, and would <i>lov</i>e<i> </i>for someone - probably a non-engineer - to help rewrite them.</li>
+<li>quotes, stories, screenshots, and photos (<a href="http://creativecommons.org/licenses/by/2.0/">CC-BY</a>, please) from Sugar/SoaS users on what they've done with the platform, cool things they've tried, how this fits into a classroom, and so forth, to be used on the <a href="http://spins.fedoraproject.org/soas/">spin webpage</a> and related links - bonus points if you can talk about <i>contributing</i> to SoaS as well as using it!</li>
+</ul>
+<p>More coming as we find out what we need. The spin page itself is under construction (along with a <a href="https://fedoraproject.org/wiki/Spin_webpage_creation_SOP">SOP on how to make spin pages</a> - the process right now is probably more complex/painful than it should be) and screenshots are on their way. Stay tuned!</p>

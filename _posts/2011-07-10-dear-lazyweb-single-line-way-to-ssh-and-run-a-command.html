@@ -1,0 +1,33 @@
+---
+layout: post
+title: 'Dear Lazyweb: single-line way to ssh and run a command?'
+date: 2011-07-10 21:55:13.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Dear lazyweb: I want a single-line command that will ssh me into a remote server <em>and </em>run a specified command. I know it's both simple and possible (I did it before and forgot), and I'm pretty close. Basically, I want a one-liner that replicates this:</p>
+<blockquote><p>[mel@mylaptop ~]$ ssh mel@remoteserver.org<br />
+[mel@remoteserver ~]$ mycommand --option</p></blockquote>
+<p>The closest I've gotten is:</p>
+<blockquote><p>ssh mel@remoteserver.org &gt;&gt; 'mycommand --option'</p></blockquote>
+<p>...which does in fact put 'mycommand --option' on the remote terminal, but won't show it (I'm left staring at my local terminal's screen, but when I ssh into the remote server afterwards, I see 'mycommand --option' in the command history.</p>
+<p>Intended usage is to make a <a href="http://zsh.sourceforge.net">zsh</a> <a href="http://zsh.sourceforge.net/Intro/intro_8.html">alias</a> that will ssh me over to the server I use for <a href="http://quadpoint.org/articles/irssi">irssi + screen</a>, then resume my irssi screen session (screen -raAD).</p>
+<blockquote><p>alias irc=&lt;magic-ssh-command-goes-here&gt;</p></blockquote>
+<p>Oh, and I finally upgraded to <a href="http://gnome3.org/">GNOME 3</a> this afternoon. So far, I like it; my dual monitor setup gives me a few UI quirks (as I figure out exactly what these are, I'll document and report them), and I have yet to be able to think "the GNOME 3 way," but it's just <em>very</em> nicely done; my kudos and congratulations go out, very belatedly, to the GNOME team for some excellent and thoughtful work.</p>
+<p><strong>UPDATE: Figured it out! It's the -t option for ssh.</strong></p>
+<p>The final alias:</p>
+<blockquote><p>alias irc="ssh mel@remoteserver.org -t screen -raAD"</p></blockquote>

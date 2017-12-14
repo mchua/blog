@@ -1,0 +1,41 @@
+---
+layout: post
+title: Tunescript
+date: 2009-03-11 18:55:06.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Every so often Ben Fisher will make magical things that make me smile*. <a href="http://students.olin.edu/2010/bfisher/codepages_st/bmidi/tunescript/index.html">Tunescript</a>, for instance. You type in text. It plays music.</p>
+<p><img style="max-width: 800px;" src="{{ site.baseurl }}/assets/thm_tunesc.png" /></p>
+<p>There are rough edges. The "play" button only works in Windows for a reason I don't fully understand, so we had to comment out the entirety of the bmidiplay.py file before it would run on my (Fedora) laptop, and then I had to play each of them from the command line on <a href="http://timidity.sourceforge.net/">timidity</a>.</p>
+<p>Here's why I like it.</p>
+<ul>
+<li>It's text-based. I don't have to accurately mouse-click on a tiny score.</li>
+<li>Its interpreter is intelligently designed. I'll let Ben <a href="http://halfhourhacks.blogspot.com/2009/02/midi-part-3-tunescript.html">explain this part</a>.</li>
+<li>My killer feature: it's spatial - by that I mean that you play a C by typing "c" - to make it last two beats, you type "c . ", three beats is "c . . " and so on. Since you can do multiple voices (by stacking them on subsequent lines), if you're writing in a monospace font, you can easily see timing and duration of notes. (This breaks when you write sharps and flats - the visual alignment was apparently an unintended feature.) Things like <a href="http://lilypond.org/web/">lilypond</a> don't do this - I'm starting to look at lilypond as "beautiful for layout, but not so awesome for composing," the same way I no longer write my drafts in LaTeX (I mess with content in plaintext, then use LaTeX for typesetting as needed).</li>
+</ul>
+<p>To make sense of that last one, here's Ben's arrangement of Billy Joel's "It's Still Rock And Roll To Me." You can see the notes line up (and how sharps break it).</p>
+<p><code><br />(voice 1 'rock organ')<br />(voice 2 "bass")<br />(tempo 210)</p>
+<p> /&gt;&gt; ^<br /> /&gt;&gt; v c,c c,c c,c c,c c,c c,c c,c c,c</p>
+<p> /&gt;&gt; ... c,c c,c c,dvb,, a,, a,g g,g<br /> /&gt;&gt; c,c c,c c,c c,cve,e e,e e,e e,e</p>
+<p> /&gt;&gt; a#,,  a#,a# a#,,  c', /a//g/f,, <br /> /&gt;&gt; a#,a# a#,a# a#,a# a#,a# f,f f,f f,f f,f</p>
+<p> /&gt;&gt; ^... c,c c,c c,dvb,, a,, a,g g,g<br /> /&gt;&gt; ^c,c c,c c,c c,cve,e e,e e,e e,e</p>
+<p> /&gt;&gt; a#,,  a#,a# a#,,  c', /a//g/f,, <br /> /&gt;&gt; a#,a# a#,a# a#,a# a#,a# f,f f,f f,f f,f</p>
+<p> /&gt;&gt; ... e,e g,g b,b c',, a,e g,a ,,e<br /> /&gt;&gt; e,e e,e e,e e,e a,a  a,a a,a a,a</p>
+<p> /&gt;&gt; e,, e,e g,g b,b c',g a,e g,a,<br /> /&gt;&gt; e,e e,e e,e e,e d,d d,d g,g g,g</p>
+<p></code><br />I'll be using this to try getting down some Herb Alpert this weekend, since attempts to use staff paper are driving me mad. And then I can use the rest of Ben's <a href="http://students.olin.edu/2010/bfisher/codepages_st/bmidi/">midi suite</a> to make a score that Melanie can play her flute from...</p>
+<p>*sometimes he also makes stuff that makes me go "what were you <i>thinking?" </i>For instance, a Mandelbrot generator written in Verilog. (For those of you unfamiliar with Verilog, this is akin to saying "I'm going to stick a red-hot poker into each of my fingers <i>and</i> play a Bach chaconne." It's beautiful but incredibly masochistic.)</p>
+<div class="zemanta-pixie"><img class="zemanta-pixie-img" src="{{ site.baseurl }}/assets/pixy.gif?x-id=13cb117f-6b1f-4ad7-9387-14d1887d28aa" /></div>

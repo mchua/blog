@@ -1,0 +1,40 @@
+---
+layout: post
+title: 'FUDCon Tempe Hackfest: Etherpad'
+date: 2011-01-31 01:20:21.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><em>This post is one of multiple <a href="../2011/01/30/im-liveblogging-fudcon-tempe-hackfests/">FUDCon  Tempe hackfest liveblogs</a>. (Not sure what FUDCon is? <a href="../2011/01/30/a-whirlwind-of-fudcon-sessions/">Read  this post first</a>.)</em></p>
+<p>I caught up with <a href="http://fedoraproject.org/wiki/AndrewOverholt">Andrew Overholt</a>, <a href="http://fedoraproject.org/wiki/User:Mbooth">Mat Booth</a>, and <a href="http://fedoraproject.org/wiki/User:Sdz">Sebastian Dziallas</a> in the back corner of the lightning talks room as they were winding down several hours of work on <a href="http://etherpad.org">Etherpad</a>, a browser-based collaborative text editor that's used widely for realtime document editing within the <a href="http://fedoraproject.org">Fedora</a> community. They're drawing on work started at the <a href="http://fedoraproject.org/wiki/Etherpad_FAD">Etherpad FAD</a> in October of 2010 and were happily surprised to find <a href="https://github.com/ether/pad/commit/753cee0778c88f31f7ed23e44e630297fb18eb9c">some patches</a> from the earlier FAD had <a href="https://github.com/ether/pad/commit/753cee0778c88f31f7ed23e44e630297fb18eb9c">already been adopted</a> into the latest <a href="http://en.wikipedia.org/wiki/Upstream_(software_development)">upstream</a> release.</p>
+<p><em><a href="http://blog.melchua.com/wp-content/uploads/2011/01/etherpad-hackfest.png"><img class="alignnone size-full wp-image-2760" title="etherpad-hackfest" src="{{ site.baseurl }}/assets/etherpad-hackfest.png" alt="" width="400" height="301" /></a></em></p>
+<p><em>What are you guys doing?</em></p>
+<p><strong>Sebastian:</strong> We're working on Etherpad and trying to get it packaged in Fedora.</p>
+<p><strong>Andrew:</strong> It's actually a good example of bringing a random third-party application into Fedora. In a lot of cases, Java applications will bundle random blobs that they get from someplace, so the procedure to go through to get something like that into Fedora is to start with a spec file <em>(a script that, among other things, specifies how to install the software)</em> that will build it the way [the upstream community] expects it to build. Start by using their bundled [library] copies, and one by one go through and replace each [library] with the Fedora copies.<br />
+<em><br />
+Note for newcomers: "<a href="http://en.wikipedia.org/wiki/Software_package_(installation)">packaging</a>" refers to getting a piece of open source software into the list of "one-click installs" that users of a Linux distribution like Fedora can easily try out. Different distributions have different requirements for packaging, and Fedora has fairly strict <a href="http://fedoraproject.org/wiki/Packaging/Guidelines">standards</a> for licensing and up-to-dateness of code; furthermore, all the software dependencies that a program relies upon must be packaged separately, also in Fedora, before the program itself is allowed in.</p>
+<p>Packaging a piece of software for Fedora therefore usually entails a thorough architecture and licensing review along with patching the software to use well-maintained code libraries - it can be a fair amount of work. The payoff is that your software is instantly exposed to a wider audience who can install and test your latest stable release with one command or a few button clicks. You can learn more about packaging software for Fedora at the </em><a href="http://fedoraproject.org/wiki/PackageMaintainers"><em>Package Maintainers page.</em><br />
+</a><br />
+<strong>Andrew:</strong> Most of the hard work has already been done. Almost all the dependencies are already in Fedora.</p>
+<p><strong>Mat:</strong> We've found the dependencies that aren't [in Fedora] yet, so I'm working on packaging them.</p>
+<p><strong>Andrew:</strong> And I can get them reviewed hopefully today or tomorrow. There's just a few that remain...</p>
+<p><strong>Sebastian:</strong> Right - 3 packages. We started out with having <a href="https://fedoraproject.org/w/index.php?title=Etherpad&amp;oldid=175692">30 libraries</a> which were bundled, and ripped them out over the time, and now we're <a href="https://fedoraproject.org/wiki/Etherpad#Libraries_bundled_in_Etherpad">down to 3</a>.</p>
+<p><strong>Andrew:</strong> 2 of the remaining ones are actually forked copies of libraries we do have in Fedora, so we're seeing if we can make [Etherpad] work with the unforked version.</p>
+<p><em>What can people do to help?</em></p>
+<p><strong>Andrew:</strong> One thing we need is a Scala programmer. We want to see if we can get Etherpad upstream working with the latest version of Scala, 2.8, because right now we're making it work with the compat-package [of an outdated version of Scala].</p>
+<p><strong>Sebastian:</strong> There's one last package of doom (c3p0-0.9.1.2.jar) that is needed to build Etherpad, but it currently has trouble compiling against the latest Java version. We need a Java programmer to take a look and see if they can fix that, remove Etherpad's dependency on it, or use a different Java compiler on it.</p>
+<p><em>If you're a Scala or Java programmer or packager who can help, get in touch with <a href="http://fedoraproject.org/wiki/AndrewOverholt">Andrew</a>,  <a href="http://fedoraproject.org/wiki/User:Mbooth">Mat</a>, or <a href="http://fedoraproject.org/wiki/User:Sdz">Sebastian</a> and take a look at the notes on <a href="http://fedoraproject.org/wiki/Etherpad#Packaging_Etherpad">Packaging Etherpad</a>, and hopefully we'll have Etherpad packaged and etherpad.fedoraproject.org up and running sometime during the next release.</em></p>

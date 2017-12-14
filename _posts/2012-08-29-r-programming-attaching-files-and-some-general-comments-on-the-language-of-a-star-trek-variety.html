@@ -1,0 +1,40 @@
+---
+layout: post
+title: 'R programming: attaching files and some general comments on the language of
+  a Star Trek variety'
+date: 2012-08-29 14:45:02.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- engineering edu
+tags:
+- rprogramming
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Things I'm learning today: There are no scalars in R; there are only vectors of length 1.</p>
+<p>I'm liveblogging while my professor goes on about version control (he calls them "change management systems,  " and it sounds like I may need to re-activate my rusty memory of CVS unless I can swiftly convince people of the benefits of git) I'm reading the first chapters of various R books to triangulate a better feel for the language I was zooming through last week.</p>
+<p><a href="http://ml.stat.purdue.edu/stat695v/chambers.r.book">Programming With R (by Chambers)</a>'s <strong>Chapter 1</strong> sets the stage quite nicely by reminding people that the point is to help <em>humans</em> manipulate and deeply understand their data. It talks about:</p>
+<p>...an obligation on all creators of software to program in such a way that the computations can be understood and trusted. This obligation I label the <em>Prime Directive</em>... [modified from Star Trek], our directive is not to distort the message of the data, and to provide computations whose content can be trusted and understood. The prime directive of [the Star Trek characters], notice, was not their <em>mission</em> but rather an important safeguard to apply in pursuing that mission. Their mission was to explore, to "boldly go where no one has gone before", and all that. That's really our mission too: to explore how software can add new abilities for data analysis. And our own prime directive, likewise, is an important caution and guiding principle as we create the software to support our mission.</p>
+<p>The concept of the <a href="http://en.wikipedia.org/wiki/Data_frame">data frame</a> is a new one for me, but after wading through a couple more formal definitions, I'm going to think of it as the platonic version of a spreadsheet; it's a big grid with data -- any type of data, mix-and-match data -- inside it.</p>
+<p>Dr. Cleveland says that the mixed data types are the Big Deal about data frames; the other primitives (vectors and matrices, which seem to do many of the same things) must all be of one type. Always the lazy programmer, I ask why one wouldn't then use data frames for everything -- is it a big efficiency tradeoff to use matrices/vectors when you can? Turns out the answer is "sort of" -- they are simpler, smaller, and take up less space on disk. Sure, if you're trying to play around with a quick prototype, you can use data frames indiscriminately. But if you're trying to really optimize for speed on repeated calculations on huge datasets, you use the leanest things you can, and matrices and vectors are simpler and smaller than data frames that contain the same information.</p>
+<p>He shows us an example of how someone might do that: if you have a data frame that holds, say, the various state-regions within different countries and some information within them, you don't need to use the character-versions of the names ("illinois", "iowa", "idaho") as full references to the states when you're working with the data. You can use <code>factor()</code> to assign unique numeric IDs to them -- so you know that "illinois" is 42, "iowa" is 43, "idaho" is 44 -- the integers will be faster to work with than the strings. Then you just have the computer remember that 42 was "illinois" and change it back afterwards.</p>
+<p>The rest of Chambers's first chapter goes through some basics (R is a functional programming language, everything in R is an object, it's an open source language, here's a bit of history) and then drops you off at <a href="http://ml.stat.purdue.edu/stat695v/chambers.r.book">Programming With R</a>'s <strong>Chapter 2</strong>, an introduction to the interactive nature of R. I discover that last week's playing-around relieves me of the need to do much but skim this chapter to make sure there's nothing vital that I've missed. I pick up on the <em>sapply</em> iterator, which is a more efficient way to do things like "for (<em>variable</em> in <em>sequence</em>) <em>execute-this-expression</em>". (I vaguely feel, without comparing them too hard, that this is similar to <a href="http://python.org">Python's</a> built-in function <a href="http://docs.python.org/library/functions.html#map">map()</a>.) In the meantime, Dr. Cleveland mentions that memory allocation is automatic, unlike C. I rejoice.</p>
+<p>A quick operation I don't want to forget: <strong>To attach a file to an R session</strong>, you use the <code>attach()</code> function and specify the file location. To make this easier on myself, I first set my working directory to my R-programming folder (which is where I want to save the code I'm working on) and check I'm in the right place, <em>then</em> call <code>attach()</code>.</p>
+<p><code><br />
+&gt; setwd("/home/mchua/Dropbox/R-programming")<br />
+&gt; getwd()<br />
+[1] "/home/mchua/Dropbox/R-programming"<br />
+&gt; attach("lattice.RData")<br />
+</code></p>
+<p>Aaaand that's all for the afternoon; we'll get our first programming homework assignment tonight, but I don't expect it to be too difficult since we've only covered the primitives of the language so far. (I hear the fun-with-Hadoop group will be breaking out onto a separate project track soon, and will be keeping an eye on that to see whether I want to jump to that.)</p>

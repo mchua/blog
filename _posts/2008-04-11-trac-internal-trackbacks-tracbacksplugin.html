@@ -1,0 +1,28 @@
+---
+layout: post
+title: Trac internal trackbacks (TracBacksPlugin)
+date: 2008-04-11 18:41:19.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>I released my first <a href="http://trac.edgewall.org">Trac</a> plugin today (with lots of help). It's called <a href="http://trac-hacks.org/wiki/TracBacksPlugin">TracBacks</a> and it provides internal trackback functionality between tickets in a Trac instance. It's also very simple (or at least it was, and we're trying to keep it that way and as as clean as possible). This is because another purpose of its creation was to serve as a tutorial plugin for the developers at <a href="http://topp.openplans.org">TOPP</a> who wanted to learn how to <a href="http://trac-hacks.org">hack trac</a>, and I couldn't do much complicated stuff while keeping what I did coherent for a lunch talk. A "making of" tutorial is in the works.</p>
+<p>Why is this cool?</p>
+<p>Well, Trac is an increasingly popular python-based open-source project management and bug-tracking tool. It's used by many open-source development teams to figure out what needs to be done ("tickets," which could also be called "tasks"), who's doing it, what tasks depend on what other tasks, and so on, and is the central development tool for many large projects and groups (including OLPC and TOPP). One feature that it has is the ability to comment on tickets - yes, like commenting on a blog post - so people can talk about what they're working on and how to solve a particular problem.</p>
+<p>This is awesome, but there's a hitch: if developer A is working on ticket 1, and developer B is working on ticket 2 and writes some notes (on ticket 2) how it's related to ticket 1, it automatically makes a (ticket-2)-to-(ticket 1) link that's easy to follow to get more details. So far so good. However, developer A has no idea her ticket has just been discussed on ticket 2, and tinkers on blithely unaware of what is going on around her, because there is no reciprocal (ticket 1)-to-(ticket 2) link.</p>
+<p>How can we automatically indicate that tickets are being discussed at other tickets? Trackbacks. <a href="http://www.oneofthewolves.com/">Tim Coulter</a> was the one who suggested this initially. What this plugin does is simply to create that reciprocal (ticket 1)-to-(ticket 2) link so that anyone looking at ticket 1 can see it has been talked about on ticket 2 as well. You can see it here at <a href="http://trac-hacks.org/wiki/TracBacksPlugin">http://trac-hacks.org/wiki/TracBacksPlugin</a>, and it's rapidly being improved upon by others. </p>
+<p>I'd like to give a shout-out thanks to several people: Doug significantly upgraded the regular expression used to pick out comments, Tim added quoting functionality so excerpts from the referrer-ticket show up in the referred-to ticket) and made a far more elegant stop-infinite-recursion mechanism, Josh added a nice exception handler for when you try to refer to a nonexistent ticket. Thanks tremendously to these folks as well as Jeff and thatch (who pointed me towards some helpful sections of code) as well as Noah, who is just generally awesome and fielded some questions from the other new Trac devs from TOPP today.</p>
+<p>The most important Cool Thing that came out of this today was that we now have people at TOPP who want to hack Trac and have a good start on doing so (and will pick it up much faster than I did, seeing as how the Zope interface architecture is apparently... quite similar to Trac plugins, from what I've heard). Being able to mod your own working environment is always good.</p>

@@ -1,0 +1,31 @@
+---
+layout: post
+title: 'My first shell script: bundlemaker'
+date: 2008-05-14 21:31:59.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+- olpc
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Technical Thing For The Day: Achieved!</p>
+<p>Today I learned how to write shell scripts - or that is, I wrote my first shell script that didn't involve a straight cut-and-paste from my .history file. (for my parents: a ".history file" is something that contains the last bunch of commands you've typed into your computer, and is useful for going back and figuring out what you've just done... sort of like an instant replay.)</p>
+<p>I spent way too long tracking down Boston-area housing for the ILXO<br />
+people who will be in the Chicago office with me this summer (they're<br />
+going to be at 1cc for a while for training), so going to count this script because it's the only tech thing I've got to show for today. (So far.) The script itself was written in little bits and pieces during a meeting when I couldn't hear the people who were talking; it's a quick hack.</p>
+<p>It's a <a href="http://wiki.laptop.org/go/Content_bundle_making_script">content bundle making script</a> that I whipped up for Chris, who was <a href="http://wiki.laptop.org/go/User:Cjl/Sandbox3">working on creating health content bundles</a> from MedLinePlus. Basically, if you point the script at an "index.html-like" page on the web that has links to articles and files that you'd like to include in a bundle, the script will download that page and all the files it points to, generate library metadata for the XO to interpret, then pack it all up in an .xol library bundle file.</p>
+<p>Writing shell scripts is surprisingly easy. I was psyching myself up for it to be hard and all sorts of elaborate arcana. I should not do that. It is not hard. Really, you just type in the commands you'd type into the shell, use $variables in appropriate places, and look up the proper syntax for simple logic loops (one nitpick: I wish they'd use mathematical notation for boolean logic instead of making me remember that "-ne" means "not equals" instead of the "!=" I'm used to. This is entirely my fault, as I am a creature of habit).</p>
+<p>The script could use improvement - more to the point, my script-writing-fu could use improvement as there are kludges in there I'm not satisfied with (for instance, the section that creates a library.info is incredibly brittle; it just concatenates the appropriate lines into a text file), so comments and changes and pointers to cool examples of good script-writing practice are super-welcome.</p>
+<p>Perhaps I should go back to visit NYC and get my copy of <em>Beautiful Code</em> back from Ethan someday. That has some gorgeous code to read.</p>

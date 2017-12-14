@@ -1,0 +1,32 @@
+---
+layout: post
+title: Code review tools?
+date: 2008-10-14 20:06:45.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- olpc
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Today a friend at Google gave me a brief crash course overview of their spiffy workflow system. (If there is one thing Google does well, it's Build Systems That Ease Thinking Friction. This does not make things easy; it enables you to do things that are hard.) Some of the key parts of the system that I'll get back to later is that (1) it's easy to build code, and (2) it's easy to write automated test cases for your code - all worthy goals that we should aim to improve on as well.</p>
+<p>Another part of Google's workflow is their code review system. The way my friend described it, there's this constant loop of feedback and revision happening with code - imagine something going around and around in a positively improving cycle - and when it's ripe and ready, someone with privs can pluck it from that cycle and make it a commit (as opposed to a linear "go forward... get stuck here... if it doesn't work discard it out of the waterfall completely" system).</p>
+<p>Theoretically, all dev teams do some form of this. Google has a toolset to make it as painless as possible, thanks to a guy named <a href="http://en.wikipedia.org/wiki/Guido_van_rossum">Guido</a>. You can see Van Rossum's <a href="http://video.google.com/videoplay?docid=-8502904076440714866">presentation</a> on the system and his <a href="http://code.google.com/p/rietveld/downloads/detail?name=Mondrian2006.pdf&can=2&amp;q=">slides</a> from the talk. There's an <a href="http://codereview.appspot.com/">open source version</a>, too. It's not the <a href="http://www.review-board.org/">only tool</a> that does this, and I'm <a href="http://lists.laptop.org/pipermail/sugar/2008-July/006784.html">not the first one</a> to think of it as a potential plus for the OLPC community.</p>
+<p>It sounds like what might have happened when this was briefly mentioned last time (note that there are no follow-ups to Sayamindu's email in the last link) was that it was a little tricky to get the prior version of Review Board working with our git repos, and it got lost in the "aieeee release!" rush because the "Talk About Patches On The Mailing List, comment inline" methodology worked Well Enough.</p>
+<p>I worry that the latter doesn't scale, though, and that its inability to scale keeps us from scaling (rather than the "oh, when traffic gets high enough, we'll put in the tools to handle it" methodology I usually agree with, this may be one place we have to build to handle capacity as a prerequisite for getting that capacity). I don't know for sure. This entire post is a lot of speculation based on talking briefly with a very small number of people.</p>
+<p>Three questions, then:</p>
+<ol>
+<li>Why don't we do this now? Is there some reason or some happening that I'm missing? Or is it just "because we haven't tried it in a way that works yet" (and what are the potential hard parts about doing so)?</li>
+<li>Do you think this might be helpful (and how)? Even a quick yes/no vote in the comments here would help as a fast sanity check.</li>
+<li>Would anyone be interested in playing with this with me? I'm thinking of a 2-hour sprint next week to try to choose, set up, configure, and try out something like this. If it works, great. If it doesn't work, we'll publish why, we learned something, and we had fun. Comment here and I'll email you to set up a sprint time.</li>
+</ol>
+<p>(Thanks for all the public and private conversations people have sent me on these blog posts so far by the way - I'm learning a lot by posting my OLPC braindumps here, and the conversations I've had with people who agree, disagree, point out that I'm reinventing the wheel, flaws in my reasoning, and so on - these are a large part of what teaches me how to Do Stuff Better.)</p>

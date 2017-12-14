@@ -1,0 +1,31 @@
+---
+layout: post
+title: Fedora Insight is going up as a zikula guinea pig for F12 after all.
+date: 2009-08-14 19:24:58.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Seems like I've got a lot to thank Ricky for today. I was originally all gloom and doom and "we're not getting a zikula-based <a href="https://fedoraproject.org/wiki/Fedora_Insight">FI</a> up for F12 because there are blockers, RAAAH BLOCKERS" after reading the <a href="http://lists.fedoraproject.org/pipermail/logistics/">logistics archives</a> wherein a lot of very smart people concluded that Zikula Would Not Work For F12. And then Ricky questioned my assumptions.</p>
+<blockquote><p>Are the same things that were blocking zikula for the docs team blocking zikula for marketing? Would it be that hard to get even an initial, relatively blank zikula instance on servers that are not covered by the Infrastructure change freeze and then work on polishing that?</p></blockquote>
+<p>After a conversation in #fedora-websites with ricky and poelcat, the answer to "can we make a zikula-based FI go live for F12?" now seems like this:</p>
+<ul>
+<li>we aren't sure...</li>
+<li>but there actually aren't any good reasons why it wouldn't work,</li>
+<li>so we should try it until we hit an actual blocker instead of whining about things maybe not working for unknown reasons.</li>
+</ul>
+<p>The legal things I thought were blocking zikula were actually blocking zikula for docs, not marketing. All 3 packages we need for an FI zikula instance (zikula, zikula-module-crpTag, and zikula-module-News) are already packaged (and thus definitely not blocked on legal stuff). And zikula is extremely easy to set up. I just followed <a href="https://fedoraproject.org/wiki/How_to_set_up_a_Zikula_sandbox">https://fedoraproject.org/wiki/How_to_set_up_a_Zikula_sandbox</a>, and in 14 minutes I went from "which packages should I download?" to "logged into working local instance with both modules installed." Now we <a href="https://fedorahosted.org/marketing-team/ticket/14">just need to get it on a test instance...</a></p>
+<p>After it's up, Robyn Bergeron has stepped forward (thanks Robyn!) to test it out and hack through a first run of some semblance of a workflow. Things are moving forward. Life is good! It's my hope that FI using zikula will let us test out the platform within the Fedora community and make as many mistakes as possible so that Docs doesn't have to make them.</p>

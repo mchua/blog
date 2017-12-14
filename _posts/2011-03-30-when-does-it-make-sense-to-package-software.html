@@ -1,0 +1,40 @@
+---
+layout: post
+title: When does it make sense to package software?
+date: 2011-03-30 15:55:34.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- teaching open source
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>A few separate conversations in the span of the past hour left me with this question: when does it make sense for a piece of software to be packaged? What makes someone say something like "oh, we should get that into Fedora" - when does the rationale behind it hold? Here are my half-formed thoughts, in the spirit of <a href="http://www.catb.org/%7Eesr/writings/cathedral-bazaar/cathedral-bazaar/ar01s04.html">RERO</a>, so that those who know more than I do about the topic can nucleate around the idea and rip it apart. (Go! Go! Go!)</p>
+<p>At the most basic level, as I (a non-packager) understand it, <strong>packaging software makes it easier for <em>someone else</em> to deploy it.</strong> Repeatedly, identically, easily, in an automated manner.That's it. That's the big deal. So the question of <em>do I want this software packaged?</em> becomes <em>would it be in my interest to make it easy for other people to deploy this software?</em></p>
+<p>This means that answering the question "should it be packaged?" isn't actually about looking at the software, per se. Instead, you look how the situation of a group of people would change if the deployability of the software changed.</p>
+<p>For end-user desktop applications, which is what most computer users spend their days in front of, the answer is almost always yes. In fact, I can't think of any exceptions. Those applications are made usable via being installed on an individual's computer. The easier it is to deploy, the easier it is to get someone using it. Users want their software to be easy to install. Developers of desktop applications want users to install and use their software. Of <em>course</em> <a href="http://mozilla.org/firefox">Firefox</a> and <a href="http://pidgin.im">Pidgin</a> and <a href="http://en.wikipedia.org/wiki/Bash_%28Unix_shell%29">bash</a> should be packaged.</p>
+<p>The same goes for development tools and languages. They, too, are deployed via individual instances; the more instances there are, the easier it is for developers to use it, the more developers will be using it, the more powerful the upstream language community becomes. <a href="http://python.org">Python</a> and <a href="http://eclipse.org">Eclipse</a> will always, always be packaged.</p>
+<p>These are the easy cases. <strong>For desktop applications and individually deployed tools, both end-users and developers (and the businesses they work within) benefit from easier deployment, and therefore packaging makes sense.</strong></p>
+<p>It starts getting interesting when you look at multi-user hosted services. Some still fall into the same case as above, where end-users and developers and their ecosystems benefit from easier deployment. For instance, <a href="http://moodle.org/">Moodle</a> developers have a strong incentive to get their work packaged. For them, more working individual Moodle deployments are a good thing - they make the community more powerful. The more deployments of Moodle schools want to spin up, the more consulting will be purchased from Moodle companies. And for schools and their IT admins and teachers, the "end users" of this software, having it be easy to spin up a working instance is a huge bonus; they frequently want to try out the software, experiment with different modules in a sandbox before deploying it live for a class, and so forth. <strong>When you're trying to decentralize functionality, packaging makes sense.</strong></p>
+<p>However, sometimes a project's influence does <em>not</em> depend on the number of independent instances of its software. Take <a href="http://openhatch.org">OpenHatch</a>, a website for aggregating getting-started tasks and mentors for FOSS novices. The influence of OpenHatch therefore depends on <em>how much information they can centralize</em>, rather than how much functionality they can decentralize. OpenHatch is also an open source software project - they custom-developed the platform they run on - but the point of open-sourcing OpenHatch is to make it possible for volunteers to contribute to the central site. Packaging OpenHatch and making it easy to spin up other deployments would not make much sense. <strong>When you're trying to centralize information, packaging doesn't make sense...</strong></p>
+<p><strong>...to you. But it may to other people who want to decentralize your functionality later on.</strong> Take <a href="https://wiki.mozilla.org/Update:Remora">Remora</a>, the software developed by <a href="http://mozilla.org/">Mozilla</a> in order to <a href="http://addons.mozilla.org/">aggregate Firefox plugins</a>. This was also an example of "power via centralization of information" - Remora developers wanted to get more people to addons.mozilla.org, and something like mozilla-addons.somewhere-else.org would have <em>hurt</em> their project! The turning point came when another group wanted to centralize a <em>different</em> set of information the same way; <a href="http://sugarlabs.org">Sugar Labs</a> needed a way to <a href="http://activities.sugarlabs.org">host its activities</a>, and therefore broke out Remora for generalization. But it's important to note that it was the software's second user, not its first developer, with that impetus for generalization and ease of deployment.</p>
+<p>I could see OpenHatch running into a similar situation someday - surely something else will come up where somebody wants to aggregate tasks and match mentors and doers! - but as long as nothing specific comes up, the OpenHatch project is likely to remain unpackaged, because it simply doesn't need to be <em>right now</em>.</p>
+<p>Now here's the really interesting part: <strong>what if you want to centralize </strong><strong>functionality</strong><strong>?</strong><em> </em>Most "software as a service" (SaaS) providers fall into this category. Look at <a href="http://www.limesurvey.org/">Limesurvey</a>, an open source survey platform. It's got <a href="https://www.limeservice.com/">Limeservice</a>, a hosted version with a basic free plan that heavy users can pay to upgrade with more responses. I've used Limeservice in the past because it's <em>too darn hard for me to set up Limesurvey on my own.</em> Packaging Limesurvey would make it easier to deploy, which might decrease usage of the central service - so even if I as a user would love to be able to <em>yum install limesurvey</em>, if I put myself in Limeservice's shoes, I can see why they might not be jumping to get it packaged! (Limeservice's prices are also low enough that it's not <em>that</em> painful for me as a user - I'm not trying to badmouth Limeservice here, it's a pretty nifty service and a great piece of software, and I'm glad to use it for my research projects.)</p>
+<p>Still, it's possible for someone to package Limesurvey just because they want to. With open source, you can <em>always</em> decentralize functionality, and that seems to be the trend. Decentralized functionality, centralized information. It's mostly a question of:</p>
+<ul>
+<li>Who would benefit from having the functionality decentralized?</li>
+<li>How much work would it take to do?</li>
+<li>Are the folks who'd benefit willing to put up the resources to do that work? (This is harder for some than others, and dependent on the packager just as much as the package; for instance, as a non-packager, even an easy package is a <em>tremendous</em> amount of work for me to handle - but I also know other people who eat bundled libraries for breakfast and would see the same thing as a trivial task.)</li>
+</ul>
+<p>I think these ideas are rough and certainly could use more development, but it's some churning food for thought I wanted to put out there.</p>

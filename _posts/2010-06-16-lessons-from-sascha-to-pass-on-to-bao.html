@@ -1,0 +1,27 @@
+---
+layout: post
+title: Lessons from Sascha to pass on to Bao
+date: 2010-06-16 21:36:41.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- sugar
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Lessons I've learned today whlie hanging out in the <a href="http://sugarlabs.org">Sugar</a> IRC channel (#sugar) and want to pass on to Bao (a student from Arlington who's hacking on the <a href="http://git.sugarlabs.org/projects/irc">IRC Activity</a> this week):</p>
+<p><b>Cloning a personal branch</b> for development is <a href="http://git.sugarlabs.org/projects/irc/repos/mainline/new">really easy</a> and a good idea so that unstable changes don't get pushed to mainline. This is particularly important for developers running the bleeding-edge <a href="http://wiki.sugarlabs.org/go/Development_Team/Jhbuild">sugar-jhbuild</a> code, since it pulls directly from the git repos, so an experimental commit there could break things for them. (Fortunately, the IRC Activity isn't pulled into sugar-jhbuild by default, but it's a good habit to get into, for when you start working on code that is.)</p>
+<p><b>It's difficult to interpret text communications</b> when you're new sometimes. What an experienced developer may regard as friendly suggestions for improvement (that they've spent their valuable time helpfully trying to write up) may be received by newcomers as a big stick smacking them down and discouraging their project contributions. By default, assume that people are trying to be helpful and put forth constructive criticism <i>because</i> they want your project to succeed, and for you to stick around.<b></p>
+<p>git config --global color.diff auto</b> enables diff coloring in git. Pretty! Secifically, the diff coloring will show you EOL (end of line) spaces - they'll display as red blocks. These EOL spaces don't really make a difference when you're tinkering with your own code, but when you start upstreaming your work, they make patches very annoying for reviewers and people trying to merge your patches in. In general, it's a good idea to set your editor to remove EOL spaces automatically. </p>
+<p>Thanks to <a href="http://wiki.sugarlabs.org/go/User:Sascha_silbe">Sascha Silbe</a> for teaching me (and others in the channel) about this stuff today. Sascha writes:</p>
+<blockquote><p>"I can remember the pains of going through the SL review process for the first time rather well, so I try to make sure new contributors learn how to do it 'right' early on. It means a lot less work and less waiting on yet another review iteration."</p></blockquote>
+<p>I'm writing this up because I find that teaching something to someone else makes it more likely that I'll learn it myself, and this is all stuff that I want to learn. Mm, hacking-fu++. Thanks, Sascha. This is the kind of knowledge-spreading that we need to do with new contributors in order to grow our capacity to hack on things - it's how novice hackers (like myself) learn how to be productive.</p>

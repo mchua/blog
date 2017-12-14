@@ -1,0 +1,39 @@
+---
+layout: post
+title: Simplest possible setup
+date: 2010-03-14 23:08:41.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- soas
+- sugar
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Question: what is the <i>simplest possible</i> ecosystem one could put together for a <a href="http://wiki.sugarlabs.org/go/Sugar_on_a_Stick">Sugar on a Stick</a> (SoaS) pilot? I suspect it would consist of the following elements:
+<ol>
+<li><b>An enthusiastic classroom teacher</b> who "gets" Sugar and open source, is excited about integrating Sugar into her curriculum and having her students participate in the upstream Sugar Labs community, and is in constant contact with...</li>
+<li><b>...a local deployment support team</b> with ties and familiarity with the <a href="http://sugarlabs.org">Sugar Labs</a> and <a href="http://fedoraproject.org">Fedora</a> communities and the ability to introduce the teacher and her students to them, hands-on troubleshooting experience, the ability to document events so that they make sense to both educators and engineers, and a quick QA feedback loop with...</li>
+<li><b>...SoaS developers</b> with expertise in creating and customizing not just the SoaS software but the build and release engineering infrastructure needed to get it out the door on a regular and timely basis, who are aware of and responsive to the needs of the students and willing to adjust the software frequently and on-the-fly to make things work out <i>for that classroom</i>, and...</li>
+<li><b>...the small number of students</b> in it, who <i>all</i> have their own SoaS stick (small number, 100% coverage) and are working to not just understand the open source community but to actively participate in it, with the blessing of...</li>
+<li><b>...school administrators and parents</b>, who remain fully aware of what is going on at all times so that the learning can, when possible, extend into their homes (which all have computers) and beyond, and...</li>
+<li><b>...the hardware for the pilot itself</b> chosen specifically for its compatibility with SoaS so everything will work out-of-the-box, with...</li>
+<li><b>...no funding/resource problems</b> with all hardware purchased ahead of time, time volunteered, and a bit of discretionary budget for other needs that might crop up at...</li>
+<li><b>...a series of weekly deployment check-ins</b> between developers and the support crew, between the support crew and the teacher and her students, between the deployment and support crew and the larger Sugar Labs community, between the teacher and the parents of her students, but only...</li>
+<li><b>...for a limited time</b>, with the understanding by all parties that this is an experiment and that our biggest contribution to the Sugar Labs community is finding out whether it works or not, and demonstrating how and why - and of course,</li>
+<li><b>wonderful, supportive, informed upstream communities</b> - in this case, Sugar Labs and Fedora (since SoaS is a <a href="http://spins.fedoraproject.org/">Fedora Spin</a>). </li>
+</ol>
+<p>Which is exactly why the <a href="http://wiki.sugarlabs.org/go/CFS_SoaS_pilot">CFS pilot</a> was set up the way it's been set up. We're not really working under realistic limitations - what we're doing will largely <i>not scale</i>. But much of it will. And we're trying to pull together the different components and show how they interrelate - by blogging, by slowly starting to find the right mailing lists to talk on, by experimenting with different ways we can all cope with data overload (for instance, Lynne May didn't really start blogging until I put <a href="http://www.scribefire.com/">scribefire</a> on her laptop - the tiny decrease in activation energy was enough).&nbsp; </p>
+<p>Now if only we had a test case system. Note to self: stop being such a slacker in this department and get <a href="http://semantic-mediawiki.org/wiki/Semantic_MediaWiki">smw</a> up already! If anyone would like to help me pick up on the <a href="http://blog.melchua.com/2009/09/03/semantic-mediawiki-test-case-system-is-alpha-ish-needs-owner/">smw-based test case management system project</a>, let me know. It's something I can easily mentor, but don't have a lot of time to actually <i>do</i> myself.</p>
+<p>I'm also having some trouble getting a good VM-based test setup going so I can quickly verify SoaS bugs being reported without having to get a spare stick, a spare laptop, boot things, etc... I'll try again when the next nightly build comes out, and if <i>that</i> doesn't work, will actually post a detailed trouble ticket. (Right now the chances that it might be the image's fault rather than my setup's fault are reasonably high.)</p>
+<p>And Trac mail notifications have been... inconsistent, at best. Sometimes, when a ticket is created or commented on, and I own that ticket, I do not get email notices. It's not my spam filters; I checked those first. Still trying to track this behavior and narrow it down so that it <i>isn't</i> intermittent; I am not sure what triggers this (apparent) bug, or if there's a way to see (on Trac's end) whether it thinks it's sending me an email each time.</p>
+<p>Good things happening, always more things to fix - such is the nature of life, and the nature of satisfying work.</p>

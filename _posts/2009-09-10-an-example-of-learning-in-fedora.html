@@ -1,0 +1,41 @@
+---
+layout: post
+title: An example of learning in Fedora
+date: 2009-09-10 23:59:05.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- olin
+- teaching open source
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>I wanted to call this out as a rapid - but typical - example of a learning experience in the Fedora community (and more generally, in open source). These conversation snips were only a few seconds long, each line immediately following the next. It's not planned; this isn't a special "teaching night," we're just trying to get something (making an authentication plugin work for a content platform we're deploying). I play the role of the new apprentice in these particular exchanges. Total amount of time for both conversations: maybe 30sec. (My logs don't have timestamps, so I can't be exactly sure.)</p>
+<p>It's the kind of conversation that's completely normal to us (good litmus test: Fedora folks, look at the logs. Do you find them boring and not particularly out of the ordinary? Okay. Then look at the list of things I learned from those snippets at the bottom of this post.) but, in my opinion, one of <i>the</i> things that makes open source communities so <a href="http://gregdek.livejournal.com/53809.html">&lt;shameless plug&gt; fascinating to researchers &lt;/shameless plug&gt;</a>. It's in these many tiny rapid conversations and just-in-time course corrections that keep us immersed in an environment where we're continually nudged onto The Right Path, which is in large part learning how to teach ourselves to do things and figure them out. The kind of thing school ought to be.</p>
+<p><b>Snippet #1</b></p>
+<p><b>&lt;ke4qqq&gt;</b> mchua: itbegins: I need to bail - the srpm I posted should be good - I have a koji build - but am out of time to get it installed and test http://koji.fedoraproject.org/koji/taskinfo?taskID=1669749<br /><b>&lt;mchua&gt;</b> ke4qqq: thanks, david - I'll stick your last note on the ticket so we're updated<br />* mchua is falling asleep over the keyboard and needs to crash soon<br /><b>&lt;itbegins&gt;</b> I don't suppose there's anyone hanging out in the channel who could take on the installation task? :)&nbsp; I'm still not packed :-<br /><b>&lt;mchua&gt;</b> itbegins: I'll stand here and try to find someone. You should go pack.<br /><b>&lt;mchua&gt;</b> mmcgrath, abadger1999, ricky, G_work, mdomsch: can someone either help us install and test a srpm on pt6 (for Fedora Insight) or walk me through how to do it so that I know how in the future?<br /><b>* mchua</b> is staring at http://koji.fedoraproject.org/koji/taskinfo?taskID=1669749 and isn't quite sure what to do here.<br /><b>&lt;mdomsch&gt;</b> mchua, click the green buildArch line<br /><b>&lt;mmcgrath&gt;</b> mchua: then find the link<br /><b>&lt;mdomsch&gt;</b> at the bottom of that next page<br /><b>&lt;mmcgrath&gt;</b> on the pt servers you can just install the unsigned package<br /><b>&lt;mmcgrath&gt;</b> so then a rpm -Uhv 'http://koji.fedoraproject.org/koji/getfile?taskID=1669750&amp;name=zikula-module-fedora-fasauth-0.2-2.el5.noarch.rpm'<br /><b>* mchua</b> does so</p>
+<p><b>Snippet #2</b></p>
+<p><b>&lt;mchua&gt;</b> mdomsch: ok. is there a way i'd be able to check whether that's done without having to ask ke4qqq ? (for future reference)<br /><b>* mchua </b>may be asking nonsensical questions. new to this.<br /><b>&lt;mdomsch&gt;</b> mchua, not really<br /><b>&lt;mdomsch&gt; </b>all questions are good<br /><b>&lt;mchua&gt;</b> mdomsch: hm, I guess I could yum info zikula-module-fedora-fasauth on pt6. *checks* ...that sort of works, for some cases<br />* mchua reckons that's good enough<br /><b>&lt;mdomsch&gt;</b> it won't tell you about koji builds<br /><b>&lt;mdomsch&gt;</b> it'll tell you info about what is available<br /><b>&lt;mchua&gt;</b> mdomsch: but it'll tell me what repo a package is in if it isn't installed, which is what I was trying to find out ("is $foo in epel-testing, or do we need to get $owner to run $something")<br /><b>&lt;mdomsch&gt;</b> mchua, indeed; but there's going to be some delay...<br /><b>&lt;mdomsch&gt;</b> ke4qqq has to do the build<br /><b>&lt;mdomsch&gt;</b> and make update<br /><b>&lt;mdomsch&gt; </b>then dgilmore needs to be awake to sign the package and push it to epel-testing<br /><b>&lt;mdomsch&gt; </b>then it needs to get synced out<br /><b>&lt;mdomsch&gt;</b> so, it'll happen, but the process tends to take a few hours or days depending...<br /><b>&lt;mchua&gt; </b>ah, okay, so I can't apply the contrapositive here.<br /><b>&lt;mchua&gt;</b> (since "if ke4qqq has done make update, it should show up in epel-testing" isn't true; it's a necessary but insufficient condition)</p>
+<p><b>Partial list of things I learned from the conversation snips above</b>
+<ul>
+<li>people build srpms in koji, and you can find them in places like http://koji.fedoraproject.org/koji/taskinfo?taskID=1669749</li>
+<li>after an srpm is posted, it needs to be installed and tested</li>
+<li>it's ok/normal/expected for someone to clearly drop a task so that somebody else can pick it up</li>
+<li>publictest ("pt") servers can install unsigned packages</li>
+<li>how to navigate koji to install an rpm that isn't yet in a repository</li>
+<li>all questions are good</li>
+<li>yum info $name-of-module will tell me (among other things) what repo that module is in, if that module is not installed (notably: I figured this out myself by spending a few seconds poking around things)</li>
+<li>built-in-koji-and-updated and available-in-repos are not the same thing; there's a lag due to manual approval being needed from dgilmore, and then another lag to sync it</li>
+</ul>
+<p>Imagine the same lessons laid out clearly in textbook format, and how long it would take to teach that lesson (and how boring it would be, and how much I would probably care). It's a lot. <i>And</i> it's all in context. And it's all immediately applied to something that you can immediately and publicly demonstrate results for. And <i>that</i> is why learning in open source communities is so dang powerful.</p>
+<div class="zemanta-pixie"><img class="zemanta-pixie-img" alt="" src="{{ site.baseurl }}/assets/pixy.gif?x-id=ae5a9f72-9c32-8f29-bc67-9f28e3896e5e" /></div>

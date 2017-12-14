@@ -1,0 +1,37 @@
+---
+layout: post
+title: 'nb: FOSS textbook commenting tool'
+date: 2010-06-30 21:49:24.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- olin
+- teaching open source
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>I'm at a <a href="http://i2e2.olin.edu/summer2010/program.php">curriculum development workshop</a> at <a href="http://www.olin.edu">Olin</a> working on the design of <a href="http://teachingopensource.org/index.php/POSSE">POSSE</a>. It is... well, let's just say I think I understand what POSSE participants feel like (this is also a week-long faculty workshop; I'm the only participant who's not a professor) - it's an experience that's making me see a world (in this case, curriculum design at universities) in an entirely new light, and <i>finally</i> starting to gain the ability to learn at the level I'd like to learn at... I'm nowhere near there, but I think this week is bootstrapping me up to the point where I can learn much of the rest by doing (a lot, for a long time - now I need a <i>lot</i> more experience). This workshop is giving me cultural context. Whoa.</p>
+<p>Awesomeness of the day (one moment of many): running into <a href="http://mit.edu/sanjoy/www/">Sanjoy Mahajan</a>, an MIT professor who was my advisor for my humanities capstone on open content engineering textbooks. Sanjoy is also a FOSS geek, <i>and</i> he's a visiting professor at Olin this coming year. Back in the day, we talked about software for writing textbooks. Turns out he kept working on it, and now one of his students has made an open source textbook writing software called <a href="http://nb.csail.mit.edu/">nb</a> - the code is actually under an MIT license, I'm told, but there's no (easily findable) public repo of it yet, etc... we'll fix that soon.</p>
+<div class="youtube-video"><object height="300" width="400"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=7370219&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=7370219&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" height="300" width="400"></embed></object></div>
+<p><a href="http://vimeo.com/7370219">A Guided Tour of NB</a> from <a href="http://vimeo.com/user2508991">Sacha Zyto</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+<p>Basically, it's heatmapped commenting on textbooks in pdf format, inspired by the <a href="http://gplv3.fsf.org/comments/gplv3-draft-2.html">comment workflow on the GPL v3 draft</a> back when it was a draft a few years ago. This way you can see at a glance where folks have commented, and how much, so you know what areas of the text you need to work on. See Sanjoy's book, <a href="http://mit.edu/6.055/notes/notes-annotated.pdf">Street Fighting Mathematics</a>, for an example of an annotated text. </p>
+<p>How would this work in practice?
+<ul>
+<li><b>source code:</b> TeX</li>
+<li><b>compiler: </b>LaTeX</li>
+<li><b>submit a comment/patch</b>: write an annotation on the book using nb</li>
+<li><b>accept/push a patch</b>: revise the upstream TeX, "recompile" the pdf in LaTeX</li>
+<li><b>forking:</b> get the TeX source and build your own</li>
+<li>etc.</li>
+</ul>
+<p>I don't know how <i>well</i> it would work, but I'll be poking the maintainer over the weekend, trying to get an instance of nb up, and then throwing the latest instance of the <a href="http://teachingopensource.org/index.php/Textbook_Release_0.8">TOS Textbook</a> up on it to see how that goes, just as an experimental "let us try this tool!" branch. Hrm. When... do I have free time? That is the hard part. If this works out, it would be <i>amazing</i> to have students in classes (Heidi and Tim, I'm looking at you) comment on the textbook as they're using it.</p>

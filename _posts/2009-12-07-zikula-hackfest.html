@@ -1,0 +1,57 @@
+---
+layout: post
+title: Zikula hackfest
+date: 2009-12-07 16:32:51.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Our hackfest on <a href="http://zikula.org">zikula</a> deployment has been running full-tilt since Sunday morning. Zikula is a php-based CMS that <a href="https://fedoraproject.org/wiki/DocsProject">Docs</a>, <a href="https://fedoraproject.org/wiki/Marketing">Marketing</a>, and <a href="https://fedoraproject.org/wiki/FWN">News</a> are deploying, the latter two pooling together to get <a href="https://fedoraproject.org/wiki/Fedora_Insight">Fedora Insight</a> (a website showcasing continuously updated streams of content so we can show, rather than just tell, the world why we're so excited about Fedora) up and running to publish deliverables from both.</p>
+<p>A snapshot of the chaos:</p>
+<blockquote><p>"How's <a href="http://www.xinha.org">xinha</a>?"<br />
+"It's in pending, but it's not in <a href="http://fedoraproject.org/wiki/EPEL/FAQ#What_is_EPEL.3F">epel</a>-testing. I don't know why."<br />
+"I think Dennis Gilmore has to push a shiny button. Hey Luke, does Dennis have to push a shiny button?"<br />
+"Dennis Gilmore has to push a shiny button."<br />
+"Find Dennis Gilmore!"<br />
+"Fiiiiind Dennis Gilmooooooore!"<br />
+*pause*<br />
+"What does he look like?"</p></blockquote>
+<p><em>FUDCon: The Hunt For Dennis Gilmore</em> was ultimately a success; with a series of rapid pointers from folks both on IRC and at FUDCon, Matthew Daniels (who packaged xinha, a js-based WYSIWYG editor) located him minutes before we had to leave for skating, and xinha is now in epel-testing and ready to deploy on publictest. Meanwhile, David Nalley tackled symlinks in pagemaster and worked with Simon Birtwistle on upgrading us to zikula 1.2.0, Sebastian Dziallas jumped in at the last minute to patch filterutil as a relay team of Matt Domsch and Mike McGrath got us the sysadmin-test membership he needed, and Pascal Calarco built a beat submission interface and <a href="https://fedoraproject.org/wiki/FWN/FIWorkFlow">workflow</a> while beginning to pull together the next issue of FWN...</p>
+<p>And this was the relatively calm part of our day.</p>
+<p>Earlier, we'd had...</p>
+<ul>
+<li>Diana Martin <a href="http://www.cyber-anthro.com/?p=193">ramping up to speed</a> on bringing sanity to our CSS design and templates, particularly for our pagemaster-based workflow - this is also Diana's first Fedora contribution, so a <em>huge</em> welcome to her, and a thank-you from our heroic and perpetually overworked design crew!</li>
+<li>Karsten Wade joining us on IRC to make a list of <a href="https://fedoraproject.org/wiki/Zikula_content_types">content type creation tutorials</a> - which we need help fleshing out. If you know of any good tutorials for making videos, documents, screencasts, podcasts, etc... please add them to the page!</li>
+<li>Felix Kaechele swooping in for package reviews (literally - we went "we need a package review" into #fudcon and <em>phoosh</em>, suddenly Felix was in the room and reviews began to fly.</li>
+<li>Dale Bewley working remotely with Pascal as a brave first tester of the workflow - Beats authors, if you have a gorgeous first experience getting your beat into zikula when the time comes, thank Dale because he's the one who hit all the workflow design snags first so we could fix 'em before you did.</li>
+<li>Max Spevack getting us a "metrics to measure" checklist and pulling our messaging discussions into concreteness by starting text for an About page, which I subsequently picked up and (literally - I was a little hyper at that point) ran around the building with, reshaping it on a whiteboard and then passing the baton to Matthew Daniels, who immediately managed to cut the text to half its original length while increasing the eloquence by an order of magnitude.</li>
+</ul>
+<p>...and that's as of last night - the list has grown today. I've been running around in meetings and such today and haven't been as present, but Simon and Pascal are totally on top of things, and when I peek into the channel and see that folks like Tatica and Eric (Sparks) are joining us, I cheer.</p>
+<p>It's been fantastic - aside from Max and Pascal, this was also the first time I'd met the folks physically present at our FUDCon sprint, and putting faces to names for Simon, Felix, Sebastian, Diana, Matthew, Matt, Mike (and many more) was one of the highlights of the weekend for me (this is actually my 2nd FUDCon, the first one being Boston's back in January when I hadn't yet become a Fedora contributor). It's a joy to hang out with people who appreciate <a href="http://groups.google.com/group/zikula-discussions/browse_thread/thread/ce0e9f1305733232?pli=1">jokes about licensing</a>, plan their dinnertimes around compiling code, and stop mid-sentence, look at your screen, and go "whoa, what's <em>that</em>?" at which you can immediately tell them what package or plugin they can install to get a cool new app.</p>
+<p>Also yesterday: we went skating and I finally got to meet <a href="http://sachachua.com">Sacha</a> in person (we're not related - Chua is actually a common last name in the Philippines), hung out at the hack suite (where I totally failed at writing in English sentences and tried to package fonts with Mo instead - more thoughts on that later), and then stayed up for several more hours with Mo and Diana, which mostly involved me listening in awe to the two of them talking about design and realizing how much good design I just <em>don't notice</em>. (I'm told that this is one sign of a good design - you don't have to think about using it, it's just the way it "should" be.) And then I totally crashed. Hard. For 6.5 hours. (Yeah, that's a lot of sleep for me.)</p>
+<p>Anyway.</p>
+<p><strong>Where we are:</strong></p>
+<ul>
+<li>xinha needs to be deployed in the zikula instance running on publictest6 (it's available in the epel-testing repositories and should be available via yum, but once the package is installed, we need to do some scribite magic to go from that to "wow, text areas have WYSIWYG!").</li>
+<li>filterutil and pagemaster need to be finished, rebuilt, pushed to the right repos, and installed on publictest6.</li>
+<li>publictest6 needs to be upgraded to zikula 1.2.0 (currently 1.1.0), Simon is doing this as I type.</li>
+<li>Beat writers need to try out the workflow Pascal and Dave have set up, I reckon Pascal will probably be talking on the news list about that soon.</li>
+<li>The design needs love. <a href="https://fedorahosted.org/design-team/query?status=new&amp;status=assigned&amp;status=reopened&amp;keywords=%7Einsight&amp;order=priority">Lots of love.</a> Simon Birtwistle, Mo Duffy, Greg Sieranski, and Diana Martin have brought a tremendous amount of order to our chaos, but we still need sheer CSS/js skills and capacity to help us muscle through these tickets. If you know a CSS-er who can spend a day working on this, please let us know and we'll on-ramp them.</li>
+<li>We're going to be making calls for help getting a content queue in place shortly, but right now, the vast majorities of our efforts are dedicated towards getting FWN's workflow working on zikula in staging. Still, if you've got the desire to put on an editorial hat, then - by all means, please <a href="https://www.redhat.com/mailman/listinfo/fedora-marketing-list">join us on the marketing list!</a></li>
+</ul>
+<p>Something we could have used more of this weekend was packaging manpower - periodically we'd run into blockers that would be <em>really</em> easy for someone with packaging skillz (read: not us) to solve, but difficult for us to get up to speed on. We're talking about things like "delete a single curly brace from this line of code" - trivial changes that just Need To Get Through The Packaging System, which as non-packagers we don't (yet) understand. David, Felix, and Sebastian magically materialized and helped us this weekend (for which we are eternally grateful) but we wonder if any other hackfests were in the same situation, and if it might be worthwhile to have a Packager Station during the next hackfest that would be manned in shifts with packagers willing to take on any tasks they're approached with.</p>
+<p><a href="http://iwrotecode.blogspot.com">Aaron Clark</a> has <a href="http://iwrotecode.blogspot.com/2009/12/future-fudcon-hackfest-request.html">posted a proposal</a> for a hackfest focused on creating new <em>packagers</em> (and incidentally, new packages) at the next FUDCon which I'd very much like to go to (as one of the learners) and that could be one source of the station. New packagers would get lots of practice on packaging; since things get easier with practice, this also increases the likelihood they'll keep learning how to package afterwards because the activation energy to do so would be dramatically lower after a weekend of Packaging Stuff.</p>
+<p>Back to the sprint! I keep telling myself that once we get to staging, everything is going to be alllll right - all we have to do is get to staging, all we have to do is get to staging... *yells and scrambles back in the direction of the battlefield* WE WILL PREVAIL!</p>

@@ -1,0 +1,63 @@
+---
+layout: post
+title: 'Barcamp: Drupal tutorial'
+date: 2006-10-01 09:21:00.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta:
+  blogger_blog: mellory.blogspot.com
+  blogger_permalink: "/2006/10/barcamp-drupal-tutorial.html"
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Holy instant website, Batman.</p>
+<p><a href="http://drupal.org/">Drupal </a>is something I've been meaning to play with for a while, but it took <a href="http://www.treslerdesigns.com/">Sam Tresler's</a> <a href="http://barcamp.org/BarCampNYC2">Barcamp </a>presentation on Instant Drupal to get me started. He turned a static site into a dynamic Drupal one as we all watched; I decided to take notes and follow along. An hour and fifteen minutes after the presentation started, I'm sitting here staring at a new website for the <a href="http://swe.olin.edu/">Olin SWE Chapter</a> on my laptop (as of this posting, the site is not live as I need to get it over to an Olin webserver... but Simone and Kate, if you're reading this, I finally got off my butt and moved.)</p>
+<p>I'm officially sold on this thing. I'm still planning on having a CMS Tryout Weekend for OCP (the Open Content Project, Olin's open source/content group) - probably right at the end of term, since we have some events (Linux installfest, roll-your-own-distro party, Python GUI eval party) coming up first. But I'm <span style="font-style: italic;">very</span> impressed by Drupal because it seems very easy to teach non-coders how to admin it - incredibly vital because it means the groups you set up Drupal websites for can become self-sufficient quickly and not have to call you for tech support forever.</p>
+<p>Here are my notes on the session, which should walk you through setting up your own Drupal site (downloading included) in an hour. Thanks, Sam!</p>
+<p><span style="font-weight: bold;">Introducing Drupal </span><br />Here's Drupal's <a href="http://drupal.org/">homepage</a>. It's technically a CMS, but Sam prefers to think of it as a web development framework.</p>
+<p>Today: Building a drupal site from scratch in an hour. Working with <a href="http://www.oiaonline.org/">http://www.oiaonline.org</a> which is a site with  static javascripted pages, .pdf newsletters, an events calendar, links to, and galleries with uploaded images/thumbnails. We can duplicate all this functionality (and more) in Drupal.</p>
+<p><span style="font-weight: bold;">Download and install</span></p>
+<p>We need to get started quickly. Install <a href="http://www.apachefriends.org/en/xampp.html">xampp</a>, a preconfigured apache distro with apache, mysql, and php.  After installing, go to <a href="http://localhost/">http://localhost</a> to make sure the server is running on your computer.</p>
+<p>Download the latest version of  <a href="http://drupal.org/">Drupal</a> and unzip it into your htdocs folder (inside your xampp installation - my path was C:xampphtdocs.)</p>
+<p><span style="font-weight: bold;">Set up your database</span></p>
+<ul>
+<li>Go to <a href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a> to see your local phpmyadmin page, thanks to xampp.</li>
+<li>On the main phpadmin page, there is a section labeled "create new database." Type the name you want to use in and make yourself a mysql database.</li>
+<li>Make sure your new database - we'll call it <span style="font-style: italic;">mydrupal</span> in this example - is selected in the drop-down box on the very left hand side of phpmyadmin. On the main screen you should see a list of tabs, one of which is labeled "SQL". Click it; you'll see a text box labeled "Run SQL query/queries on database <span style="font-style: italic;">mydrupal</span>."</li>
+<li> Inside your htdocs/drupal folder there's a file called INSTALL.mysql.txt. Open it up and copy the line that begins "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE..." into the "Run SQL query" textbox in phpmyadmin, changing appropriate variables. In our case, we're going to replace <span style="font-style: italic;">databasename</span>, <span style="font-style: italic;">username, </span>and <span style="font-style: italic;">password</span> to <span style="font-style: italic;">mydrupal</span> - but you can set them to whatever you want as long as you remember them.</li>
+<li>A few tabs down from "SQL" in phpmyadmin is a tab called "Import." Go there, click the Browse button, and point it towards htdocs/drupal/database/database.4.1.mysql (this will work for most cases - check the end of htdocs/drupal/INSTALL.mysql.txt to make sure you've got the right one) then hit the Go button and watch lots of tables be automatically created.</li>
+<li>Open htdocsdrupalsitesdefaultsettings.php and set $db_url and $db_prefix lines to the database you created (replace 'username', 'password', and 'databasename' with what you set; unless you explicitly set a mysql prefix during database creation, leave the $db_prefix untouched.) In our case we're going to change them all to <span style="font-style: italic;">mydrupal </span>because that's what we used two steps ago.</li>
+</ul>
+<p><span style="font-weight: bold;">And you've got Drupal.</span></p>
+<ul>
+<li><a href="http://localhost/drupal">http://localhost/drupal</a> should work now. From here on out, the interface is fairly self-explanatory and can mostly be guessed at, but here is some stuff you will want to do.</li>
+<li>Create an admin account; there's a link on your drupal install's main page to do this. You'll probably get an error message that says it couldn't email your password to you; ignore it.</li>
+<li>Go to administer > settings and fill in the forms with your organization's information. You may want to turn on "clean URLs" to get rid of extraneous php syntax in your urls, but you don't need to.</li>
+<li>Cache settings: Also in administer > settings. For development, keep it disabled. When you go live, you may want to enable it so that the webpage won't dynamically generate every time it doesn't need to.</li>
+<li>Save before you test your new settings; Drupal settings don't take effect unless you save.</li>
+<li>The default Drupal settings are pretty good. If you don't understand something, you probably don't need to touch it.</li>
+</ul>
+<p><span style="font-weight: bold;">Modules: make stuff functional.<br /></span>
+<ul>
+<li>Go to administer > modules and check the boxes for whatever modules you'd like on your site.</li>
+<li>If you want more modules, download <a href="http://drupal.org/project/Modules">Drupal modules</a> you like and drag them into your htdocsdrupalmodules file and they'll show up on your administer > modules page.</li>
+</ul>
+<p><span style="font-weight: bold;">Putting the C in CMS: adding content.</p>
+<p></span>On your left navigation bar is a link labeled "add content." Click it and you'll see the available content modules you just enabled. Click the name of the one you'd like to create - the suggested first one to try is a Page - and you'll get a bunch of self-explanatory textboxes to click and go. After you add your first bit of content, look at your Drupal site again, and it should look a heck of a lot like a fully running CMS... because it is.<span style="font-weight: bold;"><br /></span><br /><span style="font-weight: bold;">Themes: make stuff pretty</span></p>
+<ul>
+<li><a href="http://drupal.org/project/Themes">Download themes</a> you like (or ones you've made) into your htdocs/drupal/themes folder and they'll show up in your administer > themes section; just pick one and go.</li>
+<li>You can enable more than one theme (so users can choose which one to look at) but can only have one default (the one that first shows up).</li>
+<li>Themes use normal php and css, so if you know either of those, you can easily modify the default themes to use your own logo and such.</li>
+</ul>
+<p><span style="font-weight: bold;">And you're done. </span>For more information on Drupal, check out their <a href="http://groups.drupal.org/">homepage</a> (I think that's the tenth time I've linked there in this post); there may be a local <a href="http://groups.drupal.org/">Drupal group</a> near you that meets up if you're looking for live people to ask questions of. Beyond that, Google is your friend, as people have posted about their <a href="http://www.nicklewis.org/node/766">favorite modules</a> and such in thousands of places.</p>
+<p>I'll be playing more with this in the coming weeks setting up Drupal for a few groups that I'm involved with, so if you have any tricks or shortcuts to share (or want to drag me into your Drupal group - I'm an engineering student in Boston interested in journalism and education) leave a comment with your contact info or <a href="mailto:metamel@gmail.com">email me</a> and I'll write you back. Comments and revisions to this walkthrough are also totally welcome; if someone wants to slap it on a wiki, go ahead, mod it, share it, change it, and otherwise consider it yours.</p>

@@ -1,0 +1,71 @@
+---
+layout: post
+title: irssi + screen quickstart
+date: 2010-07-07 00:31:42.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- sugar
+- teaching open source
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><i>Notes I wrote up months ago that have since been found by others to be useful. Posting for posterity. Basically, these instructions are for how to set up an always-on logger for IRC (chat) - helpful for being able to hear the conversations others are having about the project you're working on while you're away. I am assuming a fair amount of background knowledge here, but the content is remixable, so feel free to yoink/improve/etc.</i></p>
+<p>1. ssh into the box you have an account on - for instance, Sugar Labs folks can use sunjammer (aka people.sugarlabs.org) by requesting an account at <a class="moz-txt-link-freetext" href="http://wiki.sugarlabs.org/go/Sysadmin/Shell_account_request">http://wiki.sugarlabs.org/go/Sysadmin/Shell_account_request</a><br />
+.</p>
+<p>2. Run these commands (comments in parentheses).</p>
+<p>screen<br />
+<br />(a dialog will pop up, hit return to kill it)</p>
+<p>irssi<br />
+<br />(you'll get a mostly blank screen, with a stripe across the bottom with the<br />
+time and a number [1] in brackets - that's the window list - and then a line<br />
+below that with [(status)] in it, which is the description of the window that<br />
+you're in, and the place you type the rest of the commands.)</p>
+<p>/connect irc.freenode.net<br />
+<br />(and then, if you want, /msg nickserv identify &lt;password&gt; to sign in.)</p>
+<p>/set autolog on<br />
+<br />(it'll start storing things in ~/irclogs in self-explanatory filenames)</p>
+<p>/join #sugar<br />
+<br />(and whatever other channels you may want to be in)</p>
+<p>(You'll notice that every channel you join opens up another window - the first<br />
+channel will be in window 2, the next in window 3, and so forth. Use ctrl-p<br />
+(previous) and ctrl-n (next) to switch between windows, or alt-NUMBER to jump<br />
+to the NUMBERth window.)</p>
+<p>(You'll also notice that the numbers for each window light up in different<br />
+colors when someone joins/leaves a channel (blue), talks in a channel (white),<br />
+or calls your name in a channel (pink).)</p>
+<p>(All the normal IRC commands work as expected, and so does tab-completion.)</p>
+<p>(a note on /whois: if you have a PM window open for that person, the whois<br />
+information will appear in the PM window. Otherwise, it will appear in window<br />
+1.)</p>
+<p>3. When you want to stop, do</p>
+<p>/away &lt;away message&gt;</p>
+<p>and then detatch from screen, which is</p>
+<p>CTRL-a, d<br />
+<br />(ctrl-a followed by d)</p>
+<p>which will dump you in your normal sunjammer shell outside of screen.</p>
+<p>Or you can just kill the terminal by typing</p>
+<p>~.</p>
+<p>or whatever.</p>
+<p>When you log in again, restart the screen session with</p>
+<p>screen -raAd</p>
+<p>...and you'll be back. If you then type</p>
+<p>/away</p>
+<p>...you'll see all the messages sent to your nick in the meantime in window 1,<br />
+and you'll be set to not-away.</p>
+<p>4. More docs at <a class="moz-txt-link-freetext" href="http://www.irssi.org/documentation/startup">http://www.irssi.org/documentation/startup</a><br />
+and <a class="moz-txt-link-freetext" href="http://quadpoint.org/articles/irssi">http://quadpoint.org/articles/irssi</a><br />
+.</p>
+<p>I mostly find irssi useful for being always-on all the time and having backlogs<br />
+of conversations that have happened while I'm away. It also means that anywhere<br />
+I have ssh, I have IRC.</p>

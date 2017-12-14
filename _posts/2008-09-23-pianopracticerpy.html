@@ -1,0 +1,38 @@
+---
+layout: post
+title: pianopracticer.py
+date: 2008-09-23 13:39:21.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Oh. This is how I practice piano*.</p>
+<pre>#!/usr/bin/python
+
+# Prints a new random chord to play every 5 seconds.
+# This could be made more generalizable/hackable/useful, yeah. I'm lazy.
+
+import time
+import random
+
+basenote = ['A',  'A#','B','C','C#','D','D#','E','F','F#','G','G#']
+chord = ['major','minor','major 7','dominant','minor 7',
+'minor 7 flat 5','diminished']
+
+while(True):
+print random.choice(basenote), random.choice(chord)
+ time.sleep(5)</pre>
+<p>*The "I need to learn chords, keys, and how to sightread them from a fake book" bit. There's also the part where I'm reworking my Schubert impromptu, and the part where I'm actually going through <a href="http://en.wikipedia.org/wiki/The_Virtuoso_Pianist_In_60_Exercises">Hanon</a> to get back my technique. I <em>am</em> mindful that drilling != music and the latter is what I need and want to learn, but this is the equivalent of doing pushups - I'm trying to get the actual muscles of my fingers built up again until they hit keys evenly, because I physically can not play pieces well until they are.</p>

@@ -1,0 +1,40 @@
+---
+layout: post
+title: Designing technology to support reflection
+date: 2012-10-11 22:55:37.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- engineering edu
+- fedora
+- teaching open source
+tags: []
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Anyone who's heard me talk about Teaching Open Source portions of my research will soon gather that I'm a fanatic about metacognition. If our designers and engineers and writers and developers and contributors don't know themselves and how they think, how can they work with others? Here's an actionable summary of a little (ok, 20 pages) paper called "Designing Technology to Support Reflection, written for FOSS projects and other distributed online communities where learning takes place. The paper was written in 1999, when open source was still a baby, the internet had just begun taking hold, and MOOCs were light years away, so I've updated the examples to be more familiar to us 13 years later.</p>
+<p>The paper outlines "...four ways that technology can provide powerful scaffolding for... [a] combination of both individual and collaborative reflection... [for] actively monitoring, evaluating, and modifying one's thinking and comparing it to both expert models and peers." (That last quote was an incredibly hacked-up and shortened version of the abstract, by the way - and the start of the paper is a lovely lit review on why metacognition matters for performance; if you are at all interested in these topics, I recommend reading at least the first 3 pages.)</p>
+<p>The four ways:</p>
+<ul>
+<li>process displays</li>
+<li>process prompts</li>
+<li>process models</li>
+<li>a forum for reflective social discourse</li>
+</ul>
+<p><strong>Process displays</strong> are basically debuggers; they show learners where they are in a process (which may be new, complex, and confusing to see, let alone do the first time). <a href="http://getfirebug.com/">Firebug</a> can be thought of as a process display, albeit not one specifically designed for education; <a href="http://www.hackasaurus.org/en-US/goggles/">Hackasaurus</a> is a bit closer. <a href="http://worrydream.com/LearnableProgramming/">Bret Victor's piece on Learnable Programming</a> is a great example of how an even richer system might be designed. Also, pretty much anything that supports portfolio creation can be used as a process display -- wikis, blogs, etc.</p>
+<p><strong>Process prompts</strong> are attention-grabbers that bring the focus of learners to appropriate bits of a process while it's in motion. You can think of the specific question-prompts of a bug reporting form as a process prompt; if we took that one step farther and had an option to replace the big blank textbox with a "novice" display that walked them through steps for reporting a bug ("What were you trying to do?" "What specifically did you type/click?" "What happened next?" "What did you expect to happen instead?" etc.) that would be an upgrade. Checklists are a very simple sort of process prompt; for instance, see <a href="http://www.mediawiki.org/wiki/Git/Code_review/guide">Mediawiki's guide to conducting a code review</a>.</p>
+<p><strong>Process models</strong> are maps of expert thought processes, the "stuff" that experts know and act on but don't always articulate because they're taking it for granted. <a href="http://blog.linuxgrrl.com/">Mo Duffy</a> does a great job of this when describing her work on GNOME and Fedora, and I don't even need to look that far -- her two most recent blog posts walk you through some of her thinking about <a href="http://blog.linuxgrrl.com/2012/09/25/anaconda-bootloader-reusing-home-assigning-partitions-to-disks/">bootloader UI design</a> and <a href="http://blog.linuxgrrl.com/2012/07/31/fedora-18-wallpaper-hackfest-report/">wallpaper development</a>, respectively. Now, this is more a think-out-loud than a true generalized process map; such a thing looks more like <a href="http://infrastructure.fedoraproject.org/infra/docs/outage.txt">Fedora Infrastructure's "what to do when there's a system outage" document.</a> Armed with this, even a novice sysadmin like me can see how masters like Kevin Fenzi and his crew keep their cool and manage the ship even in the midst of a maelstrom (although actually doing it is another thing).</p>
+<p><strong>Reflective social discourse</strong> is about getting more eyeballs on a problem to make it shallower -- hearing multiple voices on a topic, getting feedback from many different angles. (This is where the paper most shows its age; there's almost an undercurrent of awe in describing how <em>several computers could be connected through a fileserver!</em> and students could <em>write notes commenting on the work of their peers!</em>) Nowadays, there's the obvious collection of tools specifically made for dialog: blogs, microblogs, Planet blog aggregators, chatrooms of all sorts. But there are others more subtly embedded in our practice. Public bugtrackers and code reviews are all about reflective social discourse -- I've learned plenty by reading extended comment threads on closed tickets. And while this isn't a technology-supported option per se, conferences and in-person events are another form of this -- present your idea to a bunch of friends and have them help you make it stronger.</p>
+<p>The article closes with a plea for systems thinking. Won't someone, somewhere, start designing learning technology that incorporates all four of these in one? And we are -- look at any of the dashboards being created for things like EdX or Khan Academy, and you'll find all four aspects. But now you know what they're doing.</p>
+<p>Here's the paper, for those of you inclined to chase down the full text. Have fun!</p>
+<blockquote><p>Lin, X. D., Hmelo, C. E., Kinzer, C. K., &amp; Secules, T. J. (1999). Designing technology to support reflection. Educational Technology Research &amp; Development 47(3), 43-62.</p></blockquote>

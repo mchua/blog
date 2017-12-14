@@ -1,0 +1,31 @@
+---
+layout: post
+title: XO speakers and interesting parts
+date: 2008-01-26 21:10:45.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Confirmed why I can't hear sound from my <a href="http://laptop.org">XO</a> unless I stick my ears right up next to the speaker (and even then, only <em>just</em>.) It's something I've known for a long time, but never quantified.</p>
+<p>From <a href="http://wiki.laptop.org/go/Sound">[[Sound]]</a>:</p>
+<blockquote><p>The speakers in the XO are from and for cellphone speakers. They are optimized for voice, and have less quality frequency response at the low end of the spectrum... What this means is kids will likely crank up the volume so that they can hear some of the lower frequencies. Since the physical size of the speakers prohibits any frequencies below 350 HZ... The speakers start rolling off at about 600 Hz and are virtually worthless below 400 Hz.</p></blockquote>
+<p>I have almost no high-frequency hearing. I can only hear low frequencies - as a matter of fact, my hearing begins rolling off at about 400Hz and is virtually worthless <em>above</em> 600Hz, which is... the exact opposite of what the laptop's speakers do.</p>
+<p>If severely amplified and piped into my ears, they might make an interesting rough hearing aid for my particular kind of loss, especially since there's a strategic spike at the frequencies cell phones use to transmit human voices; I must find my headphones when I return to Boston.</p>
+<p>I also wonder what the <a href="http://en.wikipedia.org/wiki/Frequency_response">frequency response</a> of the headphones-out jack is compared to the frequency response of the speakers themselves, and how you would test that. The former would be easy with equipment if I probed the jack directly with a nice scope and then had the laptop sweep from low to high (oh, how I miss not taking advantage of Olin's lab equpment now). But the latter? Much as I'd love to have an MLLSA graph (a 3D graphic of frequency response, graphing frequency, amplitude, and time, pronounced "Melissa") of these things, I can't think of a way to do it short of an <a href="http://forum.ecoustics.com/bbs/messages/34579/131062.html">echo-proof room</a> and... a good way to factor out the frequency response of the microphone used to record, and - I really have no idea how sound engineers actually do this. I wonder if someone who took the "Engineers' Orchestra" class would know.</p>
+<p>In other news, apparently other people can hear the beeps the laptops make when they're using the <a href="http://wiki.laptop.org/go/Distance">Acoustic Tape Measure</a> program (sorry, <a href="http://wiki.laptop.org/go/Activities">Activity</a>). The <a href="http://wiki.laptop.org/go/Distance#Measurement_Algorithm">measurement algorithm</a> and <a href="http://wiki.laptop.org/go/Distance#Development_notes">development notes</a> are fascinating - apparently there's some really freaky math in the code that even the original developer didn't understand. I haven't looked at it yet, but it would be a fun thing to poke around in with a couple of other people who want to play with SigSys for an evening.</p>
+<p>Broke (and fixed) my B4 again today, which put me behind on testing I'd planned. (Look, I <em>like</em> disassembling this laptop; I've had so few things to disassemble before.) After the fixing-it part, I probed around the motherboard a little to get some voltage levels for Ian and found some "missing" components, such as <a href="http://flickr.com/photos/sethwoodworth/2217187753/in/set-72157603519282789/">this diode</a> (photo by Seth). You can see the <a href="http://en.wikipedia.org/wiki/Image:Diode_symbol.svg">diode symbol</a> directly to the left of the black box in the bottom right corner (which is the power connector), even solder on the contacts - but no diode. There's also what looks like a similarly omitted capacitor at the top. Last-minute board revision?</p>
+<p>Also cool: the black stickers affixed to the heat spreader, which is a plate of metal that rests on top of the XO's <a href="http://en.wikipedia.org/wiki/CPU">CPU</a> to drain off heat in lieu of a (noisy, breakage-prone, power-sucking, dust-gets-into-me) fan. Seth's photographic skills again come to the rescue: in <a href="http://flickr.com/photos/sethwoodworth/2217191161/in/set-72157603519282789/">this picture</a>, the big silver plate spanning most of the left half is the heat spreader, and at the top towards the middle of the picture you can see there's a notch cut in it to accommodate a round black component labeled 5R0R (upside down).</p>
+<p>Between the silver of the heat spreader and the round black knob that is the component is what looks like a thin black sticker that's been pasted over the notch cut out of the heat spreader, then trimmed to make room for the 5ROR - almost like fenders for the heat spreader. From the angle of this particular photo, it looks like a fat black "L."  Similar sticker-bumper-cutouts are in a few other places where the heat spreader has to fit around the rare sticking-up component. The sticker-stuff is not particularly thermally conductive, but it's also not electrically conductive, so my best guess is that they are bumpers for the heat spreader that prevent it from accidentally shorting something.</p>
+<p>Incidentally, I have no idea what the "5ROR" component is. Google <a href="http://www.google.com/search?q=5ror">thinks it's a ceiling fan</a>.</p>

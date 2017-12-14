@@ -1,0 +1,30 @@
+---
+layout: post
+title: aslo .xo updater proposal
+date: 2009-04-21 23:24:18.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- sugar
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Proposal from <a href="http://halfhourhacks.blogspot.com/">Ben Fisher</a> for <a href="http://activities.sugarlabs.org/">aslo</a>:</p>
+<p>When an activity's git repository's "stable" branch is updated, the .xo file available for download on aslo should update too. How can this be done? Here's his rough outline:
+<ol>
+<li>Have a shell script on a cron job that git updates each activity and (if changes have occured) rebuilds a new .xo file. (This can run on any computer.)</li>
+<li>Have that script also copy the new .xo file to the location .xo files are stored on the aslo server, with the proper name. (This requires special access to the server running aslo.)</li>
+<li>Have the server hosting aslo run a sql query to add the new .xo file to the relevant database.</li>
+<li>Somehow work out any concurrency issues that might occur.</li>
+</ol>
+<p>Thoughts? Takers?</p>
+<div class="zemanta-pixie"><img class="zemanta-pixie-img" src="{{ site.baseurl }}/assets/pixy.gif?x-id=b9fcb5bc-c85a-8d23-af59-2fb761272375" /></div>

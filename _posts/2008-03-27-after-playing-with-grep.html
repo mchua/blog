@@ -1,0 +1,32 @@
+---
+layout: post
+title: after playing with grep
+date: 2008-03-27 06:45:10.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Regular expressions are awesome, but ridiculous. I did not know there were so many implementations and syntax variants. I think it is time to read <a href="http://regex.info/">the book</a>. For the uninitiated (and so that my parents can understand this post), regular expressions are powerful bits of syntax that make search operations (like <a href="http://en.wikipedia.org/wiki/Grep">grep</a>) <i>much </i>cooler and more functional. </p>
+<p>For instance, take... uh... google. I know my parents have used google. You can query google with words and phrases, like "cab" if you're looking for websites about taxis. This will give you websites that use the word "cab" in them. (Similarly, if I'm writing a paper about taxis, I might search for all instances of the word "cab" in there.)</p>
+<p>What if you want more complicated searches? You can do things like "cab" OR "taxi" or "cab" AND "taxi" which gives you the intersection and union of results containing those words, respectively - not a big deal. </p>
+<p>Okay. But wait, why do our search results suddenly return things on <i>cable television?</i> Oh yeah. <b>Cab</b>le television. But we just want the word 'cab.' So what if we did something like...</p>
+<p><i>&amp;amp;lt;the word has to start here!&amp;amp;gt;cab&amp;amp;lt;the word has to end here!&amp;amp;gt;</i></p>
+<p>Or in some regular expression syntax variants, <i>^cab$ </i>(it's faster to type ^ and $ than the tags above).</p>
+<p>What if we were studying chromatography and wanted to find references to color - I mean colour - I mean... actually, we don't care how it's spelled, only that it starts with "col" and ends with "r"? (So words like <i>colander </i>and <i>colthisisacompletelymadeupwordr</i> are also things we are, for some reason, looking for.)</p>
+<p>We could search for something like this: <i>col&amp;amp;lt;stuff can go in the middle, we don't care&amp;amp;gt;r </i>- or in shorter, more common syntax, <i>col*r</i>, the asterisk (*) being shorthand for "stuff goes in here, but we don't care what it is, or how long." There are special characters and a syntax where you can say things like "A single character goes here, but we don't care what it is as long as it's a character," or "there should be whitespace between these two words - we don't care how much or what kind, you can use tabs, a space, a bazillion spaces, whatever" and search for those.</p>
+<p>The list goes on. You can match...</p>
+<p>palindromes: <i>^(.?)(.?)(.?)(.?)(.?)(.?)(.?)(.?)(.?).?987654321$</i></p>
+<p>email addresses: <i>^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$</p>
+<p></i>and so on, and so forth, and hooray for simple ideas with great power. (See, mom and dad? This is why I get all excited about these kinds of things. And that's just the tip of the iceberg. And there's far more to it than regular expressions.)</p>

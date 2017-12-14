@@ -1,0 +1,42 @@
+---
+layout: post
+title: 'Word wrap: more adventures with sed'
+date: 2008-10-15 21:15:25.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>When I first pasted <a class="moz-txt-link-freetext" href="http://wiki.laptop.org/go/Experiments_with_unordered_paths/IRC_transcript">the transcript of C. Scott's talk</a>, it was ugly and unwrapped and splurted off the right edge of my screen. So I decided to learn more regular expressions. This is what happened.</p>
+<p><b>Attempt #1:</b> Mrah. why does <i><b>cat foo.txt | sed 's/(.{1,  80}( +|$<br />
+?)|(.{1,80})/13<br />
+/g'</b></i> not work? <i><b>3</b></i> is not an invalid reference, you silly thing.</p>
+<p><b>D'oh moment #1:</b> Oh. escaping { and ( with  is needed with sed. now...</p>
+<p><b>Attempt #2: </b>why doesn't <i><b>cat foo.txt | sed 's/(.{1,80})( +|$<br />
+?)|(.{1,80})/13<br />
+/g'</b></i> work?</p>
+<p><b>Attempt #3 (gave up): </b>Ok, simplifying... <i><b>cat foo.txt | sed 's/(.{1,80})/1<br />
+/g'</b></i> will work, but not split across word boundaries when possible. Good enough for me (for now).</p>
+<pre>&lt;br /&gt;#!/bin/sh&lt;br /&gt;&lt;br /&gt;if [ $# -ne 1 ]; then&lt;br /&gt;   echo Usage: wrap file.txt&lt;br /&gt;   exit 127&lt;br /&gt;fi&lt;br /&gt;&lt;br /&gt;cat $1 | sed 's/(.{1,80})/1
+/g'&lt;br /&gt;exit 0&lt;br /&gt;</pre>
+<p>Translation from bahasa geek, for parents and other noncoders: I was trying to come up with a way to quickly wrap long lines of text (the equivalent of hitting Enter to put a newline in the middle of long sentences so that they'll fit onto a page). </p>
+<p>Sed is a <b>s</b>tream <b>ed</b>itor that I used to do this, and I wrote a shell script (#!/bin/sh) that fed (cat) out the file I gave the script ($1 - which is a variable that I'd replace with the file I wanted to wrap, when the script was actually run). This replaces (s/) instances of an 80-character group, <b>(.{1,80})</b> - the escaped parentheses, <b>( </b>and<b> )</b>, say this is a group of characters, the period says "any non-whitespace character," and the "1, 80" inside the escaped brackets says "up to 80 of them all together."</p>
+<p>It replaces it with that same 80-character group (using <b>1</b>, which is a backreference - basically, "the first group that you talked about here," which is what we were doing with the parentheses - and then a newline, <b><br />
+</b>, which is like the Enter key. Basically, this script has the same effect as me going through a text document the following way:</p>
+<ol>
+<li>hit the right arrow key 80 times</li>
+<li>hit Enter</li>
+<li>repeat steps 1 and 2 until you reach the end of the document</li>
+</ol>
+<p>It's a dumb script because it'll break in the middle of words but I couldn't figure out how to make it pay attention to word boundaries. I tried - see above attempts - but gave up because I didn't have time to chase the answer down. I'm hoping that somebody reading this might be able to spot where I went wrong. Halp?</p>

@@ -1,0 +1,39 @@
+---
+layout: post
+title: 'Language learning for deaf autodidacts: Praat'
+date: 2011-04-19 14:57:27.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- languages
+- olin
+- teaching open source
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<div>My friend Erin Dowd, a talented linguist (and engineer, musician, and cook, among other things) who spends her days thinking about things like phonological inventories and has better Mandarin pronunciation than I do, shot me an email last week.</p>
+<blockquote><p>I was using <a href="http://www.fon.hum.uva.nl/praat/">Praat</a> for a paper I'm writing, and I thought you might like to play with it, especially if you're still trying to change your accent. I use it to analyze formants in sound files, but it's got a lot more functionality that I haven't explored.</p></blockquote>
+<p>Praat is an open source phonetic analysis suite developed by Paul Boersma and David Weenink at the University of Amsterdam. It's <a href="http://www.fon.hum.uva.nl/praat/GNU_General_Public_License.txt">GPL(v2)</a> licensed, <em>ridiculously </em>cross-platform (Mac/Win/Linux/FreeBSD<br />
+- but also SGI/Solaris/HPUX), has been around since at least 2007, and is still under active development (the latest version was uploaded on April 15, 2011, which is 4 days ago as of this writing). There's no public version control repository - I've emailed them about that - but you can download the source tar and dig around; it's mostly C++.</p>
+<p>It's fun to play with. I know Praat's intended for speech analysis, but couldn't resist playing some guitar into the microphone (on the theory that the guitar - even with its many harmonics - would produce purer frequencies than my speaking voice). And you can see it picked up on the short 4-step ascending and descending scale I played before I confused with with chords at the end - the blue line in the bottom graph (the <a href="http://en.wikipedia.org/wiki/Spectrogram">spectrogram</a>) goes up and down in sync with the notes of the guitar.</p>
+<p><img style="max-width: 800px;" src="{{ site.baseurl }}/assets/guitar-playing.png" alt="" width="600" height="381" /></p>
+<p>Voice data was even more fascinating. I've been trying to work on my "deaf accent" for several years now, and Erin's been amazing with helping me explore that whenever we get to hang out together; she'll notice strange little things nobody else does. It was her observation that the "accent" decreased when I tilted my head back that eventually led to the discovery of how to control my oral-nasal resonance, which makes me sound a <em>lot</em> less deaf when I remember to do it.</p>
+<p>Pratt - which has a <em>ton</em> of features I don't fully understand - is sort of a computerized Erin. In addition to plotting the spectrogram, it gives you pitch contours (in blue), formants (red), and intensity contours (yellow) - and all of these can be manipulated. Oh, and you can annotate the images with phonemes and words pronounced if you want. The graph below is for the spoken words "hello, world!" (what else would I say)?</p>
+<p><img style="max-width: 800px;" src="{{ site.baseurl }}/assets/helloworld.png" alt="" width="600" height="382" /></p>
+</div>
+<div>Erin suggested using Praat as a beefed-up version of language software that "trains" your pronunciation to be like a native speaker's. Plot your voice, see how close you are to average formant values in a phonological inventory for your desired accent, plot again, do it again until you hit it right.</p>
+<p>She showed me an <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2993100/">interesting variant</a> on this theme; Praat can also <em>manipulate</em> the formants, intensity curves, pitches, etc. of audio waveforms, meaning it can take your voice and change your intonation, accent, etc. So these researchers took second-language learners, recorded their voices in the target language (where they had an accent), used Praat to transform the learners' voices into <em>non</em>-accented speech, and gave them back their "perfect" pronunciation records to imitate and measure themselves against.<em> Holy cow</em>, I thought. <em>I could hear myself with a perfect American English accent. Or gorgeous Mandarin pronunciation. Or...</em></p>
+<p>I'd love to see this made into a language-learning game. Imagine the possibilities! Pronunciation training like this could blow away any of the "speech recognition" functionality in commercial language-learning software currently on the market; instead of matching against <em>one</em> native speaker's recording (no matter how hard you try, you'll never sound like someone else), you could norm your own voice into an accent-average compiled from data from thousands of native speakers, and match against that. When combined with something like <a href="http://librivox.org/">librivox</a>, an initiative to make open-licensed audiobooks from public domain works like <a href="http://www.gutenberg.org/wiki/Main_Page">Project Gutenberg</a>, the by-products of language learning could actually accelerate the building of a shared cultural library. Anyone looking for a software engineering, game design, linguistics, or signal processing project?</p>
+</div>
+<p>Praat is, by the way, not yet packaged for Fedora.</p>

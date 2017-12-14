@@ -1,0 +1,70 @@
+---
+layout: post
+title: 'Getting started with RHIPE (R + Hadoop): installing and testing'
+date: 2012-09-25 16:48:26.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags:
+- rprogramming
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><a href="http://www.r-project.org/">R</a> is a statistical programming language, and <a href="http://hadoop.apache.org/">Hadoop</a> is a way to do distributed computations. Put them together and you get <a href="https://www.datadr.org/">RHIPE</a>, a way to wield Hadoop from within R -- effectively, a tool that lets you divide up your big number-crunching calculations into small bits and have them magically go off to multiple computers where Statistics! Magic! happens, then recombine into an answer on the other side. (Unsurprisingly, this technique is called "divide and recombine."</p>
+<p>I've elected to take the project track for my R programming class, because plunging in over my head on statistics (which I'm fuzzy on), Hadoop (I barely know what it is), and R (saw it for the first time last month) seems like a fun way to learn, and I'm continuing to take notes here so people can follow along.</p>
+<p>Now, the disclaimer here is that it's going to be tough to replicate our environment. We have a Hadoop cluster set up by the stats department's grad students (thanks, Jeff and Yang!) to play with, so I did not need to do most of the steps when <a href="https://www.datadr.org/install.html">following the installation instructions</a> for RHIPE, which you will need to do if you want to play along. Getting our environmental variables configured (installation step #4) was most of today, followed by starting RHIPE and running some tests to verify it was working. I'll walk you through what I did.</p>
+<p><strong>Install the prerequisites.</strong> Follow instructions for prerequisites 1-3 on <a href="https://www.datadr.org/install.html">https://www.datadr.org/install.html</a> (I didn't have to do this as I had an already-working system.) Alternatively, you can download the virtual machine and skip this and the next step, though I'm not sure how that will affect you in terms of performance.</p>
+<p><strong>Set your environment variables.</strong> I put the following in my .bashrc; your mileage may vary.</p>
+<p><code><br />
+# configuration provided by Jeff Li for RHIPE development<br />
+export LD_LIBRARY_PATH=/opt/R-2.15.1/src/src/main/:/opt/protobuf/lib<br />
+export HADOOP=/usr/lib/hadoop/<br />
+export HADOOP_BIN=$HADOOP/bin<br />
+export R_LIBS=$HOME/R_LIBS<br />
+</code></p>
+<p>If you edit your .bashrc (or other config file), don't forget to run <code>source .bashrc</code> afterwards so that the new environment variables are applied. (It will not work if you don't do this.)</p>
+<p><strong>Install RHIPE.</strong> This is easy. As commanded by the install instructions, simply run</p>
+<p><code><br />
+wget https://github.com/downloads/saptarshiguha/RHIPE/Rhipe_0.69.tar.gz<br />
+R CMD INSTALL Rhipe_0.69.tar.gz<br />
+</code></p>
+<p>If you're like me and needed to install RHIPE in your home directory because of permissions (I put it in a folder called R_LIBS in my homedir), do...</p>
+<p><code><br />
+wget https://github.com/downloads/saptarshiguha/RHIPE/Rhipe_0.69.tar.gz<br />
+mkdir R_LIBS<br />
+R CMD INSTALL -l ~/R_LIBS Rhipe_0.69.tar.gz<br />
+</code></p>
+<p><strong>Start R and start RHIPE.</strong> If you don't know how to start R, you should really read a basic R tutorial at this point because the rest of this will happen inside R. Once you've got an R prompt:</p>
+<p><code><br />
+library("Rhipe")<br />
+rhinit()<br />
+</code></p>
+<p>And RHIPE is started. You have to do this every time you start R when you're working with RHIPE, so I found it useful to put both lines in my .First function (discussed at the end of <a href="http://blog.melchua.com/2012/08/31/r-for-programmers-of-other-languages-and-first/">this post</a>).</p>
+<p><code><br />
+.First library("Rhipe")<br />
+Sys.sleep(3)<br />
+rhinit()<br />
+}<br />
+</code></p>
+<p>It doesn't quite work; the <code>library("Rhipe")</code> execution seems to run fine, but I still need to run <code>rhinit()</code> manually each time. I get the error message <code>Error in Rhipe:::.rhinit(errors, info, path, cleanup, bufsize, buglevel) : could not find function "read.table"</code> even after adding the <code>Sys.sleep(3)</code> pause (thinking that it might be trying to go before the library is fully loaded), but I'll ask and see if there's something I'm missing.</p>
+<p><strong>Test out RHIPE.</strong> If the tests on <a href="https://www.datadr.org/doc/installation.html#tests">https://www.datadr.org/doc/installation.html#tests</a> are working, you're in good shape.</p>
+<p><strong>Play around with some RHIPE functions.</strong> The tests above should have created something at <code>/tmp/x</code> which you can now practice copying, deleting, etc. Use <a href="http://www.stat.purdue.edu/~sguha/rhipe/doc/html/functions.html">this functions list</a> as a reference, but not everything will be relevant -- so just try out these:</p>
+<ol>
+<li><code>rhls("/tmp")</code> # ls for RHIPE, lists things in <code>/tmp</code></li>
+<li><code>rhcp("/tmp/x", "/tmp/x-cp")</code> # cp for RHIPE, copies <code>/tmp/x</code> to <code>/tmp/x-cp</code></li>
+<li><code>rhdel("/tmp/x")</code> # rm for RHIPE, removes <code>/tmp/x</code></li>
+</ol>
+<div>Note that <code>rhcp()</code> is for things within the HDFS (highly distributed filesystem, a Hadoop thing that takes all the distributed places your data's being stored and makes one giant filesystem out of them -- my understanding is that it's sort of like <a href="http://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)">LVM</a>). If you want to copy something from outside the HDFS into the HDFS, you use <code>rhput("/file/from/outside/HDFS", "/place/inside/HDFS/to/copy/to")</code> instead.</div>
+<div></div>
+<div><strong>Take a break.</strong> Getting RHIPE working is a big job, so rest until Thursday, when I figure out what we're doing next.</div>

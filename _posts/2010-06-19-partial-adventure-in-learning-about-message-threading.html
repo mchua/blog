@@ -1,0 +1,48 @@
+---
+layout: post
+title: Partial adventure in learning about message threading
+date: 2010-06-19 19:44:51.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>I wondered how email message threading worked the other day, so I decided to <a href="http://people.dsv.su.se/%7Ejpalme/ietf/message-threading.html">go</a> <a href="https://wiki.mozilla.org/MailNews:Message_Threading">find</a> <a href="http://www.jwz.org/doc/threading.html">out</a>.</p>
+<p>The question I had was "how do I reply to a message that was sent to a list before I subscribed to it, in such a way that it gets threaded in the proper manner?" Specifically, I wanted to respond to the summit-planning list's email thread titled <a href="http://lists.fedoraproject.org/pipermail/summit-planning/2010-June/000009.html">"Booth setup on Tuesday"</a> yet choose my own level of <a href="http://lists.fedoraproject.org/pipermail/summit-planning/2010-June/thread.html">nesting</a> in the thread. For instance...</p>
+<pre>* original message
+* reply 1
+* reply A to reply 1
+* reply $foo to reply A
+* reply B to reply 1
+* &lt;--- YOUR REPLY GOES HERE
+* reply 2
+* reply 3
+* reply A to reply 3
+</pre>
+<p>I <a href="http://lists.fedoraproject.org/pipermail/summit-planning/2010-June.txt.gz">downloaded the archives</a> for the appropriate month and looked around. Huh. This is the first time I've actually paid attention to what was in the message headers...</p>
+<p><code><br />
+From bpowell01 at fedoraproject.org  Thu Jun 10 17:33:50 2010<br />
+From: bpowell01 at fedoraproject.org (Brian Powell)<br />
+Date: Thu, 10 Jun 2010 13:33:50 -0400<br />
+Subject: Booth setup on Tuesday<br />
+In-Reply-To:<br />
+References: &lt;20100610012156.GC18467@victoria.internal.frields.org&gt;<br />
+Message-ID: &lt;aanlktikjb0w0nmy1rv1cppuqpbsmxbie3pr_w38bu8iq @mail.gmail.com&gt;<br />
+</code></p>
+<p>Hrm. In-Reply-To and References seemed pretty promising. They pointed to the Message-IDs of the messages they were threaded under, in the order of their nesting. It wouldn't be too awful to get a mail client to do threading with that.</p>
+<p>As a side note, how <em>do </em>Message-IDs get generated? They're specified in <a href="http://tools.ietf.org/html/rfc5322#section-3.6.4">RFC 5322</a>, but it seems like different mail clients generate them in different manners, and the<a href="http://www.jwz.org/doc/mid.html"> only document</a> I could find that had actual suggestions on the implementation is 12 years old. Seems like the answer is "pick your mail client, then look at the code."</p>
+<p>Anyhow. I think that if I changed the In-Reply-To / References headers to be the correct things, my message would nest nicely. Trouble is that I can't find a way to do that in Thunderbird - the only promising <a href="https://addons.mozilla.org/en-US/thunderbird/addon/875/">extension</a> I could find wasn't compatible with the version of tbird I run (3.0.4). At this point (1) Paul started a new thread that was a better one for me to respond with my information to, and (2) I went "eh!" and decided to stop chasing this down because I was hosed with other things. Nice small adventure, though.</p>
+<p>I'm happy to learn even tiny bits and snatches of how email works, because I'm <em>still </em>trying to digest how mutt setup works (after blindly copying Karsten's .muttrc file and with help from Ian and Paul, I can <em>send</em> email using mutt, but haven't... figured out how to read it yet). I have such a broken <a href="http://wiki.mutt.org/?MailConcept">concept of how email works</a> that all the bits and pieces haven't quite sunk in the right way yet (the way that would let me, y'know, <em>use</em> this stuff with impunity).</p>
+<p>Once I understand mutt, the next thing I want to figure out is dovecot. I can do these things blindly, I just don't really understand what's going on... and I would like to. Just because. It's fun.</p>

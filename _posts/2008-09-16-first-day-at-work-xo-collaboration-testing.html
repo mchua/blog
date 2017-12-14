@@ -1,0 +1,29 @@
+---
+layout: post
+title: 'First day at work: XO collaboration testing'
+date: 2008-09-16 19:47:40.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- olpc
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Yesterday (September 15) was my first day as a full-time QA/Support engineer at OLPC. It's good to be back at 1cc with everyone again! I'm going to start logging non-internal things in this blog as well so others can follow along; let me know if there's a way I can be more transparent, because in my mind, if anyone's ever confused (or more confused than I am, anyway) about what I'm doing, that is a bug I need to fix.</p>
+<p>Much of the first day was consumed by things like paperwork and setting up my desktop. I had a lot of catch-up reading and meetings to do, and met a lot of new people who had come on board this summer. This included Reuben Caron, my compatriot in system-level support, who has set me to reading through old RT tickets trying to get a feel for what kind of large-scale deployment problems are coming up.</p>
+<p>A bit of explanation: what do we mean by system-level support? Well, the XO was designed to work in packs; communities of XOs, if you will. Many G1G1 donors and volunteers have only seen XOs in small numbers; ones, twos, maybe a few dozen together at a conference for a few hours. Country deployments have dozens, hundreds, thousands of XOs. When you have those numbers, you get issues of infrastructure (power, networking, activation) and scale that don't come up at the individual machine level - for instance, what happens when you try to get 300 XOs connected to a school server? (This would imply that you have 300 XOs and a school server, first of all...)</p>
+<p>More on system support as it comes along; Reuben and I will be looking for ways to involve the community in systems support. The first challenge is that most community members don't have access to a system to work, test, or develop with; ideas on how to change that or get around it are very welcome.</p>
+<p>Another part of what I'm doing is QA/testing. Right now we're running tests in preparation for the 8.2.0 release - you can actually <a href="http://wiki.laptop.org/go/Friends_in_Testing">help with this</a> if you have an XO and some free time. The current candidate is <a href="http://pilgrim.laptop.org/~pilgrim/xo-1/streams/8.2/build760/devel_jffs2/">8.2-760</a>. Kim made a draft <a href="http://wiki.laptop.org/go/TestPlan_8.2.0">test plan</a> right before I started, and we need to generate <a href="http://wiki.laptop.org/go/Test_cases_8.2.0">test cases</a> that will cover all the features available in the new release.</p>
+<p>One example of a test case - and the one I ran the afternoon of my first day - is the <a href="http://wiki.laptop.org/go/Tests/Network/XS/20XOPersistence">20 XO XS collaboration persistence test</a>, which connects 20 XOs to a school server (XS) access point (AP), gets them collaborating on a number of Activities, and sees how well that collaboration stays up over the course of multiple hours. We're happy to report that this test passed (this time, at least) - 760 seems to show improved collaboration stability over previous builds. Sweet!</p>
+<p>I know this is a test that not many people outside of 1cc will be able to replicate and verify; in later posts (and later days), I'll try to start putting out things I've done that you, too, can do at home to help out. And probably some things I <em>haven't</em> done - things I can't do myself, but which still need to happen, with the community's help - if you'll allow me to request a hand from you once in a while.</p>
+<p>And the morning and the evening were the first day.</p>

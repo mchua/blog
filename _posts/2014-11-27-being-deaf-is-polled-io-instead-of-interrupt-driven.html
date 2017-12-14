@@ -1,0 +1,34 @@
+---
+layout: post
+title: 'Being deaf is: polled I/O instead of interrupt-driven'
+date: 2014-11-27 09:30:31.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- hearing
+tags: []
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>By the way, the whole <a href="http://blog.melchua.com/2014/11/27/being-deaf-is-constant-baseline-soundmaking-anxiety/">baseline sound-making anxiety</a> thing? It works the other way, too.</p>
+<p>I'm an electrical/computer engineer. I like making <a href="http://en.wikipedia.org/wiki/Embedded_system">embedded systems</a>, which are tiny computers that do tasks while responding to the outside world. (I promise this is relevant. Stay with me here.) There are two (basic) ways for embedded systems to handle external input: they can have polled I/O (input-output), or they can be interrupt-driven. <a href="http://www.calvin.edu/academic/rit/webBook/chapter2/design/hardware/io/interrupts.htm">This Calvin College page</a> has a nice explanation for polling I/O:</p>
+<blockquote><p>Think of a game where a basketball player is asked to make as many free-throws as possible in one minute, but the clock is down the hall in another room. The player must run down the hall and check if the minute has passed, and if not, go back to the gym and try to make another shot, then run down the hall to check the clock and run back to take another shot. The player spends much of the time simply checking (polling) the clock.</p></blockquote>
+<p>But wait -- what if the basketball player can hear? And if the clock has a loud buzzing alarm? Then they're fine, and can keep taking shots until they hear the BZZZT! that tells them to stop. This is called being <em>interrupt-driven</em>, and it's <em>such </em>a gift -- I'm stunned how much my hearing friends take this for granted. They can keep shooting basketballs, all the time. They can go right about their business, confident they'll <em>know </em>when someone knocks on the door, or <a href="http://blog.melchua.com/2014/09/23/being-deaf-is-straining-to-lipread-restaurant-order-numbers/">their food order is ready</a>, or their kid falls down the stairs.</p>
+<p>The deaf basketball player, on the other hand, keeps running back and forth along the hallway. I put in a periodic 1000-millisecond delay into my activity loop to stop and check things.</p>
+<p>For instance, I enjoy cooking for friends. My kitchen is right next to my front door. At some point this fall, I realized I was constantly tense while cooking, and caught myself pausing periodically to see if somebody was at the door -- because I <em>can </em>hear knocks on that door if I'm next to it, and very quiet, and I'm concentrating <em>really </em>hard. It was a totally unconscious programming loop I'd set up, and it basically said:</p>
+<ol>
+<li><span style="line-height: 13px;">It would be rude to let guests wait at the door for more than 30-60 seconds.</span></li>
+<li>Therefore, every 30-60 seconds, I will stop cooking and <em>concentrate really hard! </em>to check if guests are at the door.</li>
+</ol>
+<p>I decided this was silly. Most of the time, guests <em>aren't </em>at the door, so the vast majority of this concentration is just wasted effort.</p>
+<p>Now I just prop open my front door if I'm expecting guests, and <em>voila </em>-- instant cooking relaxation. (Yes, yes. Safety and heating/cooling bills. There are these tradeoffs.) In the long run, the better solution is getting a <a href="http://www.harriscomm.com/doorknocker-125-flashing-led-door-signaler.html">flashing door knocker</a> and/or having a kitchen with big windows with the driveway/door within their line of sight (this is what I had last year, and it was <em>marvelous</em>). So, future Mel-home, you are going to have <em>features</em>.</p>

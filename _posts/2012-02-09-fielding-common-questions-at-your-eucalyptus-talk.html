@@ -1,0 +1,56 @@
+---
+layout: post
+title: Fielding common questions at your Eucalyptus talk
+date: 2012-02-09 13:48:49.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- eucalyptus
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+  aktt_tweeted: '1'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><strong>Update 2/20/2012 - after further discussion with EuCa folks, I've updated and expanded the responses below. Thanks to everyone who chimed in!</strong></p>
+<p>As the Eucalyptus community picks up steam, more and more folks who aren't Eucalyptus employees are giving talks about EuCa at various events around the world - which is fantastic. How do we get everyone the information they need to give a successful talk? Ah, that's the fun challenge.</p>
+<p>Sometimes we just fill in gaps as we go along. For instance, Shaon's talk, "Next generation cloud deployment: Self help is the best help!" just got accepted to SoftExpo 2012. Subsequently, a few of us had a spontaneous discussion on how to field a couple tricky questions when giving EuCa talks - the post below is based on <a href="http://meetbot.eucalyptus.com/meeting-logs/eucalyptus-meeting/2012-02-09/eucalyptus-meeting.2012-02-09-17.15.log.html">these meeting logs</a>. (Disclaimer: these represent individual opinions and don't speak for Eucalyptus as a company, etc.)</p>
+<p><strong>Why is Eucalyptus using the Amazon API?</strong></p>
+<p>Because AWS is way farther ahead than the others, and we believe it to be the most worthy of focus. We may support other APIs in the future, but we prefer to focus now on the best API, and that's AWS. See <a href="http://www.markshuttleworth.com/archives/765">this post by Mark Shuttleworth</a> for reference - it's about OpenStack, but makes the same point.</p>
+<p><em>Comments from Eucalpytus folks: "AWS is by far the most popular public cloud out there. I.e. it's not just best, it is also the most common.</em></p>
+<p><strong>How much does Eucalyptus support cost?</strong></p>
+<p>Varies widely. <a href="http://www.eucalyptus.com/about/contact">Contact Eucalyptus</a> for details.</p>
+<p><em>I originally posted this without a number because I know companies are often hesitant to post that sort of pricing information on the web. After asking around within Eucalyptus, I found out they actually wanted to give a public answer - awesome! Therefore: if we change the question to "subscription" (not "support"), the answer is "It starts at $2,000 per server per year."</em></p>
+<p><strong>What third party apps are available for Eucalyptus management?</strong></p>
+<p>There are a few options for apps that run on Eucalyptus and provide Amazon-RDS-like support. Three popular ones:</p>
+<ul>
+<li><a href="http://open.eucalyptus.com/wiki/ToolsEcosystem_Hybridfox">HybridFox</a></li>
+<li><a href="http://open.eucalyptus.com/wiki/RightScale">RightScale</a></li>
+<li><a href="https://support.enstratus.com/entries/141383-eucalyptus-faq">Enstratus</a></li>
+</ul>
+<p><strong>Providers of IaaS services need a usage monitoring tool. What does Eucalyptus offer?</strong></p>
+<p>There are hooks in Euca 3.0 for reporting usage; this is a new feature. We don't have [public] details yet, but they will be in the docs when we release them (which will hopefully be soon).</p>
+<p><strong>In Euca 2.0, instances cannot be recovered once the node goes down. Is there any solution?</strong></p>
+<p>Boot from EBS is a new feature in Euca 3, and may be able to help with that problem somewhat. However, redundancy (multiple instances running at all times) is the way to survive instance failures. If you have multiple zones, start instances on all zones.</p>
+<p>Instances are supposed to be expendable. HA (High Availability) is for the infrastructure: the app will still need to be designed with the cloud in mind to be fully HA. EBS and Walrus are the persistent storages to be used to keep the states and backup.</p>
+<p><strong>Wait, wouldn't EBS and Walrus use more resources? I thought cloud was supposed to minimize resource usage.</strong></p>
+<p>Yep. HA wastes resources by design.</p>
+<p><em>A Eucalyptus employee commented with a clarification here: I wouldn't say that HA "wastes" resources. It of course uses more resources, but for a good and intended purpose. So it's not a waste. I would say something like "there is nothing such as a free lunch. To have HA, you need redundancy, and redundancy requires its own resources."</em></p>
+<p><strong>What are the alternatives to Eucalyptus, and why would someone choose Eucalyptus over them?</strong></p>
+<p><em>It was pointed out to me that the first question here needs to be "how do you define 'alternatives'?" But in any case, here are a few.</em></p>
+<ul>
+<li><em>A suggested addition to the list: vCloud Director from VMware, which is also aimed at enterprise customers - but is not open source.</em></li>
+<li>Openstack: Broad community supported by many companies, modular design. Both a blessing and a curse. Openstack is much more a set of tools for building a cloud; Euca is cloud-in-a-box. And openstack, honestly, just isn't as far along. <em>(Additional community comments: it's designed primarily for public clouds and doesn't support the AWS API.)</em></li>
+<li>Cloudstack: Good product, good UI. Integration with AWS isn't as good.<em> (Additional community comments: it's also mostly used by service providers, not enterprises.)</em></li>
+<li>Opennebula: Again, more of a toolkit approach. Not too many components -- just more flexibility about how you put them together. Seems like Openstack and Opennebula are both good for the service provider market, and Euca and cloudstack are more all-inclusive products for the enterprise market.</li>
+</ul>
+<p><em>That's all we had time for -- what other questions would you ask, and how would you answer these?</em></p>

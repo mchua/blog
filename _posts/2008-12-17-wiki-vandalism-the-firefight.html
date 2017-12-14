@@ -1,0 +1,29 @@
+---
+layout: post
+title: 'Wiki vandalism: the firefight'
+date: 2008-12-17 00:13:22.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- olpc
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>This is certainly an interesting way to be greeted when you sign on to IRC...</p>
+<blockquote><p>&lt;cjl&gt; any wiki sysops around?<br />&lt;cjl&gt; wiki.l.o is under massive vandalism attack and has been for several days<br />&lt;mchua_&gt; cjl: I'm about.<br />&lt;mchua_&gt; cjl: What's up?<br />&lt;cjl&gt; look at recent edits, I'm in rollback hell<br />* mchua_ takes out the well-polished double-barreled shotgun (I've been noticing some IP spam over the last few days...)</p></blockquote>
+<p>We have been hit by a <a href="http://wiki.laptop.org/index.php?title=Special:RecentChanges&from=20081216010055&amp;limit=500&hideminor=0&amp;hideliu=1">flood of vandalism</a> on the OLPC wiki that started at 15:19 on 2008-12-17. The vandalism is consistent, done only by not-logged-in users, and continuing (approx. once every half-hour, often more frequently) and seems like the work of a bot; it comes from different IP addresses and usually includes the text "(FIELD_OTHER)" (no quotes) in the spam edit, though it sometimes includes single words of gibberish, as in <a href="http://wiki.laptop.org/index.php?title=Le_Wiki_de_OLPC&curid=5062&amp;diff=187187&amp;oldid=153569">here</a>: (The FIELD_OTHER and gibberish edits come from the same IP addresses, and those IP addresses have nothing except vandalizing edits.)</p>
+<p>Sysop Chris Leonard (cjl) first spotted the vandalism and began to fight it tonight, reverting vandalized pages en masse; Joachim Pedersen (joachimp) soon joined in on the effort to identify the rogue IP addresses, and Michael Stone (m_stone) looked for ways to stop the spamming at the source. #olpc logs starting from approximately 1:23am EST detail much of the conversation. I see SJ also joined in on the <a href="http://wiki.laptop.org/go/Special:IPBlockList">blocking action</a>. </p>
+<p>Two hours of constant reverts and blocks later, we think we've cleaned up the bulk of the spam, but wiki-gang should take another pass after the captcha is implemented, as well to make sure this type of thing won't happen (as easily) again. Thanks to Chris, Joachim, Michael, and SJ (and others who may have pitched in - let me know if I've missed you!) for their heroic late-night responses.</p>
+<p>Short term solution: add a captcha for all edits and new page creations for users who are not logged in (i.e. IP users).</p>
+<p>Long term solution: I'm at a loss for how to track this down further and stop it at the source. Ideas, thoughts?</p>
+<p>Most of this was also <a href="http://lists.laptop.org/pipermail/wiki-gang/2008-December/000125.html">posted</a> to the wiki-gang list, and a ticket has been filed to the OLPC sysadmin queue asking for a captcha to be placed on anonymous edits until we can find a better solution.</p>
+<blockquote><p>(towards the end of the firefight)<br />&lt;cjl&gt; 02:26 in UTC-5<br />&lt;mchua_&gt; and I still have to write that 8.2.1 test plan, yay<br />&lt;mchua_&gt; well... at least I know I still love my work. :)</p></blockquote>

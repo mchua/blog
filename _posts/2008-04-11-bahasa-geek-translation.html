@@ -1,0 +1,64 @@
+---
+layout: post
+title: 'IRC deconstruction: bahasa geek translation'
+date: 2008-04-11 20:59:09.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>I wish Dr. M had made us do a <a href="http://www.clicktracks.com/insidetrack/articles/kirk_analytics.php?source=nws072007">statistical analysis of red-shirt deaths in Star Trek</a>. Ah, geekiness. (Although I can't complain too much; writing a stats paper on the World Series isn't that bad either).</p>
+<p>Also, I love watching geeks talk. Behold:<br />
+<em><br />
+<strong>user1:</strong> http://en.wikipedia.org/wiki/Special:Search?go=Go&amp;search=Snark_(punctuation) &gt;&gt; user2<br />
+<strong>user2:</strong> bash: user2: Permission denied<br />
+<strong>user1:</strong> sudo http://en.wikipedia.org/wiki/Special:Search?go=Go&amp;search=Snark_(punctuation) &gt;&gt; user2</em></p>
+<p>Now, I know my parents (who are reading this) probably don't understand why this is so amusing, and why I adore hanging out with people who can <em>talk like that</em>. The analogy for them is that it's like getting back to Manila - although they speak fluent English and have lived in the US for years, it's probably really nice to get back to a land where everyone speaks their creole of Min-nan, English, Tagalog, and... whatever else is in there. It's not that you can't live without speaking that language with somebody else, but there are some thoughts and patterns you can't express in any other way, and it's great to be able to get them out.</p>
+<p>I'll do my best to explain what it means so mom and dad can see how much information (and humor, and implicit culture) is packed into the three lines up there. For any hackers out there; please correct my misinterpretations. For any social scientists out there: likewise on my methodology.</p>
+<p><strong>Analysis:</strong></p>
+<p>For the uninitiated, this is an IRC transcript; it's 3 lines from a chatroom in which two people (user1 and user2, both young men working in the software field) were talking. They know each other and are trading friendly jabs (a common way of showing friendship among... well, I'm tempted to say hackers, but I really think this generalizes to a broader social group - maybe 'guys,' or less colloquially 'western young-adult males.') The straight translation into English would go something like this.<br />
+<em><br />
+<strong>user1:</strong> I insult user2!<br />
+<strong>user2:</strong> I block your insult!<br />
+<strong>user1:</strong> I counter-insult and succeed!</em></p>
+<p>Not particularly funny, though. Let's take a look at how they insulted each other so we can see where the witticism comes in. One line at a time.</p>
+<p><em><strong>user1:</strong> http://en.wikipedia.org/wiki/Special:Search?go=Go&amp;search=Snark_(punctuation) &gt;&gt; user2</em></p>
+<p>Okay. First lesson: <a href="http://en.wikipedia.org">Wikipedia,</a> a popular online encyclopedia that's user-editable and well-known among the geek set (and increasingly in non-geek sets as well). The URL provided is the "<a href="http://en.wikipedia.org/wiki/Snark_%28punctuation%29">snark</a>" article, where a snark is "A sarcasm mark or sarcasm point [which] identifies text as being <a href="http://en.wikipedia.org/wiki/Derogatory" class="mw-redirect" title="Derogatory">derogatory</a> or <a href="http://en.wikipedia.org/wiki/Ironic" class="mw-redirect" title="Ironic">ironic</a>." (Wikipedia)</p>
+<p>Next, the double right angle brackets. "&gt;&gt;" is something used on the Unix command line to transfer information from one process (or location) to another. For instance, the command <strong>echo foo &gt;&gt; foo.txt</strong> will take the output of 'echo foo' (which is the text 'foo') and save it to the file 'foo.txt.' (<a href="http://en.wikipedia.org/wiki/Foo">Foo</a> itself is a metasyntactic variable that programmers use as temporary/example variables when they can't think of any other name; I am myself a hacker and often conform to many of their communication conventions.) In other words, <strong>a &gt;&gt; b</strong> means "place a's output at b." I think of it as "throw at," or "place towards." So we could also deconstruct the line above like this:<br />
+<em><br />
+</em><em><strong>user1:</strong> [oblique reference to derogatory sarcasm] placed-towards user2<br />
+</em>or...<br />
+<em><strong>user1:</strong> *throws sarcastic insult towards user2*</em></p>
+<p>Next, user2 replies. He's not going to take this sitting down.<br />
+<em><strong><br />
+user2:</strong> bash: user2: Permission denied</em></p>
+<p>This is a made-up output in response to user1's insult - user2 is acting as if he is a computer that user1's command has just been called on. Bash is a shell - a command-line interface that commands (which is what user1's message is formatted to emulate) are typed into. This message is essentially saying that user1 does not have the necessary (technological/security) privileges ("privs") to carry out the insult-operation defined above - that is, to save the snark file output to location "user1." Some translations of user2's line might go like this:</p>
+<p><em><strong>user2:</strong> you can't touch me.<br />
+</em><em><strong>user2:</strong> you don't have the power to actually insult me in that way.<br />
+</em><em><strong>user2:</strong> missed me! nyah!</em></p>
+<p>Finally, user1 counter-jabs with a response that bypasses the "block" that user2's comment made against the original insult.<em><br />
+</em><em><br />
+<strong>user1:</strong> sudo http://en.wikipedia.org/wiki/Special:Search?go=Go&amp;search=Snark_(punctuation) &gt;&gt; user2</em></p>
+<p><a href="http://en.wikipedia.org/wiki/Sudo">Sudo</a> means "superuser do," with superuser being the administrative account that can do basically <em>anything </em>on a computer (including bypassing local "Permission denied" errors). The rest of the comment is identical to user1's first insult.</p>
+<p>If user2's comment means "you can't touch me," user1's riposte means "oh yes I can." The use of "sudo" indicates elevated access privileges and possibly by extension technical superiority, as administrative access on machines is typically only given to experienced and trusted people. The conversation thread of insults terminated here and user1 and user2 (and others) went on to discuss other things.</p>
+<p>It is important to realize that these <em>were not actual commands</em>. By this I mean the comments were written with many elements of code (and would for the most part* be executable on an actual command-line) but are not purely so - they're mixed in a peculiar creole of code, colloquial English, and "hacker slang" (which includes specialized terminology). They're also typed into a chat window where they clearly <em>won't </em>be executed as 'actual' commands on a computer - the intent is to "run the program" <em>on the other person's brain</em> in order to communicate. (Which is, in one way of looking at it, what all languages... do. They're brain-executable programs and protocols in some sense.)</p>
+<p><strong>Recap: </strong>There are also some things exhibited nicely here that are common in hacker culture in general.</p>
+<ul>
+<li>extended sprints of wit - subtle humor/puns and wordplay, done straight-faced for long conversations that get increasingly more humorous by building atop of twisted logic.</li>
+<li>insults as a signal of familiarity and friendship - the more you know someone, the worse names you can call them as terms of endearment.</li>
+<li>strong "insider" computing metaphor knowledge - this entails two things: (1) implicit understanding/assumption that the other person knows the meaning of these specialized technical commands, another insider-bonding action and (2) acceptance of mixing these computing terms with colloquial English.</li>
+</ul>
+<p><strong>*Postscript: </strong>As I mentioned earlier, I am myself a hacker. I can't (okay, "don't want to") resist adding that the command that user1 typed is invalid as presented - attempting to pipe a <a href="http://en.wikipedia.org/wiki/Url">URL</a> ("webpage address") directly to a file will give you the error <em>'bash: http://url-you-typed.com: No such file or directory'</em> and what you actually want is to pipe the content of the page <em>at that url</em> to the file. (In other words, get the webpage that's at http://url-you-typed.com and [dump the text you would see in a browser] to [a file]). Therefore, I say...</p>
+<p><strong>mchua: </strong><a href="http://freshmeat.net/projects/links/">links</a> -dump <a href="http://en.wikipedia.org/wiki/Pwn">http://en.wikipedia.org/wiki/Pwn</a> &gt;&gt; user1anduser2</p>
+<p>And there you go.</p>

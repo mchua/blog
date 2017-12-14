@@ -1,0 +1,28 @@
+---
+layout: post
+title: Polyglot content on the OLPC
+date: 2007-03-30 09:31:00.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta:
+  blogger_blog: mellory.blogspot.com
+  blogger_permalink: "/2007/03/polyglot-content-on-olpc.html"
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Spent a good chunk of yesterday at <a href="http://www.laptop.org/">OLPC </a>re-teaching myself how to program in Python while making a library translator. I'm beginning to learn about internationalization, and spent far too long reading about <a href="http://www.gnu.org/software/gettext/">gettext </a>and now know why there are so many underscores inside printfs (print statements in the C language).</p>
+<p>The short answer is that they allow substitution of strings within programs - for instance, _("Hello!") transforms into "Hello!" when you tell your software to build with English, and "Ba'ax ka wa'alik!" when you tell it to build in Mayan. When it's called, gettext performs a lookup-subsitution in the <a href="http://www.gnu.org/software/gettext/manual/html_node/gettext_9.html">.po files</a> you give it, which are basically lists of phrases you've got inside your program, written in a bunch of different languages.</p>
+<p>.po files are apparently very widely used because they're so simple (they're literally just lists of translations of phrases in your program), but they break down when you try to translate larger bodies of information because there's no way to build structure into them. Every message has to have an unique ID. If you're building something on the scale of - say, the <a href="http://dev.laptop.org/pub/content/library/">OLPC library</a>, that's thousands and thousands of reference numbers floating around with no way to categorize them. Ouch. Okay, you could specify the format of the msgid and parse it to create a structural hierarchy, but... really, there must be a better way. Any ideas?</p>
+<p>As part of translating the <a href="http://dev.laptop.org/pub/content/library/biology/">Biology </a>page (read: while putzing around before writing the actual code that would translate the Biology page) I tried <a href="http://wiki.laptop.org/go/Localization/Library#Biology_XML_format">experimenting </a>with <a href="http://w3schools.com/xml/">XML </a>to replace .po's and it seems to work. Kent Quirk pointed out that Python <a href="http://www.diveintopython.org/getting_to_know_python/dictionaries.html">dictionaries </a>would do the same thing (and they're what I'm using now), but the benefit of XML is that you can enforce template compliance with a <a href="http://w3schools.com/dtd/dtd_intro.asp">DTD </a>to make translations less random and spotty (like, you can't put in three different translations for the title in Spanish, you have to pick one) and it also fails more gracefully in case someone messes up while hand-editing... and translators <span style="font-style: italic;">are </span>going to be hand-editing these files.</p>
+<p>There's also Wikipedia's <a href="http://en.wikipedia.org/wiki/Wikipedia:Multilingual_coordination">approach </a>to multilingual coordination, which (as best I can tell) is "put lots of links to variants in different languages and let people figure it out and hand-link it themselves." Weirdly enough, each language's wiki is completely separate from the rest, meaning I'd have to create a separate account to edit the <a href="http://zh.wikipedia.org/wiki/">Chinese </a>and <a href="http://en.wikipedia.org/">English </a>wikipedias. I see the rationale behind the split for content organizing reasons, but the inability to merge different accounts must be annoying for frequent translators there.</p>
+<p>But yes. I learned a ton, I had a lot of fun, I started flaking the rust off my high-level programming fingers again (resulting in <span style="font-style: italic;">painfully</span> slow coding yesterday, but it's getting better) and I'm going back. Hopefully over time my helpfulness-output will start outweighing my asks-stupid-questions-that-take-time-to-answer input. Hurrah, laptops!</p>

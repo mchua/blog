@@ -1,0 +1,53 @@
+---
+layout: post
+title: How the zikula-based test instance of FI was put up, part 1
+date: 2009-08-16 02:18:43.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Another peek into the thought processes of a <a href="http://blog.melchua.com/2009/08/14/joining-infrastructure/">newbie learning how to be a sysadmin.</a> My project: <a href="https://fedorahosted.org/marketing-team/ticket/14">install zikula with 2 plugins on a test server.</a> This took me 14 minutes to do on my own laptop; let's see how long it takes me to figure out how to do the same thing on Fedora Infrastructure's publictest6 machine. Go!</p>
+<p><a href="https://fedoraproject.org/wiki/How_to_set_up_a_Zikula_sandbox#Package_installation"><strong>Part 1: Package installation</strong></a></p>
+<ol>
+<li>I've ssh'd into publictest6 and am armed with my <a href="https://fedorahosted.org/marketing-team/ticket/14">ticket</a> and <a href="https://fedoraproject.org/wiki/How_to_set_up_a_Zikula_sandbox">instructions</a>. Excellent.</li>
+<li>Shoot. I can't yum install the zikula packages because the package needs the more recent versions of a bunch of php modules.  <a href="http://lists.fedoraproject.org/pipermail/logistics/2009-July/000039.html">This error has been encountered before</a>, but after reading that mailing list thread I'm still not sure what to do about it. HALP.</li>
+<li>Ask Ricky on IRC. Answer: the package doesn't <em>actually</em> need the recent versions of those php modules; the old ones are fine. The package is being updated to reflect that, but in the meantime I can use <a href="http://linux.die.net/man/1/yumdownloader">yumdownloader</a> to grab the rpm and then install it with --nodeps to force past the issue.</li>
+<li>This does indeed work. I rejoice, then ask Ricky where I could have found that out for myself - where did the packager give the ok to blithely ignore dependency errors? Answer: <a href="http://lists.fedoraproject.org/pipermail/logistics/2009-August/000130.html">buried in mailing list archives</a> - and I know it's impossible for me to keep up with all mailing lists - so asking around was actually the best strategy for me here.</li>
+<li>Now that I've installed the zikula package, I easily yum install the zikula-module-crpTag package, and then... well hey, that's interesting. When I try to do the same for the zikua-module-News package, I get an error saying "No package zikula-module-News available." Running a yum search zikula-module confirms that... huh, yeah, it isn't. That's strange, because I know publictest6 is running RHEL 5.3 (because Ricky told me), and when I <a href="https://admin.fedoraproject.org/pkgdb/search/">search for packages</a> (I found that page by googling "search fedora packages") I readily find <a href="https://admin.fedoraproject.org/pkgdb/packages/name/zikula-module-News?_csrf_token=a2c965aa60865e56529a16b7b9174a3f3621b328">the entry for zikula-module-News</a> and that it's packaged for <a href="https://admin.fedoraproject.org/pkgdb/packages/name/zikula-module-News?_csrf_token=a2c965aa60865e56529a16b7b9174a3f3621b328#FedoraEPEL5">EPEL 5</a>, which... should make it available to a machine running RHEL 5.whatever. HALP.</li>
+<li>Ask Ricky on IRC. His answer: "I imagine it's waiting on the next EPEL push. We do have epel and epel-testing enabled on our machines, so once it even gets into testing, it should show up there." These two sentences teach me a couple things: (1) packages are pushed to 'available' status for various repositories (in this case, the EPEL repo(sitory)) in regular cycles; they're not necessarily instantaneously available when they're made. Hm. Now I wonder how those cycles happen, how often, and who pushes them. (2) Fedora Infra enables epel and epel-testing on their machines, so if I want to know what packages I can easily install on Fedora publictest machines, those are the two repos I should check. (I already knew that you could specify what repos your computer would be able to install packages from.) (3) It seems unusual for a live server to have a testing repo enabled (but not so weird for a publictest machine).</li>
+<li>However, this doesn't tell me what I can do to fix the issue. "Am I out of luck on the News module until the next push?" I ask. "And when would that be?" Ricky outlines 2 options: (1) get it in the Fedora Infrastructure repo (hey, another repo I didn't previously know about that is also enabled on the publictest machines!) (2) install the RPM directly on the machine. When I ask Ricky which one he would pick, he says he would download the RPM from <a href="http://fedoraproject.org/wiki/Koji">koji</a> and then install it (option 2).</li>
+<li>...so I <a href="http://koji.fedoraproject.org/koji/">wander to koji</a> and <a href="http://koji.fedoraproject.org/koji/buildinfo?buildID=123731">find the zikula-module-News package there</a>, then <a href="http://kojipkgs.fedoraproject.org/packages/zikula-module-News/2.4.1/3.el5/noarch/zikula-module-News-2.4.1-3.el5.noarch.rpm">wget the noarch rpm</a> into publictest6 and install it (sudo rpm -i --nodeps zikula-module-News-2.4.1-3.el5.noarch.rpm) All modules are now installed. The process so far has taken me about an hour (granted, I've been interrupted by cousins to serve as a piano accompaniment for part of that). In comparison, when I was going through the same process on my own laptop, I'd finished these steps (without needing to ask any questions) by the end of the second minute, most of which was "sit and twiddle thumbs while stuff downloads" time.</li>
+</ol>
+<p><strong>Part 2: <a href="https://fedoraproject.org/wiki/How_to_set_up_a_Zikula_sandbox#System_setup">System setup</a></strong></p>
+<blockquote><p>&lt;mchua&gt; ricky: [mchua@publictest6 ~]$ sudo chkconfig httpd on<br />
+&lt;mchua&gt; sudo: chkconfig: command not found<br />
+&lt;mchua&gt;  (but the 'Web Server' and 'MySQL Database' groups are already installed on publictest6).<br />
+&lt;mchua&gt; ricky: what's happening / what to do?<br />
+&lt;mchua&gt; (I told you I'd need hand-holding through this first round.)<br />
+&lt;tmz&gt; mchua: you likely just need to specify the full path to chkconfig, as your user may not have /sbin in the path.<br />
+&lt;tmz&gt; e.g.: sudo /sbin/chkconfig httpd on<br />
+&lt;mchua&gt; tmz: ...that would do it. thanks!</p></blockquote>
+<p>Yeah, that would be from the "d'oh, I should have checked that" department. This section went without a hitch thereafter.</p>
+<p><strong>Part 3: <a href="https://fedoraproject.org/wiki/How_to_set_up_a_Zikula_sandbox#Set_up_database">Set up database</a></strong></p>
+<ol>
+<li>I gleefully followed the instructions to set the mysql root password (mysqladmin -u root password <em>the-new-password-I-wanted-went-here</em>)</li>
+<li>...then realized that the mediawiki instance that fedora QA was running on publictest6 might also want to know the mysql root password I'd just changed. Ran to IRC and asked Ricky how they usually worked out accounts/passwords/access between multiple things using mysql on the same server. Answer: "Oh, we usually just leave it blank since it's only accessible if you have a shell there anyway. If you want to change it, I'd store it in a file like /root/mysql_password and make sure anybody sharing that machine knows about it."</li>
+<li>That would overcomplicate things, though, so I hurriedly set the mysql root password back to blank. (mysqladmin -u root -p password '' # I guessed that empty '' quotes would give me a blank password, and I was right.)</li>
+<li>As a side note: while that was going on, I asked Ricky whether that was a general thing to do for mysql root, becaues it seemed odd to leave root passwords blank. Ricky explained that production machines had /var/lib/mysql chmodded to 700 so that one would need to mysql -u root as root (or as the mysql user) to get access.</li>
+</ol>
+<p>Things went without a hitch thereafter.</p>
+<p><strong>Part 4: <a href="https://fedoraproject.org/wiki/How_to_set_up_a_Zikula_sandbox#Zikula_installation">Zikula installation</a></strong></p>
+<p>Around 3:15am, I decided to do the rest of this... tomorrow.</p>

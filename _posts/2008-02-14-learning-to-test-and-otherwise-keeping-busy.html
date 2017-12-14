@@ -1,0 +1,42 @@
+---
+layout: post
+title: Learning to test and otherwise keeping busy
+date: 2008-02-14 20:18:54.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Week two of my internship is almost over, and I continue to be surprised every day. In a good way. I knew that engineers solved problems (and didn't just Make New Technologies), but I never thought I'd have it driven home to me with such force - I have not done a single commit to any code repository, fabricated start-to-finish any design of a product I can really call my own, nor do I do complicated mathematics on a daily basis (I love math, and certainly wouldn't object to this - but I think that Ivan would say that it's not engineering unless you're doing the crunchin'.)</p>
+<p>But I do think I'm a heck of a lot better at my personal (rather hand-wavy) notion of engineering-as-the-art-of-solving-problems than I was 9 months ago, rather awkwardly stepping off the stage with a diploma I didn't expect in hand. Not as good as I'd like, but better, and I don't think I'll ever be as good as I like. So... what the hey.</p>
+<p>Right now, at TOPP, I'm learning how to test. This is apparently one of those wonderful meta-laden fields where you have to think a lot about your own thinking; I enjoy it a lot, and have started reading academic papers on testing (and epistemology) while eating lunch, at least until my coworkers tell me to get over to the table and actually talk to people. (Which I do. And I appreciate the reminder.) </p>
+<p>In my search for precision and conciseness, I ended up spending^H^H^H^Hwasting a good hour this morning creating a schema to write test notes in, ending up with a text document full of stuff that looks like... this.</p>
+<blockquote>
+<p>1. U[#P1].P1(invite-request) -&gt; J</p>
+<p>2. J.w(register-start)</p>
+<p>3. J.e(invite-approve)</p>
+<p>4. J.w[~P1](register-start)</p>
+<p>5. J.e{~P1](register-confirm)    
+</p></blockquote>
+<p>Or in what I originally thought was actually English: (don't <em>actually</em> try to read the below paragraph):</p>
+<blockquote>
+<p>"A project P1 admin uses the web interface (within their project P1 interface on woonerf) to invite a Joiner via email. The Joiner does not react to the email but instead starts their user registration through the woonerf web interface (but does not yet confirm their email). The Joiner returns to email, sees the original invitation from the project P1 admin, and follows that email to create an account and confirm email for that account before trying to return to confirm the email for his/her first account creation attempt."    </p>
+</blockquote>
+<p>Yeah.</p>
+<p>Fortunately, Tim and David intervened, and Sonali showed me her <em>much</em> better flow test charts, and then I found some <em>real </em>bugs. Which took several hours to describe, with large amounts of help, because of the strange way in which they interacted (and my relative inexperience in writing good bug reports). Productivity and learninating was had, I was happy, and I took the abysmally long train ride home.</p>
+<p>Today I also wrote <a href="http://www.openplans.org/projects/operations/blog/2008/02/14/big-questions-from-the-opdev-conversation/">my first TOPP blog post</a> on Big Questions I've heard about <a href="http://openplans.org">openplans and why we're doing it</a>, and then my first <a href="http://en.wikiversity.org/wiki/Vital_Ideation">Vital Ideation</a>"assignment," <a href="http://vitalideation.blogspot.com/2008/02/no-longer-tortured-confessions-of.html">somewhat late</a> (which is fine, since I'm not technically enrolled in the class).</p>
+<p>Now I'm starting to get somewhat fuzzy-headed for having stayed up 'till nearly 4am this morning waiting for a <a href="http://wiki.laptop.org/go/Grassroots">grassroots</a> meeting that nobody else came to, but I also got tons of stuff done while waiting, and I'm about to go to bed right this moment, so the dull-brain feeling will pass. I do enjoy feeling awake, and need at least 4 hours a night regularly to function.</p>
+<p>I'll be spending this weekend at the <a href="http://wiki.laptop.org/go/University_Chapter_Jam_Boston">University Chapter Jam Boston</a>, which is drawing in students from the Boston area for a momentum-building hackathon for their various OLPC college chapters. There's a really pretty page <a href="http://olinolpc.org/">here,</a> but I'm trying to get them to move it to the wiki (and make a template so all jams can look as good as their page).In general, Olin people <a href="http://wiki.laptop.org/go/User:Mchua/Braindumps/Wiki_song">need to put stuff on the OLPC wiki more</a>.</p>
+<p>(Note: I think my email client might be doing weird things - again - so if you're expecting a message from me, I might not get this ironed out until tomorrow or so... I need to find a less-bad way of experimenting with Thunderbird/pine/mutt configurations for working offline.) </p>
+<p>[Edit: I hate the behavior of wordpress on a Mac. Next time I'm writing posts from my laptop.] </p>

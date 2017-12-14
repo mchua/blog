@@ -1,0 +1,32 @@
+---
+layout: post
+title: Language and fixing my keyboard
+date: 2008-01-22 01:03:01.000000000 -05:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Didn't fit anywhere else
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>Robitussin doesn't taste any better than it did 15 years ago. (I wrote them a letter back then suggesting they add more sugar to their formula, and got back a reply saying that their formula couldn't just be changed like that.) It does, however, enable me to sleep after 1.5 hours of coughing instead of not sleeping at all, which is a marked improvement over nights past.</p>
+<p>One thing I forgot to add yesterday - I want to continue to write. Especially in the last few years, I've started to feel a greater depth in the things I can do with words to get across weird mind-spurts I'm trying to convey (and an increased incidence of writing <em>making </em>me have weird mind-spurts in the first place, which I love).</p>
+<p>I'm all over learning other languages (human and computer) and love tinkering with tech stuff, but if the "10 years to mastery" window is true, I'm starting to come up on my more "mature" phase in writing, since I seriously began doing it around 11 or so in Mr. Panitch's English class. Written language is my tool in a way that breadboards and chips and assembly won't catch up with for another couple of years, even if I sunk my full self into electrical engineering and code right this moment. I suspect it's that desire to be as comfortable with technical things that's making me hanker for the long haul of a PhD in ECE.</p>
+<p>Today was both more and less productive than I'd hoped. My XO was unbricked, so I was able to explore the software more (there's been a tremendous amount of development since the end of September, when I shipped off to Asia) and partially solve a weird bug that's cropped up; my XO's "h" key has believed it's a "u" since around the time of my (software) upgrade to Build 656, although I can't positively say it was 656 that caused it since I didn't notice the problem until the day after I upgraded (apparently I don't type "h" that much.)</p>
+<p>After worrying about the problem being hardware for a while (keyboard traces shorting out or something), I decided to eliminate other options and spent some time upgrading/downgrading firmware before realizing I could type "h" just fine in the non-<a href="http://wiki.laptop.org/go/Sugar">Sugar</a> console and so it was (1) not hardware - yay, I didn't have to send my laptop back for repairs! and (2) not firmware - although it would be pretty hard for a firmware bug to mess up my keyboard.</p>
+<p>Then I discovered<a href="http://www.xfree86.org/current/xev.1.html"> xev</a>, which shouts out X events (including keypresses) and realized that while my "h" and "u" keys returned different keycodes, those keycodes were mapped by XLookupString to the same character ("u"). I still have no idea how this happened.</p>
+<p>The "h thinks it's a u" bug continued, but later in the evening while helping someone else enable Amharic input on their XO (they'd filed it as a software bug when it was actually a case of "you need to change your input method"), I discovered the setxkbmap command, which... fixes it. Or more precisely, "setxkbmap us" fixes it. (I suppose other languages would have done just as well, but I speak primarily English.)</p>
+<p>The annoying part is that I have to re-run that command at boot every time. I'm trying to find a way to make the changes permanent (and find out what map it's using right now that's corrupted, and how in the blazes it got that way). Ah, the joy of the hunt.</p>
+<p>Got a good number of people's XO issues fixed (yeah, the volunteer gang is basically tech support), set up things for the meeting at Google tomorrow, went through a lot of emails (I have to evolve my email-coping strategy, because my current one is not working under my new mail-load) and learned about cooking mishua in a wok (mom). And several other semi-major things that I also did not expect to get done today.</p>
+<p>On the other hand, some wiki cleanup stuff I'd planned to do never got done, and several 'zine articles were left half-finished. So I still can't <a href="http://blog.melchua.com/2007/04/06/how-i-get-my-brain-to-sit-still-sometimes/">eat the spinach.</a></p>
+<p>One thing I've noticed this week while lending a hand in #olpc-help: I still have a tendency to help other people with their problems instead of fixing my own. I should think about setting up anti-office-hours again (hours during which I'm not allowed to teach/help anyone else).</p>
+<p>Now for the education part of my brain... (next post) [Edit: ended up being "the post after next"]</p>

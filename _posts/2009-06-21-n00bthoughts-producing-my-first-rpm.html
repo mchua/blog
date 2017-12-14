@@ -1,0 +1,59 @@
+---
+layout: post
+title: 'n00bthoughts: producing my first .rpm'
+date: 2009-06-21 10:17:48.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+tags: []
+meta:
+  _edit_last: '2'
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p>In the "I learn by documenting" vein, I'm trying to catalogue my experiences as a first-time packager. As background, I've coded and done development before and have contributed to open-source projects in the past, so I know the ./configure make make install dance and have a rough grasp for how packaging fits into the development cycle - in other words, I started out with tons of advantages over the raw newbie.</p>
+<p>And yet this has taken me over a week to do so far (and I haven't even submitted my first package for review yet) Why is this taking me so long? Fear of the unknown, really. I don't know what's involved - how long it will take or how hard it will be - so I budget out time not knowing how close to finished I'll be then, and need repetitive prodding to get started. As Ian Weller said, the first time is always the hardest - so I'm writing down what's helpful and what's confusing while I still have the privilege of considering this to be Mysterious And Hard.</p>
+<p><strong>Helpful: </strong>I aready had an idea of what <a href="http://en.wikipedia.org/wiki/Package_management_system">packaging</a> meant and what <a href="http://en.wikipedia.org/wiki/RPM_Package_Manager">RPMs</a> were. I was told this package needed to be made, and that I could and should do it, rendering me unable to use the "maybe you need some mysterious, undefined experience to be a packager, so I should stop trying to figure it out" excuse and giving me something concrete to deliver: I had a no-excuses target.</p>
+<p><strong>Confusing:</strong> Where do I find the how-to-make-an-RPM guide? <a href="http://www.google.com/search?hl=en&amp;q=how%20to%20make%20an%20rpm&amp;aq=f&amp;oq=">A google search</a> was not particularly helpful. To get from <a href="https://fedoraproject.org/"></a>to the RPM howto, I had to take this path, starting at <a href="https://fedoraproject.org/">fedoraproject.org</a></p>
+<ol>
+<li>"Packaging is participating, so I can click the little <a href="https://fedoraproject.org/en/join-fedora">join-fedora</a> sidebar."</li>
+<li>"Uh... shoot. Packaging doesn't seem to exactly be OS development, but I'll click <a href="http://fedoraproject.org/wiki/Join#OSDeveloper">OS Developer</a> anyway."</li>
+<li>"Ah, that <em>was</em> the right place; Packaging is listed under the skills-you-want-to-learn here. And lo, there is a <a href="http://fedoraproject.org/wiki/PackageMaintainers/Join">Packaging</a> link to click on!"</li>
+<li>"Now I'm on a page that shows me how to join the packaging crew. The first thing that it tells me to do is read the guidelines, and here's a link to the <a href="http://fedoraproject.org/wiki/PackageMaintainers/CreatingPackageHowTo">Creating Packages HOWTO</a> and the <a href="http://fedoraproject.org/wiki/Docs/Drafts/BuildingPackagesGuide">Building Packages Guide</a>. Golly, they're both huge. And the <a href="http://fedoraproject.org/wiki/Packaging/Guidelines">Packaging Guidelines</a>. And the...</li>
+<li><code>*** Too Much Information! buffer overflow detected ***: /usr/bin/mel-brain terminated</code></li>
+</ol>
+<p><strong>Helpful: </strong>Sebastian Dziallas pointed me towards <a href="http://koji.fedoraproject.org/koji/buildinfo?buildID=84419">astronomy-bookmarks</a>, which is nearly identical to the RPM I was trying to make; I downloaded and unpacked it and poked around, noticing what files it contained - and that it did not, in fact, seem to have magic within it. Just files with some settings I didn't yet understand. Presumably, somewhere in the oversupply of RPM-making-howtos, <em>something</em> would teach me how to make something similar.</p>
+<p><strong>Confusing:</strong> While lurking on another IRC channel, I overheard the <a href="http://docs.fedoraproject.org/drafts/rpm-guide-en/">RPM Guide</a> being mentioned. It's gorgeous and a helpful reference, but definitely not a walk-through for first-time packagers. Filed in my "good references to have around" section.</p>
+<p><strong>Helpful: </strong>The <a href="http://fedoraproject.org/wiki/PackageMaintainers/CreatingPackageHowTo#Creating_Package_HOWTO">Creating Packages HOWTO</a> referred to Christoph Wickert's <a href="https://fedoraproject.org/wiki/Building_RPM_packages_%2820090405%29">Building RPM packages tutorial</a>, which was the first thing that really got my rear in gear as far as <em>doing</em> things that would create a package rather than <em>researching</em> how to create a package. It was good to be able to watch Christoph walk newbies through packaging, see what questions they had, and have a conversational stream to follow along.</p>
+<p>Using Christoph's chat as a guide, I installed all the necessary tools (rpmbuild and rpmdevtools), ran rpmdev-setuptree to make the appropriate folders in my homedir, put my source (a single bookmarks.html file, following the lead of <a href="http://koji.fedoraproject.org/koji/buildinfo?buildID=84419">astronomy-bookmarks</a>) in the SOURCES folder, ran rpmdev-newspec to make a skeletal <a href="http://en.wikipedia.org/wiki/RPM_Package_Manager#Spec_file">spec file</a>, and took a first stab at filling it in. This file was my <a href="http://mchua.fedorapeople.org/edu-spin-bookmarks/edu-spin-bookmarks-spec.old-1">first attempt</a>.</p>
+<p><strong>Confusing:</strong> According to the instructions, it was now time to run <code>rpmbuild -ba edu-spin-bookmarks.spec</code>. Experienced packagers who've glanced at my first spec might be able to guess the error I ran into. Here it is.</p>
+<p><code><br />
++ install -p -m 644 /home/mchua/rpmbuild/SOURCES /home/mchua/rpmbuild/BUILDROOT/edu-spin-bookmarks-0.0.1-1.fc10.i386/usr/share/bookmarks<br />
+install: omitting directory `/home/mchua/rpmbuild/SOURCES'<br />
+error: Bad exit status from /var/tmp/rpm-tmp.x3Rq1M (%install)<br />
+RPM build errors:<br />
+Bad exit status from /var/tmp/rpm-tmp.x3Rq1M (%install)<br />
+</code></p>
+<p>Two fruitless hours of looking for documentation on %install followed before I realized I'd just spent 1 hour 50 minutes too many and should really just be asking for help.</p>
+<p><strong>Helpful:</strong> Sebastian, once again, came to the rescue.</p>
+<pre>&lt;sdziallas&gt; you'll need to specify the bookmarks.html in the source0 part
+&lt;sdziallas&gt; mchua: because rpmbuild won't download the file
+&lt;sdziallas&gt; mchua: basically, it doesn't know what to do, I guess. you can
+ also put just the filename temporarily in the source0 argument.</pre>
+<p>Lo and behold. changing line 9 from</p>
+<p><code>Source0:        http://mchua.fedorapeople.org/edu-spin-bookmarks/</code></p>
+<p>to</p>
+<p><code>Source0:        http://mchua.fedorapeople.org/edu-spin-bookmarks/bookmarks.html</code></p>
+<p>did the trick. I had been looking in the wrong place for what turned out to be a trivially obvious answer. (If Sebastian had not been around, where should I have looked for the answer? What's the ideal way for me to have found the fix?) Running rpmbuild now popped out an edu-spin-bookmarks-0.0.1-1.fc10.i386.rpm - and now I was ready for Phase II, making the RPM functional and ready for review... (stay tuned for our next installment!)</p>
+<p>Yes, this is a slow and agonizing crawl through something very simple, and I'm sure I'm boring many people here to tears. ;-) Here's the point: to the beginner, it <em>is</em> a slow and agonizing crawl, and we don't see the "very simple" yet. Or at the very least, realizing that it's simple and learning how to navigate the simplicity is not a trivial thing.</p>
+<p>I'm actually quite impressed by how simple the process is, and how helpful the resources are - however, my baseline for "easy process!" is "it's better than several weeks of blindly trying to install Linux for the first time via stacks of floppies in 2001!" so just because it's "good enough" doesn't mean it's as good as it <em>could</em> be.</p>
+<p>How can we improve this experience?</p>
+<div class="zemanta-pixie"><img class="zemanta-pixie-img" src="{{ site.baseurl }}/assets/pixy.gif?x-id=25543b86-76dd-8fb0-ab13-df1985fb9604" alt="" /></div>

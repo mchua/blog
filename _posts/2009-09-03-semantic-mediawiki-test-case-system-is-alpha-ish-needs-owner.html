@@ -1,0 +1,31 @@
+---
+layout: post
+title: Semantic MediaWiki test case system is alpha-ish, needs owner
+date: 2009-09-03 00:48:41.000000000 -04:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- fedora
+- testing
+tags: []
+meta: {}
+author:
+  login: mchua
+  email: mel@melchua.com
+  display_name: Mel
+  first_name: Mel
+  last_name: Chua
+---
+<p><i>I've been amiss in posting updates lately. This post is based on <a href="https://www.redhat.com/archives/fedora-test-list/2009-September/msg00085.html">a post to fedora-test-list </a>but has more links than the original email.</i></p>
+<p>We've been experimenting with using <a href="http://semantic-mediawiki.org/wiki/Semantic_MediaWiki">Semantic MediaWiki</a> (SMW) as a test case management system for Fedora QA. There are a few other projects that did/do this, like <a href="http://wiki.laptop.org/go/Test_cases">OLPC</a> and the <a href="http://km.aifb.uni-karlsruhe.de/projects/owltests/index.php/OWL_2_Test_Cases">W3C OWL working group</a> (this one was set up by the SMW developers, so the semantic stuff is quite nice) but this is very much bleeding-edge and not yet a common/widespread notion, and in need of development. Yay, <a href="https://fedoraproject.org/wiki/Foundations#First">First!</a></p>
+<p>We now have a <a href="https://fedoraproject.org/wiki/Test_Day:2009-09-03_SoaS#Test_Results">first working (minimal) set up</a> for the <a href="https://fedoraproject.org/wiki/Test_Day:2009-09-03_SoaS">SoaS Fedora Test Day</a>, which is Thursday, September 3 - yes, this is a shameless plug; if you want to try it out, come over and test some liveusb images with us. If you want to see our journey down the rabbit hole on how this was created, Sebastian Dziallas, James Laska, and I logged and took <a href="http://meetbot.fedoraproject.org/fedora-qa/2009-09-02/fedora-qa.2009-09-02-14.14.log.html">detailed notes</a> of not just our steps but also our thought process through them. (The hampster dance is somewhere in those logs for those of you who remember that particular blast from the past.)</p>
+<p>It turns out the SMW community is interested in what we're doing. (Again: Yay, First!) I was in the #semanticmediawiki IRC channel tonight and was asked if we could log our stuff in the upstream <a href="http://smw.referata.com">SMW users community</a> and ping the semediawiki-user mailing list when we have something there we want to share - so I made a <a href="http://smw.referata.com/wiki/Fedora">stub page for Fedora</a> and put in what I could.</p>
+<p>Some more knowledgeable thoughts from  Markus Krotzsch, one of the lead developers from SMW:</p>
+<blockquote><p> A typical test: <a href="http://km.aifb.uni-karlsruhe.de/projects/owltests/index.php/FS2RDF-literals-ar">http://km.aifb.uni-karlsruhe.de/projects/owltests/index.php/FS2RDF-literals-ar</a>. Click "edit with form" on this page to see how the input is presented. We adopted a tab-based scheme to avoid overwhelming the user.</p>
+<p>A typical listing, generated automatically: <a href="http://km.aifb.uni-karlsruhe.de/projects/owltests/index.php/Rdfs:range">http://km.aifb.uni-karlsruhe.de/projects/owltests/index.php/Rdfs:range</a> (the properties used here, in fact, were also entered automatically by analysing the user input; this is possible with custom code when the tests are of a sufficiently formal nature)</p>
+<p>We also generate bulk exports of tests that are used by a software suite to run the tests and report results. Much of this could be improved in various ways (the site was originally hacked together on one weekend). I learned that one should really plan the details of the underlying knowledge model and user interaction before adding content to the wiki. Also, we use some non-Web software to execute tests and publish results, while your system would probably be more similar to a bug tracker.</p></blockquote>
+<p>I don't have the bandwidth to be "the SMW Test Case System Person" creating and maintaining this system, but would be happy to teach what I know of the process if someone is interested in taking this on, especially now that we've figured out how to actually make it work (it's usable! we're in alpha!), what resources to draw on to learn more, and an upstream SMW community to engage with. SMW for test case management is a pretty new thing to do. Any takers?</p>
+<div class="zemanta-pixie"><img class="zemanta-pixie-img" alt="" src="{{ site.baseurl }}/assets/pixy.gif?x-id=2a605410-7aa1-8d93-9499-1acf1e63fd50" /></div>
