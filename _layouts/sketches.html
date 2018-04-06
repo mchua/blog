@@ -1,31 +1,60 @@
 ---
 layout: default
 ---
+<h2>Topics</h2>
 <nav class="nav nav--topics">
   <ul class="nav__list nav__list--topics">
     <li class="nav__item nav__item--hacking">
-      <figure class="fluidratio"></figure>
-      <a href="">Hacking</a>
+      <a href="">
+        <figure class="fluidratio"></figure>
+        Hacking
+        <small>{{ site.categories["teaching open source"].size }} posts</small>
+      </a>
     </li>
     <li class="nav__item nav__item--academia">
-      <figure class="fluidratio"></figure>
-      <a href="">Academia</a>
+      <a href="">
+        <figure class="fluidratio"></figure>
+        Academia
+        <small>{{ site.categories["engineering edu"].size }} posts</small>
+      </a>
     </li>
     <li class="nav__item nav__item--movement">
-      <figure class="fluidratio"></figure>
-      <a href="">Movement, music, art, and language</a>
+      <a href="">
+        <figure class="fluidratio"></figure>
+        Movement, music, art, and language
+        <small>{{ site.categories["music"].size }} posts</small>
+      </a>
     </li>
     <li class="nav__item nav__item--deafness">
-      <figure class="fluidratio"></figure>
-      <a href="">Deafness</a>
+      <a href="">
+        <figure class="fluidratio"></figure>
+        Deafness
+        <small>{{ site.categories["hearing"].size }} posts</small>
+      </a>
     </li>
     <li class="nav__item nav__item--faith">
-      <figure class="fluidratio"></figure>
-      <a href="">Faith</a>
+      <a href="">
+        <figure class="fluidratio"></figure>
+        Faith
+        <small>{{ site.categories["catholic"].size }} posts</small>
+      </a>
     </li>
     <l class="nav__item nav__item--haluhalo">
-      <figure class="fluidratio"></figure>
-      <a href="">Haluhalo</a>
+      <a href="">
+        <figure class="fluidratio"></figure>
+        Haluhalo
+        <small>{{ site.categories["Didn't fit anywhere else"].size }} posts</small>
+      </a>
     </li>
   </ul>
 </nav>
+
+{% for post in site.posts limit:10 %}
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  <p class="author">
+    <span class="date">{{ post.date }}</span>
+  </p>
+  <div class="content">
+    {{ post.content }}
+  </div>
+{% endfor %}

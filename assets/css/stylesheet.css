@@ -1,8 +1,24 @@
 body {
-  background: #333;
+  background: #F1F2E4;
+  font-family: "freight-neo-pro", serif;
 }
 
+a:link,
+a:visited {
+
+}
+
+a:hover,
+a:active {
+
+}
+
+h1,
+h2,
+h3,
+h4,
 .nav {
+  font-family: "adrianna", sans-serif;
 
 }
 
@@ -10,14 +26,39 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.nav__list--topics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+@media (min-width: 728px) {
+  .nav__list--topics {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.nav__list a:link,
+.nav__list a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+.nav__list a:hover,
+.nav__list a:active {
+  text-decoration: underline;
 }
 
 .nav__item {
   display: block;
   cursor: pointer;
+}
+
+.nav__item small {
+  opacity: .5;
 }
 
 .fluidratio {
@@ -30,12 +71,11 @@ body {
   margin-bottom: .5em;
 }
 
-.nav__item a {
-  display: none;
+.nav__item figure {
+  background-color: #fff;
 }
 
 .nav__item--hacking figure {
-  background-color: #001f3f;
   background-image: url("/assets/topics/hacking-1.png");
 }
 .nav__item--hacking:hover figure {
@@ -43,7 +83,6 @@ body {
   background-image: url("/assets/topics/hacking-2.png");
 }
 .nav__item--academia figure {
-  background-color: #39CCCC;
   background-image: url("/assets/topics/academia-1.png");
 }
 .nav__item--academia:hover figure {
@@ -51,7 +90,6 @@ body {
   background-image: url("/assets/topics/academia-2.png");
 }
 .nav__item--movement figure {
-  background-color: #85144b;
   background-image: url("/assets/topics/movement-1.png");
 }
 .nav__item--movement:hover figure {
@@ -59,7 +97,6 @@ body {
   background-image: url("/assets/topics/movement-2.png");
 }
 .nav__item--deafness figure {
-  background-color: #3D9970;
   background-image: url("/assets/topics/deafness-1.png");
 }
 .nav__item--deafness:hover figure {
@@ -67,7 +104,6 @@ body {
   background-image: url("/assets/topics/deafness-2.png");
 }
 .nav__item--faith figure {
-  background-color: #FF851B;
   background-image: url("/assets/topics/faith-1.png");
 }
 .nav__item--faith:hover figure {
@@ -75,7 +111,6 @@ body {
   background-image: url("/assets/topics/faith-2.png");
 }
 .nav__item--haluhalo figure {
-  background-color: #B10DC9;
   background-image: url("/assets/topics/haluhalo-1.png");
 }
 .nav__item--haluhalo:hover figure {
