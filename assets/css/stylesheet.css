@@ -1,0 +1,84 @@
+body {
+  background: #333;
+}
+
+.nav {
+
+}
+
+.nav__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+}
+
+.nav__item {
+  display: block;
+  cursor: pointer;
+}
+
+.fluidratio {
+  display: block;
+  height: 0;
+  padding-top: 60%;
+  width: 100%;
+  margin: auto;
+  background-size: cover;
+  margin-bottom: .5em;
+}
+
+.nav__item a {
+  display: none;
+}
+
+.nav__item--hacking figure {
+  background-color: #001f3f;
+  background-image: url("/assets/topics/hacking-1.png");
+}
+.nav__item--hacking:hover figure {
+  background-color: #85144b;
+  background-image: url("/assets/topics/hacking-2.png");
+}
+.nav__item--academia figure {
+  background-color: #39CCCC;
+  background-image: url("/assets/topics/academia-1.png");
+}
+.nav__item--academia:hover figure {
+  background-color: #0074D9;
+  background-image: url("/assets/topics/academia-2.png");
+}
+.nav__item--movement figure {
+  background-color: #85144b;
+  background-image: url("/assets/topics/movement-1.png");
+}
+.nav__item--movement:hover figure {
+  background-color: #FFDC00;
+  background-image: url("/assets/topics/movement-2.png");
+}
+.nav__item--deafness figure {
+  background-color: #3D9970;
+  background-image: url("/assets/topics/deafness-1.png");
+}
+.nav__item--deafness:hover figure {
+  background-color: #7FDBFF;
+  background-image: url("/assets/topics/deafness-2.png");
+}
+.nav__item--faith figure {
+  background-color: #FF851B;
+  background-image: url("/assets/topics/faith-1.png");
+}
+.nav__item--faith:hover figure {
+  background-color: #01FF70;
+  background-image: url("/assets/topics/faith-2.png");
+}
+.nav__item--haluhalo figure {
+  background-color: #B10DC9;
+  background-image: url("/assets/topics/haluhalo-1.png");
+}
+.nav__item--haluhalo:hover figure {
+  background-color: #F012BE;
+  background-image: url("/assets/topics/haluhalo-2.png");
+}
