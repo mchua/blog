@@ -22,6 +22,9 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: mchua
 github_username:  mchua
 
+paginate: 10
+paginate_path: "/page/:num/"
+
 defaults:
   -
     scope:
@@ -35,6 +38,7 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
