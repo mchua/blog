@@ -4,48 +4,15 @@ layout: default
 <h2>Topics</h2>
 <nav class="nav nav--topics">
   <ul class="nav__list nav__list--topics">
-    <li class="nav__item nav__item--hacking">
-      <a href="">
+    {% for topic in site.topics %}
+    <li class="nav__item nav__item--{{ topic.slug | lowercase | slugify}}">
+      <a href="{{ topic.url }}">
         <figure class="fluidratio"></figure>
-        Hacking
-        <small>{{ site.categories["teaching open source"].size }} posts</small>
+        {{ topic.title }}
+        <small>{{ site.categories["[topic.category]"].size }} posts</small>
       </a>
     </li>
-    <li class="nav__item nav__item--academia">
-      <a href="">
-        <figure class="fluidratio"></figure>
-        Academia
-        <small>{{ site.categories["engineering edu"].size }} posts</small>
-      </a>
-    </li>
-    <li class="nav__item nav__item--movement">
-      <a href="">
-        <figure class="fluidratio"></figure>
-        Movement, music, art, and language
-        <small>{{ site.categories["music"].size }} posts</small>
-      </a>
-    </li>
-    <li class="nav__item nav__item--deafness">
-      <a href="">
-        <figure class="fluidratio"></figure>
-        Deafness
-        <small>{{ site.categories["hearing"].size }} posts</small>
-      </a>
-    </li>
-    <li class="nav__item nav__item--faith">
-      <a href="">
-        <figure class="fluidratio"></figure>
-        Faith
-        <small>{{ site.categories["catholic"].size }} posts</small>
-      </a>
-    </li>
-    <l class="nav__item nav__item--haluhalo">
-      <a href="">
-        <figure class="fluidratio"></figure>
-        Haluhalo
-        <small>{{ site.categories["Didn't fit anywhere else"].size }} posts</small>
-      </a>
-    </li>
+    {% endfor %}
   </ul>
 </nav>
 
