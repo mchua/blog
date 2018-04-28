@@ -2,6 +2,19 @@
 layout: default
 ---
 
-hi
-
 {{ content }}
+
+<section>
+  <h2>About Mel</h2>
+</section>
+
+<section>
+  <h2>Contact + Social Media</h2>
+</section>
+
+<section>
+  <h2>My Mission</h2>
+  {{ page.mission-intro | markdownify }}
+
+  {{ page.mission | markdownify }}
+</section>
