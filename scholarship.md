@@ -1,8 +1,7 @@
 ---
 title: Scholarship
-layout: default
+layout: scholarship
 ---
-
 I have always been a curious child.
 
 As an engineer who has built my career in open source communities and an educator with over a decade of teaching and curriculum development experience, I'm intrigued by the space between how hackers learn and how engineers are taught. Both open source and engineering academia require neophytes to learn complex collaborative processes in order to produce technology, but their approaches have historically been quite different; school is abstract and controlled, well-scaffolded and private – whereas open community projects are chaotic and improvisational, public and "real." Understanding the patterns of how knowledge is spread in each culture allows us to bridge them and combine their strengths. This creates radically transparent communities of makers solving real problems for real users while being aware of how they teach their craft to new apprentices.
