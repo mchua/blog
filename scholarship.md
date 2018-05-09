@@ -1,5 +1,6 @@
 ---
 title: Scholarship
+layout: default
 ---
 
 I have always been a curious child.
