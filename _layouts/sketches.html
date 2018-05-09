@@ -5,7 +5,7 @@ layout: default
 {% include nav--topics.html %}
 
 {% for post in site.posts limit:10 %}
-  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
   <p class="author">
     <span class="date">{{ post.date }}</span>
   </p>

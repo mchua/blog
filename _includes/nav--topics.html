@@ -2,7 +2,7 @@
   <ul class="nav__list nav__list--topics">
     {% for topic in site.topics %}
     <li class="nav__item nav__item--{{ topic.slug | lowercase | slugify}} {% if page.slug == topic.slug %} active{% endif %}">
-      <a href="{{ topic.url }}">
+      <a href="{{ site.baseurl }}{{ topic.url }}">
         <figure class="fluidratio"></figure>
         {{ topic.title }}
         <small>{{ site.categories["[topic.category]"].size }} posts</small>
