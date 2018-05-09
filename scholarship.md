@@ -1,6 +1,10 @@
 ---
 title: Scholarship
 layout: scholarship
+description: |
+  This is supposedly the website section where the more... serious stuff goes.
+  Publications, research projects, things like that.
+  Check it out, and I'll try to keep a straight face.
 ---
 I have always been a curious child.
 
