@@ -1,6 +1,8 @@
 ---
 title: Self
 layout: self
+description: |
+  Hi, I'm Mel, a nomadic hack-of-all-trades who frequently geeks out about open source and engineering, education communities of practice, and just about everything else under the sun.
 about: |
   There's a [longer bio and a CV](about) if you like, but the best way to get a grasp on my thoughtstream is to read my blog, which I write for my future self.
 
@@ -45,5 +47,3 @@ mission: |
 
   I allow myself to feel, hope, and love. Even when it is painful, it is still worth it to be fully alive.
 ---
-
-Hi, I'm Mel, a nomadic hack-of-all-trades who frequently geeks out about open source and engineering, education communities of practice, and just about everything else under the sun.
