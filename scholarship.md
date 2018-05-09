@@ -8,13 +8,46 @@ description: |
 ---
 
 - how learning happens in FOSS communities / distributed technical communities
+    * Chua, M. (2014). Hacker school begins to write a book: A massive collaborative autoethnography by a maker community (pp. 1–4). IEEE. https://doi.org/10.1109/FIE.2014.7044397
+    * Edupsych for hackers - repeated talk, one version was filmed at https://www.youtube.com/watch?v=Xzpi1G-L78w
+    
 - interface-building between academic systems and open source communities
-- engineering curricular cultures: what they are, how to study them, specific examples
-- prototyping alternate-universe (curricular) cultures: how they come to be and how people can nudge that
-- engineering faculty development (curricular (re)design and change, identity/reflection, revealing rhetoric)
-- qualitative research methods (multimodal, collaborative, narrative, (auto)ethnographic)
-- NOT THE DEAF STUFF: that's under a different section, but is not primary scholarship
+    * Jadud, M. C., & Chua, M. (2011). A Walk In The Commons. Invited talk presented at the Kenyon College Center for Instructional Excellence series, Kenyon College.
+    * Ellis, H. J. C., Hislop, G. W., Chua, M., & Dziallas, S. (2012). How to Involve Students in FOSS Projects. In Proceedings of the Frontiers in Education Conference. Rapid City, SD: IEEE.
+    * Chua, M., & Dziallas, S. (2012). Work in progress: From sage on the stage to guide on the side: Examining shifts in teaching practice through stories of open community participation (pp. 1–2). IEEE. https://doi.org/10.1109/FIE.2012.6462252
+    * http://redhat.com/posse
 
+- engineering (and computing/technology) curricular cultures: what they are, how to study them, specific examples
+    * Chua, M. & Edmonds, T. (2017). Curricular culture literacy and miscodes in its absence: Making sense of conflicts in cross-institutional curricular collaborations. In Proceedings of the Frontiers in Education Conference. Indianapolis, IN: IEEE.
+    * Edmonds, T. & Chua, M. (2017). Curricular culture transferability, openness, and literacy: A framework for the curricular culture change capacity of individuals. In Proceedings of the Frontiers in Education Conference. Indianapolis, IN: IEEE.
+
+- prototyping alternate-universe (curricular) cultures: how they come to be and how people can nudge that
+    * haven't really gotten solid pubs out in this yet, honestly - can merge into prior category, or leave as "watch this space b/c it's coming"
+
+- engineering faculty development (curricular (re)design and change, identity/reflection, revealing rhetoric)
+    * Chua, M. and Cagle, L. E. (2017). You can change the world, but not this homework assignment: The contradictory rhetoric of engineering agency. In Proceedings of the Frontiers in Education Conference. Indianapolis, IN: IEEE.
+    * Chua, M. & Edmonds, T. (2017). Conversation and Participation Architectures: Practices for Creating Dialogic Spaces with Engineering Students. ASEE Conferences. 
+    * Strong, A., Chua, M., & Cutler, S. (2016). Talking “Faculty Development” with Engineering Educators, Then Talking “Engineering Education” with Faculty Developers: A Collaborative Reflection on Working Across Communities. ASEE Conferences. https://doi.org/10.18260/p.26010
+    * Cutler, S., Strong, A. C., & Chua, M. (2015). Exploring the black box of dissemination: The role of professional and organizational development (pp. 1–3). IEEE. https://doi.org/10.1109/FIE.2015.7344091
+    * Chua, M., & Dringenberg, E. (2014). The quest for the Mythical Phoenix: Attendee narratives at an engineering education faculty workshop (pp. 1–4). IEEE. https://doi.org/10.1109/FIE.2014.7044260
+    * Thompson, J. D., Chua, M., & Joslyn, C. H. (2014). Engineering and Engineering Education as Spiritual Vocations. Presented at the 2014 ASEE Annual Conference & Exposition, Indianapolis, IN. Retrieved from https://peer.asee.org/20382 (Best Paper award, Liberal Engineering / Engineering in Society division)
+
+- I was the student columnist for ASEE Prism for a while (geared towards engineering faculty interested in engineering education)
+    * Chua, M. (2016). Engineering as a Physical Art. ASEE Prism. Retrieved from http://www.asee-prism.org/unstable-equilibrium-oct-2/ 
+    * Chua, M. (2016). Set an Example of a Normal Life. ASEE Prism. Retrieved from http://www.asee-prism.org/unstable-equilibrium-jan-3/ 
+    * Chua, M. (2015). The Privilege of Being Oblivious. ASEE Prism. Retrieved from http://www.asee-prism.org/unstable-equilibrium-sep/ 
+    * Chua, M. (2015). Communicating Is So Inefficient. ASEE Prism. Retrieved from http://www.asee-prism.org/unstable-equilibrium-jan-2/ 
+    * Chua, M. (2014). More Than Words and Numbers. ASEE Prism. Retrieved from http://www.asee-prism.org/unstable-equilibrium-oct/ 
+    * Chua, M. (2014). Culture Clash. ASEE Prism. Retrieved from http://www.asee-prism.org/unstable-equilibrium-jan/
+
+- qualitative research methods (multimodal, collaborative, narrative, (auto)ethnographic)
+    * Chua, M., & Adams, R. S. (2014). Using realtime transcription to do member-checking during interviews (pp. 1–3). IEEE. https://doi.org/10.1109/FIE.2014.7044251
+
+- I draw comics and so forth about engineering edu / learning theories, see "graphical works" section
+    
+- NOT THE DEAF/WOMEN/DIVERSITY STUFF: that's under a different section, but is not primary scholarship
+    * Chua, M., Ray, B., & Stein, L. A. (2017). A Behind-the-Scenes Look at Access Setup: A case study of the Deaf Professional / Designated Interpreter model in engineering education research. In Proceedings of the Frontiers in Education Conference. Indianapolis, IN: IEEE.
+    
 I have always been a curious child.
 
 As an engineer who has built my career in open source communities and an educator with over a decade of teaching and curriculum development experience, I'm intrigued by the space between how hackers learn and how engineers are taught. Both open source and engineering academia require neophytes to learn complex collaborative processes in order to produce technology, but their approaches have historically been quite different; school is abstract and controlled, well-scaffolded and private – whereas open community projects are chaotic and improvisational, public and "real." Understanding the patterns of how knowledge is spread in each culture allows us to bridge them and combine their strengths. This creates radically transparent communities of makers solving real problems for real users while being aware of how they teach their craft to new apprentices.
