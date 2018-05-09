@@ -1,6 +1,11 @@
 # melchua
 
-to install:
+requirements:
+
+- ruby
+- bundler `gem install bundler`
+
+to install packages for the first time:
 
 `bundle install`
 
