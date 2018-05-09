@@ -1,5 +1,12 @@
 ---
-layout: home
+title: Self
+layout: self
+about: |
+  There's a [longer bio and a CV](about) if you like, but the best way to get a grasp on my thoughtstream is to read my blog, which I write for my future self.
+
+  I don't believe in formal introductions or compartmentalizing one's life,
+
+  so everything here is...
 mission-intro: |
   I believe that everybody has a mission, and try to live with awareness and intent so that I can discern mine.
 
