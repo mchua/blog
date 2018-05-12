@@ -5,6 +5,10 @@ body {
   font-family: "freight-neo-pro", Optima, serif;
 }
 
+img {
+  max-width: 100%;
+}
+
 a:link,
 a:visited {
 
