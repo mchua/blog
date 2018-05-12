@@ -1,24 +1,8 @@
 ---
-layout: page
-title: CV
-date: 
-type: page
-parent_id: '0'
-published: false
-password: ''
-status: draft
-categories: []
-tags: []
-meta:
-  _edit_last: '3'
-  _wp_page_template: default
-author:
-  login: mchua
-  email: mel@melchua.com
-  display_name: Mel
-  first_name: Mel
-  last_name: Chua
+title: Curriculum Vitae
+layout: default
 ---
+
 <p>This CV is a giant resume; all other resumes I have are subsets of this one. Or at least this CV will be a giant resume. As you can see, it's not done yet.</p>
 <h1>Scholarly publications</h1>
 <h2>Working Papers</h2>
