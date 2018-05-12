@@ -1,5 +1,5 @@
 ---
 title: Sketches
 layout: sketches
-description: Sometimes I draw things. Wanna see?
+description: Sometimes I write and draw things. Wanna see?
 ---
