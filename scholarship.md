@@ -51,7 +51,7 @@ description: |
 
 ---
 
-<p>This list is insanely incomplete.</p>
+<p>This list is super incomplete.</p>
 <ul>
 <li><strong><a href="http://radicallytransparentresearch.org">Radically transparent research</a></strong> (RTR) is a change initiative and an emergent qualitative research methodology inspired by the radical realtime transparency practices of open communities such as Free and Open Source software, hardware, and content projects. It results in public and collaboratively constructed artifacts with the potential to broaden awareness of and participation in research while creating a compendium of stories that can be shared with other practitioners considering similar transformations to their own practices. I'm driving the development process of RTR through its first implementations in actual research projects like the "Changemakers" investigation of Purdue's XRoads research group under Robin Adams or the Teaching Open Source project "Sage on the Stage, Guide on the Side" with Sebastian Dziallas.</li>
 <li><strong><a href="http://teachingopensource.org/index.php/User:Mchua/A_Blogger_Is_You!">A Blogger Is You!</a></strong> is a workshop on academic blogging.</li>
