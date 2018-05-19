@@ -97,41 +97,35 @@ h4,
   background-image: url("{{ site.baseurl }}/assets/topics/hacking-1.png");
 }
 .nav__item--hacking:hover figure, .nav__item--hacking.active figure {
-  background-color: #85144b;
   background-image: url("{{ site.baseurl }}/assets/topics/hacking-2.png");
 }
 .nav__item--academia figure {
   background-image: url("{{ site.baseurl }}/assets/topics/academia-1.png");
 }
 .nav__item--academia:hover figure, .nav__item--academia.active figure {
-  background-color: #0074D9;
   background-image: url("{{ site.baseurl }}/assets/topics/academia-2.png");
 }
 .nav__item--movement figure {
   background-image: url("{{ site.baseurl }}/assets/topics/movement-1.png");
 }
 .nav__item--movement:hover figure, .nav__item--movement.active figure {
-  background-color: #FFDC00;
   background-image: url("{{ site.baseurl }}/assets/topics/movement-2.png");
 }
 .nav__item--deafness figure {
   background-image: url("{{ site.baseurl }}/assets/topics/deafness-1.png");
 }
 .nav__item--deafness:hover figure, .nav__item--deafness.active figure {
-  background-color: #7FDBFF;
   background-image: url("{{ site.baseurl }}/assets/topics/deafness-2.png");
 }
 .nav__item--faith figure {
   background-image: url("{{ site.baseurl }}/assets/topics/faith-1.png");
 }
 .nav__item--faith:hover figure, .nav__item--faith.active figure {
-  background-color: #01FF70;
   background-image: url("{{ site.baseurl }}/assets/topics/faith-2.png");
 }
 .nav__item--haluhalo figure {
   background-image: url("{{ site.baseurl }}/assets/topics/haluhalo-1.png");
 }
 .nav__item--haluhalo:hover figure, .nav__item--haluhalo.active figure {
-  background-color: #F012BE;
   background-image: url("{{ site.baseurl }}/assets/topics/haluhalo-2.png");
 }
