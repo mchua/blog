@@ -5,8 +5,17 @@ body {
   font-family: "freight-neo-pro", Optima, serif;
 }
 
+header {
+  text-align: center;
+}
+
 img {
   max-width: 100%;
+}
+
+.icon {
+  width: 200px;
+  height: auto;
 }
 
 a:link,
@@ -85,47 +94,44 @@ h4,
   padding-top: 60%;
   width: 100%;
   margin: auto;
-  background-size: cover;
+  background-size: fit;
   margin-bottom: .5em;
 }
 
 .nav__item figure {
   background-color: rgba(0,0,0,.05);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .nav__item--hacking figure {
-  background-image: url("{{ site.baseurl }}/assets/topics/hacking-1.png");
+  background-image: url("{{ site.baseurl }}/assets/topics/doodles/hacking.png");
 }
 .nav__item--hacking:hover figure, .nav__item--hacking.active figure {
-  background-image: url("{{ site.baseurl }}/assets/topics/hacking-2.png");
 }
 .nav__item--academia figure {
-  background-image: url("{{ site.baseurl }}/assets/topics/academia-1.png");
+  background-image: url("{{ site.baseurl }}/assets/topics/doodles/academia.png");
 }
 .nav__item--academia:hover figure, .nav__item--academia.active figure {
-  background-image: url("{{ site.baseurl }}/assets/topics/academia-2.png");
 }
 .nav__item--movement figure {
-  background-image: url("{{ site.baseurl }}/assets/topics/movement-1.png");
+  background-image: url("{{ site.baseurl }}/assets/topics/doodles/movement.png");
 }
 .nav__item--movement:hover figure, .nav__item--movement.active figure {
-  background-image: url("{{ site.baseurl }}/assets/topics/movement-2.png");
 }
 .nav__item--deafness figure {
-  background-image: url("{{ site.baseurl }}/assets/topics/deafness-1.png");
+  background-image: url("{{ site.baseurl }}/assets/topics/doodles/deafness.png");
 }
 .nav__item--deafness:hover figure, .nav__item--deafness.active figure {
-  background-image: url("{{ site.baseurl }}/assets/topics/deafness-2.png");
 }
 .nav__item--faith figure {
-  background-image: url("{{ site.baseurl }}/assets/topics/faith-1.png");
+  background-image: url("{{ site.baseurl }}/assets/topics/doodles/faith.png");
 }
 .nav__item--faith:hover figure, .nav__item--faith.active figure {
-  background-image: url("{{ site.baseurl }}/assets/topics/faith-2.png");
 }
 .nav__item--haluhalo figure {
-  background-image: url("{{ site.baseurl }}/assets/topics/haluhalo-1.png");
+  background-image: url("{{ site.baseurl }}/assets/topics/doodles/haluhalo.png");
 }
 .nav__item--haluhalo:hover figure, .nav__item--haluhalo.active figure {
-  background-image: url("{{ site.baseurl }}/assets/topics/haluhalo-2.png");
 }
