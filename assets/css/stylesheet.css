@@ -3,6 +3,8 @@
 body {
   background: #F1F2E4;
   font-family: "freight-neo-pro", Optima, serif;
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -55,6 +57,8 @@ h4,
 .nav__list a:visited {
   color: #000;
   text-decoration: none;
+  display: inline-block;
+  padding: 1em;
 }
 
 .nav__list a:hover,
@@ -73,6 +77,15 @@ h4,
 
 .nav--main .nav__item {
   display: inline-block;
+}
+
+.nav--main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nav--main .nav__list {
+  text-align: center;
 }
 
 .nav__list--topics {
@@ -134,4 +147,37 @@ h4,
   background-image: url("{{ site.baseurl }}/assets/topics/doodles/haluhalo.png");
 }
 .nav__item--haluhalo:hover figure, .nav__item--haluhalo.active figure {
+}
+
+.wall {
+  height: 80vh;
+  width: 100vw;
+  display: block;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.wall--self {
+  background-color: #E0E0E0;
+}
+
+.wall--scholarship {
+  background-color: #D1C6BD;
+}
+
+.wall--sketches {
+  background-color: #F2C94C;
+}
+
+.poster {
+  padding: 10vh 0;
+}
+
+.poster img {
+  display: block;
+  margin: auto;
+  max-height: 60vh;
+  width: auto;
 }
