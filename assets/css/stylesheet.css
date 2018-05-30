@@ -64,14 +64,18 @@ h4,
 }
 
 .nav__list a:link,
-.nav__list a:visited {
+.nav__list a:visited,
+.nav__item:link,
+.nav__item:visited {
   color: #000;
   text-decoration: none;
   display: inline-block;
 }
 
 .nav__list a:hover,
-.nav__list a:active {
+.nav__list a:active,
+.nav__item:hover,
+.nav__item:active {
   text-decoration: underline;
 }
 
