@@ -14,9 +14,9 @@
     <div class="container">
       <strong class="nav__item">mel chua</strong>
       <ul class="nav__list">
-        <li class="nav__item"><a href="{{ site.baseurl }}/">self</a></li>
-        <li class="nav__item"><a href="{{ site.baseurl }}/scholarship">scholarship</a></li>
-        <li class="nav__item"><a href="{{ site.baseurl }}/sketches">sketches</a></li>
+        <li class="nav__item {% if page.title == "Self" %}active{% endif %}"><a href="{{ site.baseurl }}/">self</a></li>
+        <li class="nav__item {% if page.title == "Scholarship" %}active{% endif %}"><a href="{{ site.baseurl }}/scholarship">scholarship</a></li>
+        <li class="nav__item {% if page.title == "Sketches" %}active{% endif %}"><a href="{{ site.baseurl }}/sketches">sketches</a></li>
       </ul>
     </div>
   </nav>

@@ -46,6 +46,11 @@ h4,
 
 .lead {
   font-size: 1.5em;
+  padding: 1.5em 0;
+}
+
+.active {
+  font-weight: bold;
 }
 
 .nav__list {
