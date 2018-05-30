@@ -6,6 +6,9 @@ description: |
   It's basically impossible to describe yourself in 500 words or less,
   or a slideshow, or a couple pictures, but I'll try anyway.
 ---
+
+<img src="{{ site.baseurl }}/assets/illustrations/cleaned/self.png" alt="">
+
 <p><strong>Short third-person version (this is what I copy-paste into boxes asking for a "speaker bio"):</strong></p>
 <p>Mel Chua is a contagiously enthusiastic hacker, writer, and educator with over a decade of teaching and curriculum development experience and a track record of leadership in Free, Libre, and Open Source Software (FLOSS) communities, most recently as Red Hat Inc's. educational liason. Now part of Purdue University's School of Engineering Education, Mel's work bridges academic research on successful learning and making communities with deep personal experience in building them.</p>
 <p><strong>Longer and hopefully more fun version:<br />
