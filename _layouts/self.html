@@ -8,24 +8,26 @@ layout: default
   </div>
 </div>
 
-<div class="lead">
-  {{ page.description }}
+<div class="container">
+  <div class="lead">
+    {{ page.description }}
+  </div>
+
+  {{ content }}
+
+  <section>
+    <h2>About Mel</h2>
+    {{ page.about | markdownify }}
+  </section>
+
+  <section>
+    <h2>Contact + Social Media</h2>
+  </section>
+
+  <section>
+    <h2>My Mission</h2>
+    {{ page.mission-intro | markdownify }}
+
+    {{ page.mission | markdownify }}
+  </section>
 </div>
-
-{{ content }}
-
-<section>
-  <h2>About Mel</h2>
-  {{ page.about | markdownify }}
-</section>
-
-<section>
-  <h2>Contact + Social Media</h2>
-</section>
-
-<section>
-  <h2>My Mission</h2>
-  {{ page.mission-intro | markdownify }}
-
-  {{ page.mission | markdownify }}
-</section>

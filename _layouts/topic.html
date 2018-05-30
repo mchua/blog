@@ -1,14 +1,15 @@
 ---
 layout: default
 ---
+<div class="container">
+  <header>
+    <img class="icon" src="{{ site.baseurl}}/assets/topics/doodles/{{ page.icon }}" alt="{{ page.title }}">
+    <h1>{{ page.title }}</h1>
+    <div class="lead">{{ page.description }}</div>
+    {% include nav--topics.html %}
+  </header>
 
-<header>
-  <img class="icon" src="{{ site.baseurl}}/assets/topics/doodles/{{ page.icon }}" alt="{{ page.title }}">
-  <h1>{{ page.title }}</h1>
-  <div class="lead">{{ page.description }}</div>
-  {% include nav--topics.html %}
-</header>
-
-{% for post in site.categories.["[page.category]"] %}
-  <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-{% endfor %}
+  {% for post in site.categories.["[page.category]"] %}
+    <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+  {% endfor %}
+</div>

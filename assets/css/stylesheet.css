@@ -11,6 +11,11 @@ header {
   text-align: center;
 }
 
+.container {
+  max-width: 960px;
+  margin: auto;
+}
+
 img {
   max-width: 100%;
 }
@@ -58,7 +63,6 @@ h4,
   color: #000;
   text-decoration: none;
   display: inline-block;
-  padding: 1em;
 }
 
 .nav__list a:hover,
@@ -69,6 +73,7 @@ h4,
 .nav__item {
   display: block;
   cursor: pointer;
+  padding: 1em;
 }
 
 .nav__item small {
@@ -79,7 +84,7 @@ h4,
   display: inline-block;
 }
 
-.nav--main {
+.nav--main .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
