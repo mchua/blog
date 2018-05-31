@@ -52,8 +52,13 @@ layout: default
 
   <section>
     <h2>My Mission</h2>
-    {{ page.mission-intro | markdownify }}
-
-    {{ page.mission | markdownify }}
+    <div class="row">
+      <div>
+        {{ page.mission-intro | markdownify }}
+      </div>
+      <div>
+        {{ page.mission | markdownify }}
+      </div>
+    </div>
   </section>
 </div>

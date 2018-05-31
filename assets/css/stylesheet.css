@@ -17,6 +17,14 @@ header {
   padding: 0 20px;
 }
 
+section {
+  margin-bottom: 40px;
+}
+
+.row {
+  display: flex;
+}
+
 img {
   max-width: 100%;
 }
