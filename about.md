@@ -2,9 +2,8 @@
 title: About
 permalink: /about/
 layout: default
-description: |
-  It's basically impossible to describe yourself in 500 words or less,
-  or a slideshow, or a couple pictures, but I'll try anyway.
+description: Wherein I attempt the impossible tasks of briefly introducing myself.
+
 ---
 
 <img src="{{ site.baseurl }}/assets/illustrations/cleaned/self.png" alt="">
