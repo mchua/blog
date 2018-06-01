@@ -2,11 +2,6 @@
 title: Scholarship
 layout: scholarship
 description: When I decided to hone my skills for deeply pursuing fascinating things, the practice of scholarship became one of my training grounds for doing so.
-
-Academia 
-  This is supposedly the website section where the more... serious stuff goes.
-  Publications, research projects, things like that.
-  Check it out, and I'll try to keep a straight face.
 ---
 
 - how learning happens in FOSS communities / distributed technical communities
