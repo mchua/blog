@@ -3,20 +3,6 @@ title: Curriculum Vitae
 layout: default
 ---
 
-# Curriculum Vitae
-
-Mel Chua
-
-Curriculum Vitae
-
-96 Clintwood Ct, Unit E
-Brighton, NY 14620
-SMS: +1.847.970.8484
-
-Voice: +1.224.704.1278
-
-mel.chua@rit.edu
-
 ## Education
 
 Ph.D. – School of Engineering Education, Purdue University, 2018 (defense passed; projected deposit)
