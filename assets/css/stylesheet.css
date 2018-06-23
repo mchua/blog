@@ -248,6 +248,14 @@ h4,
   left: -70%;
 }
 
+.poster--next:hover img {
+  right: -60%;
+}
+
+.poster--prev:hover img {
+  left: -60%;
+}
+
 .poster--next img {
   position: absolute;
   right: -70%;

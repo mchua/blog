@@ -13,6 +13,10 @@ paginate_path: "/page/:num/"
 collections:
   topics:
     output: true
+  drawings:
+    output: true
+  talks:
+    output: true
 
 defaults:
   -
@@ -28,6 +32,20 @@ defaults:
     values:
       permalink: /sketches/:title/
       layout: topic
+  -
+    scope:
+      path: ""
+      type: "drawings"
+    values:
+      permalink: /sketches/drawings/:title/
+      layout: default
+  -
+    scope:
+      path: ""
+      type: "talks"
+    values:
+      permalink: /studies/talks/:title/
+      layout: default
 
 markdown: kramdown
 
