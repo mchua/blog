@@ -116,11 +116,6 @@ h4,
   display: inline-block;
 }
 
-.nav--main .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
 .nav--main .nav__list {
   text-align: center;
 }
@@ -199,11 +194,15 @@ h4,
   background-repeat: no-repeat;
 }
 
+.wall--index {
+  background-color: #ffffff;
+}
+
 .wall--self {
   background-color: #E0E0E0;
 }
 
-.wall--scholarship {
+.wall--studies {
   background-color: #D1C6BD;
 }
 
@@ -220,6 +219,36 @@ h4,
   margin: auto;
   max-height: 60vh;
   width: auto;
+}
+
+.nav--posters {
+  display: grid!important;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 50px;
+}
+
+.poster--prev,
+.poster--next {
+  display: block;
+  position: relative;
+}
+
+.poster--prev {
+  cursor: w-resize;
+}
+
+.poster--next {
+  cursor: e-resize;
+}
+
+.poster--prev img {
+  position: absolute;
+  left: -70%;
+}
+
+.poster--next img {
+  position: absolute;
+  right: -70%;
 }
 
 footer {

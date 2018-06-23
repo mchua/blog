@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/stylesheet.css" type="text/css">
   </head>
   <body>
-  <nav class="nav nav--main">
+  <nav class="nav nav--main wall--{{ page.title | slugify }}">
     <div class="container">
-      <a class="nav__item {% if page.title == "Index" %}active{% endif %}" href="/">mel chua</a>
       <ul class="nav__list">
+        <li class="nav__item {% if page.title == "Index" %}active{% endif %}"><a href="{{ site.baseurl }}/index">mel chua</a></li>
         <li class="nav__item {% if page.title == "Self" %}active{% endif %}"><a href="{{ site.baseurl }}/self">self</a></li>
         <li class="nav__item {% if page.title == "Studies" %}active{% endif %}"><a href="{{ site.baseurl }}/studies">studies</a></li>
         <li class="nav__item {% if page.title == "Sketches" %}active{% endif %}"><a href="{{ site.baseurl }}/sketches">sketches</a></li>
