@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>{{ page.title }} | Mel Chua</title>
+    <title>{% if page.title != "Index" %}{{ page.title }} | {% endif %}Mel Chua</title>
   <meta name="author" content="name">
   <meta name="description" content="description here">
   <meta name="keywords" content="keywords,here">
@@ -12,10 +12,10 @@
   <body>
   <nav class="nav nav--main">
     <div class="container">
-      <a class="nav__item" href="/">mel chua</a>
+      <a class="nav__item {% if page.title == "Index" %}active{% endif %}" href="/">mel chua</a>
       <ul class="nav__list">
-        <li class="nav__item {% if page.title == "Self" %}active{% endif %}"><a href="{{ site.baseurl }}/">self</a></li>
-        <li class="nav__item {% if page.title == "Scholarship" %}active{% endif %}"><a href="{{ site.baseurl }}/scholarship">scholarship</a></li>
+        <li class="nav__item {% if page.title == "Self" %}active{% endif %}"><a href="{{ site.baseurl }}/self">self</a></li>
+        <li class="nav__item {% if page.title == "Studies" %}active{% endif %}"><a href="{{ site.baseurl }}/studies">studies</a></li>
         <li class="nav__item {% if page.title == "Sketches" %}active{% endif %}"><a href="{{ site.baseurl }}/sketches">sketches</a></li>
       </ul>
     </div>
@@ -45,6 +45,6 @@
       </ul>
     </div>
   </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/assets/js/jquery.min.js"></script>
   </body>
 </html>

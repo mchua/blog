@@ -1,6 +1,6 @@
 ---
-title: Self
-layout: self
+title: Index
+layout: index
 description: |
   Hi, I'm Mel, a nomadic hack-of-all-trades who frequently geeks out about open source and engineering, education communities of practice, and just about everything else under the sun.
 about: |

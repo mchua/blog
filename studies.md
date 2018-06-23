@@ -1,6 +1,6 @@
 ---
-title: Scholarship
-layout: scholarship
+title: Studies
+layout: studies
 description: When I decided to hone my skills for deeply pursuing fascinating things, the practice of scholarship became one of my training grounds for doing so.
 ---
 
