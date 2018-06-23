@@ -20,13 +20,13 @@ defaults:
       path: ""
       type: "posts"
     values:
-      permalink: /:year/:month/:day/:title/
+      permalink: /sketches/:year/:month/:day/:title/
   -
     scope:
       path: ""
       type: "topics"
     values:
-      permalink: /topics/:title/
+      permalink: /sketches/:title/
       layout: topic
 
 markdown: kramdown
