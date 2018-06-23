@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/stylesheet.css" type="text/css">
   </head>
   <body>
+<!--
   <nav class="nav nav--main wall--{{ page.title | slugify }}">
     <div class="container">
       <ul class="nav__list">
@@ -20,6 +21,7 @@
       </ul>
     </div>
   </nav>
+-->
   {{ content }}
   <footer>
     <div>
@@ -46,5 +48,7 @@
     </div>
   </footer>
   <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/instantclick.min.js"></script>
+  <script>InstantClick.init('mousedown');</script>
   </body>
 </html>

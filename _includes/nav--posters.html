@@ -1,11 +1,14 @@
 <div class="nav--posters wall wall--{{ include.current }}">
   <a class="poster--prev" href="/{{ include.prev }}">
-    <img src="{{ site.baseurl }}/assets/posters/{{ include.prev }}.png" alt="">
+    <p>{{ include.prev }}</p>
+    <img src="{{ site.baseurl }}/assets/posters/{{ include.prev }}-2.png" alt="">
   </a>
   <div class="poster--current">
-    <img src="{{ site.baseurl }}/assets/posters/{{ include.current }}.png" alt="">
+    <p><strong>{{ include.current }}</strong></p>
+    <img src="{{ site.baseurl }}/assets/posters/{{ include.current }}-2.png" alt="">
   </div>
   <a class="poster--next" href="/{{ include.next }}">
-    <img src="{{ site.baseurl }}/assets/posters/{{ include.next }}.png" alt="">
+    <p>{{ include.next }}</p>
+    <img src="{{ site.baseurl }}/assets/posters/{{ include.next }}-2.png" alt="">
   </a>
 </div>

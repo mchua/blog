@@ -195,19 +195,19 @@ h4,
 }
 
 .wall--index {
-  background-color: #ffffff;
+  background-color: #C3BF85;
 }
 
 .wall--self {
-  background-color: #E0E0E0;
+  background-color: #CE9966;
 }
 
 .wall--studies {
-  background-color: #D1C6BD;
+  background-color: #AA9079;
 }
 
 .wall--sketches {
-  background-color: #F2C94C;
+  background-color: #9BC6BD;
 }
 
 .poster {
@@ -217,14 +217,14 @@ h4,
 .poster img {
   display: block;
   margin: auto;
-  max-height: 60vh;
+  max-height: 100%;
   width: auto;
 }
 
 .nav--posters {
   display: grid!important;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 50px;
+  grid-column-gap: 0;
 }
 
 .poster--prev,
@@ -235,10 +235,12 @@ h4,
 
 .poster--prev {
   cursor: w-resize;
+  text-align: left;
 }
 
 .poster--next {
   cursor: e-resize;
+  text-align: right;
 }
 
 .poster--prev img {
