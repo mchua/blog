@@ -1,18 +1,18 @@
 {% if include.collapsed == "yes" %}
 <div class="nav--posters wall wall--{{ include.current }}">
-  <a class="poster--prev" href="/{{ include.prev }}">
+  <a class="poster--prev" href="{{ site.baseurl }}/{{ include.prev }}">
     <p>{{ include.prev }}</p>
   </a>
   <div class="poster--current">
     <p><strong>{{ include.current }}</strong></p>
   </div>
-  <a class="poster--next" href="/{{ include.next }}">
+  <a class="poster--next" href="{{ site.baseurl }}/{{ include.next }}">
     <p>{{ include.next }}</p>
   </a>
 </div>
 {% else %}
 <div class="nav--posters wall wall--{{ include.current }}">
-  <a class="poster--prev" href="/{{ include.prev }}">
+  <a class="poster--prev" href="{{ site.baseurl }}/{{ include.prev }}">
     <p>{{ include.prev }}</p>
     <img src="{{ site.baseurl }}/assets/posters/{{ include.prev }}-2.png" alt="">
   </a>
@@ -20,7 +20,7 @@
     <p><strong>{{ include.current }}</strong></p>
     <img src="{{ site.baseurl }}/assets/posters/{{ include.current }}-2.png" alt="">
   </div>
-  <a class="poster--next" href="/{{ include.next }}">
+  <a class="poster--next" href="{{ site.baseurl }}/{{ include.next }}">
     <p>{{ include.next }}</p>
     <img src="{{ site.baseurl }}/assets/posters/{{ include.next }}-2.png" alt="">
   </a>
