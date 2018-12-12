@@ -4,7 +4,7 @@ layout: index
 description: |
   Hi, I'm Mel, a nomadic hack-of-all-trades who frequently geeks out about open source and engineering, education communities of practice, and just about everything else under the sun.
 about: |
-  There's a [longer bio and a CV](about) if you like, but the best way to get a grasp on my thoughtstream is to read my blog, which I write for my future self.
+  There's a [longer bio and a CV](self) if you like, but the best way to get a grasp on my thoughtstream is to read my blog, which I write for my future self.
 
   I don't believe in formal introductions or compartmentalizing one's life,
 
