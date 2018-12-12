@@ -20,6 +20,8 @@ description: >-
 twitter_username: mchua
 github_username:  mchua
 
+baseurl: http://caseyg.github.io/melchua
+
 defaults:
   -
     scope:
