@@ -1,6 +1,6 @@
 ---
-title: Curriculum Vitae
-layout: default
+title: CV
+layout: page
 ---
 
 ## Education

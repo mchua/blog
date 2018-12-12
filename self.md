@@ -1,7 +1,7 @@
 ---
 title: Self
 permalink: /self/
-layout: self
+layout: page
 description: Wherein I attempt the impossible tasks of briefly introducing myself.
 
 ---

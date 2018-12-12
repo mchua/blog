@@ -1,6 +1,6 @@
 ---
 title: Research Statement
-layout: default
+layout: page
 ---
 
 # Research Statement
