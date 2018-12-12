@@ -7,6 +7,8 @@ github_username:  mchua
 
 baseurl: https://caseyg.github.io/melchua
 
+theme: minima
+
 paginate: 25
 paginate_path: "/page/:num/"
 
