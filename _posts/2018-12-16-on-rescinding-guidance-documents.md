@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Image Description: Race Matters - a story about white privilege'
+title: 'On rescinding guidance documents'
 date: 2018-12-16 16:49:00.000000000 -05:00
 type: post
 published: true
