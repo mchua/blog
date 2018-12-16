@@ -1,7 +1,7 @@
 ---
 layout: post
-title: On rescinding guidance documents
-date: 2018-12-16T20:49:00.000Z
+title: Image Description: Race Matters - a story about white privilege
+date: 2018-12-16 16:49:00.000000000 -05:00
 type: post
 published: true
 password: ''
@@ -25,3 +25,4 @@ Thing is, schools and parents are often pretty clueless about how to serve disab
 It is specifically powerful to have that kind of documentation be in official government documents. Sure, private groups could create best practice documents with the same (or same type of) information about serving disabled kids. However, private groups can't say "this is legally mandated" without pointing to actual government/legal documents. And sometimes schools/employers/landlords/etc. will dismiss documents that aren't "official," but will pay more attention to something from the relevant government agency, even if it is simply "guidance."
 
 Taking away tools that people can use to fight and advocate for their rights is a blow towards implementation of the law, even if it doesn't (yet) directly touch the law itself. It's like saying that slashing the marketing for a product won't hurt its sales. Implementation requires awareness; awareness requires information and the tools and skills to advocate and act. These tools are also things we need to protect.
+
