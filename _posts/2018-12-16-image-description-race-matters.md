@@ -14,7 +14,7 @@ author:
   last_name: Chua
 ---
 
-Image description by Mel Chua. Please improve! The original comic is at http://www.raceconscious.org/2017/07/race-matters-story-white-privilege/, and passing on this image description (or a better version of it) to the original authors so it can be listed with the comic would be much appreciated. I am posting it here because I could not find a way to contact the authors about adding this to the original comic.
+Image description by Mel Chua. Please improve! The original comic is [from Race Conscious](http://www.raceconscious.org/2017/07/race-matters-story-white-privilege). If anyone knows how to pass on this image description (or a better version of it) to the original authors so it can be listed with the comic, that would be much appreciated. I am only posting it here because I could not find a way to contact the authors about adding this to the original comic.
 
 The entire comic is done in a pen-and-ink style with watercolor-like coloring. Each paragraph is a new frame.
 
