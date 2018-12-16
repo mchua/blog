@@ -1,6 +1,6 @@
 ---
 layout: post
-title: On ADHD adaptations
+title: On rescinding guidance documents
 date: 2018-12-16T20:49:00.000Z
 type: post
 published: true
