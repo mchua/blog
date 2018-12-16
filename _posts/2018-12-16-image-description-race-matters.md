@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Image Description: Race Matters - a story about white privilege
+title: 'Image Description: Race Matters - a story about white privilege'
 date: 2018-12-16 17:14:00.000000000 -05:00
 type: post
 published: true
