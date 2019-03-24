@@ -19,7 +19,7 @@ author:
   last_name: Chua
 ---
 <p>When I first pasted <a class="moz-txt-link-freetext" href="http://wiki.laptop.org/go/Experiments_with_unordered_paths/IRC_transcript">the transcript of C. Scott's talk</a>, it was ugly and unwrapped and splurted off the right edge of my screen. So I decided to learn more regular expressions. This is what happened.</p>
-<p><b>Attempt #1:</b> Mrah. why does <i><b>cat foo.txt | sed 's/(.{1,80}( +|$<br />
+<p><b>Attempt #1:</b> Mrah. why does <i><b>cat foo.txt | sed 's/(.{1,  80}( +|$<br />
 ?)|(.{1,80})/13<br />
 /g'</b></i> not work? <i><b>3</b></i> is not an invalid reference, you silly thing.</p>
 <p><b>D'oh moment #1:</b> Oh. escaping { and ( with  is needed with sed. now...</p>
