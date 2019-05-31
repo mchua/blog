@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ADHD developers and academics"
+title: "ADD developers and  academics"
 date: 2019-05-28 00:22:54.000000000 -05:00
 type: post
 published: true
