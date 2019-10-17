@@ -13,12 +13,16 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
 title: Mel Chua
 email: mel@melchua.com
-description: >-
+url: https://melchua.com/
+baseurl: /blog
+
+description:
   "Hacker. Writer. Researcher. Teacher. Human jumper cable."
-twitter_username: mchua
-github_username:  mchua
+keywords: hacker, writer, researcher, scholar, teacher, deaf, diversity, engineering, education, open source
+meta_author: Chua Mel
 
 defaults:
   -
@@ -27,6 +31,15 @@ defaults:
       type: "posts"
     values:
       permalink: /:year/:month/:day/:title/
+
+twitter_username: mchua
+github_username: mchua
+
+social:
+  - title: twitter
+    url: https://twitter.com/mchua
+  - title: github
+    url: https://github.com/mchua
 
 # Build settings
 markdown: kramdown
