@@ -17,6 +17,6 @@
       {% endif %}
     {% endunless %}
 
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <li><a href="/blog{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
