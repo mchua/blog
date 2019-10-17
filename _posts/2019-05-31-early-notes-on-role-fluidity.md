@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Early notes on role fluidity""
+title: "Early notes on role fluidity"
 date: 2019-05-31 00:13:20.000000000 -05:00
 type: post
 published: true
